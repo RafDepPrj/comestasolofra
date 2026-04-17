@@ -6,7 +6,7 @@
 <title>Come sta Solofra — Dati pubblici, resi leggibili</title>
 <meta name="description" content="Dati pubblici su Solofra raccolti, analizzati e visualizzati. A cura di Raffaele De Piano.">
 <meta property="og:title" content="Come sta Solofra">
-<meta property="og:description" content="Dati pubblici su Solofra, resi leggibili. Popolazione, calcoli, deduzioni, fonti.">
+<meta property="og:description" content="Dati pubblici su Solofra, resi leggibili. Popolazione, bilancio, calcoli, deduzioni, fonti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -42,15 +42,16 @@
   .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
   .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
   .site-title span { color: var(--accent); }
-  nav { display: flex; gap: 20px; }
-  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; }
+  nav { display: flex; gap: 24px; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; }
   nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
 
   .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(36px,5vw,60px); max-width: 1060px; margin: 0 auto; }
   .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
   .hero-title { font-family: var(--serif); font-size: clamp(40px,5.5vw,68px); line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 18px; }
   .hero-title em { font-style: italic; color: var(--ink-2); }
-  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 580px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 620px; line-height: 1.65; margin-bottom: 24px; }
   .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .15s, border-color .15s; }
   .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
@@ -63,64 +64,25 @@
   .sec-title { font-family: var(--serif); font-size: clamp(26px,3.5vw,40px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; }
   .sec-intro { font-size: 15px; color: var(--ink-2); max-width: 620px; line-height: 1.65; margin-bottom: 40px; }
 
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 52px; }
-  .stat-card { background: var(--paper); padding: 26px 22px; transition: background .15s; }
-  .stat-card:hover { background: var(--paper-2); }
-  .stat-val { font-family: var(--serif); font-size: 46px; line-height: 1; letter-spacing: -0.03em; margin-bottom: 8px; }
-  .stat-val.neg { color: var(--accent); }
-  .stat-val.neu { color: var(--ink); }
-  .stat-lbl { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
-  .stat-sub { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
+  /* Card sezioni */
+  .sez-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 20px; margin-bottom: 40px; }
+  .sez-card { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; text-decoration: none; color: var(--ink); transition: border-color .2s, transform .2s, background .2s; }
+  .sez-card:hover { border-color: var(--ink-3); background: var(--paper-2); transform: translateY(-2px); }
+  .sez-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 12px; }
+  .sez-card-title { font-family: var(--serif); font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .sez-card-sub { font-size: 14px; color: var(--ink-2); line-height: 1.55; margin-bottom: 20px; }
+  .sez-stats { display: flex; gap: 20px; padding-top: 16px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .sez-stat { display: flex; flex-direction: column; gap: 2px; }
+  .sez-stat-v { font-family: var(--serif); font-size: 22px; color: var(--ink); line-height: 1; }
+  .sez-stat-v.neg { color: var(--accent); }
+  .sez-stat-l { font-size: 11px; color: var(--ink-3); letter-spacing: 0.03em; }
+  .sez-cta { margin-top: 20px; font-size: 13px; color: var(--ink-2); display: flex; align-items: center; gap: 6px; }
+  .sez-cta::after { content: '→'; transition: transform .2s; display: inline-block; }
+  .sez-card:hover .sez-cta::after { transform: translateX(3px); }
 
-  .chart-block { margin-bottom: 52px; }
-  .chart-hed { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-  .chart-sub { font-size: 12px; color: var(--ink-3); margin-bottom: 18px; }
-  .bar-chart { display: flex; flex-direction: column; gap: 8px; }
-  .bar-row { display: grid; grid-template-columns: 44px 1fr 72px; align-items: center; gap: 10px; }
-  .bar-year { font-size: 12px; color: var(--ink-3); text-align: right; }
-  .bar-track { height: 24px; background: var(--paper-2); border-radius: 4px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 4px; width: 0; transition: width 1s cubic-bezier(.16,1,.3,1); }
-  .bar-fill.base  { background: var(--ink-2); }
-  .bar-fill.alert { background: var(--accent); }
-  .bar-num { font-size: 12px; font-weight: 500; color: var(--ink); text-align: right; }
-
-  .calcoli-wrap { margin-bottom: 52px; }
-  .subsec-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-
-  .calcolo { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
-  .calcolo-hed { background: var(--paper-2); padding: 14px 20px; font-size: 13px; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .tag { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-3); color: var(--ink-3); padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
-  .calcolo-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
-  .calc-step { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; }
-  .calc-n { width: 24px; height: 24px; border-radius: 50%; background: var(--paper-3); color: var(--ink-3); font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-  .calc-t { font-size: 14px; color: var(--ink); line-height: 1.6; }
-  .calc-t strong { font-weight: 500; }
-  .calc-t em { font-style: italic; color: var(--ink-2); }
-  .calc-result { margin: 4px 0 0 40px; padding: 12px 16px; background: var(--paper-2); border-radius: 8px; font-size: 14px; color: var(--ink); border-left: 3px solid var(--accent); line-height: 1.55; }
-  .calc-result strong { font-weight: 500; }
-
-  .deduzioni-wrap { margin-bottom: 52px; }
-  .deduzioni { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-  .ded { background: var(--paper); padding: 26px 22px; }
-  .ded-marker { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; margin-bottom: 14px; }
-  .ded-marker.r { background: #fce8e3; color: var(--accent); }
-  .ded-marker.a { background: var(--amber-bg); color: var(--amber); }
-  .ded-marker.g { background: var(--green-bg); color: var(--green); }
-  .ded-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
-  .ded-text { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
-
-  .domanda { border-top: 2px solid var(--ink); padding-top: 24px; margin-bottom: 52px; }
-  .domanda-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
-  .domanda-text { font-family: var(--serif); font-size: clamp(18px,2.5vw,24px); line-height: 1.4; color: var(--ink); font-style: italic; }
-
-  .fonte { background: var(--paper-2); border-radius: 10px; padding: 20px 22px; }
-  .fonte-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
-  .fonte-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-  .fonte-list li { font-size: 13px; color: var(--ink-2); display: flex; gap: 8px; align-items: baseline; }
-  .fonte-list li::before { content: '→'; color: var(--ink-3); flex-shrink: 0; }
-  .fonte-list a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); transition: border-color .15s; }
-  .fonte-list a:hover { border-color: var(--ink); }
-  .fonte-note { font-size: 12px; color: var(--ink-3); line-height: 1.55; border-top: 1px solid var(--border); padding-top: 12px; }
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 32px clamp(24px,4vw,40px); margin-bottom: 40px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.4vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
 
   footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
   .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
@@ -135,9 +97,8 @@
   .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
 
   @media (max-width: 640px) {
-    nav { display: none; }
-    .bar-row { grid-template-columns: 36px 1fr 58px; }
-    .calc-step { grid-template-columns: 24px 1fr; gap: 8px; }
+    nav { gap: 16px; }
+    nav a { font-size: 12px; }
   }
 </style>
 </head>
@@ -149,12 +110,11 @@
 
 <header>
   <div class="header-inner">
-    <a href="#" class="site-title">Come sta <span>Solofra</span></a>
+    <a href="index.html" class="site-title">Come sta <span>Solofra</span></a>
     <nav>
-      <a href="#demografia">dati</a>
-      <a href="#calcoli">i calcoli</a>
-      <a href="#deduzioni">deduzioni</a>
-      <a href="#fonti">fonti</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="demografia.html">Demografia</a>
+      <a href="bilancio.html">Bilancio</a>
     </nav>
   </div>
 </header>
@@ -162,212 +122,64 @@
 <div class="hero">
   <p class="hero-eyebrow">Solofra (AV) — aggiornato aprile 2026</p>
   <h1 class="hero-title">Dati pubblici,<br><em>resi leggibili.</em></h1>
-  <p class="hero-sub">Questa pagina raccoglie dati ufficiali su Solofra, mostra i calcoli per intero, spiega il ragionamento dietro ai numeri e cita le fonti.</p>
+  <p class="hero-sub">Una raccolta di dati ufficiali su Solofra: popolazione, bilancio, economia. Con i calcoli mostrati per intero, le fonti sempre citate e le deduzioni separate dai fatti.</p>
   <div class="hero-meta">
     A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
     <span>·</span>
-    <span>Prima sezione pubblicata: aprile 2026</span>
+    <span>Aggiornato con nuove sezioni man mano</span>
   </div>
 </div>
 
 <hr class="div">
 
 <div class="page-wrap">
-<div class="section" id="demografia">
+<div class="section">
 
-  <p class="sec-label">Sezione 1 · Demografia · Aprile 2026</p>
-  <h2 class="sec-title">Quanti siamo — e cosa sta cambiando</h2>
-  <p class="sec-intro">In dieci anni Solofra ha perso circa 600 residenti. Non è solo un numero: cambia la composizione della città, la sua base fiscale, i servizi che può permettersi di erogare.</p>
+  <p class="sec-label">Le sezioni</p>
+  <h2 class="sec-title">Cosa puoi leggere qui</h2>
+  <p class="sec-intro">Ogni sezione parte da una domanda concreta, mostra i numeri che servono a rispondere, spiega i calcoli e cita i documenti ufficiali.</p>
 
-  <div class="stat-grid">
-    <div class="stat-card">
-      <div class="stat-val neg">−600</div>
-      <div class="stat-lbl">Residenti in meno</div>
-      <div class="stat-sub">Tra il 2013 e il 2024, secondo i dati ISTAT</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-val neu">~11.950</div>
-      <div class="stat-lbl">Abitanti oggi (2024)</div>
-      <div class="stat-sub">Eravamo ~12.550 nel 2013</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-val neg">−4,8%</div>
-      <div class="stat-lbl">Calo in un decennio</div>
-      <div class="stat-sub">Quattro volte il tasso nazionale nello stesso periodo</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-val neg">60</div>
-      <div class="stat-lbl">Persone in meno ogni anno</div>
-      <div class="stat-sub">In media: una classe scolastica intera ogni dodici mesi</div>
-    </div>
-  </div>
+  <div class="sez-grid">
 
-  <div class="chart-block">
-    <p class="chart-hed">Popolazione residente 2013–2024</p>
-    <p class="chart-sub">Fonte: ISTAT / tuttitalia.it — dati al 31 dicembre di ogni anno. Verifica i valori su tuttitalia.it prima di citarli.</p>
-    <div class="bar-chart" id="popChart"></div>
-  </div>
+    <a href="demografia.html" class="sez-card">
+      <div class="sez-num">01 — Demografia</div>
+      <h3 class="sez-card-title">Quanti siamo — e cosa sta cambiando</h3>
+      <p class="sez-card-sub">Solofra perde residenti da dieci anni. Chi parte, chi resta, e cosa significa per il commercio, i servizi, il bilancio del Comune.</p>
+      <div class="sez-stats">
+        <div class="sez-stat">
+          <span class="sez-stat-v neg">−600</span>
+          <span class="sez-stat-l">residenti in 10 anni</span>
+        </div>
+        <div class="sez-stat">
+          <span class="sez-stat-v">~11.950</span>
+          <span class="sez-stat-l">abitanti oggi</span>
+        </div>
+      </div>
+      <div class="sez-cta">Leggi la sezione</div>
+    </a>
 
-  <!-- I CALCOLI -->
-  <div class="calcoli-wrap" id="calcoli">
-    <p class="subsec-label">I calcoli — come arriviamo a questi numeri</p>
-
-    <div class="calcolo">
-      <div class="calcolo-hed">
-        <span class="tag">Calcolo 1</span>
-        Tasso di calo di Solofra a confronto con la media nazionale
+    <a href="bilancio.html" class="sez-card">
+      <div class="sez-num">02 — Bilancio comunale</div>
+      <h3 class="sez-card-title">Il bilancio di Solofra in chiaro</h3>
+      <p class="sez-card-sub">31 milioni di euro all'anno. Cosa paga ogni cittadino, cosa il Comune non incassa, quanto costa il debito ereditato. Tutto dal bilancio 2025 ufficiale.</p>
+      <div class="sez-stats">
+        <div class="sez-stat">
+          <span class="sez-stat-v">€923</span>
+          <span class="sez-stat-l">di tributi pro capite</span>
+        </div>
+        <div class="sez-stat">
+          <span class="sez-stat-v neg">€919</span>
+          <span class="sez-stat-l">di disavanzo pro capite</span>
+        </div>
       </div>
-      <div class="calcolo-body">
-        <div class="calc-step">
-          <div class="calc-n">1</div>
-          <div class="calc-t">Popolazione Solofra 2013: <strong>12.550</strong>. Popolazione Solofra 2024: <strong>11.950</strong>. Differenza assoluta: <strong>−600 persone</strong>.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">2</div>
-          <div class="calc-t">Calcolo del tasso percentuale: (600 ÷ 12.550) × 100 = <strong>4,78%</strong>, arrotondato a <strong>−4,8%</strong> in dieci anni.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">3</div>
-          <div class="calc-t">La popolazione italiana è passata da circa 60,2 milioni (2013) a 58,9 milioni (2024): −1,3 milioni, pari a <strong>−2,2%</strong> nazionale. Per i comuni dell'Appennino meridionale la perdita media stimata nello stesso decennio è attorno a <strong>−3–4%</strong>. Solofra è nella parte alta di questa fascia.</div>
-        </div>
-        <div class="calc-result"><strong>Sintesi:</strong> Solofra perde residenti circa quattro volte più velocemente della media nazionale, e a un ritmo superiore alla media dei comuni appenninnici simili.</div>
-      </div>
-    </div>
-
-    <div class="calcolo">
-      <div class="calcolo-hed">
-        <span class="tag">Calcolo 2</span>
-        Quanto vale la perdita di 600 residenti per le casse comunali
-      </div>
-      <div class="calcolo-body">
-        <div class="calc-step">
-          <div class="calc-n">1</div>
-          <div class="calc-t">I comuni ricevono dallo Stato il <strong>Fondo di Solidarietà Comunale (FSC)</strong>, calcolato anche in base alla popolazione residente. Per i comuni campani nella fascia 10.000–15.000 abitanti, il FSC pro capite è stimato tra <strong>120 e 180 € per abitante</strong> (fonte: elaborazioni su dati MEF 2023). Usiamo il valore centrale: <strong>150 €/ab</strong>.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">2</div>
-          <div class="calc-t">600 residenti persi × 150 €/ab = <strong>circa 90.000 € in meno</strong> di trasferimenti statali annui rispetto al 2013. <em>Questa è una stima di ordine di grandezza: il FSC tiene conto di molte variabili oltre alla sola popolazione.</em></div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">3</div>
-          <div class="calc-t">A questa perdita si sommano le entrate proprie legate alla residenza: <strong>addizionale IRPEF comunale</strong> (ogni residente che parte porta via la propria quota), <strong>TARI</strong> (tariffa rifiuti, pagata dalle utenze domestiche), <strong>IMU prima casa per nuove famiglie</strong>. Ogni voce contribuisce alla riduzione del bilancio.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">4</div>
-          <div class="calc-t">I costi fissi del comune — strade, illuminazione, uffici, personale — non si riducono in modo proporzionale con la popolazione. Il risultato: meno entrate, stessi costi fissi, <strong>costo pro capite che sale</strong>.</div>
-        </div>
-        <div class="calc-result"><strong>Ordine di grandezza complessivo:</strong> tra FSC e entrate proprie, la perdita di 600 residenti vale verosimilmente tra <strong>100.000 e 200.000 € annui</strong> di minori entrate per il comune — risorse che non possono essere reinvestite in servizi. Consulta i bilanci storici su OpenBilanci per i dati reali anno per anno.</div>
-      </div>
-    </div>
-
-    <div class="calcolo">
-      <div class="calcolo-hed">
-        <span class="tag">Calcolo 3</span>
-        Il meccanismo del circolo vizioso demografico
-      </div>
-      <div class="calcolo-body">
-        <div class="calc-step">
-          <div class="calc-n">1</div>
-          <div class="calc-t">Chi parte è prevalentemente giovane, nella fascia <strong>20–35 anni</strong>. Questa è la fascia con il tasso di fertilità più alto. Meno giovani residenti = meno potenziali genitori a Solofra = meno nati.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">2</div>
-          <div class="calc-t">Il <strong>saldo naturale</strong> (nati meno morti) di Solofra è negativo da almeno 5 anni consecutivi. In molti comuni dell'Irpinia il numero di morti supera già quello dei nati di un fattore 1,5–2. Con la partenza dei giovani questa forbice si allarga ulteriormente.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">3</div>
-          <div class="calc-t">Meno bambini → meno iscritti alle scuole → rischio riduzione classi e chiusura plessi → la città diventa meno attrattiva per famiglie con figli → queste famiglie partono → ancora meno bambini.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">4</div>
-          <div class="calc-t">Lo stesso meccanismo vale per i servizi sanitari: meno residenti → meno medici di base assegnati al comune → lista d'attesa più lunga → la città è meno attrattiva per famiglie anziane o con bambini piccoli.</div>
-        </div>
-        <div class="calc-result"><strong>Il meccanismo:</strong> spopolamento → meno giovani → meno nati → meno servizi → più spopolamento. Un ciclo che si autoalimenta e che diventa esponenzialmente più difficile da invertire nel tempo, non linearmente.</div>
-      </div>
-    </div>
-
-    <div class="calcolo">
-      <div class="calcolo-hed">
-        <span class="tag">Calcolo 4</span>
-        Quanto spende in meno il commercio locale ogni anno
-      </div>
-      <div class="calcolo-body">
-        <div class="calc-step">
-          <div class="calc-n">1</div>
-          <div class="calc-t">Secondo i dati ISTAT sui consumi delle famiglie italiane (2023), un residente adulto spende in media circa <strong>1.200–1.400 € al mese</strong> in consumi totali. La quota che ricade sul commercio locale — supermercati, negozi di vicinato, bar, ristoranti, servizi alla persona — è stimata intorno al <strong>40–50%</strong>, pari a circa <strong>550–650 € al mese per persona</strong>.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">2</div>
-          <div class="calc-t">Usando il valore centrale di <strong>600 € al mese per residente</strong>: 600 persone in meno × 600 €/mese = <strong>360.000 € al mese</strong> in meno di spesa che non entra nei negozi, nei bar, nei supermercati e nei servizi di Solofra. Su base annua: <strong>circa 4,3 milioni di euro</strong>.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">3</div>
-          <div class="calc-t">Per dare un riferimento concreto: un bar che serve 20 caffè in meno al giorno perde circa <strong>30 € al giorno</strong>, oltre <strong>10.000 € all'anno</strong>. Un supermercato che vede ridursi la clientela abituale di 50 famiglie perde una quota significativa del proprio fatturato — spesso la differenza tra restare aperto e chiudere. Un negozio di abbigliamento, un parrucchiere, una farmacia: lo stesso ragionamento si applica a ogni attività che vive di clientela locale e abituale.</div>
-        </div>
-        <div class="calc-step">
-          <div class="calc-n">4</div>
-          <div class="calc-t"><em>La stima è conservativa</em>: non include l'effetto moltiplicatore (ogni euro speso localmente genera ulteriore attività economica nel territorio), né la spesa delle famiglie come nucleo (che è superiore alla somma delle spese individuali), né la perdita di indotto su attività artigianali e professionali.</div>
-        </div>
-        <div class="calc-result"><strong>Ordine di grandezza:</strong> la perdita di 600 residenti sottrae al commercio e ai servizi locali di Solofra una cifra stimata tra <strong>3,5 e 5 milioni di euro all'anno</strong> di consumi che non avvengono più nel territorio. È denaro che, in un'altra realtà, andrebbe a fare la spesa, a prendere il caffè, dal parrucchiere, dal meccanico — qui.</div>
-      </div>
-    </div>
+      <div class="sez-cta">Leggi la sezione</div>
+    </a>
 
   </div>
 
-  <!-- DEDUZIONI -->
-  <div class="deduzioni-wrap" id="deduzioni">
-    <p class="subsec-label">Deduzioni — cosa ci dicono questi numeri</p>
-    <div class="deduzioni">
-      <div class="ded">
-        <span class="ded-marker r">Criticità</span>
-        <div class="ded-title">Il calo non è solo numerico — è generazionale</div>
-        <div class="ded-text">Solofra non perde residenti in modo uniforme. Perde prevalentemente giovani tra i 20 e i 35 anni. La città che rimane è strutturalmente più anziana di quella di dieci anni fa — con bisogni diversi, minore dinamismo economico e minore capacità di costruire futuro.</div>
-      </div>
-      <div class="ded">
-        <span class="ded-marker r">Criticità</span>
-        <div class="ded-title">Ogni residente che parte è un cliente in meno ogni giorno</div>
-        <div class="ded-text">Lo spopolamento non è solo un dato demografico — è una perdita di fatturato reale per bar, negozi, supermercati, artigiani e professionisti. Stimiamo che i 600 residenti persi in dieci anni valgano tra 3,5 e 5 milioni di euro annui di consumi locali in meno. Per molte attività di vicinato, è la differenza tra sopravvivere e chiudere.</div>
-      </div>
-      <div class="ded">
-        <span class="ded-marker r">Criticità</span>
-        <div class="ded-title">La base fiscale si restringe ogni anno</div>
-        <div class="ded-text">Meno residenti significa meno entrate per il comune. Questa forbice rende progressivamente più difficile mantenere il livello dei servizi esistenti. Non è un'opinione — è aritmetica di bilancio.</div>
-      </div>
-      <div class="ded">
-        <span class="ded-marker a">Attenzione</span>
-        <div class="ded-title">Il problema è strutturale, non contingente</div>
-        <div class="ded-text">Lo spopolamento delle aree interne appenniniche è un fenomeno nazionale che dura da decenni. Non dipende da chi governa il comune in un dato momento. Le soluzioni non possono essere episodiche — richiedono un cambio di condizioni strutturali: lavoro, servizi, connettività, qualità della vita.</div>
-      </div>
-      <div class="ded">
-        <span class="ded-marker a">Attenzione</span>
-        <div class="ded-title">Chi parte non parte perché non ama Solofra</div>
-        <div class="ded-text">Il saldo migratorio mostra che la partenza è quasi sempre per ragioni lavorative o formative. La maggior parte di chi va via lo fa con dispiacere. Non è un problema di identità — è un problema di offerta economica e di opportunità concrete.</div>
-      </div>
-      <div class="ded">
-        <span class="ded-marker g">Opportunità</span>
-        <div class="ded-title">Il trend si può rallentare</div>
-        <div class="ded-text">Comuni simili in altre regioni hanno rallentato il trend con politiche mirate: incentivi per nuovi residenti, diversificazione economica, attrazione di lavoratori da remoto, potenziamento dei servizi per l'infanzia. Non esiste una soluzione unica — ma esistono esempi concreti da studiare.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DOMANDA APERTA -->
-  <div class="domanda">
-    <p class="domanda-label">La domanda aperta</p>
-    <p class="domanda-text">Se ogni anno Solofra perde una classe scolastica di residenti, in che tipo di città vogliamo che si trasformi nei prossimi vent'anni — e cosa siamo disposti a fare per cambiare questa traiettoria?</p>
-  </div>
-
-  <!-- FONTI -->
-  <div class="fonte" id="fonti">
-    <p class="fonte-hed">Fonti e metodo</p>
-    <ul class="fonte-list">
-      <li><a href="https://www.tuttitalia.it/campania/37-solofra/statistiche/popolazione-andamento-demografico/" target="_blank">tuttitalia.it — Solofra, andamento demografico della popolazione</a> — serie storica annuale</li>
-      <li><a href="https://demo.istat.it/" target="_blank">ISTAT Demo — statistiche demografiche comunali</a> — natalità, mortalità, saldo migratorio per comune</li>
-      <li><a href="https://www.istat.it/comunicato-stampa/censimento-e-dinamica-della-popolazione-anno-2024/" target="_blank">ISTAT — Censimento e dinamica della popolazione, anno 2024</a> — comunicato stampa ufficiale</li>
-      <li><a href="https://www.mef.gov.it/documenti-pubblicazioni/open-data/index.html" target="_blank">MEF — Open Data documenti e pubblicazioni</a> — dati su Fondo di Solidarietà Comunale e trasferimenti ai comuni</li>
-      <li><a href="https://openbilanci.it/armonizzati/bilanci/solofra-comune-av/entrate/dettaglio?year=2022&type=preventivo" target="_blank">OpenBilanci — Comune di Solofra, bilancio entrate 2022</a> — bilanci comunali consultabili e verificabili</li>
-    </ul>
-    <p class="fonte-note">I calcoli mostrati in questa pagina sono elaborazioni proprie su dati pubblici. I valori stimati (come il range 100.000–200.000 € di minori entrate) sono stime di ordine di grandezza, non dati ufficiali — e sono presentati esplicitamente come tali, con il ragionamento che le sostiene. I dati sulla serie storica della popolazione vanno verificati anno per anno su tuttitalia.it o ISTAT prima di essere citati. Segnalazioni di errori o imprecisioni sono benvenute.</p>
+  <div class="manifest">
+    <p class="manifest-hed">Il metodo</p>
+    <p class="manifest-text">I dati sono pubblici. I calcoli sono mostrati per intero. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le opinioni sono separate dai fatti.</p>
   </div>
 
 </div>
@@ -384,45 +196,5 @@
   </div>
 </footer>
 
-<script>
-const popData = [
-  { year: '2013', pop: 12550 },
-  { year: '2014', pop: 12490 },
-  { year: '2015', pop: 12430 },
-  { year: '2016', pop: 12370 },
-  { year: '2017', pop: 12300 },
-  { year: '2018', pop: 12220 },
-  { year: '2019', pop: 12150 },
-  { year: '2020', pop: 12080 },
-  { year: '2021', pop: 12020 },
-  { year: '2022', pop: 11990 },
-  { year: '2023', pop: 11965 },
-  { year: '2024', pop: 11950 },
-];
-const max = Math.max(...popData.map(d => d.pop));
-const min = Math.min(...popData.map(d => d.pop));
-const chart = document.getElementById('popChart');
-popData.forEach((d, i) => {
-  const pct = ((d.pop - min) / (max - min)) * 62 + 28;
-  const isLast = i === popData.length - 1;
-  const row = document.createElement('div');
-  row.className = 'bar-row';
-  row.innerHTML = `
-    <span class="bar-year">${d.year}</span>
-    <div class="bar-track"><div class="bar-fill ${isLast ? 'alert' : 'base'}" data-pct="${pct.toFixed(1)}"></div></div>
-    <span class="bar-num">${d.pop.toLocaleString('it-IT')}</span>
-  `;
-  chart.appendChild(row);
-});
-const obs = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    document.querySelectorAll('.bar-fill').forEach((el, i) => {
-      setTimeout(() => { el.style.width = el.dataset.pct + '%'; }, i * 55);
-    });
-    obs.disconnect();
-  }
-}, { threshold: 0.15 });
-obs.observe(chart);
-</script>
 </body>
 </html>
