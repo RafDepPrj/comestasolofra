@@ -64,6 +64,12 @@
   .sec-title { font-family: var(--serif); font-size: clamp(26px,3.5vw,40px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; }
   .sec-intro { font-size: 15px; color: var(--ink-2); max-width: 620px; line-height: 1.65; margin-bottom: 40px; }
 
+  /* AI notice in evidenza sotto hero */
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 16px 20px; margin-bottom: 40px; display: flex; gap: 14px; align-items: flex-start; }
+  .ai-notice-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--amber); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; }
+  .ai-notice-text { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+  .ai-notice-text strong { color: var(--amber); font-weight: 500; }
+
   /* Card sezioni */
   .sez-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 20px; margin-bottom: 40px; }
   .sez-card { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; text-decoration: none; color: var(--ink); transition: border-color .2s, transform .2s, background .2s; }
@@ -105,7 +111,7 @@
 <body>
 
 <div class="disclaimer">
-  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale. I contenuti sono stati verificati dall'autore, ma potrebbero contenere imprecisioni. Le fonti sono citate e verificabili. Segnalazioni benvenute.</div>
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale sui documenti pubblici del Comune. Le fonti sono citate e verificabili. Non sono un commercialista: errori o imprecisioni sono possibili. Segnalazioni e correzioni sono benvenute.</div>
 </div>
 
 <header>
@@ -135,6 +141,14 @@
 <div class="page-wrap">
 <div class="section">
 
+  <!-- AI notice prominente -->
+  <div class="ai-notice">
+    <div class="ai-notice-icon">!</div>
+    <div class="ai-notice-text">
+      <strong>Lavoro amatoriale, fatto con l'AI.</strong> Non sono un commercialista né uno statistico. Queste analisi sono costruite con l'ausilio di strumenti di intelligenza artificiale a partire dai documenti pubblici, e verificate il più possibile contro le fonti. Qualche numero potrebbe contenere imprecisioni. Se noti un errore, scrivimi: correggo e cito. Le critiche costruttive sono benvenute.
+    </div>
+  </div>
+
   <p class="sec-label">Le sezioni</p>
   <h2 class="sec-title">Cosa puoi leggere qui</h2>
   <p class="sec-intro">Ogni sezione parte da una domanda concreta, mostra i numeri che servono a rispondere, spiega i calcoli e cita i documenti ufficiali.</p>
@@ -161,15 +175,15 @@
     <a href="bilancio.html" class="sez-card">
       <div class="sez-num">02 — Bilancio comunale</div>
       <h3 class="sez-card-title">Il bilancio di Solofra in chiaro</h3>
-      <p class="sez-card-sub">31 milioni di euro all'anno. Cosa paga ogni cittadino, cosa il Comune non incassa, quanto costa il debito ereditato. Tutto dal bilancio 2025 ufficiale.</p>
+      <p class="sez-card-sub">31 milioni sulla carta, 21 di risorse effettive. Da dove vengono, dove vanno, cosa pesa sul futuro. Entrate, uscite, debiti — con i calcoli per intero dai documenti ufficiali.</p>
       <div class="sez-stats">
         <div class="sez-stat">
           <span class="sez-stat-v">€503</span>
-          <span class="sez-stat-l">di tributi pro capite</span>
+          <span class="sez-stat-l">tributi pro capite</span>
         </div>
         <div class="sez-stat">
-          <span class="sez-stat-v neg">€919</span>
-          <span class="sez-stat-l">di disavanzo pro capite</span>
+          <span class="sez-stat-v neg">€1.332</span>
+          <span class="sez-stat-l">debito pro capite</span>
         </div>
       </div>
       <div class="sez-cta">Leggi la sezione</div>

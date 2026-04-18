@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilancio comunale — Come sta Solofra</title>
+<meta name="description" content="Il bilancio 2025 del Comune di Solofra tradotto in numeri comprensibili. Entrate, uscite, debiti. A cura di Raffaele De Piano.">
+<meta property="og:title" content="Bilancio comunale — Come sta Solofra">
+<meta property="og:description" content="31 milioni sulla carta, 21 di risorse effettive. Entrate, uscite, debiti — con i calcoli per intero e i documenti ufficiali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(36px,5vw,60px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(40px,5.5vw,68px); line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 620px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .15s, border-color .15s; }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  .page-wrap { max-width: 1060px; margin: 0 auto; padding: 0 clamp(20px,5vw,80px); }
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  .section { padding: clamp(40px,6vw,72px) 0; }
+  .sec-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+  .sec-title { font-family: var(--serif); font-size: clamp(26px,3.5vw,40px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .sec-intro { font-size: 15px; color: var(--ink-2); max-width: 620px; line-height: 1.65; margin-bottom: 40px; }
+
+  /* Disclaimer AI in evidenza (sotto hero) */
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 16px 20px; margin-bottom: 40px; display: flex; gap: 14px; align-items: flex-start; }
+  .ai-notice-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--amber); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; }
+  .ai-notice-text { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+  .ai-notice-text strong { color: var(--amber); font-weight: 500; }
+
+  /* Stat grid numeri chiave — ora organizzata per blocchi */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
+  .stat-card { background: var(--paper); padding: 24px 22px; transition: background .15s; position: relative; }
+  .stat-card:hover { background: var(--paper-2); }
+  .stat-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .stat-val { font-family: var(--serif); font-size: 42px; line-height: 1; letter-spacing: -0.03em; margin-bottom: 8px; }
+  .stat-val.neg { color: var(--accent); }
+  .stat-val.neu { color: var(--ink); }
+  .stat-lbl { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .stat-sub { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
+  .stat-src { font-size: 10px; color: var(--ink-3); margin-top: 8px; font-style: italic; letter-spacing: 0.02em; }
+
+  /* Blocchi tematici: Entrate, Uscite, Debiti */
+  .block { margin-bottom: 64px; }
+  .block-hed { border-top: 2px solid var(--ink); padding-top: 24px; margin-bottom: 24px; }
+  .block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .block-title { font-family: var(--serif); font-size: clamp(28px,4vw,40px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .block-intro { font-size: 15px; color: var(--ink-2); line-height: 1.65; max-width: 640px; margin-bottom: 32px; }
+
+  /* Grafico barre orizzontali generico */
+  .chart-block { margin-bottom: 32px; background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+  .chart-hed { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .chart-sub { font-size: 12px; color: var(--ink-3); margin-bottom: 22px; }
+  .bar-chart { display: flex; flex-direction: column; gap: 12px; }
+  .bar-row { display: grid; grid-template-columns: 160px 1fr 120px; align-items: center; gap: 14px; }
+  .bar-label { font-size: 13px; color: var(--ink); font-weight: 500; }
+  .bar-label small { display: block; font-weight: 400; color: var(--ink-3); font-size: 11px; margin-top: 2px; }
+  .bar-track { height: 28px; background: var(--paper-2); border-radius: 4px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; border-radius: 4px; width: 0; transition: width 1.1s cubic-bezier(.16,1,.3,1); display: flex; align-items: center; padding: 0 10px; color: white; font-size: 11px; font-weight: 500; }
+  /* Palette per le 3 sezioni */
+  .bar-fill.blu { background: #4a6fa5; }
+  .bar-fill.red { background: #c8401a; }
+  .bar-fill.grn { background: #2a6b3c; }
+  .bar-fill.amb { background: #a67a1e; }
+  .bar-fill.gry { background: #7a7a78; }
+  .bar-fill.drk { background: #3a3a37; }
+  .bar-amount { font-size: 13px; color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+  .bar-amount small { display: block; color: var(--ink-3); font-size: 11px; margin-top: 1px; }
+
+  /* Key point: lettura in chiaro del grafico */
+  .key-point { background: var(--paper-2); border-left: 3px solid var(--accent); border-radius: 4px 8px 8px 4px; padding: 14px 18px; font-size: 14px; color: var(--ink); line-height: 1.6; margin-top: 8px; }
+  .key-point strong { font-weight: 500; }
+
+  /* Debiti: 3 card affiancate con progress */
+  .debt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 16px; margin-bottom: 20px; }
+  .debt-card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+  .debt-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+  .debt-val { font-family: var(--serif); font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 4px; }
+  .debt-perCap { font-size: 13px; color: var(--ink-2); margin-bottom: 14px; }
+  .debt-desc { font-size: 13px; color: var(--ink-2); line-height: 1.55; margin-bottom: 12px; }
+  .debt-deadline { font-size: 11px; color: var(--ink-3); letter-spacing: 0.03em; padding-top: 10px; border-top: 1px solid var(--border); }
+  .debt-deadline strong { color: var(--amber); font-weight: 500; }
+
+  /* Box riepilogo */
+  .recap { background: var(--paper-2); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; }
+  .recap-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px; }
+  .recap-text { font-family: var(--serif); font-size: clamp(17px,2.2vw,20px); line-height: 1.5; color: var(--ink); font-style: italic; }
+  .recap-text strong { font-style: normal; font-weight: 500; color: var(--accent); }
+
+  /* Deduzioni — criticità, attenzione, opportunità */
+  .deduzioni-wrap { margin-bottom: 52px; }
+  .subsec-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .deduzioni { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .ded { background: var(--paper); padding: 26px 22px; }
+  .ded-marker { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; margin-bottom: 14px; }
+  .ded-marker.r { background: #fce8e3; color: var(--accent); }
+  .ded-marker.a { background: var(--amber-bg); color: var(--amber); }
+  .ded-marker.g { background: var(--green-bg); color: var(--green); }
+  .ded-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+  .ded-text { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+
+  /* Domanda / nota metodologica finale */
+  .domanda { border-top: 2px solid var(--ink); padding-top: 24px; margin-bottom: 52px; }
+  .domanda-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .domanda-text { font-family: var(--serif); font-size: clamp(18px,2.5vw,24px); line-height: 1.4; color: var(--ink); font-style: italic; }
+
+  .fonte { background: var(--paper-2); border-radius: 10px; padding: 20px 22px; margin-bottom: 20px; }
+  .fonte-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .fonte-doc { display: flex; flex-direction: column; gap: 16px; margin-bottom: 14px; }
+  .doc { border-left: 2px solid var(--border); padding: 2px 0 2px 14px; }
+  .doc-title { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.45; }
+  .doc-title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); transition: border-color .15s; }
+  .doc-title a:hover { border-color: var(--ink); }
+  .doc-meta { font-size: 12px; color: var(--ink-3); margin-top: 4px; line-height: 1.5; }
+  .fonte-note { font-size: 12px; color: var(--ink-3); line-height: 1.55; border-top: 1px solid var(--border); padding-top: 12px; }
+
+  .map-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 10px; }
+  .map-table th, .map-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .map-table th { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); background: var(--paper); }
+  .map-table td { color: var(--ink-2); }
+  .map-table td strong { font-weight: 500; color: var(--ink); }
+  .map-table .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  @media (max-width: 640px) {
+    nav { gap: 16px; }
+    nav a { font-size: 12px; }
+    .bar-row { grid-template-columns: 110px 1fr 95px; gap: 8px; }
+    .bar-label { font-size: 12px; }
+    .bar-amount { font-size: 12px; }
+    .map-table { font-size: 11px; }
+    .map-table th, .map-table td { padding: 6px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale sui documenti pubblici del Comune. Le fonti sono citate e verificabili. Non sono un commercialista: errori o imprecisioni sono possibili. Segnalazioni e correzioni sono benvenute.</div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="site-title">Come sta <span>Solofra</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="demografia.html">Demografia</a>
+      <a href="bilancio.html" class="active">Bilancio</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">Sezione 02 · Bilancio comunale · Aprile 2026</p>
+  <h1 class="hero-title">Il bilancio di Solofra<br><em>in chiaro.</em></h1>
+  <p class="hero-sub">Il bilancio del Comune vale 31 milioni di euro sulla carta — di cui circa €21,7 milioni di risorse effettive, il resto partite di giro e anticipazioni. Sono soldi nostri. Questa pagina traduce il documento ufficiale di 133 pagine in tre domande: da dove vengono, dove vanno, cosa pesa sul futuro.</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>Dati: Bilancio di Previsione 2025-2027, Comune di Solofra</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<div class="page-wrap">
+<div class="section">
+
+  <!-- NOTIFICA AI in alto, prominente ma pulita -->
+  <div class="ai-notice">
+    <div class="ai-notice-icon">!</div>
+    <div class="ai-notice-text">
+      <strong>Lavoro amatoriale, fatto con l'AI.</strong> Non sono un commercialista né un revisore dei conti. Questa analisi è stata costruita con strumenti di intelligenza artificiale a partire dai documenti pubblici del Comune, e verificata il più possibile contro le fonti. Qualche numero potrebbe contenere imprecisioni. Se noti un errore o vuoi contribuire con una correzione, scrivimi: i dati possono essere mostrati chiaramente — se questo lavoro lo facesse un addetto ai lavori sarebbe certamente più preciso e autorevole.
+    </div>
+  </div>
+
+  <!-- 4 NUMERI CHIAVE organizzati per tema -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-eyebrow">Scala</div>
+      <div class="stat-val neu">€21,7 mln</div>
+      <div class="stat-lbl">Risorse effettive 2025</div>
+      <div class="stat-sub">Il bilancio ufficiale è 31 mln, ma €9,311 mln sono partite di giro e anticipazioni di tesoreria</div>
+      <div class="stat-src">Nota Integrativa, pag. 7-8</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-eyebrow">Entrate</div>
+      <div class="stat-val neu">€503</div>
+      <div class="stat-lbl">Tributi pro capite</div>
+      <div class="stat-sub">IMU + TARI + addizionale IRPEF, in media per cittadino</div>
+      <div class="stat-src">Elaborazione su Nota Integrativa, pagg. 15-18</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-eyebrow">Uscite</div>
+      <div class="stat-val neg">€208</div>
+      <div class="stat-lbl">Accantonati per tasse non riscosse</div>
+      <div class="stat-sub">Il FCDE pro capite pesa più del personale comunale (€163)</div>
+      <div class="stat-src">Nota Integrativa, pagg. 35-38</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-eyebrow">Debiti</div>
+      <div class="stat-val neg">€1.332</div>
+      <div class="stat-lbl">Mutui + FAL pro capite</div>
+      <div class="stat-sub">Mutui (€429) + FAL Fondo Anticipazione Liquidità (€903), in ripianamento per ~20 anni</div>
+      <div class="stat-src">Parere Revisore, pagg. 8 e 29</div>
+    </div>
+  </div>
+
+  <!-- ==================== BLOCCO 1: ENTRATE ==================== -->
+  <div class="block">
+    <div class="block-hed">
+      <div class="block-num">01 — Entrate</div>
+      <h2 class="block-title">Da dove vengono i soldi</h2>
+      <p class="block-intro">Le risorse correnti del Comune nel 2025 ammontano a 13,4 milioni di euro. Arrivano da tre fonti principali: i tributi che i cittadini pagano direttamente, i trasferimenti dello Stato e della Regione, e le entrate da servizi e canoni.</p>
+    </div>
+
+    <div class="chart-block">
+      <p class="chart-hed">Composizione delle entrate correnti 2025</p>
+      <p class="chart-sub">Fonte: Nota Integrativa, pag. 8 — Totali per titolo. Popolazione di riferimento: 12.000 abitanti (arrotondamento prudenziale su 12.140, Parere Revisore pag. 3).</p>
+      <div class="bar-chart" id="entrateChart"></div>
+    </div>
+
+    <div class="chart-block">
+      <p class="chart-hed">I tributi pagati direttamente dai cittadini</p>
+      <p class="chart-sub">IMU, TARI e addizionale IRPEF sono le tre voci che un cittadino vede direttamente sulla propria contribuzione.</p>
+      <div class="bar-chart" id="tributiChart"></div>
+      <div class="key-point"><strong>In chiaro:</strong> ogni cittadino di Solofra paga in media <strong>€503 all'anno</strong> al Comune tra IMU, TARI e addizionale IRPEF. Per una famiglia di tre persone fanno circa <strong>€1.510</strong>. A questi si aggiungono <strong>3,6 milioni</strong> di accertamenti per recuperare IMU non pagata negli anni scorsi — di cui il Comune stesso si aspetta di incassarne solo circa la metà.</div>
+    </div>
+  </div>
+
+  <!-- ==================== BLOCCO 2: USCITE ==================== -->
+  <div class="block">
+    <div class="block-hed">
+      <div class="block-num">02 — Uscite</div>
+      <h2 class="block-title">Dove vanno i soldi</h2>
+      <p class="block-intro">Le spese correnti del Comune nel 2025 sono 11,4 milioni di euro: qui finisce quasi tutto il gettito ordinario. Gli investimenti (7,6 mln) sono una voce separata, finanziata soprattutto da contributi regionali, statali ed europei — non dai tributi locali.</p>
+    </div>
+
+    <div class="chart-block">
+      <p class="chart-hed">Composizione delle spese correnti 2025</p>
+      <p class="chart-sub">Fonte: Nota Integrativa, pag. 35. Le percentuali sono sul totale delle spese correnti (€11,4 mln).</p>
+      <div class="bar-chart" id="useciteChart"></div>
+      <div class="key-point"><strong>In chiaro:</strong> la voce più grande è <strong>l'acquisto di beni e servizi</strong> (contratti con fornitori, utenze, appalti: 41%). Subito dopo viene l'<strong>accantonamento al Fondo Crediti di Dubbia Esigibilità</strong> (FCDE), che da solo vale il 22% — più del costo del <strong>personale comunale</strong> (17%). Il FCDE è una riserva obbligatoria per legge contro il rischio di mancata riscossione: soldi che il Comune deve "congelare" perché statisticamente non rientreranno.</div>
+    </div>
+  </div>
+
+  <!-- ==================== BLOCCO 3: DEBITI ==================== -->
+  <div class="block">
+    <div class="block-hed">
+      <div class="block-num">03 — Debiti</div>
+      <h2 class="block-title">Il peso del passato</h2>
+      <p class="block-intro">Qui sta il vincolo strutturale. Solofra ha tre categorie di debito ereditato che vanno ripianate per legge, con rate annuali fisse che riducono lo spazio di manovra di qualsiasi amministrazione futura.</p>
+    </div>
+
+    <div class="debt-grid">
+      <div class="debt-card">
+        <div class="debt-eyebrow">Categoria 1</div>
+        <div class="debt-val">€5,1 mln</div>
+        <div class="debt-perCap">circa €429 pro capite</div>
+        <div class="debt-desc"><strong>Mutui residui</strong> al 1° gennaio 2025. Sono i prestiti storici del Comune, in rimborso costante. Costano €306.543 di interessi passivi nel 2025.</div>
+        <div class="debt-deadline">Quota capitale mutui ordinari 2025: <strong>€486.272,40</strong> · Chiusura progressiva</div>
+      </div>
+      <div class="debt-card">
+        <div class="debt-eyebrow">Categoria 2</div>
+        <div class="debt-val">€10,8 mln</div>
+        <div class="debt-perCap">circa €903 pro capite</div>
+        <div class="debt-desc"><strong>Fondo Anticipazione Liquidità (FAL)</strong>. Anticipazioni ricevute dallo Stato per pagare debiti arretrati, oggi da restituire in rate pluriennali. È la componente più pesante.</div>
+        <div class="debt-deadline">Rata restituzione 2025: <strong>€419.879</strong> · <strong>Scadenza: entro il 2050</strong></div>
+      </div>
+      <div class="debt-card">
+        <div class="debt-eyebrow">Categoria 3</div>
+        <div class="debt-val">€14,5 mln</div>
+        <div class="debt-perCap">disavanzo tecnico totale</div>
+        <div class="debt-desc"><strong>Disavanzo di amministrazione</strong> in ripianamento. Quattro piani di rientro attivi contemporaneamente, ciascuno con rata propria.</div>
+        <div class="debt-deadline">Rata 2025: <strong>€1.728.568</strong> · Prima chiusura 2026, ultima <strong>2044</strong></div>
+      </div>
+    </div>
+
+    <div class="recap">
+      <div class="recap-label">La somma che pesa ogni anno</div>
+      <div class="recap-text">Nel 2025, tra <strong>quota capitale mutui ordinari (€486k)</strong>, <strong>restituzione FAL (€420k)</strong> e <strong>ripianamenti di disavanzo (€1,73 mln)</strong>, il Comune deve destinare circa <strong>€2,6 milioni</strong> al pagamento del passato. A questi si aggiungono <strong>€307k di interessi passivi</strong> sui mutui. Sono soldi che non possono diventare servizi, investimenti, o riduzioni di tariffe. Questo vincolo continuerà a pesare — in misura decrescente ma significativa — <strong>per i prossimi venti anni</strong>.</div>
+    </div>
+
+    <div class="key-point"><strong>In chiaro:</strong> il debito non è un problema politico di breve periodo. È una cornice permanente dentro cui qualsiasi amministrazione — qualunque sia il suo colore — dovrà operare fino al 2044-2050. Capire questa cornice è la condizione per qualsiasi discussione seria su cosa il Comune può fare con le proprie risorse.</div>
+  </div>
+
+  <!-- DEDUZIONI: criticità, attenzione, opportunità -->
+  <div class="deduzioni-wrap">
+    <p class="subsec-label">Deduzioni — cosa ci dicono questi numeri</p>
+    <div class="deduzioni">
+
+      <div class="ded">
+        <span class="ded-marker r">Criticità</span>
+        <div class="ded-title">Un quarto della TARI non viene incassato</div>
+        <div class="ded-text">Il tasso medio di riscossione della TARI è del 74,67% (Parere Revisore, pag. 19). Significa che i cittadini che pagano regolarmente sostengono, di fatto, una quota del servizio che spetterebbe a chi non paga. Non è questione di principio: è aritmetica che pesa sul bilancio di tutti.</div>
+      </div>
+
+      <div class="ded">
+        <span class="ded-marker r">Criticità</span>
+        <div class="ded-title">Il FCDE costa più del personale</div>
+        <div class="ded-text">L'accantonamento al Fondo Crediti di Dubbia Esigibilità (€2,5 milioni nel 2025) supera il costo totale del personale comunale (€1,96 milioni). È il segnale più netto di quanto la scarsa capacità di riscossione condizioni la struttura del bilancio: ogni anno il Comune deve "congelare" risorse che non potrà spendere in servizi.</div>
+      </div>
+
+      <div class="ded">
+        <span class="ded-marker r">Criticità</span>
+        <div class="ded-title">Oltre due milioni e mezzo l'anno vanno al passato</div>
+        <div class="ded-text">Tra quota capitale mutui (€486k), restituzione FAL (€420k) e ripianamenti di disavanzo (€1,73 mln), circa <strong>€2,6 milioni</strong> del bilancio 2025 sono destinati a saldare debiti ereditati. Più altri €307k di interessi passivi. Sono risorse che nessuna amministrazione, oggi, può usare per servizi o investimenti. Questa quota continuerà fino al 2044-2050.</div>
+      </div>
+
+      <div class="ded">
+        <span class="ded-marker a">Attenzione</span>
+        <div class="ded-title">Il FCDE è un meccanismo prudenziale, non uno scandalo</div>
+        <div class="ded-text">L'obbligo di accantonare risorse contro il rischio di mancata riscossione è previsto per legge (D.lgs. 118/2011) e vale per tutti i Comuni italiani. La sua entità dipende dai dati storici di riscossione dell'ente. Non dimostra di per sé cattiva amministrazione — ma la sua dimensione a Solofra racconta qualcosa sulla capacità complessiva di far rispettare la contribuzione.</div>
+      </div>
+
+      <div class="ded">
+        <span class="ded-marker a">Attenzione</span>
+        <div class="ded-title">Gli investimenti non dipendono dai tributi locali</div>
+        <div class="ded-text">Le opere pubbliche previste per il 2025 (€7,6 milioni) sono finanziate quasi interamente da contributi sovracomunali — Regione, Stato, fondi europei, PNRR. Lo spazio di manovra del Comune è quindi concentrato sulla gestione corrente: personale, servizi, manutenzioni. Capire questa distinzione aiuta a valutare cosa un'amministrazione può effettivamente fare con le proprie risorse.</div>
+      </div>
+
+      <div class="ded">
+        <span class="ded-marker g">Opportunità</span>
+        <div class="ded-title">Migliorare la riscossione libera risorse reali</div>
+        <div class="ded-text">Ogni punto percentuale di miglioramento del tasso di riscossione TARI vale circa <strong>€26.700 all'anno</strong>. Portare la riscossione dal 75% all'85% significherebbe oltre <strong>€267.000</strong> in più di entrate certe — risorse che oggi vanno accantonate al FCDE e non possono essere spese. È un margine reale e misurabile, non un'astrazione.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DOMANDA APERTA -->
+  <div class="domanda">
+    <p class="domanda-label">La domanda aperta</p>
+    <p class="domanda-text">Se ogni famiglia versa circa 1.500 euro l'anno al Comune, se un quarto della TARI non rientra, e se oltre due milioni e mezzo l'anno sono impegnati sul passato — che tipo di patto tra cittadini e amministrazione vogliamo costruire, e come lo rendiamo verificabile nel tempo?</p>
+  </div>
+
+  <!-- DOCUMENTI UFFICIALI -->
+  <div class="fonte">
+    <p class="fonte-hed">Documenti ufficiali consultati</p>
+    <div class="fonte-doc">
+      <div class="doc">
+        <div class="doc-title"><a href="https://www.halleyweb.com/c064101/zf/index.php/trasparenza/index/index/categoria/339" target="_blank">Bilancio di Previsione 2025-2027</a></div>
+        <div class="doc-meta">Documento ufficiale · 133 pagine · Prodotto dal Comune di Solofra, 11 marzo 2025 · Pubblicato in Amministrazione Trasparente il 17 luglio 2025</div>
+      </div>
+      <div class="doc">
+        <div class="doc-title"><a href="https://www.halleyweb.com/c064101/zf/index.php/trasparenza/index/index/categoria/339" target="_blank">Nota Integrativa al Bilancio di Previsione 2025-2027</a></div>
+        <div class="doc-meta">Documento ufficiale · 57 pagine · Prodotto dal Comune di Solofra · Pubblicato in Amministrazione Trasparente il 17 luglio 2025 · Fonte principale per le analisi di questa pagina</div>
+      </div>
+      <div class="doc">
+        <div class="doc-title"><a href="https://www.halleyweb.com/c064101/zf/index.php/trasparenza/index/index/categoria/339" target="_blank">Parere del Revisore Unico dei Conti sul Bilancio di Previsione 2025-2027</a></div>
+        <div class="doc-meta">Verbale n. 3 del 12/03/2025 · Autore: Dott. Roberto Di Franza, Revisore Unico dei Conti · Protocollo 3897 del 12/03/2025</div>
+      </div>
+    </div>
+    <p class="fonte-note">Tutti i documenti sono consultabili nella sezione <strong>Amministrazione Trasparente</strong> del sito istituzionale del Comune di Solofra, categoria "Bilanci". Se i documenti vengono riorganizzati dal Comune, eventuali link diretti potrebbero cambiare.</p>
+  </div>
+
+  <!-- MAPPA NUMERI-FONTI -->
+  <div class="fonte">
+    <p class="fonte-hed">Mappa numeri → fonti</p>
+    <p class="fonte-note" style="border-top: none; padding-top: 0; margin-bottom: 14px;">Ogni numero di questa pagina è tracciabile alla pagina esatta di uno dei tre documenti ufficiali.</p>
+    <div style="overflow-x: auto;">
+    <table class="map-table">
+      <thead>
+        <tr>
+          <th>Dato</th>
+          <th class="num">Valore</th>
+          <th>Fonte</th>
+          <th>Pagina</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Totale bilancio 2025</strong></td><td class="num">€30.986.996,44</td><td>Nota Integrativa</td><td>pag. 7</td></tr>
+        <tr><td>Anticipazioni di tesoreria</td><td class="num">€3.000.000,00</td><td>Nota Integrativa</td><td>pag. 8</td></tr>
+        <tr><td>Partite di giro</td><td class="num">€6.311.033,00</td><td>Nota Integrativa</td><td>pag. 8</td></tr>
+        <tr><td>Popolazione al 01/01/2024</td><td class="num">12.140 ab.</td><td>Parere Revisore</td><td>pag. 3</td></tr>
+        <tr><td>Entrate correnti totali (T1+T2+T3)</td><td class="num">€13.444.262,71</td><td>Nota Integrativa</td><td>pag. 8</td></tr>
+        <tr><td>Gettito IMU 2025</td><td class="num">€2.354.809,29</td><td>Nota Integrativa</td><td>pag. 15</td></tr>
+        <tr><td>Gettito TARI 2025</td><td class="num">€2.674.759,00</td><td>Nota Integrativa</td><td>pag. 18</td></tr>
+        <tr><td>Addizionale IRPEF 2025</td><td class="num">€1.014.706,49</td><td>Nota Integrativa</td><td>pag. 18</td></tr>
+        <tr><td>Accertamenti IMU recupero evasione</td><td class="num">€3.583.996,13</td><td>Nota Integrativa</td><td>pag. 37</td></tr>
+        <tr><td>Fondo Perequativo dallo Stato</td><td class="num">€1.449.461,93</td><td>Nota Integrativa</td><td>pag. 20</td></tr>
+        <tr><td><strong>Tasso riscossione TARI</strong></td><td class="num">74,67%</td><td>Parere Revisore</td><td>pag. 19</td></tr>
+        <tr><td>FCDE totale 2025</td><td class="num">€2.497.599,35</td><td>Nota Integrativa</td><td>pag. 38</td></tr>
+        <tr><td>Totale spese correnti 2025</td><td class="num">€11.441.594,64</td><td>Nota Integrativa</td><td>pag. 35</td></tr>
+        <tr><td>Spesa personale 2025</td><td class="num">€1.959.483,95</td><td>Nota Integrativa</td><td>pag. 35</td></tr>
+        <tr><td>Acquisto beni e servizi 2025</td><td class="num">€4.723.818,28</td><td>Nota Integrativa</td><td>pag. 35</td></tr>
+        <tr><td>Trasferimenti correnti 2025</td><td class="num">€1.102.828,02</td><td>Nota Integrativa</td><td>pag. 35</td></tr>
+        <tr><td>Interessi passivi 2025</td><td class="num">€306.543,56</td><td>Nota Integrativa</td><td>pag. 35</td></tr>
+        <tr><td>Spese in conto capitale 2025</td><td class="num">€7.599.648,59</td><td>Nota Integrativa</td><td>pag. 39</td></tr>
+        <tr><td><strong>Residuo mutui al 01/01/2025</strong></td><td class="num">€5.149.579,30</td><td>Parere Revisore</td><td>pag. 29</td></tr>
+        <tr><td><strong>FAL residuo al 31/12/2024</strong></td><td class="num">€10.830.178,73</td><td>Bilancio di Previsione</td><td>allegato a/1, pag. 43</td></tr>
+        <tr><td>Rata restituzione FAL 2025</td><td class="num">€419.879,33</td><td>Nota Integrativa</td><td>pag. 41</td></tr>
+        <tr><td>Quota capitale mutui ordinari 2025</td><td class="num">€486.272,40</td><td>Nota Integrativa</td><td>pag. 41</td></tr>
+        <tr><td>Totale Titolo 4 Rimborso prestiti 2025</td><td class="num">€906.151,73</td><td>Nota Integrativa</td><td>pag. 8</td></tr>
+        <tr><td>Rata ripiano disavanzo FAL</td><td class="num">€547.398,15</td><td>Parere Revisore</td><td>pag. 8</td></tr>
+        <tr><td><strong>Disavanzo da ripianare totale</strong></td><td class="num">€14.485.622,97</td><td>Parere Revisore</td><td>pag. 8</td></tr>
+        <tr><td>Rata disavanzo 2025</td><td class="num">€1.728.568,48</td><td>Parere Revisore</td><td>pag. 8</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Nota metodologica + invito a correggere -->
+  <div class="fonte" style="background: var(--paper); border: 1px solid var(--border);">
+    <p class="fonte-hed">Nota metodologica e invito alla correzione</p>
+    <p class="fonte-note" style="border-top: none; padding-top: 0;">
+      I valori pro capite sono calcolati su una <strong>base arrotondata di 12.000 abitanti</strong>. Il dato ufficiale al 01/01/2024 è 12.140 abitanti (Parere Revisore, pag. 3). L'arrotondamento prudenziale verso il basso produce valori pro capite leggermente più alti di quelli calcolati sul dato esatto — la differenza è di circa l'1% e non altera le conclusioni.
+      <br><br>
+      Il <strong>Fondo Crediti di Dubbia Esigibilità (FCDE)</strong> è un istituto previsto dal D.lgs. 118/2011 per tutti i Comuni italiani. La sua entità varia in base ai tassi storici di riscossione dell'ente. Un FCDE elevato non indica di per sé cattiva gestione — indica prudenza contabile di fronte a difficoltà storiche di riscossione.
+      <br><br>
+      Le <strong>previsioni 2025</strong> qui commentate sono quelle del Bilancio di Previsione approvato a marzo 2025. A consuntivo (rendiconto 2025) i valori effettivi potranno differire. La pagina verrà aggiornata quando il rendiconto sarà pubblico.
+      <br><br>
+      <strong>Errori possibili.</strong> Questa analisi è stata costruita con l'ausilio di strumenti di AI da un cittadino non addetto ai lavori. Qualche lettura potrebbe essere imprecisa, qualche classificazione contabile potrebbe essere discutibile. Se noti un errore, scrivimi su <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a>: correggo e cito la segnalazione. L'obiettivo è che questi dati siano leggibili — non che siano perfetti al primo colpo.
+    </p>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Tutti i dati sono pubblici e le fonti sono citate. I calcoli sono verificabili da chiunque.
+    </div>
+    <div class="footer-r">Prima pubblicazione: aprile 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+<script>
+// ======== GRAFICO 1: ENTRATE CORRENTI ========
+const entrateData = [
+  { label: 'Entrate tributarie',    sub: 'IMU, TARI, IRPEF, recupero evasione, Fondo Perequativo', total: 11079732, cls: 'blu' },
+  { label: 'Entrate extratributarie',sub: 'Servizi, canoni, multe, rimborsi',                     total: 1127429,  cls: 'grn' },
+  { label: 'Trasferimenti correnti', sub: 'Da Stato, Regione, UE',                                total: 1237100,  cls: 'amb' },
+];
+
+// ======== GRAFICO 2: TRIBUTI PAGATI DAI CITTADINI ========
+const tributiData = [
+  { label: 'IMU',    sub: 'Imposta municipale propria', total: 2354809, perCap: 196, cls: 'blu' },
+  { label: 'TARI',   sub: 'Tassa sui rifiuti',          total: 2674759, perCap: 223, cls: 'red' },
+  { label: 'IRPEF',  sub: 'Addizionale comunale',       total: 1014706, perCap: 85,  cls: 'grn' },
+];
+
+// ======== GRAFICO 3: SPESE CORRENTI ========
+const usciteData = [
+  { label: 'Acquisto beni e servizi', sub: 'Contratti, utenze, appalti',              total: 4723818, pct: 41.3, cls: 'red' },
+  { label: 'FCDE',                    sub: 'Fondo Crediti di Dubbia Esigibilità',     total: 2497599, pct: 21.8, cls: 'amb' },
+  { label: 'Personale',               sub: 'Redditi da lavoro dipendente',            total: 1959483, pct: 17.1, cls: 'blu' },
+  { label: 'Trasferimenti correnti',  sub: 'Sociale, scuole, contributi a terzi',     total: 1102828, pct: 9.6,  cls: 'grn' },
+  { label: 'Altre spese correnti',    sub: 'Fondi, rimborsi, imposte a carico ente',  total: 851322,  pct: 7.5,  cls: 'gry' },
+  { label: 'Interessi passivi',       sub: 'Sui mutui in ammortamento',               total: 306543,  pct: 2.7,  cls: 'drk' },
+];
+
+function drawBars(containerId, data, showPerCap=false, showPct=false) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const max = Math.max(...data.map(d => d.total));
+  data.forEach(d => {
+    const pct = (d.total / max) * 100;
+    const row = document.createElement('div');
+    row.className = 'bar-row';
+    const amountFmt = d.total.toLocaleString('it-IT', { maximumFractionDigits: 0 });
+    let rightHtml;
+    if (showPerCap) {
+      rightHtml = `€${amountFmt}<small>€${d.perCap}/abitante</small>`;
+    } else if (showPct) {
+      rightHtml = `€${(d.total/1000000).toFixed(2)} mln<small>${d.pct}% del totale</small>`;
+    } else {
+      rightHtml = `€${(d.total/1000000).toFixed(2)} mln<small>€${amountFmt}</small>`;
+    }
+    row.innerHTML = `
+      <div class="bar-label">${d.label}<small>${d.sub}</small></div>
+      <div class="bar-track"><div class="bar-fill ${d.cls}" data-pct="${pct.toFixed(1)}">€${(d.total/1000000).toFixed(2)} mln</div></div>
+      <div class="bar-amount">${rightHtml}</div>
+    `;
+    container.appendChild(row);
+  });
+  // Anima quando visibile
+  const obs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      container.querySelectorAll('.bar-fill').forEach((el, i) => {
+        setTimeout(() => { el.style.width = el.dataset.pct + '%'; }, i * 100);
+      });
+      obs.disconnect();
+    }
+  }, { threshold: 0.15 });
+  obs.observe(container);
+}
+
+drawBars('entrateChart', entrateData, false, false);
+drawBars('tributiChart', tributiData, true, false);
+drawBars('useciteChart', usciteData, false, true);
+</script>
+</body>
+</html>
