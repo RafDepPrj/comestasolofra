@@ -62,6 +62,30 @@
 
   hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
 
+  /* Insight strip — tabella sintetica fatto/manca per infrastruttura */
+  .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+  .insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+  .ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+  .tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 860px; }
+  .tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .tbl-insights th.done { color: var(--green); }
+  .tbl-insights th.todo { color: var(--accent); }
+  .tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+  .tbl-insights tr:last-child td { border-bottom: none; }
+  .tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+  .tbl-insights .col-num { white-space: nowrap; }
+  .tbl-insights .col-num .big { font-family: var(--serif); font-size: 22px; line-height: 1; letter-spacing: -0.02em; color: var(--ink); display: block; }
+  .tbl-insights .col-num .big.neg { color: var(--accent); }
+  .tbl-insights .col-lbl { color: var(--ink-2); font-size: 13px; }
+  .tbl-insights .col-done, .tbl-insights .col-todo { font-size: 13px; }
+  .tbl-insights .col-src { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
+  @media (max-width: 720px) {
+    .tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+    .tbl-insights .col-num .big { font-size: 20px; }
+    .tbl-insights .col-infra { font-size: 14px; }
+  }
+
   .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
   @media (min-width: 960px) {
     .layout { grid-template-columns: 220px 1fr; gap: 64px; }
@@ -203,6 +227,67 @@
     A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
     <span>·</span>
     <span>Ultima consultazione fonti: aprile 2026</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<div class="insights-wrap">
+  <p class="insights-hed">I numeri, in sintesi</p>
+  <p class="insights-sub">I dati chiave per le quattro infrastrutture: quanto è stato fatto e quanto resta. Ogni dato è sostenuto dalle fonti riportate in pagina.</p>
+
+  <div class="ins-tbl-wrap">
+    <table class="tbl-insights">
+      <thead>
+        <tr>
+          <th class="col-infra">Infrastruttura</th>
+          <th class="col-num">Numero</th>
+          <th class="col-lbl">Cosa rappresenta</th>
+          <th class="done">Fatto</th>
+          <th class="todo">Manca</th>
+          <th class="col-src">Fonte</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="col-infra">Galleria Monte Pergola</td>
+          <td class="col-num"><span class="big neg">4 anni</span></td>
+          <td class="col-lbl">galleria a canna unica</td>
+          <td class="col-done">cantiere ripartito a marzo 2025 · nuovo appaltatore Infratech</td>
+          <td class="col-todo">prima fase promessa luglio 2026 · seconda canna senza data</td>
+          <td class="col-src">Anas · 2022, 2025</td>
+        </tr>
+
+        <tr>
+          <td class="col-infra">Cantieri raccordo</td>
+          <td class="col-num"><span class="big">€ 51,3 mln</span></td>
+          <td class="col-lbl">cantieri di manutenzione attivi</td>
+          <td class="col-done">2 lotti NDBA su 3 completati · Atripalda e Fisciano</td>
+          <td class="col-todo">lotto Montoro-Solofra da completare · stima fine 2026</td>
+          <td class="col-src">Anas · 2025</td>
+        </tr>
+
+        <tr>
+          <td class="col-infra">Terza corsia</td>
+          <td class="col-num"><span class="big neg">€ 348 mln</span></td>
+          <td class="col-lbl">mancanti al primo stralcio</td>
+          <td class="col-done">€ 109 mln finanziati (24%) · progetto definitivo depositato</td>
+          <td class="col-todo">€ 348 mln da trovare (76%) · tratto irpino senza copertura</td>
+          <td class="col-src">FILT-CGIL / FIT-CISL · MIT</td>
+        </tr>
+
+        <tr>
+          <td class="col-infra">Ferrovia Sa-Av-Bn</td>
+          <td class="col-num"><span class="big neg">2012</span></td>
+          <td class="col-lbl">ultimo anno servizio ferroviario ad Avellino</td>
+          <td class="col-done">Salerno → Codola elettrificata · aprile 2024</td>
+          <td class="col-todo">tratta Avellino + riapertura stazione · obiettivo RFI 2026</td>
+          <td class="col-src">RFI · Legambiente</td>
+        </tr>
+
+      </tbody>
+    </table>
   </div>
 </div>
 
