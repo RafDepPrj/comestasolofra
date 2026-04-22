@@ -102,12 +102,12 @@
   table.data td.val { font-family: var(--serif); font-size: 16px; color: var(--ink); white-space: nowrap; }
   table.data td.val.neg { color: var(--accent); }
   table.data td.val.ok { color: var(--green); }
-  table.data.crono td:first-child { white-space: nowrap; font-family: var(--serif); color: var(--accent); font-size: 15px; }
   @media (max-width: 640px) {
     table.data { font-size: 13px; }
     table.data th, table.data td { padding: 10px 12px; }
   }
 
+  /* Timeline — stile unificato per tutti i cronoprogrammi */
   .timeline { position: relative; margin: 24px 0; padding-left: 28px; }
   .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
   .tl-item { position: relative; padding-bottom: 22px; }
@@ -119,6 +119,7 @@
   .tl-year { font-family: var(--serif); font-size: 16px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 4px; }
   .tl-txt { font-size: 14px; color: var(--ink); line-height: 1.6; }
   .tl-txt em { color: var(--ink-3); font-style: normal; font-size: 13px; }
+  .tl-txt strong { font-weight: 500; color: var(--ink); }
   .tl-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--ink-3); margin: 12px 0 20px; padding: 12px 16px; background: var(--paper-2); border-radius: 6px; }
   .tl-legend span { display: inline-flex; align-items: center; gap: 6px; }
   .tl-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
@@ -246,27 +247,29 @@
         </table>
       </div>
 
-      <h3 class="sub">Cronoprogramma</h3>
-      <div class="tbl-wrap">
-        <table class="data crono">
-          <thead><tr><th>Data</th><th>Evento</th></tr></thead>
-          <tbody>
-            <tr><td>2020</td><td>Avvio indagini integrative Anas per progettazione interventi</td></tr>
-            <tr><td>Giugno 2021</td><td>Chiusura canna dir. Salerno per lavori — galleria a canna unica (doppio senso)</td></tr>
-            <tr><td>Gennaio 2022</td><td>Consegna lavori al primo appaltatore · investimento comunicato 48 milioni</td></tr>
-            <tr><td>Marzo 2024</td><td>Caduta calcinacci · parabrezza sfondato · chiusura temporanea e riapertura</td></tr>
-            <tr><td>Luglio 2024</td><td>Vertice in Prefettura — sindaci di Solofra, Montoro, Serino chiedono chiarezza sui tempi</td></tr>
-            <tr><td>Estate 2024</td><td>Rescissione contratto con primo appaltatore (~30% lavori eseguiti secondo atti parlamentari)</td></tr>
-            <tr><td>Dicembre 2024</td><td>Nuova caduta calcinacci · traffico bloccato in entrambe le direzioni</td></tr>
-            <tr><td>27 marzo 2025</td><td>Consegna cantiere al nuovo appaltatore · Consorzio Infratech</td></tr>
-            <tr><td>29 aprile 2025</td><td>Sopralluogo sottosegretario MIT Ferrante · ripresa effettiva dei lavori</td></tr>
-            <tr><td>Agosto 2025</td><td>Dispositivo estivo 10-14: solo TIR pomodori · 10 sindaci firmano lettera al Prefetto</td></tr>
-            <tr><td>Novembre 2025</td><td>Incidente all'uscita della galleria · disagi su tutto il raccordo</td></tr>
-            <tr><td>14 febbraio 2026</td><td>Tamponamento a catena · 4 veicoli coinvolti · 4 feriti</td></tr>
-            <tr><td><strong>Luglio 2026 (promessa Anas)</strong></td><td><strong>Ultimazione prima fase — apertura canna dir. Salerno ammodernata</strong></td></tr>
-          </tbody>
-        </table>
+      <h3 class="sub">Cronologia dei lavori</h3>
+      <div class="tl-legend">
+        <span><span class="dot green"></span> eventi effettivamente accaduti</span>
+        <span><span class="dot red"></span> scadenze dichiarate non rispettate</span>
+        <span><span class="dot amber"></span> obiettivi futuri dichiarati, da verificare</span>
       </div>
+
+      <div class="timeline">
+        <div class="tl-item green"><div class="tl-year">2020</div><div class="tl-txt">Avvio indagini integrative Anas per progettazione interventi di manutenzione straordinaria.</div></div>
+        <div class="tl-item green"><div class="tl-year">Giugno 2021</div><div class="tl-txt">Chiusura canna direzione Salerno per lavori. La galleria inizia a viaggiare su una sola canna a doppio senso di marcia.</div></div>
+        <div class="tl-item green"><div class="tl-year">Gennaio 2022</div><div class="tl-txt">Consegna lavori al primo appaltatore. <em>Investimento comunicato: 48 milioni di euro.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">Marzo 2024</div><div class="tl-txt">Caduta calcinacci dalla volta · parabrezza di un'auto sfondato · chiusura temporanea e riapertura dopo interventi di messa in sicurezza.</div></div>
+        <div class="tl-item green"><div class="tl-year">Luglio 2024</div><div class="tl-txt">Vertice in Prefettura: i sindaci di Solofra, Montoro e Serino chiedono chiarezza sui tempi dei lavori.</div></div>
+        <div class="tl-item red"><div class="tl-year">Estate 2024</div><div class="tl-txt">Rescissione del contratto con il primo appaltatore. <em>Secondo l'interrogazione del Gruppo PD alla Camera, era stato realizzato solo il 30% dei lavori.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">Dicembre 2024</div><div class="tl-txt">Nuova caduta calcinacci · traffico bloccato in entrambe le direzioni.</div></div>
+        <div class="tl-item green"><div class="tl-year">27 marzo 2025</div><div class="tl-txt">Consegna del cantiere al nuovo appaltatore, Consorzio Stabile S.C.A.R.L. Infratech.</div></div>
+        <div class="tl-item green"><div class="tl-year">29 aprile 2025</div><div class="tl-txt">Sopralluogo del sottosegretario MIT Tullio Ferrante · ripresa effettiva dei lavori. <em>Investimento rimanente aggiornato: 27 milioni, completamente finanziati.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">Agosto 2025</div><div class="tl-txt">Dispositivo estivo 10-14: solo TIR del trasporto pomodori · 10 sindaci firmano lettera al Prefetto.</div></div>
+        <div class="tl-item red"><div class="tl-year">Novembre 2025</div><div class="tl-txt">Nuovo incidente all'uscita della galleria · disagi su tutto il raccordo.</div></div>
+        <div class="tl-item red"><div class="tl-year">14 febbraio 2026</div><div class="tl-txt">Tamponamento a catena · 4 veicoli coinvolti · 4 feriti.</div></div>
+        <div class="tl-item amber"><div class="tl-year">Luglio 2026</div><div class="tl-txt"><strong>Promessa Anas:</strong> ultimazione prima fase · apertura della canna direzione Salerno ammodernata. <em>Obiettivo dichiarato, da verificare.</em></div></div>
+      </div>
+
       <p class="note">Il comunicato Anas di aprile 2025 indica che, "alla conclusione di tale intervento, le attività previste dal progetto in fase di riadeguamento si concentreranno nella canna in direzione di Avellino". Non è stata pubblicata una data ufficiale per il completamento di questa fase successiva. Qualsiasi stima oltre luglio 2026 va considerata come proiezione, non come impegno documentato.</p>
     </section>
 
@@ -291,18 +294,19 @@
         </table>
       </div>
 
-      <h3 class="sub">Cronoprogramma</h3>
-      <div class="tbl-wrap">
-        <table class="data crono">
-          <thead><tr><th>Data</th><th>Evento</th></tr></thead>
-          <tbody>
-            <tr><td>Estate 2024</td><td>Avvio lavori NDBA + sistema idraulico — primi due lotti (Atripalda + Fisciano)</td></tr>
-            <tr><td>Luglio 2025</td><td>Avvio manutenzione viadotto km 18,290 (investimento 1 mln)</td></tr>
-            <tr><td>Settembre 2025</td><td>Ultimazione primi due lotti NDBA · avvio lotto Montoro-Solofra · avvio barriere fonoassorbenti Montoro</td></tr>
-            <tr><td>Gennaio 2026</td><td>Chiusura notturna km 9+180 dir. Salerno (13-15 gennaio) per manutenzione</td></tr>
-            <tr><td>Fine 2026 (stima Anas)</td><td>Ultimazione intervento NDBA completo su tutto il raccordo</td></tr>
-          </tbody>
-        </table>
+      <h3 class="sub">Cronologia dei lavori</h3>
+      <div class="tl-legend">
+        <span><span class="dot green"></span> eventi effettivamente accaduti</span>
+        <span><span class="dot red"></span> scadenze dichiarate non rispettate</span>
+        <span><span class="dot amber"></span> obiettivi futuri dichiarati, da verificare</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item green"><div class="tl-year">Estate 2024</div><div class="tl-txt">Avvio lavori NDBA + sistema idraulico · primi due lotti ad Atripalda (km 29-30) e Fisciano (km 8-9).</div></div>
+        <div class="tl-item green"><div class="tl-year">Luglio 2025</div><div class="tl-txt">Avvio manutenzione viadotto km 18,290 in territorio di Solofra. <em>Investimento: 1 milione di euro.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">Settembre 2025</div><div class="tl-txt">Ultimazione primi due lotti NDBA · avvio lotto Montoro-Solofra (km 14-20) · avvio barriere fonoassorbenti Montoro (3,3 milioni).</div></div>
+        <div class="tl-item green"><div class="tl-year">Gennaio 2026</div><div class="tl-txt">Chiusura notturna km 9+180 direzione Salerno (13-15 gennaio) per manutenzione.</div></div>
+        <div class="tl-item amber"><div class="tl-year">Fine 2026</div><div class="tl-txt"><strong>Stima Anas:</strong> ultimazione intervento NDBA completo su tutto il raccordo.</div></div>
       </div>
     </section>
 
@@ -334,30 +338,30 @@
 
       <h3 class="sub">Cronologia del progetto</h3>
       <div class="tl-legend">
-        <span><span class="dot green"></span> tappe effettivamente realizzate</span>
-        <span><span class="dot red"></span> tappe formali non seguite da azioni operative</span>
-        <span><span class="dot amber"></span> tappe con contraddizioni documentate</span>
+        <span><span class="dot green"></span> eventi effettivamente accaduti</span>
+        <span><span class="dot red"></span> scadenze dichiarate non rispettate</span>
+        <span><span class="dot amber"></span> obiettivi futuri dichiarati, da verificare</span>
       </div>
 
       <div class="timeline">
-        <div class="tl-item red"><div class="tl-year">2001 · 21 dicembre</div><div class="tl-txt">Delibera CIPE 121/2001. Inclusione nel Primo Programma delle Infrastrutture Strategiche. <em>Costo stimato: 246 milioni.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">2001 · 21 dicembre</div><div class="tl-txt">Delibera CIPE 121/2001. Inclusione nel Primo Programma delle Infrastrutture Strategiche. <em>Costo stimato: 246 milioni.</em></div></div>
         <div class="tl-item green"><div class="tl-year">2008 · 9 maggio</div><div class="tl-txt">Anas trasmette al MIT il progetto preliminare dell'intero intervento.</div></div>
         <div class="tl-item green"><div class="tl-year">2009</div><div class="tl-txt">19 giugno: parere favorevole del Consiglio Superiore dei Lavori Pubblici. 30 novembre: parere favorevole della Commissione VIA del MATTM.</div></div>
         <div class="tl-item green"><div class="tl-year">2014</div><div class="tl-txt">16 settembre: parere favorevole del MIBACT. 1° agosto: delibera CIPE 26/2014 — intervento nel corridoio plurimodale tirrenico nord-europa.</div></div>
-        <div class="tl-item red"><div class="tl-year">2015</div><div class="tl-txt">Patto Stato-Regione Campania firmato in Prefettura a Napoli. Il raccordo è tra le opere strategiche.</div></div>
+        <div class="tl-item green"><div class="tl-year">2015</div><div class="tl-txt">Patto Stato-Regione Campania firmato in Prefettura a Napoli. Il raccordo è tra le opere strategiche.</div></div>
         <div class="tl-item green"><div class="tl-year">2016 · 1 dicembre</div><div class="tl-txt">Delibera CIPE 54/2016 — 123 milioni di FSC 2014-2020 per lo stralcio Fratte-Baronissi.</div></div>
         <div class="tl-item green"><div class="tl-year">2018</div><div class="tl-txt">Approvazione progetto preliminare. <em>Costo fissato a 232,35 milioni.</em></div></div>
         <div class="tl-item green"><div class="tl-year">2021 · 27 luglio</div><div class="tl-txt">CIPESS delibera 44/2021 — approvazione aggiornamento Contratto di Programma.</div></div>
-        <div class="tl-item amber"><div class="tl-year">2022</div><div class="tl-txt">Riformulazione in due lotti nell'ambito del Contratto di Programma MIT-ANAS. Il 28 giugno il Consiglio Comunale di Baronissi approva il progetto definitivo.</div></div>
+        <div class="tl-item green"><div class="tl-year">2022</div><div class="tl-txt">Riformulazione in due lotti nell'ambito del Contratto di Programma MIT-ANAS. Il 28 giugno il Consiglio Comunale di Baronissi approva il progetto definitivo.</div></div>
         <div class="tl-item green"><div class="tl-year">2023 · febbraio</div><div class="tl-txt">Progettazione definitiva pubblicata sul sito del MIT. L'approvazione formale da parte del CIPESS non risulta essere ancora arrivata secondo le fonti sindacali consultate.</div></div>
         <div class="tl-item red"><div class="tl-year">2023 · 24 luglio</div><div class="tl-txt">ANAS approva il Programma Triennale 2023/2025. Avvio procedure di affidamento previsto per il 2024. <em>Non risulta avvenuto nelle fonti consultate.</em></div></div>
         <div class="tl-item red"><div class="tl-year">2024 · 21 marzo</div><div class="tl-txt">Contratto di Programma MIT-ANAS 2021-2025. <em>Costo aggiornato: 410 milioni (2023) → 457 milioni (2024). Incremento documentato di quasi il doppio rispetto al 2018.</em></div></div>
         <div class="tl-item red"><div class="tl-year">2024</div><div class="tl-txt">Secondo fonti giornalistiche (ITV Online, ottobre 2025), il tratto irpino non risulta incluso nel finanziamento attuale.</div></div>
-        <div class="tl-item amber"><div class="tl-year">2025 · 26 giugno</div><div class="tl-txt">Anas proroga i vincoli preordinati all'esproprio fino al 18 luglio 2027.</div></div>
+        <div class="tl-item red"><div class="tl-year">2025 · 26 giugno</div><div class="tl-txt">Anas proroga i vincoli preordinati all'esproprio fino al 18 luglio 2027. <em>Decisione in apparente contraddizione con un avvio lavori imminente.</em></div></div>
         <div class="tl-item red"><div class="tl-year">2025 · agosto</div><div class="tl-txt">FILT-CGIL e FIT-CISL Salerno sollevano pubblicamente la discrepanza tra proroga vincoli al 2027 e tempi di avvio riportati da fonti OpenCoesione per il 2026.</div></div>
         <div class="tl-item red"><div class="tl-year">2025 · 31 ottobre</div><div class="tl-txt">Secondo fonti giornalistiche, la terza corsia andrà in appalto solo per il tratto salernitano. Il tratto irpino resta senza copertura documentata.</div></div>
-        <div class="tl-item amber"><div class="tl-year">2026 · aprile</div><div class="tl-txt"><em>Alla data di redazione di questa pagina, l'appalto sul tratto salernitano non risulta ancora avviato nelle fonti pubbliche consultate.</em></div></div>
-        <div class="tl-item red"><div class="tl-year">2027 · 18 luglio</div><div class="tl-txt">Scadenza proroga vincoli espropriativi.</div></div>
+        <div class="tl-item amber"><div class="tl-year">2026 · aprile</div><div class="tl-txt"><strong>Stato attuale:</strong> alla data di redazione di questa pagina, l'appalto sul tratto salernitano non risulta ancora avviato nelle fonti pubbliche consultate.</div></div>
+        <div class="tl-item amber"><div class="tl-year">2027 · 18 luglio</div><div class="tl-txt">Scadenza proroga vincoli espropriativi.</div></div>
       </div>
     </section>
 
@@ -385,26 +389,27 @@
         </table>
       </div>
 
-      <h3 class="sub">Cronoprogramma</h3>
-      <div class="tbl-wrap">
-        <table class="data crono">
-          <thead><tr><th>Data</th><th>Evento</th></tr></thead>
-          <tbody>
-            <tr><td>2012</td><td>Chiusura stazione di Avellino al servizio viaggiatori</td></tr>
-            <tr><td>2015</td><td>Intesa Regione Campania–Stato a Napoli · elettrificazione nei piani</td></tr>
-            <tr><td>2017</td><td>Stanziamento FSC 2014-2020 per elettrificazione</td></tr>
-            <tr><td>2021</td><td>Scadenza originaria completamento — mancata</td></tr>
-            <tr><td>2022-2023</td><td>Promessa elettrificazione entro giugno 2023, esercizio entro fine 2023 — mancata</td></tr>
-            <tr><td>8 aprile 2024</td><td>Completata elettrificazione tratta Salerno-Mercato San Severino-Codola · messa in tensione portali</td></tr>
-            <tr><td>Aprile 2024</td><td>RFI dichiara: Mercato San Severino → Pratola Serra nel 2025 · Pratola Serra → Benevento ancora in progettazione</td></tr>
-            <tr><td>Dicembre 2024</td><td>Sit-in Legambiente alla stazione di Avellino: "Vogliamo prendere il treno"</td></tr>
-            <tr><td>Dicembre 2024</td><td>Sindaci di Avellino, Solofra, Montoro, Serino, San Michele di Serino chiedono accelerazione alla Regione</td></tr>
-            <tr><td>Agosto 2025</td><td>Petizione di 14 associazioni irpine: riaprire Avellino con treni a gasolio/ibridi</td></tr>
-            <tr><td><strong>Fine 2025 (obiettivo RFI)</strong></td><td><strong>Elettrificazione fino ad Avellino — obiettivo dichiarato, da verificare</strong></td></tr>
-            <tr><td>2026 (obiettivo RFI)</td><td>Riapertura stazione Avellino al servizio viaggiatori — obiettivo dichiarato, da verificare</td></tr>
-          </tbody>
-        </table>
+      <h3 class="sub">Cronologia dei lavori</h3>
+      <div class="tl-legend">
+        <span><span class="dot green"></span> eventi effettivamente accaduti</span>
+        <span><span class="dot red"></span> scadenze dichiarate non rispettate</span>
+        <span><span class="dot amber"></span> obiettivi futuri dichiarati, da verificare</span>
       </div>
+
+      <div class="timeline">
+        <div class="tl-item red"><div class="tl-year">2012</div><div class="tl-txt">Chiusura della stazione di Avellino al servizio viaggiatori.</div></div>
+        <div class="tl-item green"><div class="tl-year">2015</div><div class="tl-txt">Intesa Regione Campania-Stato firmata a Napoli · elettrificazione nei piani.</div></div>
+        <div class="tl-item green"><div class="tl-year">2017</div><div class="tl-txt">Stanziamento FSC 2014-2020 per l'elettrificazione della linea.</div></div>
+        <div class="tl-item red"><div class="tl-year">2021</div><div class="tl-txt">Scadenza originaria completamento elettrificazione. <em>Non rispettata.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">2022-2023</div><div class="tl-txt">Promessa elettrificazione entro giugno 2023, esercizio entro fine 2023. <em>Non rispettata.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">8 aprile 2024</div><div class="tl-txt">Completata elettrificazione tratta Salerno-Mercato San Severino-Codola · messa in tensione portali.</div></div>
+        <div class="tl-item green"><div class="tl-year">Aprile 2024</div><div class="tl-txt">RFI dichiara: Mercato San Severino → Pratola Serra entro il 2025 · Pratola Serra → Benevento ancora in progettazione.</div></div>
+        <div class="tl-item green"><div class="tl-year">Dicembre 2024</div><div class="tl-txt">Sit-in Legambiente alla stazione di Avellino: "Vogliamo prendere il treno" · sindaci di Avellino, Solofra, Montoro, Serino e San Michele di Serino chiedono accelerazione alla Regione.</div></div>
+        <div class="tl-item green"><div class="tl-year">Agosto 2025</div><div class="tl-txt">Petizione di 14 associazioni irpine: riaprire Avellino con treni a gasolio/ibridi.</div></div>
+        <div class="tl-item amber"><div class="tl-year">Fine 2025</div><div class="tl-txt"><strong>Obiettivo RFI:</strong> elettrificazione fino ad Avellino. <em>Obiettivo dichiarato, da verificare.</em></div></div>
+        <div class="tl-item amber"><div class="tl-year">2026</div><div class="tl-txt"><strong>Obiettivo RFI:</strong> riapertura della stazione di Avellino al servizio viaggiatori. <em>Obiettivo dichiarato, da verificare.</em></div></div>
+      </div>
+
       <p class="note">Lo stanziamento complessivo per l'opera è stato indicato in modo diverso nelle fonti. Il comunicato RFI dell'8 aprile 2024 parla di 174 milioni per l'intervento complessivo Benevento-Avellino-Mercato San Severino-Codola + tratta Codola-Sarno. Alcune fonti giornalistiche precedenti (2022) riferivano di stanziamenti di 220-230 milioni. Possibile riarticolazione finanziaria in corso d'opera; la cifra RFI è la più recente tra quelle consultate.</p>
     </section>
 
@@ -514,7 +519,9 @@
 
       <p>La pagina distingue con attenzione tra dato documentale (verificato in comunicato ufficiale o documento pubblico), stima (indicata come tale nel testo) e inferenza (ricostruzione logica a partire dai dati disponibili). Dove una data o un importo è tratto da fonte giornalistica, la fonte è citata esplicitamente nel testo o nelle tabelle.</p>
 
-      <p>La pagina non contiene proposte politiche. L'obiettivo è raccogliere in un luogo unico i numeri, le date e le fonti che riguardano lo stato della mobilità del territorio solofrano, consentendo a chiunque di consultarli e verificarli autonomamente. La sezione "Cosa significa per Solofra" raggruppa le letture del quadro complessivo dal punto di vista della città, mantenendo separate le criticità documentate dalle opportunità possibili.</p>
+      <p>Le cronologie dei quattro cantieri usano uno schema visivo unificato: <strong>verde</strong> per gli eventi effettivamente accaduti, <strong>rosso</strong> per le scadenze dichiarate non rispettate, <strong>ambra</strong> per gli obiettivi futuri dichiarati ancora da verificare. Questa distinzione è alla base della sezione "Cosa significa per Solofra", che raggruppa le letture del quadro complessivo dal punto di vista della città, mantenendo separate le criticità documentate dalle opportunità possibili.</p>
+
+      <p>La pagina non contiene proposte politiche. L'obiettivo è raccogliere in un luogo unico i numeri, le date e le fonti che riguardano lo stato della mobilità del territorio solofrano, consentendo a chiunque di consultarli e verificarli autonomamente.</p>
 
       <div class="ai-notice">
         <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
