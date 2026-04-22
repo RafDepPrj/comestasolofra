@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mobilità e collegamenti — Come sta Solofra</title>
-<meta name="description" content="La galleria Monte Pergola, il raccordo Avellino-Salerno, la terza corsia, la ferrovia. Dati pubblici e cronoprogrammi.">
+<meta name="description" content="La galleria Monte Pergola, il raccordo Avellino-Salerno, la terza corsia, la ferrovia. Quattro infrastrutture, quattro storie di tempo.">
 <meta property="og:title" content="Mobilità e collegamenti — Come sta Solofra">
-<meta property="og:description" content="Quattro cantieri, quattro storie, un unico problema per chi vive a Solofra.">
+<meta property="og:description" content="Quattro infrastrutture, quattro storie di tempo. Il problema di Solofra è la strada che porta a Solofra.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -62,7 +62,7 @@
 
   hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
 
-  /* Insight strip — tabella sintetica fatto/manca per infrastruttura */
+  /* Insight strip — tabella fatto/manca per infrastruttura */
   .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
   .insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
   .insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
@@ -85,6 +85,38 @@
     .tbl-insights .col-num .big { font-size: 20px; }
     .tbl-insights .col-infra { font-size: 14px; }
   }
+
+  /* Sezione "Cosa significa per Solofra" — con card singole */
+  .solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+  .solofra-intro { margin-bottom: 32px; max-width: 720px; }
+  .solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .solofra-lede strong { color: var(--ink); font-weight: 500; }
+  .solofra-quote { font-family: var(--serif); font-style: italic; font-size: clamp(18px,2.2vw,22px); line-height: 1.4; color: var(--ink); padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--paper); border-radius: 0 6px 6px 0; margin-top: 18px; }
+
+  .cao-group { margin-top: 36px; }
+  .cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .cao-group-hed .dot.red { background: var(--accent); }
+  .cao-group-hed .dot.amber { background: var(--amber); }
+  .cao-group-hed .dot.green { background: var(--green); }
+  .cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+  .cao-group.c h3 { color: var(--accent); }
+  .cao-group.a h3 { color: var(--amber); }
+  .cao-group.o h3 { color: var(--green); }
+  .cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+
+  .cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+  .cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+  .cao-card:hover { transform: translateY(-2px); }
+  .cao-card.c { border-top-color: var(--accent); }
+  .cao-card.a { border-top-color: var(--amber); }
+  .cao-card.o { border-top-color: var(--green); }
+  .cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+  .cao-card-body strong { font-weight: 500; color: var(--ink); }
 
   .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
   @media (min-width: 960px) {
@@ -131,7 +163,7 @@
     table.data th, table.data td { padding: 10px 12px; }
   }
 
-  /* Timeline — stile unificato per tutti i cronoprogrammi */
+  /* Timeline */
   .timeline { position: relative; margin: 24px 0; padding-left: 28px; }
   .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
   .tl-item { position: relative; padding-bottom: 22px; }
@@ -150,24 +182,6 @@
   .tl-legend .dot.red { background: var(--accent); }
   .tl-legend .dot.green { background: var(--green); }
   .tl-legend .dot.amber { background: var(--amber); }
-
-  .cao { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 20px; }
-  @media (min-width: 900px) {
-    .cao { grid-template-columns: repeat(3, 1fr); }
-  }
-  .cao-block { padding: 24px 24px; background: var(--paper); border: 1px solid var(--border); border-radius: 8px; border-top: 3px solid var(--ink-3); }
-  .cao-block.c { border-top-color: var(--accent); }
-  .cao-block.a { border-top-color: var(--amber); }
-  .cao-block.o { border-top-color: var(--green); }
-  .cao-hed { font-family: var(--serif); font-style: italic; font-size: 20px; margin-bottom: 16px; letter-spacing: -0.005em; }
-  .cao-block.c .cao-hed { color: var(--accent); }
-  .cao-block.a .cao-hed { color: var(--amber); }
-  .cao-block.o .cao-hed { color: var(--green); }
-  .cao ul { list-style: none; }
-  .cao li { font-size: 14px; color: var(--ink); line-height: 1.65; padding: 12px 0; border-bottom: 1px dashed var(--border); }
-  .cao li:last-child { border-bottom: none; }
-  .cao li:first-child { padding-top: 0; }
-  .cao li strong { font-weight: 500; color: var(--ink); }
 
   .fonti { font-size: 13px; }
   .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
@@ -222,7 +236,7 @@
 <div class="hero">
   <p class="hero-eyebrow">03 — Mobilità e collegamenti · aggiornato aprile 2026</p>
   <h1 class="hero-title">Come si arriva a Solofra —<br><em>e come si parte.</em></h1>
-  <p class="hero-sub">La galleria Monte Pergola, i cantieri sul raccordo Avellino-Salerno, la terza corsia progettata nel 2001, la linea ferroviaria. Quattro cantieri, quattro storie. I numeri ufficiali, i cronoprogrammi dichiarati, le fonti verificabili.</p>
+  <p class="hero-sub">Quattro infrastrutture, quattro storie di tempo. Quanto passa, quanto resta, quanto si è speso, quanto manca. I numeri ufficiali, le fonti verificabili, i cronoprogrammi dichiarati.</p>
   <div class="hero-meta">
     A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
     <span>·</span>
@@ -232,16 +246,17 @@
 
 <hr class="div">
 
+<!-- INSIGHT TABLE -->
 <div class="insights-wrap">
   <p class="insights-hed">I numeri, in sintesi</p>
-  <p class="insights-sub">I dati chiave per le quattro infrastrutture: quanto è stato fatto e quanto resta. Ogni dato è sostenuto dalle fonti riportate in pagina.</p>
+  <p class="insights-sub">I dati chiave per le quattro infrastrutture che collegano Solofra al resto della Campania: quanto tempo è passato, quanto è stato fatto, quanto resta. Ogni dato è sostenuto dalle fonti riportate in pagina.</p>
 
   <div class="ins-tbl-wrap">
     <table class="tbl-insights">
       <thead>
         <tr>
           <th class="col-infra">Infrastruttura</th>
-          <th class="col-num">Numero</th>
+          <th class="col-num">Tempo</th>
           <th class="col-lbl">Cosa rappresenta</th>
           <th class="done">Fatto</th>
           <th class="todo">Manca</th>
@@ -254,7 +269,7 @@
           <td class="col-infra">Galleria Monte Pergola</td>
           <td class="col-num"><span class="big neg">4 anni</span></td>
           <td class="col-lbl">galleria a canna unica</td>
-          <td class="col-done">cantiere ripartito a marzo 2025 · nuovo appaltatore Infratech</td>
+          <td class="col-done">cantiere ripartito marzo 2025 · nuovo appaltatore Infratech</td>
           <td class="col-todo">prima fase promessa luglio 2026 · seconda canna senza data</td>
           <td class="col-src">Anas · 2022, 2025</td>
         </tr>
@@ -270,8 +285,8 @@
 
         <tr>
           <td class="col-infra">Terza corsia</td>
-          <td class="col-num"><span class="big neg">€ 348 mln</span></td>
-          <td class="col-lbl">mancanti al primo stralcio</td>
+          <td class="col-num"><span class="big neg">24 anni</span></td>
+          <td class="col-lbl">dal primo progetto alle carte attuali</td>
           <td class="col-done">€ 109 mln finanziati (24%) · progetto definitivo depositato</td>
           <td class="col-todo">€ 348 mln da trovare (76%) · tratto irpino senza copertura</td>
           <td class="col-src">FILT-CGIL / FIT-CISL · MIT</td>
@@ -279,8 +294,8 @@
 
         <tr>
           <td class="col-infra">Ferrovia Sa-Av-Bn</td>
-          <td class="col-num"><span class="big neg">2012</span></td>
-          <td class="col-lbl">ultimo anno servizio ferroviario ad Avellino</td>
+          <td class="col-num"><span class="big neg">14 anni</span></td>
+          <td class="col-lbl">stazione di Avellino chiusa dal 2012</td>
           <td class="col-done">Salerno → Codola elettrificata · aprile 2024</td>
           <td class="col-todo">tratta Avellino + riapertura stazione · obiettivo RFI 2026</td>
           <td class="col-src">RFI · Legambiente</td>
@@ -291,18 +306,140 @@
   </div>
 </div>
 
+
+<!-- COSA SIGNIFICA PER SOLOFRA — spostata qui, subito dopo insight -->
+<div id="solofra" class="solofra-wrap">
+  <div class="solofra-intro">
+    <h2 class="solofra-hed">Cosa significa per Solofra.</h2>
+    <p class="solofra-lede">I numeri in tabella raccontano quattro cantieri. Ma chi vive qui la vive così: <strong>il problema di Solofra è la strada che porta a Solofra.</strong> Chi va in ospedale ad Avellino, chi fa il pendolare per Salerno o Fisciano, chi attraversa la galleria ogni giorno, chi vorrebbe aprire un'attività o trasferirsi qui: tutti pagano il prezzo dello stesso tempo fermo.</p>
+    <p class="solofra-lede">Il dato più difficile da misurare, ma forse il più importante, è un altro:</p>
+    <div class="solofra-quote">Ci siamo abituati. E una routine, a un certo punto, smette di sembrare un problema.</div>
+  </div>
+
+  <!-- CRITICITÀ -->
+  <div class="cao-group c">
+    <div class="cao-group-hed">
+      <span class="dot red"></span>
+      <h3>Criticità documentate</h3>
+      <span class="cao-count">5 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi va in ospedale</h4>
+        <p class="cao-card-body">Raggiungere l'ospedale di Avellino con la galleria a canna unica è diventato un calcolo. Le deviazioni sulle provinciali SP5, SP90, SP145 allungano i tempi in modo imprevedibile. <strong>Per chi ha un familiare ricoverato, questo è un problema quotidiano dal 2021.</strong></p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi fa il pendolare</h4>
+        <p class="cao-card-body">Oltre <strong>5.000 studenti irpini</strong> raggiungono l'Università di Salerno a Fisciano. A loro si aggiungono i pendolari di lavoro verso Salerno e la sua area industriale. Tutti dipendono dalla gomma: il treno regolare da Avellino manca dal 2012.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi entra in galleria</h4>
+        <p class="cao-card-body">A <strong>febbraio 2026 un tamponamento a catena ha causato quattro feriti</strong>. Nel 2024 calcinacci dalla volta hanno sfondato il parabrezza di un'auto in transito. Il rischio non è più un'ipotesi: è già successo, più volte. E ogni anno in più a canna unica è un anno in più in cui può succedere di nuovo.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi attraversa Solofra</h4>
+        <p class="cao-card-body">Quando il raccordo non basta, <strong>i mezzi pesanti invadono il centro di Solofra e Turci</strong>. Strade pensate per la viabilità locale sono diventate il piano B quotidiano. D'estate la galleria chiude alle auto per far passare i TIR dei pomodori: un'estate sì e l'altra pure, da quattro anni.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi vorrebbe investire qui</h4>
+        <p class="cao-card-body">Un territorio con un raccordo in regime emergenziale da quattro anni, senza treno e con la soluzione strutturale ferma da 24, <strong>non attira nuove attività, non attrae professionisti, non trattiene i giovani</strong>. È una delle ragioni strutturali per cui Solofra ha perso 600 residenti in dieci anni.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ATTENZIONI -->
+  <div class="cao-group a">
+    <div class="cao-group-hed">
+      <span class="dot amber"></span>
+      <h3>Attenzioni da monitorare</h3>
+      <span class="cao-count">5 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Cronoprogrammi vs realizzati</h4>
+        <p class="cao-card-body">La terza corsia è progettata dal 2001, la ferrovia doveva concludersi nel 2021, la galleria ha avuto una rescissione contrattuale nel 2024. <strong>Le date dichiarate sono state sistematicamente disattese.</strong> Le promesse "luglio 2026" (galleria) e "fine 2025" (ferrovia) vanno trattate come obiettivi, non come esiti.</p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Sovrapposizione cantieri</h4>
+        <p class="cao-card-body">Il lotto NDBA Montoro-Solofra (km 14-20) parte dopo il completamento dei primi due lotti, e potrebbe sovrapporsi alle fasi finali del cantiere galleria. <strong>Senza un quadro unitario pubblico, la percezione di "cantieri che non finiscono mai" rischia di consolidarsi.</strong></p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Vertenza 15 operai</h4>
+        <p class="cao-card-body">Il nuovo appaltatore Infratech non ha riassunto 15 operai del cantiere precedente. La vertenza sindacale è aperta dal 2025. Al di là dell'aspetto sociale, può avere riflessi sulla tempistica dei lavori se non risolta.</p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Voci frammentate</h4>
+        <p class="cao-card-body">Su queste vicende hanno preso posizione separatamente sindaci (10 firme nell'agosto 2025), sindacati (FILT-CGIL, FIT-CISL), partiti (AVS, PD), associazioni (Legambiente, InLocoMotivi). <strong>Non risulta pubblicamente uno strumento formale permanente di coordinamento dei comuni della Valle sul tema mobilità.</strong></p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Incongruenza finanziaria ferrovia</h4>
+        <p class="cao-card-body">La discrepanza tra le cifre di stanziamento (174 mln RFI 2024 vs. 220-230 mln citati in anni precedenti) merita approfondimento. Non è chiaro se ci sia stato un ridimensionamento del perimetro dell'opera ferroviaria.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OPPORTUNITÀ -->
+  <div class="cao-group o">
+    <div class="cao-group-hed">
+      <span class="dot green"></span>
+      <h3>Spazi di manovra</h3>
+      <span class="cao-count">5 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Progetto terza corsia pronto</h4>
+        <p class="cao-card-body">La progettazione definitiva esiste e <strong>è depositata al MIT dal febbraio 2023</strong>. Non c'è un ostacolo tecnico. Gli ostacoli sono finanziari e procedurali — cioè terreno politico. Una posizione territoriale unita della provincia di Avellino sul secondo stralcio ha spazio documentale per essere sollevata.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Strumenti già previsti dalla legge</h4>
+        <p class="cao-card-body">La normativa italiana prevede <strong>Unioni di Comuni, Aree Interne SNAI, Patti Territoriali, Contratti di programma</strong>: tutti strumenti disponibili per costruire interlocuzione coordinata con MIT, Regione e Anas su temi infrastrutturali sovracomunali. Non servono leggi nuove — serve volontà politica di usare quelle esistenti.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Fermata di Solofra per l'ospedale</h4>
+        <p class="cao-card-body">Nel piano post-elettrificazione, <strong>RFI ha dichiarato che è prevista una fermata ferroviaria a Solofra con collegamento all'ospedale</strong>. Un'opportunità concreta di mobilità sanitaria e studentesca da valorizzare quando l'infrastruttura sarà operativa.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Fondi Coesione 2021-2027</h4>
+        <p class="cao-card-body">Il nuovo ciclo di fondi europei offre <strong>finestre di finanziamento non ancora chiuse</strong> per infrastrutture strategiche del Mezzogiorno. È terreno aperto su cui il territorio può candidare progetti specifici — incluso il tratto irpino della terza corsia.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Utenza certa, non ipotetica</h4>
+        <p class="cao-card-body">I 5.000 studenti irpini all'Università di Salerno, gli occupati del distretto conciario con fornitori fuori area, i pazienti sanitari fuori Solofra: <strong>l'utenza della mobilità moderna esiste già. Non è da costruire — è da servire.</strong> Questo rende economicamente difendibile qualsiasi richiesta di completamento delle opere.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 <hr class="div">
 
 <div class="layout">
 
   <aside class="toc">
-    <p class="toc-hed">In questa pagina</p>
+    <p class="toc-hed">I dossier infrastrutturali</p>
     <ol>
       <li><a href="#galleria">La galleria Monte Pergola</a></li>
       <li><a href="#raccordo">I cantieri sul raccordo</a></li>
       <li><a href="#terza-corsia">La terza corsia</a></li>
       <li><a href="#ferrovia">La linea ferroviaria</a></li>
-      <li><a href="#solofra">Cosa significa per Solofra</a></li>
       <li><a href="#fonti">Mappa numeri → fonti</a></li>
       <li><a href="#metodo">Nota metodologica</a></li>
     </ol>
@@ -499,49 +636,6 @@
     </section>
 
 
-    <!-- BLOCCO 5: COSA SIGNIFICA PER SOLOFRA -->
-    <section id="solofra" class="block">
-      <p class="block-num">Conclusioni</p>
-      <h2 class="block-title">Cosa significa tutto questo per Solofra.</h2>
-      <p class="block-intro">I quattro dossier precedenti raccolgono i fatti pubblici sulle quattro infrastrutture che connettono — o dovrebbero connettere — Solofra al resto della Campania. Questa sezione prova a leggerli insieme, dal punto di vista della città: cosa è accertato, cosa va monitorato, quali spazi di manovra esistono.</p>
-
-      <div class="cao">
-        <div class="cao-block c">
-          <p class="cao-hed">Criticità documentate</p>
-          <ul>
-            <li><strong>Dal 2021 la galleria Monte Pergola è a canna unica.</strong> L'uscita di Solofra è servita da un'infrastruttura in regime emergenziale. Anas promette l'ultimazione della prima fase a luglio 2026. La fase successiva, sulla canna direzione Avellino, non ha un cronoprogramma pubblico.</li>
-            <li><strong>I cantieri attivi sul raccordo superano i 51 milioni di euro.</strong> Non è un problema di mancanza di risorse per la manutenzione. Il problema documentato è la loro durata e concentrazione sul tratto che interessa Solofra (km 14-20 tra Montoro e Solofra rientra nel lotto NDBA non ancora avviato).</li>
-            <li><strong>Il tratto irpino della terza corsia non risulta finanziato.</strong> La scheda MIT finanziata riguarda il primo stralcio Fratte-Mercato San Severino. L'estensione fino ad Avellino Est — che servirebbe direttamente i comuni della Valle Solofrana — non è inclusa nelle fonti pubbliche consultate.</li>
-            <li><strong>Il treno ad Avellino è assente dal 2012.</strong> Gli studenti universitari solofrani diretti a Fisciano, i pendolari verso Salerno e Napoli, i pazienti verso strutture sanitarie fuori provincia dipendono interamente dalla gomma su un raccordo in regime emergenziale.</li>
-            <li><strong>Gli incidenti documentati (2024, 2025, 2026) hanno coinvolto residenti del territorio.</strong> La galleria Monte Pergola non è un'infrastruttura remota: è il tragitto quotidiano di chi lavora fuori Solofra e torna a casa.</li>
-          </ul>
-        </div>
-
-        <div class="cao-block a">
-          <p class="cao-hed">Attenzioni da monitorare</p>
-          <ul>
-            <li><strong>Cronoprogrammi dichiarati vs. realizzati.</strong> La storia documentale di questi cantieri (terza corsia dal 2001, ferrovia scadenza 2021 non rispettata, galleria con rescissione contratto nel 2024) mostra che le date dichiarate sono state sistematicamente disattese. Le promesse "luglio 2026" (galleria) e "fine 2025" (ferrovia) vanno trattate come obiettivi, non come esiti.</li>
-            <li><strong>Sovrapposizione cantieri sul tratto Solofra.</strong> Il lotto NDBA Montoro-Solofra (km 14-20) parte dopo il completamento dei primi due lotti. Potrebbe sovrapporsi alle fasi finali della galleria. Senza un quadro unitario pubblico, la percezione di "cantieri che non finiscono mai" rischia di consolidarsi.</li>
-            <li><strong>Vertenza 15 operai.</strong> La mancata riassunzione da parte del nuovo appaltatore è una vertenza aperta dal 2025. Al di là dell'aspetto sindacale, può avere riflessi sulla tempistica dei lavori se non risolta.</li>
-            <li><strong>Assenza di un tavolo territoriale strutturato.</strong> Sulle vicende della galleria e del raccordo hanno preso posizione singolarmente sindaci (10 firme nell'agosto 2025), sindacati (FILT-CGIL, FIT-CISL), partiti (AVS, PD), associazioni (Legambiente, InLocoMotivi). Ma non risulta pubblicamente uno strumento formale permanente di coordinamento dei comuni della Valle sul tema mobilità.</li>
-            <li><strong>Riarticolazione finanziaria ferrovia.</strong> La discrepanza tra le cifre dello stanziamento (174 mln RFI 2024 vs. 220-230 mln citati in anni precedenti) merita approfondimento. Non è chiaro se ci sia stato un ridimensionamento del perimetro dell'opera.</li>
-          </ul>
-        </div>
-
-        <div class="cao-block o">
-          <p class="cao-hed">Spazi di manovra</p>
-          <ul>
-            <li><strong>La progettazione definitiva della terza corsia esiste.</strong> Non c'è un ostacolo tecnico. Gli ostacoli sono finanziari e procedurali — che in infrastrutture pubbliche significa terreno politico. Una posizione territoriale unita della provincia di Avellino sul secondo stralcio ha spazio documentale per essere sollevata.</li>
-            <li><strong>Strumenti di coordinamento intercomunale previsti dalla legge.</strong> La normativa italiana prevede Unioni di Comuni, Aree Interne SNAI, Patti Territoriali, Contratti di programma — strumenti già disponibili per costruire un'interlocuzione coordinata con MIT, Regione e Anas su temi infrastrutturali sovracomunali.</li>
-            <li><strong>Fermata ferroviaria di Solofra con collegamento all'ospedale.</strong> RFI ha dichiarato che la fermata è nel piano post-elettrificazione. È un'opportunità concreta di mobilità sanitaria e studentesca da valorizzare quando l'infrastruttura sarà operativa.</li>
-            <li><strong>Fondi di Coesione 2021-2027 in fase di programmazione.</strong> Il nuovo ciclo di fondi europei offre finestre di finanziamento non ancora chiuse per infrastrutture strategiche del Mezzogiorno. È terreno aperto su cui il territorio può candidare progetti specifici.</li>
-            <li><strong>Utenza certa, non ipotetica.</strong> I 5.000 studenti irpini all'Università di Salerno, gli occupati del distretto conciario con fornitori fuori area, i pazienti sanitari fuori Solofra: l'utenza della mobilità moderna esiste già. Non è da costruire — è da servire. Questo rende economicamente difendibile qualsiasi richiesta di completamento delle opere.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-
     <!-- MAPPA FONTI -->
     <section id="fonti" class="block">
       <p class="block-num">Fonti</p>
@@ -604,7 +698,7 @@
 
       <p>La pagina distingue con attenzione tra dato documentale (verificato in comunicato ufficiale o documento pubblico), stima (indicata come tale nel testo) e inferenza (ricostruzione logica a partire dai dati disponibili). Dove una data o un importo è tratto da fonte giornalistica, la fonte è citata esplicitamente nel testo o nelle tabelle.</p>
 
-      <p>Le cronologie dei quattro cantieri usano uno schema visivo unificato: <strong>verde</strong> per gli eventi effettivamente accaduti, <strong>rosso</strong> per le scadenze dichiarate non rispettate, <strong>ambra</strong> per gli obiettivi futuri dichiarati ancora da verificare. Questa distinzione è alla base della sezione "Cosa significa per Solofra", che raggruppa le letture del quadro complessivo dal punto di vista della città, mantenendo separate le criticità documentate dalle opportunità possibili.</p>
+      <p>Le cronologie dei quattro cantieri usano uno schema visivo unificato: <strong>verde</strong> per gli eventi effettivamente accaduti, <strong>rosso</strong> per le scadenze dichiarate non rispettate, <strong>ambra</strong> per gli obiettivi futuri dichiarati ancora da verificare. La sezione "Cosa significa per Solofra" raggruppa le letture del quadro complessivo dal punto di vista della città, mantenendo separate le criticità documentate dalle opportunità possibili.</p>
 
       <p>La pagina non contiene proposte politiche. L'obiettivo è raccogliere in un luogo unico i numeri, le date e le fonti che riguardano lo stato della mobilità del territorio solofrano, consentendo a chiunque di consultarli e verificarli autonomamente.</p>
 
