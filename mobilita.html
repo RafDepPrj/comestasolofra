@@ -75,8 +75,11 @@
   .tbl-insights tr:last-child td { border-bottom: none; }
   .tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
   .tbl-insights .col-num { white-space: nowrap; }
-  .tbl-insights .col-num .big { font-family: var(--serif); font-size: 22px; line-height: 1; letter-spacing: -0.02em; color: var(--ink); display: block; }
+  .tbl-insights .col-num .big { font-family: var(--serif); font-size: 22px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); display: block; }
   .tbl-insights .col-num .big.neg { color: var(--accent); }
+  .tbl-insights .col-num .big.amb { color: var(--amber); font-size: 17px; margin-top: 4px; }
+  .tbl-insights .col-num .big.neu { color: var(--ink); }
+  .tbl-insights .col-num .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-top: 2px; font-family: var(--sans); }
   .tbl-insights .col-lbl { color: var(--ink-2); font-size: 13px; }
   .tbl-insights .col-done, .tbl-insights .col-todo { font-size: 13px; }
   .tbl-insights .col-src { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
@@ -256,7 +259,7 @@
       <thead>
         <tr>
           <th class="col-infra">Infrastruttura</th>
-          <th class="col-num">Tempo</th>
+          <th class="col-num">Durata</th>
           <th class="col-lbl">Cosa rappresenta</th>
           <th class="done">Fatto</th>
           <th class="todo">Manca</th>
@@ -267,7 +270,12 @@
 
         <tr>
           <td class="col-infra">Galleria Monte Pergola</td>
-          <td class="col-num"><span class="big neg">4 anni</span></td>
+          <td class="col-num">
+            <span class="big neg">4 anni</span>
+            <span class="sub">passati</span>
+            <span class="big amb">+ 2-4 anni</span>
+            <span class="sub">previsti</span>
+          </td>
           <td class="col-lbl">galleria a canna unica</td>
           <td class="col-done">cantiere ripartito marzo 2025 · nuovo appaltatore Infratech</td>
           <td class="col-todo">prima fase promessa luglio 2026 · seconda canna senza data</td>
@@ -276,7 +284,12 @@
 
         <tr>
           <td class="col-infra">Cantieri raccordo</td>
-          <td class="col-num"><span class="big">€ 51,3 mln</span></td>
+          <td class="col-num">
+            <span class="big neu">€ 51,3 mln</span>
+            <span class="sub">attivi</span>
+            <span class="big amb">~18 mesi</span>
+            <span class="sub">stimati residui</span>
+          </td>
           <td class="col-lbl">cantieri di manutenzione attivi</td>
           <td class="col-done">2 lotti NDBA su 3 completati · Atripalda e Fisciano</td>
           <td class="col-todo">lotto Montoro-Solofra da completare · stima fine 2026</td>
@@ -285,7 +298,12 @@
 
         <tr>
           <td class="col-infra">Terza corsia</td>
-          <td class="col-num"><span class="big neg">24 anni</span></td>
+          <td class="col-num">
+            <span class="big neg">24 anni</span>
+            <span class="sub">dal primo progetto</span>
+            <span class="big amb">senza data</span>
+            <span class="sub">avvio lavori</span>
+          </td>
           <td class="col-lbl">dal primo progetto alle carte attuali</td>
           <td class="col-done">€ 109 mln finanziati (24%) · progetto definitivo depositato</td>
           <td class="col-todo">€ 348 mln da trovare (76%) · tratto irpino senza copertura</td>
@@ -294,7 +312,12 @@
 
         <tr>
           <td class="col-infra">Ferrovia Sa-Av-Bn</td>
-          <td class="col-num"><span class="big neg">14 anni</span></td>
+          <td class="col-num">
+            <span class="big neg">14 anni</span>
+            <span class="sub">stazione chiusa</span>
+            <span class="big amb">obiettivo 2026</span>
+            <span class="sub">riapertura</span>
+          </td>
           <td class="col-lbl">stazione di Avellino chiusa dal 2012</td>
           <td class="col-done">Salerno → Codola elettrificata · aprile 2024</td>
           <td class="col-todo">tratta Avellino + riapertura stazione · obiettivo RFI 2026</td>
