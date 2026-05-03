@@ -6,7 +6,7 @@
 <title>Come sta Solofra — Dati pubblici, resi leggibili</title>
 <meta name="description" content="Dati pubblici su Solofra raccolti, analizzati e visualizzati. A cura di Raffaele De Piano.">
 <meta property="og:title" content="Come sta Solofra">
-<meta property="og:description" content="Dati pubblici su Solofra, resi leggibili. Popolazione, bilancio, mobilità, calcoli, deduzioni, fonti.">
+<meta property="og:description" content="Dati pubblici su Solofra, resi leggibili. Popolazione, bilancio, mobilità, concia, calcoli, deduzioni, fonti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -64,13 +64,11 @@
   .sec-title { font-family: var(--serif); font-size: clamp(26px,3.5vw,40px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; }
   .sec-intro { font-size: 15px; color: var(--ink-2); max-width: 620px; line-height: 1.65; margin-bottom: 40px; }
 
-  /* AI notice in evidenza sotto hero */
   .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 16px 20px; margin-bottom: 40px; display: flex; gap: 14px; align-items: flex-start; }
   .ai-notice-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--amber); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; }
   .ai-notice-text { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
   .ai-notice-text strong { color: var(--amber); font-weight: 500; }
 
-  /* Card sezioni */
   .sez-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 20px; margin-bottom: 40px; }
   .sez-card { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; text-decoration: none; color: var(--ink); transition: border-color .2s, transform .2s, background .2s; }
   .sez-card:hover { border-color: var(--ink-3); background: var(--paper-2); transform: translateY(-2px); }
@@ -122,14 +120,15 @@
       <a href="demografia.html">Demografia</a>
       <a href="bilancio.html">Bilancio</a>
       <a href="mobilita.html">Mobilità</a>
+    </a>
     </nav>
   </div>
 </header>
 
 <div class="hero">
-  <p class="hero-eyebrow">Solofra (AV) — aggiornato aprile 2026</p>
+  <p class="hero-eyebrow">Solofra (AV) — aggiornato maggio 2026</p>
   <h1 class="hero-title">Dati pubblici,<br><em>resi leggibili.</em></h1>
-  <p class="hero-sub">Una raccolta di dati ufficiali su Solofra: popolazione, bilancio, mobilità. Con i calcoli mostrati per intero, le fonti sempre citate e le deduzioni separate dai fatti.</p>
+  <p class="hero-sub">Una raccolta di dati ufficiali su Solofra: popolazione, bilancio, mobilità, concia. Con i calcoli mostrati per intero, le fonti sempre citate e le deduzioni separate dai fatti.</p>
   <div class="hero-meta">
     A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
     <span>·</span>
@@ -159,7 +158,7 @@
     <a href="demografia.html" class="sez-card">
       <div class="sez-num">01 — Demografia</div>
       <h3 class="sez-card-title">Quanti siamo — e cosa sta cambiando</h3>
-      <p class="sez-card-sub">Solofra perde residenti da dieci anni. Chi parte, chi resta, e cosa significa per il commercio, i servizi, il bilancio del Comune.</p>
+      <p class="sez-card-sub">Solofra perde residenti da dieci anni. Chi parte, chi resta, e cosa significa per il commercio, i servizi, il bilancio del Comune.[cite: 4]</p>
       <div class="sez-stats">
         <div class="sez-stat">
           <span class="sez-stat-v neg">−600</span>
@@ -176,7 +175,7 @@
     <a href="bilancio.html" class="sez-card">
       <div class="sez-num">02 — Bilancio comunale</div>
       <h3 class="sez-card-title">Il bilancio di Solofra in chiaro</h3>
-      <p class="sez-card-sub">31 milioni sulla carta, 21 di risorse effettive. Da dove vengono, dove vanno, cosa pesa sul futuro. Entrate, uscite, debiti — con i calcoli per intero dai documenti ufficiali.</p>
+      <p class="sez-card-sub">31 milioni sulla carta, 21 di risorse effettive. Da dove vengono, dove vanno, cosa pesa sul futuro. Entrate, uscite, debiti — con i calcoli per intero dai documenti ufficiali.[cite: 2]</p>
       <div class="sez-stats">
         <div class="sez-stat">
           <span class="sez-stat-v">€503</span>
@@ -193,7 +192,7 @@
     <a href="mobilita.html" class="sez-card">
       <div class="sez-num">03 — Mobilità e collegamenti</div>
       <h3 class="sez-card-title">Come si arriva a Solofra — e come si parte</h3>
-      <p class="sez-card-sub">La galleria Monte Pergola, il raccordo Avellino-Salerno, la terza corsia, la ferrovia. Quattro cantieri, quattro storie, un unico problema per chi vive qui.</p>
+      <p class="sez-card-sub">La galleria Monte Pergola, il raccordo Avellino-Salerno, la terza corsia, la ferrovia. Quattro cantieri, storie di tempo fermo.[cite: 1]</p>
       <div class="sez-stats">
         <div class="sez-stat">
           <span class="sez-stat-v neg">−4 anni</span>
@@ -202,6 +201,23 @@
         <div class="sez-stat">
           <span class="sez-stat-v">24 anni</span>
           <span class="sez-stat-l">attesa terza corsia</span>
+        </div>
+      </div>
+      <div class="sez-cta">Leggi la sezione</div>
+    </a>
+
+    <a href="concia.html" class="sez-card">
+      <div class="sez-num">04 — Concia e distretto</div>
+      <h3 class="sez-card-title">Solofra è la città della pelle</h3>
+      <p class="sez-card-sub">Il distretto conciario tra passato e presente. Tre decenni di numeri, la transizione verso il lusso e la sfida della diversificazione economica.[cite: 3]</p>
+      <div class="sez-stats">
+        <div class="sez-stat">
+          <span class="sez-stat-v neg">€220 mln</span>
+          <span class="sez-stat-l">fatturato 2023</span>
+        </div>
+        <div class="sez-stat">
+          <span class="sez-stat-v">~1.870</span>
+          <span class="sez-stat-l">addetti al distretto</span>
         </div>
       </div>
       <div class="sez-cta">Leggi la sezione</div>
