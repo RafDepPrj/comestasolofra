@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concia e distretto — Come sta Solofra</title>
+<meta name="description" content="Il distretto conciario di Solofra. Tre decenni di numeri, le forze in campo, le ragioni per cui costruire qualcosa accanto è stato finora difficile.">
+<meta property="og:title" content="Concia e distretto — Come sta Solofra">
+<meta property="og:description" content="Solofra è la città della pelle. Lo è sempre stata e probabilmente sempre lo sarà. Ma una città non si regge su una gamba sola.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+  .insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+  .ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+  .tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 860px; }
+  .tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .tbl-insights th.peak { color: var(--ink-2); }
+  .tbl-insights th.now { color: var(--accent); }
+  .tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+  .tbl-insights tr:last-child td { border-bottom: none; }
+  .tbl-insights .col-ind { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+  .tbl-insights .col-num { white-space: nowrap; }
+  .tbl-insights .col-num .big { font-family: var(--serif); font-size: 22px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); display: block; }
+  .tbl-insights .col-num .big.neg { color: var(--accent); }
+  .tbl-insights .col-num .big.neu { color: var(--ink); }
+  .tbl-insights .col-num .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-top: 2px; font-family: var(--sans); }
+  .tbl-insights .col-var { font-family: var(--serif); font-size: 17px; color: var(--accent); white-space: nowrap; }
+  .tbl-insights .col-var.flat { color: var(--ink-3); }
+  .tbl-insights .col-src { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
+  @media (max-width: 720px) {
+    .tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+    .tbl-insights .col-num .big { font-size: 20px; }
+    .tbl-insights .col-ind { font-size: 14px; }
+  }
+
+  .solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+  .solofra-intro { margin-bottom: 32px; max-width: 720px; }
+  .solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .solofra-lede strong { color: var(--ink); font-weight: 500; }
+  .solofra-quote { font-family: var(--serif); font-style: italic; font-size: clamp(18px,2.2vw,22px); line-height: 1.4; color: var(--ink); padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--paper); border-radius: 0 6px 6px 0; margin-top: 18px; }
+
+  .narr-cards { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+  @media (min-width: 720px) { .narr-cards { grid-template-columns: repeat(3, 1fr); } }
+  .narr-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 22px; border-top: 3px solid var(--ink-3); }
+  .narr-card-title { font-family: var(--serif); font-size: 18px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--ink); }
+  .narr-card-body { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .narr-card-body strong { font-weight: 500; color: var(--ink); }
+
+  .cao-group { margin-top: 36px; }
+  .cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .cao-group-hed .dot.red { background: var(--accent); }
+  .cao-group-hed .dot.amber { background: var(--amber); }
+  .cao-group-hed .dot.green { background: var(--green); }
+  .cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+  .cao-group.c h3 { color: var(--accent); }
+  .cao-group.a h3 { color: var(--amber); }
+  .cao-group.o h3 { color: var(--green); }
+  .cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+
+  .cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+  .cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+  .cao-card:hover { transform: translateY(-2px); }
+  .cao-card.c { border-top-color: var(--accent); }
+  .cao-card.a { border-top-color: var(--amber); }
+  .cao-card.o { border-top-color: var(--green); }
+  .cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+  .cao-card-body strong { font-weight: 500; color: var(--ink); }
+
+  .cao-disclaim { font-size: 12px; color: var(--ink-3); font-style: italic; margin-top: 18px; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; line-height: 1.55; }
+
+  .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+  @media (min-width: 960px) {
+    .layout { grid-template-columns: 220px 1fr; gap: 64px; }
+  }
+
+  .toc { font-size: 13px; }
+  @media (min-width: 960px) {
+    .toc { position: sticky; top: 78px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; }
+  }
+  .toc-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 10px; }
+  .toc li a { color: var(--ink-2); text-decoration: none; display: block; padding: 6px 0; line-height: 1.4; transition: color .15s; border-left: 2px solid transparent; padding-left: 10px; }
+  .toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--serif); font-size: 12px; color: var(--accent); margin-right: 8px; }
+  .toc li a:hover { color: var(--ink); border-left-color: var(--accent); }
+
+  .block { padding-bottom: clamp(48px,6vw,72px); margin-bottom: clamp(48px,6vw,72px); border-bottom: 1px solid var(--border); }
+  .block:last-of-type { border-bottom: none; }
+  .block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .block-title { font-family: var(--serif); font-size: clamp(28px,3.8vw,42px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--ink); }
+  .block-intro { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 32px; max-width: 680px; }
+
+  h3.sub { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; margin-top: 40px; margin-bottom: 18px; color: var(--ink); }
+  h3.sub:first-child { margin-top: 0; }
+
+  p { margin-bottom: 14px; color: var(--ink); }
+  p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 16px 0; }
+  a.inline { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .15s, border-color .15s; }
+  a.inline:hover { color: var(--accent); border-color: var(--accent); }
+
+  .tbl-wrap { margin: 16px 0 8px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--paper); }
+  table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.data th { text-align: left; padding: 12px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--paper-2); }
+  table.data td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); line-height: 1.5; }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data td:first-child { color: var(--ink-2); }
+  table.data td strong { font-weight: 500; color: var(--ink); }
+  table.data td.val { font-family: var(--serif); font-size: 16px; color: var(--ink); white-space: nowrap; }
+  table.data td.val.neg { color: var(--accent); }
+  table.data td.val.ok { color: var(--green); }
+  table.data td.val.amb { color: var(--amber); }
+  @media (max-width: 640px) {
+    table.data { font-size: 13px; }
+    table.data th, table.data td { padding: 10px 12px; }
+  }
+
+  .estimate-flag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--amber); background: var(--amber-bg); padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+
+  .timeline { position: relative; margin: 24px 0; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; padding-bottom: 22px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--paper); box-shadow: 0 0 0 2px var(--ink-3); background: var(--paper); }
+  .tl-item.red::before  { box-shadow: 0 0 0 2px var(--accent); background: var(--accent); }
+  .tl-item.green::before{ box-shadow: 0 0 0 2px var(--green);  background: var(--green); }
+  .tl-item.amber::before{ box-shadow: 0 0 0 2px var(--amber);  background: var(--amber); }
+  .tl-year { font-family: var(--serif); font-size: 16px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 4px; }
+  .tl-txt { font-size: 14px; color: var(--ink); line-height: 1.6; }
+  .tl-txt em { color: var(--ink-3); font-style: normal; font-size: 13px; }
+  .tl-txt strong { font-weight: 500; color: var(--ink); }
+  .tl-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--ink-3); margin: 12px 0 20px; padding: 12px 16px; background: var(--paper-2); border-radius: 6px; }
+  .tl-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .tl-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .tl-legend .dot.red { background: var(--accent); }
+  .tl-legend .dot.green { background: var(--green); }
+  .tl-legend .dot.amber { background: var(--amber); }
+
+  .reasons-list { margin: 20px 0 8px; }
+  .reason-item { display: grid; grid-template-columns: 50px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+  .reason-item:first-child { border-top: 1px solid var(--border); }
+  .reason-num-large { font-family: var(--serif); font-size: 32px; line-height: 1; color: var(--accent); letter-spacing: -0.02em; }
+  .reason-title-large { font-family: var(--serif); font-size: 19px; letter-spacing: -0.01em; margin-bottom: 6px; color: var(--ink); }
+  .reason-text-large { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .reason-text-large strong { color: var(--ink); font-weight: 500; }
+
+  .fonti { font-size: 13px; }
+  .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+  .fonti h4:first-child { margin-top: 0; }
+  .fonti ul { list-style: none; }
+  .fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+  .fonti li:last-child { border-bottom: none; }
+  .fonti li strong { color: var(--ink); font-weight: 500; }
+  .fonti li a { color: var(--ink-2); text-decoration: none; border-bottom: 1px dotted var(--ink-3); word-break: break-all; }
+  .fonti li a:hover { color: var(--accent); border-color: var(--accent); }
+  .fonti .src-flag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+  .fonti .src-flag.verified { color: var(--green); background: var(--green-bg); }
+  .fonti .src-flag.estimate { color: var(--amber); background: var(--amber-bg); }
+
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+
+  @media (max-width: 640px) {
+    nav { gap: 16px; }
+    nav a { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale sui documenti pubblici di UNIC, MIMIT, Camera di Commercio Irpinia Sannio, Regione Campania e Sviluppo Campania. Le fonti sono citate e verificabili. Errori o imprecisioni sono possibili: segnalazioni e correzioni sono benvenute.</div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="site-title">Come sta <span>Solofra</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="demografia.html">Demografia</a>
+      <a href="bilancio.html">Bilancio</a>
+      <a href="mobilita.html">Mobilità</a>
+      <a href="concia.html" class="active">Concia</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">04 — Concia e distretto · aggiornato maggio 2026</p>
+  <h1 class="hero-title">Solofra è la città della pelle —<br><em>e una città non si regge su una gamba sola.</em></h1>
+  <p class="hero-sub">Tre decenni di numeri, le forze in campo, le ragioni per cui costruire qualcosa accanto al distretto è stato finora difficile. I dati ufficiali, le fonti verificabili, le tappe documentate.</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>Ultima consultazione fonti: maggio 2026</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- INSIGHT TABLE -->
+<div class="insights-wrap">
+  <p class="insights-hed">I numeri, in sintesi</p>
+  <p class="insights-sub">Lo stato del distretto conciario di Solofra a confronto: l'ordine di grandezza degli anni del picco e i dati di oggi. Le cifre del picco sono stime ricostruttive e sono indicate come tali.</p>
+
+  <div class="ins-tbl-wrap">
+    <table class="tbl-insights">
+      <thead>
+        <tr>
+          <th class="col-ind">Indicatore</th>
+          <th class="peak">Picco anni '90</th>
+          <th class="now">Oggi</th>
+          <th>Variazione</th>
+          <th class="col-src">Fonte</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="col-ind">Fatturato del distretto</td>
+          <td class="col-num">
+            <span class="big neu">~ € 900 mln</span>
+            <span class="sub">stima storica</span>
+          </td>
+          <td class="col-num">
+            <span class="big neg">€ 220 mln</span>
+            <span class="sub">2023</span>
+          </td>
+          <td class="col-var">−76%</td>
+          <td class="col-src">UNIC · Pambianco</td>
+        </tr>
+
+        <tr>
+          <td class="col-ind">Addetti</td>
+          <td class="col-num">
+            <span class="big neu">~ 5.000</span>
+            <span class="sub">stima storica</span>
+          </td>
+          <td class="col-num">
+            <span class="big neg">~ 1.870</span>
+            <span class="sub">2024</span>
+          </td>
+          <td class="col-var">−63%</td>
+          <td class="col-src">UNIC · CamCom</td>
+        </tr>
+
+        <tr>
+          <td class="col-ind">Aziende conciarie</td>
+          <td class="col-num">
+            <span class="big neu">~ 450</span>
+            <span class="sub">stima storica</span>
+          </td>
+          <td class="col-num">
+            <span class="big neg">~ 140</span>
+            <span class="sub">~ 380 con indotto</span>
+          </td>
+          <td class="col-var">−69%</td>
+          <td class="col-src">UNIC · Sviluppo Campania</td>
+        </tr>
+
+        <tr>
+          <td class="col-ind">Quota export</td>
+          <td class="col-num">
+            <span class="big neu">—</span>
+            <span class="sub">non disponibile</span>
+          </td>
+          <td class="col-num">
+            <span class="big neu">60%</span>
+            <span class="sub">del fatturato 2023</span>
+          </td>
+          <td class="col-var flat">—</td>
+          <td class="col-src">Pambianco · UNIC</td>
+        </tr>
+
+        <tr>
+          <td class="col-ind">Posizionamento nazionale</td>
+          <td class="col-num">
+            <span class="big neu">3°</span>
+            <span class="sub">distretto italiano</span>
+          </td>
+          <td class="col-num">
+            <span class="big neu">3°</span>
+            <span class="sub">distretto italiano</span>
+          </td>
+          <td class="col-var flat">stabile</td>
+          <td class="col-src">CamCom · UNIC</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- COSA SIGNIFICA PER SOLOFRA -->
+<div id="solofra" class="solofra-wrap">
+  <div class="solofra-intro">
+    <h2 class="solofra-hed">Cosa significa per Solofra.</h2>
+    <p class="solofra-lede">I numeri raccontano un settore che ha perso tre quarti del suo peso economico in trent'anni, ma che resta il <strong>terzo distretto conciario d'Italia</strong> e l'unico distretto industriale del Mezzogiorno nel settore moda e lusso. È un paradosso solo apparente: il problema non è la concia in sé, è che a Solofra <strong>la concia è da sola</strong>.</p>
+    <p class="solofra-lede">La domanda che torna nei numeri non è cosa manca alla concia. È cosa manca, qui, accanto.</p>
+    <div class="solofra-quote">Una città non si regge su una gamba sola. Non lo è mai stato, in nessun distretto industriale italiano del Novecento. E non lo è qui.</div>
+  </div>
+
+  <div class="narr-cards">
+    <div class="narr-card">
+      <h4 class="narr-card-title">Un distretto monosettoriale è strutturalmente fragile.</h4>
+      <p class="narr-card-body">Quando un'economia locale dipende per gran parte da un unico settore industriale, gli shock esterni — concorrenza internazionale, crisi della domanda, prezzi delle materie prime, disruption logistica — colpiscono in modo amplificato. <strong>È un meccanismo conosciuto, studiato in tutti i distretti industriali italiani</strong>, dal tessile al mobile al calzaturiero.</p>
+    </div>
+
+    <div class="narr-card">
+      <h4 class="narr-card-title">La transizione qualità e lusso è del settore, non del territorio.</h4>
+      <p class="narr-card-body">Il passaggio dalla produzione di volume al posizionamento alto di gamma è un'evoluzione interna alla concia. Riguarda come si lavora dentro le concerie, non come si diversifica l'economia di Solofra. <strong>Sono due piani diversi</strong>: la modernizzazione del settore principale e la costruzione di altre attività economiche accanto.</p>
+    </div>
+
+    <div class="narr-card">
+      <h4 class="narr-card-title">Costruire accanto, non al posto.</h4>
+      <p class="narr-card-body">Altri distretti italiani che si reggono ancora sulla concia hanno fatto crescere intorno alla loro industria principale altre attività economiche e altri settori, che oggi danno lavoro indipendentemente dalla concia stessa. <strong>Solofra non lo ha fatto nella stessa misura.</strong> La domanda non è sostituire la concia: è cosa cresce accanto.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<div class="layout">
+
+  <aside class="toc">
+    <p class="toc-hed">Le pagine</p>
+    <ol>
+      <li><a href="#numeri">I numeri del distretto</a></li>
+      <li><a href="#timeline">Timeline della crisi</a></li>
+      <li><a href="#forze">Le forze in campo</a></li>
+      <li><a href="#stallo">Perché lo stallo</a></li>
+      <li><a href="#fonti">Mappa numeri → fonti</a></li>
+      <li><a href="#metodo">Nota metodologica</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- BLOCCO 1: NUMERI -->
+    <section id="numeri" class="block">
+      <p class="block-num">01 — I numeri</p>
+      <h2 class="block-title">Il distretto conciario di Solofra.</h2>
+      <p class="block-intro">Solofra è uno dei tre distretti conciari italiani, accanto ad Arzignano (Vicenza) e Santa Croce sull'Arno (Pisa). È specializzato nella lavorazione di pelli ovine e caprine destinate alla moda e al lusso. È l'unico distretto industriale del Mezzogiorno nel settore moda e lusso. Le pelli grezze arrivano principalmente da Turchia e India, attraverso le rotte commerciali del Mediterraneo e del Mar Rosso.</p>
+
+      <h3 class="sub">Numeri attuali</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Fatturato del distretto (2023)</td><td class="val">€ 220 mln</td></tr>
+            <tr><td>Addetti al distretto (2024)</td><td class="val">~ 1.870</td></tr>
+            <tr><td>Concerie attive (nucleo settore)</td><td class="val">~ 140</td></tr>
+            <tr><td>Filiera allargata (con terzisti, fornitori, indotto)</td><td class="val">~ 380</td></tr>
+            <tr><td>Quota export sul fatturato (2023)</td><td class="val">60%</td></tr>
+            <tr><td>Cassa integrazione 2024</td><td class="val amb">forte aumento</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Peso nel contesto nazionale</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Posizionamento nei distretti conciari italiani</td><td class="val">3° dopo Arzignano e Santa Croce sull'Arno</td></tr>
+            <tr><td>Quota sulla produzione conciaria italiana totale</td><td class="val">~ 7%</td></tr>
+            <tr><td>Quota sulla produzione nazionale di pelli ovine e caprine</td><td class="val">~ 50%</td></tr>
+            <tr><td>Specializzazione</td><td>pelli ovine e caprine per moda di lusso</td></tr>
+            <tr><td>Posizione nel Mezzogiorno</td><td>unico distretto industriale del Mezzogiorno nel settore moda e lusso</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Numeri storici (stime ricostruttive)</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore</th><th>Picco anni '90</th></tr></thead>
+          <tbody>
+            <tr><td>Fatturato del distretto<span class="estimate-flag">stima</span></td><td class="val">~ € 900 mln</td></tr>
+            <tr><td>Addetti<span class="estimate-flag">stima</span></td><td class="val">~ 5.000</td></tr>
+            <tr><td>Aziende conciarie<span class="estimate-flag">stima</span></td><td class="val">~ 450</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">I numeri di picco degli anni '90 sono stime ricostruttive su fonti secondarie. Non risulta disponibile una serie storica primaria certificata da rilevazioni statistiche d'epoca con metodologia documentata. Riferimenti coerenti compaiono in ricostruzioni giornalistiche e in studi territoriali.</p>
+    </section>
+
+
+    <!-- BLOCCO 2: TIMELINE -->
+    <section id="timeline" class="block">
+      <p class="block-num">02 — Tre decenni</p>
+      <h2 class="block-title">Timeline della crisi e della transizione.</h2>
+      <p class="block-intro">Trent'anni di trasformazione strutturale, vincoli normativi, riconversioni e crisi cicliche. Il distretto ha perso volumi e addetti, si è specializzato verso l'alta gamma, ha visto riconosciuto lo stato di crisi industriale complessa, ma è rimasto fuori dal perimetro ZES Campania.</p>
+
+      <div class="tl-legend">
+        <span><span class="dot green"></span> consolidamento o crescita</span>
+        <span><span class="dot red"></span> arretramento o crisi</span>
+        <span><span class="dot amber"></span> transizione in corso</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item green"><div class="tl-year">anni '90</div><div class="tl-txt">Picco storico del distretto. Stime ricostruttive parlano di circa <strong>900 milioni di euro di fatturato, 5.000 addetti, 450 aziende</strong>. Solofra è capitale italiana della pelle ovina e caprina per la moda. <em>Stime su fonti secondarie.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">2008–2020</div><div class="tl-txt">Crisi strutturale. Concorrenza internazionale, perdita di commesse di massa, dimezzamento del fatturato. Le aziende attive scendono da circa <strong>450 a circa 150–200</strong>.</div></div>
+        <div class="tl-item red"><div class="tl-year">2017 · 22 novembre</div><div class="tl-txt">Il polo industriale Battipaglia–Solofra viene riconosciuto <strong>area di crisi industriale complessa</strong> con decreto del Ministro dello sviluppo economico. Si apre la possibilità di accedere a strumenti dedicati di reindustrializzazione.</div></div>
+        <div class="tl-item red"><div class="tl-year">2018 · 28 marzo</div><div class="tl-txt">Il Piano di Sviluppo Strategico della ZES Campania, approvato dalla Giunta regionale (DGR 175/2018) e successivamente recepito da DPCM del 12 maggio 2018, elenca per la provincia di Avellino le aree di Calaggio, Pianodardine e Valle Ufita. <strong>Solofra non rientra nel perimetro ZES.</strong></div></div>
+        <div class="tl-item amber"><div class="tl-year">2021–2023</div><div class="tl-txt">Riconversione qualità e lusso. Lenta ripresa orientata alla pelletteria di lusso: <strong>meno volumi, più valore aggiunto</strong>. Le grandi firme della moda richiedono standard ambientali più alti, spingendo il distretto verso investimenti su depurazione e tracciabilità.</div></div>
+        <div class="tl-item green"><div class="tl-year">2023</div><div class="tl-txt">Fatturato del distretto: <strong>~ 220 milioni di euro</strong>. Quota export al 60% del fatturato. Specializzazione consolidata sull'alta moda.</div></div>
+        <div class="tl-item red"><div class="tl-year">2024</div><div class="tl-txt">Nuovo allarme: <strong>forte aumento del ricorso alla cassa integrazione</strong> nel distretto. Calo della produzione conciaria nazionale segnalato da UNIC. Le tensioni nelle rotte logistiche internazionali, in particolare nel Mar Rosso, contribuiscono ad aumentare i costi di approvvigionamento delle materie prime.</div></div>
+      </div>
+    </section>
+
+
+    <!-- BLOCCO 3: LE FORZE IN CAMPO -->
+    <section id="forze" class="block">
+      <p class="block-num">03 — La mappa</p>
+      <h2 class="block-title">Le forze in campo.</h2>
+      <p class="block-intro">Una mappa descrittiva delle categorie di interesse rispetto all'idea di costruire economie alternative accanto alla concia. Sono valutazioni sugli interessi strutturali delle categorie professionali e sociali coinvolte, non giudizi sulle persone.</p>
+
+      <!-- FAVOREVOLI -->
+      <div class="cao-group o">
+        <div class="cao-group-hed">
+          <span class="dot green"></span>
+          <h3>Chi guadagnerebbe dal muoversi</h3>
+          <span class="cao-count">4 categorie</span>
+        </div>
+        <div class="cao-cards">
+
+          <div class="cao-card o">
+            <h4 class="cao-card-title">Giovani, professionisti emigrati, lavoratori del digitale</h4>
+            <p class="cao-card-body">Lo sviluppo di altri settori produttivi è la condizione perché chi è andato via per lavoro o studio possa tornare, e perché chi è rimasto possa restare senza ripiegare. <strong>È la categoria più direttamente beneficiaria, ma anche la più dispersa e meno organizzata politicamente.</strong></p>
+          </div>
+
+          <div class="cao-card o">
+            <h4 class="cao-card-title">Commercianti e attività di vicinato</h4>
+            <p class="cao-card-body">Un'economia plurale significa flussi diversi, residenti più stabili, clientela più variegata. Beneficiari indiretti del freno allo spopolamento: <strong>ogni residente in più sostiene il commercio locale.</strong></p>
+          </div>
+
+          <div class="cao-card o">
+            <h4 class="cao-card-title">Cittadinanza attenta all'ambiente</h4>
+            <p class="cao-card-body">Meno dipendenza da un'unica filiera industriale a forte impatto significa meno pressione su acque, depuratori, qualità dell'aria. <strong>Un'economia plurale diluisce il carico ambientale storico del territorio.</strong></p>
+          </div>
+
+          <div class="cao-card o">
+            <h4 class="cao-card-title">Cittadinanza non legata al distretto</h4>
+            <p class="cao-card-body">Maggioranza numerica del paese: famiglie, lavoratori di altri settori, pensionati, studenti. <strong>Interessate alla qualità della vita, ai servizi, alla vivibilità.</strong> Favorevoli a un'economia diversificata.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CONDIZIONATI -->
+      <div class="cao-group a">
+        <div class="cao-group-hed">
+          <span class="dot amber"></span>
+          <h3>Chi sta in mezzo</h3>
+          <span class="cao-count">5 categorie</span>
+        </div>
+        <div class="cao-cards">
+
+          <div class="cao-card a">
+            <h4 class="cao-card-title">Imprenditori conciari modernizzatori</h4>
+            <p class="cao-card-body">Operatori del settore orientati alla qualità, agli standard ambientali alti e all'aggiornamento tecnologico per servire le grandi firme della moda. <strong>Aperti a un'economia plurale, ma la loro priorità immediata è salvare e rafforzare la concia</strong>, non costruire l'alternativa.</p>
+          </div>
+
+          <div class="cao-card a">
+            <h4 class="cao-card-title">Lavoratori conciari diretti</h4>
+            <p class="cao-card-body">Circa 1.870 addetti al distretto. La diversificazione viene letta come potenziale rischio sul reddito attuale se mal comunicata, oppure come <strong>rete di sicurezza se la concia regge in parallelo</strong>.</p>
+          </div>
+
+          <div class="cao-card a">
+            <h4 class="cao-card-title">Indotto, terzisti, fornitori</h4>
+            <p class="cao-card-body">Aziende che operano nella filiera conciaria allargata. <strong>Strutturalmente protettive del committente principale</strong>, ma più libere nel medio termine di farsi clienti diversi se nuove attività economiche generano commesse compatibili.</p>
+          </div>
+
+          <div class="cao-card a">
+            <h4 class="cao-card-title">Sindacati</h4>
+            <p class="cao-card-body">In linea di principio favorevoli a un'economia plurale, in pratica concentrati sulle vertenze conciarie aperte e sulle crisi aziendali. <strong>La diversificazione è agenda di medio termine; le emergenze occupazionali del settore sono l'agenda di oggi.</strong></p>
+          </div>
+
+          <div class="cao-card a">
+            <h4 class="cao-card-title">Istituzioni territoriali</h4>
+            <p class="cao-card-body">Camera di Commercio, Confindustria, Regione. Dichiaratamente favorevoli alla diversificazione e ai fondi a sostegno (PNRR, Transizione 5.0, FSE+). <strong>Scarsa attuazione concreta a livello locale</strong>: gli strumenti esistono ma vengono intercettati a fatica.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- STRUTTURALMENTE OPPOSTI -->
+      <div class="cao-group c">
+        <div class="cao-group-hed">
+          <span class="dot red"></span>
+          <h3>Chi guadagna dal restare fermi</h3>
+          <span class="cao-count">2 categorie</span>
+        </div>
+        <div class="cao-cards">
+
+          <div class="cao-card c">
+            <h4 class="cao-card-title">Imprenditori conciari conservatori</h4>
+            <p class="cao-card-body">Operatori del settore con asset privati specifici (impianti dedicati, posizioni storiche consolidate, reti di rapporti) il cui valore dipende dal mantenimento dello status quo del distretto. <strong>Strutturalmente refrattari a riforme che ridurrebbero i loro vantaggi competitivi accumulati nel tempo.</strong></p>
+          </div>
+
+          <div class="cao-card c">
+            <h4 class="cao-card-title">Componente conciaria della rappresentanza politica</h4>
+            <p class="cao-card-body">Le liste politiche locali hanno avuto storicamente componente conciaria significativa. Il loro peso politico si nutre della centralità del settore: <strong>economie alternative accanto riducono la loro leva di rappresentanza unica</strong> e quindi la loro influenza decisionale.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="cao-disclaim">Le posizioni descritte sono valutazioni strategiche su categorie di interesse, non giudizi su singole persone. Singoli individui possono trovarsi in posizioni diverse da quelle prevalenti della propria categoria, in base a contesto, esperienza personale, maturazione del dibattito.</p>
+
+    </section>
+
+
+    <!-- BLOCCO 4: PERCHE LO STALLO -->
+    <section id="stallo" class="block">
+      <p class="block-num">04 — Le ragioni</p>
+      <h2 class="block-title">Perché la diversificazione è ferma.</h2>
+      <p class="block-intro">Sei ragioni per cui costruire qualcosa accanto alla concia a Solofra è stato finora difficile. Sono ragioni strutturali, descritte nelle loro componenti, dal piano della rappresentanza politica a quello del linguaggio.</p>
+
+      <div class="reasons-list">
+
+        <div class="reason-item">
+          <div class="reason-num-large">01</div>
+          <div>
+            <h3 class="reason-title-large">Sovrapposizione tra rappresentanza politica e settore.</h3>
+            <p class="reason-text-large">La rappresentanza politica locale ha riflesso storicamente il peso del distretto, con presenze conciarie significative nelle diverse liste che si sono alternate. <strong>Questo intreccio ha reso più complicato sostenere proposte di lungo periodo orientate ad altri settori.</strong></p>
+          </div>
+        </div>
+
+        <div class="reason-item">
+          <div class="reason-num-large">02</div>
+          <div>
+            <h3 class="reason-title-large">Asimmetria di voce.</h3>
+            <p class="reason-text-large">Le posizioni a favore dello status quo sono organizzate e parlano una sola voce. Le categorie a favore di un'economia plurale sono diffuse — giovani, commercianti, ambientalisti, residenti — non politicamente coordinate, e <strong>dunque meno presenti nel dibattito pubblico locale</strong>.</p>
+          </div>
+        </div>
+
+        <div class="reason-item">
+          <div class="reason-num-large">03</div>
+          <div>
+            <h3 class="reason-title-large">Esclusione dalla ZES nel 2018.</h3>
+            <p class="reason-text-large">Senza Zona Economica Speciale, <strong>Solofra non ha potuto contare sugli strumenti fiscali più efficaci per attrarre investimenti in nuovi settori</strong>.</p>
+          </div>
+        </div>
+
+        <div class="reason-item">
+          <div class="reason-num-large">04</div>
+          <div>
+            <h3 class="reason-title-large">Capacità progettuale comunale debole.</h3>
+            <p class="reason-text-large">Fondi PNRR e altri strumenti di finanziamento europeo e nazionale richiedono capacità tecnica di progettazione e rendicontazione. A Solofra, come in molti comuni di pari dimensione, questa capacità è stata spesso insufficiente: <strong>le risorse disponibili non sono state intercettate nella misura possibile</strong>.</p>
+          </div>
+        </div>
+
+        <div class="reason-item">
+          <div class="reason-num-large">05</div>
+          <div>
+            <h3 class="reason-title-large">Mancanza storica di leadership esterna al settore.</h3>
+            <p class="reason-text-large">Solo chi non dipende strutturalmente dalla concia può proporre la diversificazione senza essere accusato di attaccarla. <strong>Finora, a livello politico locale, non è esistita questa figura con peso reale.</strong></p>
+          </div>
+        </div>
+
+        <div class="reason-item">
+          <div class="reason-num-large">06</div>
+          <div>
+            <h3 class="reason-title-large">Vocabolario che divide.</h3>
+            <p class="reason-text-large">La parola "diversificazione" viene letta da molti lavoratori del settore come "abbandono della concia". <strong>Senza un linguaggio che racconti le economie alternative come accanto e non al posto, ogni proposta scivola sul versante percepito come ostile.</strong></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- MAPPA FONTI -->
+    <section id="fonti" class="block">
+      <p class="block-num">Fonti</p>
+      <h2 class="block-title">Mappa numeri → fonti</h2>
+      <p class="block-intro">Ogni dato di questa pagina è tratto da un documento pubblico. Qui la lista completa delle fonti consultate, con link verificabili.</p>
+
+      <div class="fonti">
+
+        <h4>Numeri attuali del distretto</h4>
+        <ul>
+          <li><strong>Fatturato 2023: ~ € 220 milioni</strong> <span class="src-flag verified">verificato</span> — Pambianco News, evento SoLeather giugno 2023, dati distrettuali UNIC. <a href="https://www.pambianconews.com/2023/06/12/soleather-racconta-di-solofra-distretto-conciario-da-220-mln-377098/" target="_blank">pambianconews.com</a></li>
+          <li><strong>Addetti distretto 2024: ~ 1.870</strong> <span class="src-flag verified">verificato</span> — UNIC – Bilancio di Sostenibilità Concerie Italiane, sezione Risorse Umane (1.867 addetti Campania, prevalentemente Solofra). <a href="https://sustainability.unic.it/service/risorse-umane/" target="_blank">sustainability.unic.it</a></li>
+          <li><strong>Concerie attive: ~ 140 (~ 380 con indotto)</strong> <span class="src-flag verified">verificato</span> — UNIC, dati distrettuali 2023–2024, integrati con Sviluppo Campania (Rapporto Filiera T.A.C. e Orafo, 2021). <a href="https://www.sviluppocampania.it/wp-content/uploads/2021/10/FASHION-DESIGN.pdf" target="_blank">sviluppocampania.it</a></li>
+          <li><strong>Quota export: 60% sul fatturato (2023)</strong> <span class="src-flag verified">verificato</span> — Pambianco News, dati distrettuali su rilevazioni UNIC. <a href="https://www.pambianconews.com/2023/06/12/soleather-racconta-di-solofra-distretto-conciario-da-220-mln-377098/" target="_blank">pambianconews.com</a></li>
+          <li><strong>Posizionamento: terzo distretto conciario italiano</strong> <span class="src-flag verified">verificato</span> — Camera di Commercio Irpinia Sannio, documento istituzionale 2024 sul territorio irpino, e UNIC – Concerie Italiane. <a href="https://sni.unioncamere.it/sites/default/files/approfondimento/documenti/CONOSCERE%20IL%20PROPRIO%20TERRITORIO%20ED%20ORIENTARSI%20PER%20IL%20FUTURO%20-%20IRPINIA.pdf" target="_blank">sni.unioncamere.it</a></li>
+          <li><strong>Specializzazione: pelli ovine e caprine per moda di lusso</strong> <span class="src-flag verified">verificato</span> — Sviluppo Campania (Rapporto Filiera T.A.C. e Orafo, 2021); Symbola, schede UNIC; documenti UNIC sui distretti italiani. <a href="https://symbola.net/organizzazione/unic-concerie-italiane/" target="_blank">symbola.net</a></li>
+          <li><strong>Cassa integrazione 2024: forte aumento del ricorso</strong> <span class="src-flag verified">verificato</span> — Formulazione qualitativa basata su dichiarazioni UNIC sul calo della produzione 2023–2024 e sulla congiuntura settoriale. Dati statistici puntuali sulla CIG distrettuale richiedono accesso all'Osservatorio INPS territoriale. <a href="https://sustainability.unic.it/" target="_blank">sustainability.unic.it</a></li>
+        </ul>
+
+        <h4>Atti normativi e amministrativi</h4>
+        <ul>
+          <li><strong>Riconoscimento area di crisi industriale complessa (2017)</strong> <span class="src-flag verified">verificato</span> — Decreto del Ministro dello sviluppo economico del 22 novembre 2017. Il polo Battipaglia–Solofra è uno dei tre poli campani riconosciuti, comprendente i Sistemi Locali del Lavoro di Solofra e Battipaglia. <a href="https://www.mimit.gov.it/it/impresa/imprese-in-difficolta/crisi-industriale-complessa" target="_blank">mimit.gov.it</a></li>
+          <li><strong>Esclusione di Solofra dal perimetro ZES Campania (2018)</strong> <span class="src-flag verified">verificato</span> — Piano di Sviluppo Strategico ZES Campania approvato con DGR n. 175 del 28 marzo 2018, successivamente recepito da DPCM del 12 maggio 2018. Per la provincia di Avellino il perimetro include Calaggio, Pianodardine e Valle Ufita. <a href="https://lavoro.regione.campania.it/index.php/per-i-datori-di-lavoro/lavoro/finanziamenti-ed-incentivi/incentivi-alle-imprese/pacchetti-localizzativi/238-la-zes-in-campania" target="_blank">lavoro.regione.campania.it</a></li>
+          <li><strong>Comunicato Regione Campania 28 marzo 2018</strong> <span class="src-flag verified">verificato</span> — Approvazione Piano di Sviluppo Strategico ZES, elenco delle aree incluse per provincia. <a href="https://www.regione.campania.it/regione/it/news/comunicati-2018-o5yr/28-03-2018-comunicato-n-95-zona-economica-speciale-zes-approvato-dalla-giunta-il-piano-di-sviluppo-strategico-i1v3" target="_blank">regione.campania.it</a></li>
+        </ul>
+
+        <h4>Numeri storici (stime ricostruttive)</h4>
+        <ul>
+          <li><strong>Fatturato picco anni '90: ~ € 900 milioni</strong> <span class="src-flag estimate">stima storica</span> — Stima ricostruttiva su fonti secondarie. Non disponibile serie storica primaria certificata da rilevazioni statistiche d'epoca con metodologia documentata. <a href="https://www.orticalab.it/concia-solofra-pelle-lavoro-economia-irpinia-campania-aree-interne" target="_blank">orticalab.it</a></li>
+          <li><strong>Addetti picco anni '90: ~ 5.000</strong> <span class="src-flag estimate">stima storica</span> — Stima ricostruttiva su fonti secondarie. La cifra include presumibilmente lavoro stagionale e indotto diretto. <a href="https://www.orticalab.it/concia-solofra-pelle-lavoro-economia-irpinia-campania-aree-interne" target="_blank">orticalab.it</a></li>
+          <li><strong>Aziende picco anni '90: ~ 450</strong> <span class="src-flag estimate">stima storica</span> — Stima ricostruttiva su fonti secondarie. Coerente con il rapporto delle ~ 140 concerie pure attive oggi. <a href="https://www.orticalab.it/concia-solofra-pelle-lavoro-economia-irpinia-campania-aree-interne" target="_blank">orticalab.it</a></li>
+        </ul>
+
+        <h4>Fonti istituzionali e settoriali</h4>
+        <ul>
+          <li><strong>UNIC – Concerie Italiane.</strong> Bilancio di Sostenibilità dell'industria conciaria italiana. <a href="https://sustainability.unic.it/" target="_blank">sustainability.unic.it</a></li>
+          <li><strong>UNIC – Concerie Italiane.</strong> Sito istituzionale e notizie di settore. <a href="https://www.unic.it/notizie" target="_blank">unic.it</a></li>
+          <li><strong>MIMIT – Aree di crisi industriale complessa.</strong> Pagina ufficiale con elenco poli campani e elenco Comuni. <a href="https://www.mimit.gov.it/it/impresa/imprese-in-difficolta/crisi-industriale-complessa" target="_blank">mimit.gov.it</a></li>
+          <li><strong>Camera di Commercio Irpinia Sannio.</strong> Documento istituzionale 2024 sul territorio irpino. <a href="https://sni.unioncamere.it/sites/default/files/approfondimento/documenti/CONOSCERE%20IL%20PROPRIO%20TERRITORIO%20ED%20ORIENTARSI%20PER%20IL%20FUTURO%20-%20IRPINIA.pdf" target="_blank">sni.unioncamere.it</a></li>
+          <li><strong>Sviluppo Campania – Rapporto Filiera T.A.C. e Orafo (2021).</strong> Ricostruzione della filiera conciaria campana e dei suoi poli. <a href="https://www.sviluppocampania.it/wp-content/uploads/2021/10/FASHION-DESIGN.pdf" target="_blank">sviluppocampania.it</a></li>
+          <li><strong>Sviluppo Campania – Brochure ZES Campania (2021).</strong> Perimetro, aree incluse e benefici della ZES. <a href="https://www.sviluppocampania.it/wp-content/uploads/2021/02/Brochure-ZES.pdf" target="_blank">sviluppocampania.it</a></li>
+        </ul>
+
+        <h4>Fonti giornalistiche e di approfondimento</h4>
+        <ul>
+          <li><strong>Pambianco News – 12 giugno 2023.</strong> SoLeather racconta di Solofra: distretto conciario da 220 milioni. <a href="https://www.pambianconews.com/2023/06/12/soleather-racconta-di-solofra-distretto-conciario-da-220-mln-377098/" target="_blank">pambianconews.com</a></li>
+          <li><strong>Orticalab.</strong> Ricostruzione storica del distretto conciario di Solofra. <a href="https://www.orticalab.it/concia-solofra-pelle-lavoro-economia-irpinia-campania-aree-interne" target="_blank">orticalab.it</a></li>
+          <li><strong>Orticalab.</strong> Analisi UNIC sull'impatto della crisi 2020 sui tre distretti italiani. <a href="https://www.orticalab.it/Solofra-e-un-distretto-conciario-di" target="_blank">orticalab.it</a></li>
+          <li><strong>Symbola – UNIC – Concerie Italiane.</strong> Inquadramento del distretto di Solofra tra gli ecosistemi conciari italiani. <a href="https://symbola.net/organizzazione/unic-concerie-italiane/" target="_blank">symbola.net</a></li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- NOTA METODOLOGICA -->
+    <section id="metodo" class="block" style="border-bottom:none;">
+      <p class="block-num">Metodo</p>
+      <h2 class="block-title">Come è stata costruita questa pagina</h2>
+
+      <p>Tutti i dati pubblicati in questa sezione sono tratti da documenti pubblici: rapporti di settore UNIC, atti ministeriali MIMIT, atti regionali della Campania, documenti della Camera di Commercio Irpinia Sannio, rapporti di Sviluppo Campania, fonti giornalistiche verificabili tramite i link riportati. Non sono stati usati documenti riservati o informazioni non disponibili al pubblico.</p>
+
+      <p>La pagina distingue con attenzione tra <strong>dato verificato</strong> (riportato in fonte pubblica con anno di riferimento) e <strong>stima ricostruttiva</strong> (numero di periodo storico per cui non risulta disponibile una serie statistica primaria certificata, segnalato esplicitamente). I numeri di picco degli anni '90 sono trattati come stime, in coerenza con la disponibilità documentale al momento della consultazione.</p>
+
+      <p>La sezione <strong>"Le forze in campo"</strong> usa uno schema visivo unificato per categorie: <strong>verde</strong> per le categorie favorevoli alla diversificazione, <strong>ambra</strong> per le categorie ambivalenti o condizionate, <strong>rosso</strong> per le categorie strutturalmente legate al mantenimento dello status quo. Le posizioni descritte sono valutazioni su categorie di interesse, non giudizi su singole persone.</p>
+
+      <p>La pagina non contiene proposte politiche. L'obiettivo è raccogliere in un luogo unico i numeri, le date e le fonti che riguardano lo stato del distretto conciario di Solofra, consentendo a chiunque di consultarli e verificarli autonomamente.</p>
+
+      <div class="ai-notice">
+        <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+        <p class="ai-notice-text">Nella stesura dei testi è stato utilizzato un modello di intelligenza artificiale come strumento di lavoro per l'elaborazione di documenti pubblici e la loro strutturazione in forma leggibile. Ogni numero e ogni affermazione sono stati verificati rispetto alla fonte originaria. Nonostante questa verifica, è possibile che la pagina contenga errori, imprecisioni, o omissioni. <strong>Se individui un errore, una fonte non aggiornata, o un'informazione imprecisa, segnalamelo</strong>: la pagina verrà aggiornata tempestivamente. L'obiettivo è la massima accuratezza possibile su dati pubblici.</p>
+      </div>
+
+      <div class="manifest">
+        <p class="manifest-hed">Il metodo</p>
+        <p class="manifest-text">I dati sono pubblici. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le posizioni descritte sono di categoria, non di persona. Le opinioni sono separate dai fatti.</p>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Tutti i dati sono pubblici e le fonti sono citate. I numeri sono mostrati per intero e verificabili da chiunque.
+    </div>
+    <div class="footer-r">Ultimo aggiornamento: maggio 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+</body>
+</html>
