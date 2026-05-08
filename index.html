@@ -6,7 +6,7 @@
 <title>Come sta Solofra — Dati pubblici, resi leggibili</title>
 <meta name="description" content="Dati pubblici su Solofra raccolti, analizzati e visualizzati. A cura di Raffaele De Piano.">
 <meta property="og:title" content="Come sta Solofra">
-<meta property="og:description" content="Dati pubblici su Solofra, resi leggibili. Popolazione, bilancio, mobilità, concia, calcoli, deduzioni, fonti.">
+<meta property="og:description" content="Dati pubblici su Solofra, resi leggibili. Popolazione, bilancio, mobilità, concia, bambini e scuole.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -42,8 +42,8 @@
   .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
   .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
   .site-title span { color: var(--accent); }
-  nav { display: flex; gap: 24px; }
-  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; }
+  nav { display: flex; gap: 24px; overflow-x: auto; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
   nav a:hover { color: var(--ink); }
   nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
 
@@ -79,6 +79,8 @@
   .sez-stat { display: flex; flex-direction: column; gap: 2px; }
   .sez-stat-v { font-family: var(--serif); font-size: 22px; color: var(--ink); line-height: 1; }
   .sez-stat-v.neg { color: var(--accent); }
+  .sez-stat-v.ok  { color: var(--green); }
+  .sez-stat-v.amb { color: var(--amber); }
   .sez-stat-l { font-size: 11px; color: var(--ink-3); letter-spacing: 0.03em; }
   .sez-cta { margin-top: 20px; font-size: 13px; color: var(--ink-2); display: flex; align-items: center; gap: 6px; }
   .sez-cta::after { content: '→'; transition: transform .2s; display: inline-block; }
@@ -120,7 +122,8 @@
       <a href="demografia.html">Demografia</a>
       <a href="bilancio.html">Bilancio</a>
       <a href="mobilita.html">Mobilità</a>
-    </a>
+      <a href="concia.html">Concia</a>
+      <a href="scuole.html">Bambini e scuole</a>
     </nav>
   </div>
 </header>
@@ -128,7 +131,7 @@
 <div class="hero">
   <p class="hero-eyebrow">Solofra (AV) — aggiornato maggio 2026</p>
   <h1 class="hero-title">Dati pubblici,<br><em>resi leggibili.</em></h1>
-  <p class="hero-sub">Una raccolta di dati ufficiali su Solofra: popolazione, bilancio, mobilità, concia. Con i calcoli mostrati per intero, le fonti sempre citate e le deduzioni separate dai fatti.</p>
+  <p class="hero-sub">Una raccolta di dati ufficiali su Solofra: popolazione, bilancio, mobilità, concia, bambini e scuole. Con i calcoli mostrati per intero, le fonti sempre citate e le deduzioni separate dai fatti.</p>
   <div class="hero-meta">
     A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
     <span>·</span>
@@ -141,7 +144,6 @@
 <div class="page-wrap">
 <div class="section">
 
-  <!-- AI notice prominente -->
   <div class="ai-notice">
     <div class="ai-notice-icon">!</div>
     <div class="ai-notice-text">
@@ -158,7 +160,7 @@
     <a href="demografia.html" class="sez-card">
       <div class="sez-num">01 — Demografia</div>
       <h3 class="sez-card-title">Quanti siamo — e cosa sta cambiando</h3>
-      <p class="sez-card-sub">Solofra perde residenti da dieci anni. Chi parte, chi resta, e cosa significa per il commercio, i servizi, il bilancio del Comune.[cite: 4]</p>
+      <p class="sez-card-sub">Solofra perde residenti da dieci anni. Chi parte, chi resta, e cosa significa per il commercio, i servizi, il bilancio del Comune.</p>
       <div class="sez-stats">
         <div class="sez-stat">
           <span class="sez-stat-v neg">−600</span>
@@ -175,7 +177,7 @@
     <a href="bilancio.html" class="sez-card">
       <div class="sez-num">02 — Bilancio comunale</div>
       <h3 class="sez-card-title">Il bilancio di Solofra in chiaro</h3>
-      <p class="sez-card-sub">31 milioni sulla carta, 21 di risorse effettive. Da dove vengono, dove vanno, cosa pesa sul futuro. Entrate, uscite, debiti — con i calcoli per intero dai documenti ufficiali.[cite: 2]</p>
+      <p class="sez-card-sub">31 milioni sulla carta, 21 di risorse effettive. Da dove vengono, dove vanno, cosa pesa sul futuro. Entrate, uscite, debiti — con i calcoli per intero dai documenti ufficiali.</p>
       <div class="sez-stats">
         <div class="sez-stat">
           <span class="sez-stat-v">€503</span>
@@ -192,7 +194,7 @@
     <a href="mobilita.html" class="sez-card">
       <div class="sez-num">03 — Mobilità e collegamenti</div>
       <h3 class="sez-card-title">Come si arriva a Solofra — e come si parte</h3>
-      <p class="sez-card-sub">La galleria Monte Pergola, il raccordo Avellino-Salerno, la terza corsia, la ferrovia. Quattro cantieri, storie di tempo fermo.[cite: 1]</p>
+      <p class="sez-card-sub">La galleria Monte Pergola, il raccordo Avellino-Salerno, la terza corsia, la ferrovia. Quattro cantieri, storie di tempo fermo.</p>
       <div class="sez-stats">
         <div class="sez-stat">
           <span class="sez-stat-v neg">−4 anni</span>
@@ -209,7 +211,7 @@
     <a href="concia.html" class="sez-card">
       <div class="sez-num">04 — Concia e distretto</div>
       <h3 class="sez-card-title">Solofra è la città della pelle</h3>
-      <p class="sez-card-sub">Il distretto conciario tra passato e presente. Tre decenni di numeri, la transizione verso il lusso e la sfida della diversificazione economica.[cite: 3]</p>
+      <p class="sez-card-sub">Il distretto conciario tra passato e presente. Tre decenni di numeri, la transizione verso il lusso e la sfida della diversificazione economica.</p>
       <div class="sez-stats">
         <div class="sez-stat">
           <span class="sez-stat-v neg">€220 mln</span>
@@ -218,6 +220,23 @@
         <div class="sez-stat">
           <span class="sez-stat-v">~1.870</span>
           <span class="sez-stat-l">addetti al distretto</span>
+        </div>
+      </div>
+      <div class="sez-cta">Leggi la sezione</div>
+    </a>
+
+    <a href="scuole.html" class="sez-card">
+      <div class="sez-num">05 — Bambini e scuole</div>
+      <h3 class="sez-card-title">Chi cresce a Solofra</h3>
+      <p class="sez-card-sub">Quanti bambini ci sono, come sono distribuiti nelle scuole, e cosa ci dicono i numeri sul futuro prossimo. I plessi, il trend, la proiezione.</p>
+      <div class="sez-stats">
+        <div class="sez-stat">
+          <span class="sez-stat-v neg">1.540</span>
+          <span class="sez-stat-l">under 14 (2025)</span>
+        </div>
+        <div class="sez-stat">
+          <span class="sez-stat-v amb">3 su 5</span>
+          <span class="sez-stat-l">plessi sotto soglia</span>
         </div>
       </div>
       <div class="sez-cta">Leggi la sezione</div>
