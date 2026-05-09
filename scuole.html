@@ -120,6 +120,21 @@
   .cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
   .cao-card-body strong { font-weight: 500; color: var(--ink); }
 
+  /* RISORSE CARDS - 2 colonne fisse */
+  .risorse-cards { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 8px; }
+  @media (min-width: 720px) { .risorse-cards { grid-template-columns: repeat(2, 1fr); } }
+  .risorse-card { border-radius: 8px; padding: 24px 22px; border: 1px solid var(--border); }
+  .risorse-card.o { background: var(--green-bg); border-color: rgba(42,107,60,0.25); border-top: 3px solid var(--green); }
+  .risorse-card.a { background: var(--amber-bg); border-color: rgba(138,90,10,0.25); border-top: 3px solid var(--amber); }
+  .risorse-card-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+  .risorse-card.o .risorse-card-label { color: var(--green); }
+  .risorse-card.a .risorse-card-label { color: var(--amber); }
+  .risorse-card-title { font-family: var(--serif); font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--ink); }
+  .risorse-card-body { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .risorse-card-body strong { font-weight: 500; color: var(--ink); }
+  .risorse-sintesi { margin-top: 20px; padding: 16px 20px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .risorse-sintesi strong { color: var(--ink); font-weight: 500; }
+
   .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
   @media (min-width: 960px) { .layout { grid-template-columns: 220px 1fr; gap: 64px; } }
 
@@ -167,13 +182,6 @@
   .proiezione-box p { font-size: 14px; color: var(--ink-2); line-height: 1.65; margin-bottom: 10px; }
   .proiezione-box p:last-child { margin-bottom: 0; }
   .proiezione-box strong { color: var(--ink); font-weight: 500; }
-
-  .tl-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--ink-3); margin: 12px 0 20px; padding: 12px 16px; background: var(--paper-2); border-radius: 6px; }
-  .tl-legend span { display: inline-flex; align-items: center; gap: 6px; }
-  .tl-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-  .tl-legend .dot.red { background: var(--accent); }
-  .tl-legend .dot.green { background: var(--green); }
-  .tl-legend .dot.amber { background: var(--amber); }
 
   .fonti { font-size: 13px; }
   .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
@@ -240,11 +248,9 @@
 
 <hr class="div">
 
-<!-- INSIGHT TABLE -->
 <div class="insights-wrap">
   <p class="insights-hed">I numeri, in sintesi</p>
   <p class="insights-sub">Lo stato della popolazione scolastica di Solofra. Il confronto 2020–2025 sui bambini under 14, e i dati scolastici dell'anno in corso per le scuole elementari e medie.</p>
-
   <div class="ins-tbl-wrap">
     <table class="tbl-insights">
       <thead>
@@ -259,53 +265,29 @@
       <tbody>
         <tr>
           <td class="col-ind">Bambini under 14</td>
-          <td class="col-num">
-            <span class="big neu">1.728</span>
-            <span class="sub">residenti</span>
-          </td>
-          <td class="col-num">
-            <span class="big neg">1.540</span>
-            <span class="sub">2025</span>
-          </td>
+          <td class="col-num"><span class="big neu">1.728</span><span class="sub">residenti</span></td>
+          <td class="col-num"><span class="big neg">1.540</span><span class="sub">2025</span></td>
           <td class="col-var">−188</td>
           <td class="col-src">ISTAT / tuttitalia.it</td>
         </tr>
         <tr>
           <td class="col-ind">Alunni per classe — primaria</td>
-          <td class="col-num">
-            <span class="big neu">—</span>
-            <span class="sub">non disponibile</span>
-          </td>
-          <td class="col-num">
-            <span class="big amb">14,7</span>
-            <span class="sub">media 5 plessi · a.s. 2025/26</span>
-          </td>
+          <td class="col-num"><span class="big neu">—</span><span class="sub">non disponibile</span></td>
+          <td class="col-num"><span class="big amb">14,7</span><span class="sub">media 5 plessi · a.s. 2025/26</span></td>
           <td class="col-var amb">sotto soglia</td>
           <td class="col-src">MIUR Scuola in Chiaro</td>
         </tr>
         <tr>
           <td class="col-ind">Alunni per classe — medie</td>
-          <td class="col-num">
-            <span class="big neu">—</span>
-            <span class="sub">non disponibile</span>
-          </td>
-          <td class="col-num">
-            <span class="big ok">17,0</span>
-            <span class="sub">a.s. 2025/26</span>
-          </td>
+          <td class="col-num"><span class="big neu">—</span><span class="sub">non disponibile</span></td>
+          <td class="col-num"><span class="big ok">17,0</span><span class="sub">a.s. 2025/26</span></td>
           <td class="col-var ok flat">sopra soglia</td>
           <td class="col-src">MIUR Scuola in Chiaro</td>
         </tr>
         <tr>
           <td class="col-ind">Plessi primaria sotto soglia</td>
-          <td class="col-num">
-            <span class="big neu">—</span>
-            <span class="sub">non disponibile</span>
-          </td>
-          <td class="col-num">
-            <span class="big neg">3 su 5</span>
-            <span class="sub">a.s. 2025/26</span>
-          </td>
+          <td class="col-num"><span class="big neu">—</span><span class="sub">non disponibile</span></td>
+          <td class="col-num"><span class="big neg">3 su 5</span><span class="sub">a.s. 2025/26</span></td>
           <td class="col-var">—</td>
           <td class="col-src">MIUR Scuola in Chiaro</td>
         </tr>
@@ -314,7 +296,6 @@
   </div>
 </div>
 
-<!-- COSA SIGNIFICA -->
 <div id="solofra" class="solofra-wrap">
   <div class="solofra-intro">
     <h2 class="solofra-hed">Cosa significa per Solofra.</h2>
@@ -322,7 +303,6 @@
     <p class="solofra-lede">Ma c'è un altro modo di leggere questo dato. Le stesse risorse, per meno bambini, <strong>possono tradursi in più qualità per ognuno di loro</strong>. La domanda è se questa opportunità si stia cogliendo, o se si stia semplicemente gestendo il calo senza una strategia.</p>
     <div class="solofra-quote">"Se il numero di bambini scende ma il budget resta lo stesso, ogni bambino vale di più — lo stiamo usando bene?"</div>
   </div>
-
   <div class="narr-cards">
     <div class="narr-card">
       <h4 class="narr-card-title">Il calo è strutturale, non congiunturale.</h4>
@@ -349,6 +329,7 @@
       <li><a href="#numeri">I numeri demografici</a></li>
       <li><a href="#plessi">I plessi scolastici</a></li>
       <li><a href="#proiezione">La proiezione sulle scuole medie</a></li>
+      <li><a href="#risorse">La questione delle risorse</a></li>
       <li><a href="#lettura">Criticità, attenzione, opportunità</a></li>
       <li><a href="#fonti">Mappa numeri → fonti</a></li>
       <li><a href="#metodo">Nota metodologica</a></li>
@@ -357,12 +338,10 @@
 
   <main>
 
-    <!-- BLOCCO 1: NUMERI DEMOGRAFICI -->
     <section id="numeri" class="block">
       <p class="block-num">01 — I numeri</p>
       <h2 class="block-title">La popolazione scolastica di Solofra.</h2>
       <p class="block-intro">I bambini under 14 residenti a Solofra negli ultimi anni, con il dettaglio per fascia d'età. Il calo è continuo e riguarda soprattutto le fasce più piccole.</p>
-
       <h3 class="sub">Under 14 — confronto per fascia d'età</h3>
       <div class="tbl-wrap">
         <table class="data">
@@ -375,7 +354,6 @@
           </tbody>
         </table>
       </div>
-
       <h3 class="sub">Trend 2020–2025</h3>
       <div class="tbl-wrap">
         <table class="data">
@@ -391,12 +369,10 @@
       <p class="note">L'indice di vecchiaia misura quanti over 65 ci sono ogni 100 under 14. Il valore 157,5 di Solofra nel 2025 è ancora leggermente migliore della media campana (161,2), ma il trend di avvicinamento è rapido: +32,7 punti in 5 anni.</p>
     </section>
 
-    <!-- BLOCCO 2: PLESSI -->
     <section id="plessi" class="block">
       <p class="block-num">02 — Le scuole</p>
       <h2 class="block-title">I plessi dell'IC Francesco Guarini.</h2>
       <p class="block-intro">L'unico istituto comprensivo statale di Solofra. Codice AVIC88400A. Anno scolastico 2025/2026. Fonte: MIUR — Scuola in Chiaro.</p>
-
       <div class="tbl-wrap">
         <table class="data">
           <thead><tr><th>Plesso</th><th>Ordine</th><th>Alunni</th><th>Classi</th><th>Media</th><th>Stato</th></tr></thead>
@@ -404,51 +380,33 @@
             <tr class="group-hdr"><td colspan="6">Scuola secondaria di I grado</td></tr>
             <tr>
               <td><strong>Secondaria</strong> · Via Starza<br><small style="color:var(--ink-3);font-size:12px;">Indirizzi: ordinario e musicale</small></td>
-              <td>Medie</td>
-              <td class="val">340</td>
-              <td>20</td>
-              <td class="val ok">17,0</td>
+              <td>Medie</td><td class="val">340</td><td>20</td><td class="val ok">17,0</td>
               <td><span class="badge ok">sopra soglia</span></td>
             </tr>
             <tr class="group-hdr"><td colspan="6">Scuola primaria</td></tr>
             <tr>
               <td><strong>Primaria Fratta</strong> · Via della Libertà, 153</td>
-              <td>Elementare</td>
-              <td class="val">138</td>
-              <td>9</td>
-              <td class="val ok">15,3</td>
+              <td>Elementare</td><td class="val">138</td><td>9</td><td class="val ok">15,3</td>
               <td><span class="badge ok">sopra soglia</span></td>
             </tr>
             <tr>
               <td><strong>Primaria Casa Papa</strong> · Via Casa Papa, 13</td>
-              <td>Elementare</td>
-              <td class="val">133</td>
-              <td>8</td>
-              <td class="val ok">16,6</td>
+              <td>Elementare</td><td class="val">133</td><td>8</td><td class="val ok">16,6</td>
               <td><span class="badge ok">sopra soglia</span></td>
             </tr>
             <tr>
               <td><strong>Primaria Sant'Agata</strong> · Via Cortine, 53</td>
-              <td>Elementare</td>
-              <td class="val">72</td>
-              <td>5</td>
-              <td class="val amb">14,4</td>
+              <td>Elementare</td><td class="val">72</td><td>5</td><td class="val amb">14,4</td>
               <td><span class="badge amb">attenzione</span></td>
             </tr>
             <tr>
               <td><strong>Fraz. Cappuccini</strong> · Via Cacciata, 5</td>
-              <td>Elementare</td>
-              <td class="val">69</td>
-              <td>5</td>
-              <td class="val amb">13,8</td>
+              <td>Elementare</td><td class="val">69</td><td>5</td><td class="val amb">13,8</td>
               <td><span class="badge amb">attenzione</span></td>
             </tr>
             <tr>
               <td><strong>Primaria S.Andrea Apostolo</strong> · Fraz. S.Andrea</td>
-              <td>Elementare</td>
-              <td class="val">57</td>
-              <td>5</td>
-              <td class="val neg">11,4</td>
+              <td>Elementare</td><td class="val">57</td><td>5</td><td class="val neg">11,4</td>
               <td><span class="badge neg">sotto soglia</span></td>
             </tr>
           </tbody>
@@ -457,12 +415,10 @@
       <p class="note">La soglia di 15 alunni per classe (DPR 81/2009) è il punto oltre il quale il Ministero può ridurre l'organico degli insegnanti assegnati al plesso. Non è un taglio automatico, ma è il punto di attenzione normativo. Tre plessi elementari su cinque sono già sotto questa soglia nell'anno scolastico 2025/2026.</p>
     </section>
 
-    <!-- BLOCCO 3: PROIEZIONE -->
     <section id="proiezione" class="block">
       <p class="block-num">03 — La proiezione</p>
       <h2 class="block-title">Cosa succederà alle scuole medie.</h2>
       <p class="block-intro">Le scuole medie oggi reggono — 17 alunni per classe, sopra soglia. Ma questo dato riflette ancora le generazioni precedenti, più numerose. Il calo che ha già colpito le elementari arriverà anche alle scuole medie.</p>
-
       <div class="proiezione-box">
         <p class="proiezione-hed">Proiezione lineare · elaborazione su dati MIUR 2025/26</p>
         <p>Oggi alle elementari ci sono <strong>469 bambini in 5 anni di corso</strong> — circa <strong>94 per anno di corso</strong>. Quando questi bambini arriveranno alle scuole medie (3 anni), il totale stimato sarà di circa <strong>282 ragazzi</strong>.</p>
@@ -471,9 +427,36 @@
       </div>
     </section>
 
-    <!-- BLOCCO 4: CRITICITA / ATTENZIONE / OPPORTUNITA -->
+    <!-- BLOCCO 4: LA QUESTIONE DELLE RISORSE -->
+    <section id="risorse" class="block">
+      <p class="block-num">04 — La questione delle risorse</p>
+      <h2 class="block-title">Meno bambini significa meno risorse?</h2>
+      <p class="block-intro">È la domanda che viene spontanea. La risposta dipende da chi controlla quelle risorse. Non tutte le risorse funzionano allo stesso modo — e la distinzione cambia completamente il ragionamento.</p>
+
+      <div class="risorse-cards">
+
+        <div class="risorse-card o">
+          <div class="risorse-card-label">Nel controllo del Comune — opportunità reale</div>
+          <h4 class="risorse-card-title">Edifici, manutenzione, mensa, trasporto</h4>
+          <p class="risorse-card-body">Questi sono costi fissi che il Comune paga indipendentemente da quanti bambini ci sono. <strong>Meno bambini non li riduce automaticamente.</strong> Significa però che le stesse risorse si distribuiscono su meno persone: più disponibilità per ciascun bambino, più spazio, più margine per investire sulla qualità. Qui la scelta è del Comune — e l'opportunità è concreta.</p>
+        </div>
+
+        <div class="risorse-card a">
+          <div class="risorse-card-label">Fuori dal controllo del Comune — rischio da presidiare</div>
+          <h4 class="risorse-card-title">Insegnanti e personale scolastico</h4>
+          <p class="risorse-card-body">Gli insegnanti li assegna il Ministero in base al numero di classi, non il Comune. Se le classi scendono, può scendere anche l'organico. <strong>Non è automatico — è una scelta politica che si può contrastare a livello locale e regionale</strong> — ma è il rischio reale da tenere sotto controllo. Chi usa il calo demografico come pretesto per tagliare l'organico scarica il problema sui cittadini.</p>
+        </div>
+
+      </div>
+
+      <div class="risorse-sintesi">
+        <strong>In sintesi:</strong> l'opportunità non è automatica e non è ovunque. È reale sulla parte che il Comune controlla direttamente. Sul resto, il ruolo della politica locale è vigilare che il calo demografico non diventi una scusa per ridurre la qualità del servizio — invece di essere usato per migliorarla.
+      </div>
+    </section>
+
+    <!-- BLOCCO 5: CRITICITA / ATTENZIONE / OPPORTUNITA -->
     <section id="lettura" class="block">
-      <p class="block-num">04 — La lettura</p>
+      <p class="block-num">05 — La lettura</p>
       <h2 class="block-title">Criticità, attenzione, opportunità.</h2>
       <p class="block-intro">Una lettura ragionata di quello che i numeri mostrano — oggi e nei prossimi anni. Tre piani diversi dello stesso fenomeno.</p>
 
@@ -518,8 +501,8 @@
         </div>
         <div class="cao-cards">
           <div class="cao-card o">
-            <h4 class="cao-card-title">Meno bambini, stesse risorse — più disponibilità per ciascuno.</h4>
-            <p class="cao-card-body">A parità di budget, meno alunni per classe significano più attenzione individuale, insegnanti meno sovraccarichi, spazi meno affollati. <strong>Il calo demografico crea le condizioni materiali per una scuola di qualità più alta — se si sceglie di usarle.</strong></p>
+            <h4 class="cao-card-title">Meno bambini, stesse risorse comunali — più disponibilità per ciascuno.</h4>
+            <p class="cao-card-body">I costi fissi che il Comune già sostiene — edifici, mensa, trasporto — si distribuiscono su meno bambini. <strong>Questo crea le condizioni materiali per una scuola di qualità più alta — se si sceglie di usarle invece di subirle passivamente.</strong></p>
           </div>
           <div class="cao-card o">
             <h4 class="cao-card-title">Solofra ha ancora una finestra demografica.</h4>
@@ -527,64 +510,50 @@
           </div>
           <div class="cao-card o">
             <h4 class="cao-card-title">Un'offerta formativa competitiva può attrarre studenti da fuori.</h4>
-            <p class="cao-card-body">Classi più piccole e risorse concentrate creano le condizioni per costruire un'offerta didattica di qualità superiore. <strong>Un istituto riconosciuto per l'eccellenza — come già in parte accade con l'indirizzo musicale alle scuole medie — può attrarre iscritti dai comuni limitrofi</strong>, invertendo la logica dello svuotamento e portando valore al territorio.</p>
+            <p class="cao-card-body">Classi più piccole e risorse concentrate creano le condizioni per costruire un'offerta didattica di qualità superiore. <strong>Un istituto riconosciuto per l'eccellenza può attrarre iscritti dai comuni limitrofi</strong>, invertendo la logica dello svuotamento e portando valore al territorio.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FONTI -->
     <section id="fonti" class="block">
       <p class="block-num">Fonti</p>
       <h2 class="block-title">Mappa numeri → fonti</h2>
       <p class="block-intro">Ogni dato di questa pagina è tratto da un documento o dataset pubblico. Qui la lista completa con link verificabili.</p>
-
       <div class="fonti">
-
         <h4>Dati demografici</h4>
         <ul>
           <li><strong>Popolazione per fascia d'età 2020, 2022, 2024, 2025</strong> <span class="src-flag verified">verificato</span> — ISTAT, elaborati da tuttitalia.it. <a href="https://www.tuttitalia.it/campania/37-solofra/statistiche/popolazione-eta-sesso-stato-civile/" target="_blank">tuttitalia.it — Solofra, popolazione per età</a></li>
           <li><strong>Indice di vecchiaia Solofra 2020–2025</strong> <span class="src-flag verified">verificato</span> — ISTAT elaborati da tuttitalia.it. Formula: (pop. 65+) / (pop. 0–14) × 100. <a href="https://www.tuttitalia.it/campania/37-solofra/statistiche/popolazione-eta-sesso-stato-civile/" target="_blank">tuttitalia.it</a></li>
           <li><strong>Indice di vecchiaia Campania 2025: 161,2</strong> <span class="src-flag estimate">da verificare</span> — Dato da tuttitalia.it elaborati ISTAT. Da verificare prima di pubblicazioni successive. <a href="https://www.tuttitalia.it/statistiche/indici-demografici-campania/" target="_blank">tuttitalia.it — indici demografici Campania</a></li>
         </ul>
-
         <h4>Dati scolastici</h4>
         <ul>
           <li><strong>Alunni e classi per plesso — IC Francesco Guarini, a.s. 2025/2026</strong> <span class="src-flag verified">verificato</span> — MIUR, Scuola in Chiaro. Codice istituto: AVIC88400A. Dati verificati su ogni singolo plesso. <a href="https://unica.istruzione.gov.it/cercalatuascuola/istituti/AVIC88400A/" target="_blank">unica.istruzione.gov.it — IC Guarini</a></li>
           <li><strong>Soglia 15 alunni per classe</strong> <span class="src-flag verified">verificato</span> — DPR 20 marzo 2009, n. 81, "Norme per la riorganizzazione della rete scolastica e il razionale ed efficace utilizzo delle risorse umane della scuola". Soglia orientativa per la formazione delle classi.</li>
         </ul>
-
         <h4>Proiezione</h4>
         <ul>
           <li><strong>Stima alunni medie nei prossimi anni</strong> <span class="src-flag estimate">elaborazione</span> — Proiezione lineare elaborata su dati MIUR 2025/26. Ipotesi: 469 alunni elementari ÷ 5 anni di corso = ~94 per anno × 3 anni di medie = ~282 totali. Non è una previsione ufficiale.</li>
         </ul>
-
       </div>
     </section>
 
-    <!-- METODO -->
     <section id="metodo" class="block" style="border-bottom:none;">
       <p class="block-num">Metodo</p>
       <h2 class="block-title">Come è stata costruita questa pagina</h2>
-
-      <p>Tutti i dati pubblicati in questa sezione sono tratti da fonti pubbliche: ISTAT attraverso tuttitalia.it per i dati demografici, MIUR attraverso il portale Scuola in Chiaro per i dati scolastici, Comune di Solofra per i dati di bilancio citati. Non sono stati usati documenti riservati o informazioni non disponibili al pubblico.</p>
-
+      <p>Tutti i dati pubblicati in questa sezione sono tratti da fonti pubbliche: ISTAT attraverso tuttitalia.it per i dati demografici, MIUR attraverso il portale Scuola in Chiaro per i dati scolastici. Non sono stati usati documenti riservati o informazioni non disponibili al pubblico.</p>
       <p>I dati demografici 2021 e 2023 non sono stati inclusi nelle tabelle perché non verificati su fonte primaria: i dati ISTAT certificati disponibili al momento della consultazione sono per gli anni 2020, 2022, 2024 e 2025.</p>
-
       <p>La <strong>proiezione sulle scuole medie</strong> è un'elaborazione lineare basata su dati reali. Non è una previsione ufficiale. Va letta come ordine di grandezza: indica una direzione, non un numero preciso.</p>
-
       <p>La pagina non contiene proposte politiche. L'obiettivo è raccogliere in un luogo unico i numeri, le date e le fonti che riguardano la situazione scolastica e demografica di Solofra, consentendo a chiunque di consultarli e verificarli autonomamente.</p>
-
       <div class="ai-notice">
         <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
         <p class="ai-notice-text">Nella stesura dei testi è stato utilizzato un modello di intelligenza artificiale come strumento di lavoro per l'elaborazione di dati pubblici e la loro strutturazione in forma leggibile. Ogni numero e ogni affermazione sono stati verificati rispetto alla fonte originaria. Nonostante questa verifica, è possibile che la pagina contenga errori, imprecisioni, o omissioni. <strong>Se individui un errore, una fonte non aggiornata, o un'informazione imprecisa, segnalamelo</strong>: la pagina verrà aggiornata tempestivamente.</p>
       </div>
-
       <div class="manifest">
         <p class="manifest-hed">Il metodo</p>
         <p class="manifest-text">I dati sono pubblici. Le proiezioni sono dichiarate come tali. Le fonti sono linkate e verificabili. I numeri sono mostrati per intero, senza semplificazioni che ne alterino il senso.</p>
       </div>
-
     </section>
 
   </main>
