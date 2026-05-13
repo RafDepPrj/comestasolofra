@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I dati che vorremmo — Come sta Solofra</title>
+<meta name="description" content="Una lista aperta dei dati sulla vita di Solofra che ogni cittadino dovrebbe poter trovare facilmente. Alcuni li abbiamo trovati. Altri no. Se sai dove sono, dimmelo.">
+<meta property="og:title" content="I dati che vorremmo — Come sta Solofra">
+<meta property="og:description" content="Alcuni dati li abbiamo trovati. Altri no. Se sai dove sono, dimmelo. E se ne manca uno, suggeriscilo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; overflow-x: auto; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .disclaimer-bar { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-bar .inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-bar strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  /* PDF NOTE — lighter */
+  .pdf-note { max-width: 1060px; margin: 0 auto; padding: clamp(20px,3vw,28px) clamp(20px,5vw,80px); }
+  .pdf-note-inner { border-left: 3px solid var(--ink-3); padding: 16px 20px; background: var(--paper-2); border-radius: 0 8px 8px 0; }
+  .pdf-note-inner p { font-size: 14px; color: var(--ink-2); line-height: 1.65; margin: 0; }
+  .pdf-note-inner strong { color: var(--ink); font-weight: 500; }
+
+  /* SUMMARY */
+  .summary-strip { max-width: 1060px; margin: 0 auto; padding: clamp(16px,3vw,24px) clamp(20px,5vw,80px); }
+  .summary-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .summary-cells { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .summary-cell { background: var(--paper); padding: 20px; text-align: center; }
+  .summary-number { font-family: var(--serif); font-size: 40px; font-style: italic; line-height: 1; margin-bottom: 5px; }
+  .summary-label { font-size: 12px; color: var(--ink-3); letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.4; }
+  .num-red { color: var(--accent); }
+  .num-amber { color: var(--amber); }
+  .num-green { color: var(--green); }
+  @media (max-width: 560px) { .summary-cells { grid-template-columns: 1fr; } }
+
+  /* LAYOUT */
+  .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+  @media (min-width: 960px) { .layout { grid-template-columns: 220px 1fr; gap: 64px; } }
+
+  .toc { font-size: 13px; }
+  @media (min-width: 960px) { .toc { position: sticky; top: 78px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; } }
+  .toc-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 10px; }
+  .toc li a { color: var(--ink-2); text-decoration: none; display: block; padding: 6px 0; line-height: 1.4; transition: color .15s; border-left: 2px solid transparent; padding-left: 10px; }
+  .toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--serif); font-size: 12px; color: var(--accent); margin-right: 8px; }
+  .toc li a:hover { color: var(--ink); border-left-color: var(--accent); }
+
+  .block { padding-bottom: clamp(48px,6vw,72px); margin-bottom: clamp(48px,6vw,72px); border-bottom: 1px solid var(--border); }
+  .block:last-of-type { border-bottom: none; }
+  .block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .block-title { font-family: var(--serif); font-size: clamp(26px,3.5vw,38px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; color: var(--ink); }
+  .block-intro { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-bottom: 28px; max-width: 680px; }
+
+  p { margin-bottom: 14px; color: var(--ink); }
+
+  /* DATA CARDS */
+  .data-cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media (min-width: 600px)  { .data-cards { grid-template-columns: repeat(2,1fr); } }
+  @media (min-width: 1000px) { .data-cards { grid-template-columns: repeat(3,1fr); } }
+
+  .data-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px 14px; display: flex; flex-direction: column; gap: 0; transition: transform .15s; }
+  .data-card:hover { transform: translateY(-1px); }
+  .data-card.found    { border-top: 3px solid var(--green); }
+  .data-card.partial  { border-top: 3px solid var(--amber); }
+  .data-card.notfound { border-top: 3px solid var(--paper-3); }
+
+  .data-card-title { font-family: var(--serif); font-size: 16px; line-height: 1.25; margin-bottom: 8px; color: var(--ink); }
+  .data-card-body  { font-size: 13px; color: var(--ink-2); line-height: 1.6; flex: 1; margin-bottom: 14px; }
+
+  .data-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+  .badge { display: inline-flex; align-items: center; font-size: 10.5px; font-weight: 500; padding: 3px 7px; border-radius: 3px; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }
+  .badge-found    { background: var(--green-bg); color: var(--green); }
+  .badge-partial  { background: var(--amber-bg); color: var(--amber); }
+  .badge-notfound { background: var(--paper-3); color: var(--ink-3); }
+
+  .signal-btn { display: inline-block; font-size: 11.5px; color: var(--accent); text-decoration: none; border: 1px solid rgba(200,64,26,0.3); border-radius: 4px; padding: 4px 9px; transition: background .15s; white-space: nowrap; }
+  .signal-btn:hover { background: #fdf0ee; }
+  .signal-btn.green { color: var(--green); border-color: rgba(42,107,60,0.3); }
+  .signal-btn.green:hover { background: var(--green-bg); }
+
+  /* SUGGEST */
+  .suggest-box { background: var(--paper-2); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; }
+  .suggest-box h3 { font-family: var(--serif); font-size: 24px; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .suggest-box p { font-size: 14px; color: var(--ink-2); line-height: 1.65; margin-bottom: 20px; }
+  .suggest-steps { list-style: none; counter-reset: steps; margin-bottom: 24px; }
+  .suggest-steps li { counter-increment: steps; display: flex; gap: 14px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+  .suggest-steps li:last-child { border-bottom: none; }
+  .suggest-steps li::before { content: counter(steps); font-family: var(--serif); font-size: 20px; color: var(--accent); flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .suggest-steps strong { color: var(--ink); font-weight: 500; }
+  .suggest-btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; padding: 11px 22px; border-radius: 6px; letter-spacing: 0.02em; transition: opacity .15s; }
+  .suggest-btn:hover { opacity: 0.88; }
+
+  /* AI NOTICE */
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+
+  @media (max-width: 640px) {
+    nav { gap: 16px; }
+    nav a { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer-bar">
+  <div class="inner"><strong>Nota:</strong> questa pagina raccoglie dati sulla vita di Solofra che ogni cittadino dovrebbe trovare facilmente. Alcuni li abbiamo trovati. Per altri ancora stiamo cercando. È una lista aperta.</div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="site-title">Come sta <span>Solofra</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="demografia.html">Demografia</a>
+      <a href="bilancio.html">Bilancio</a>
+      <a href="mobilita.html">Mobilità</a>
+      <a href="concia.html">Concia</a>
+      <a href="scuole.html">Bambini e scuole</a>
+      <a href="trasparenza.html" class="active">I dati che vorremmo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">06 — Trasparenza · aggiornato maggio 2026</p>
+  <h1 class="hero-title">I dati che<br><em>vorremmo avere.</em></h1>
+  <p class="hero-sub">Quali informazioni sulla vita di Solofra dovrebbe poter trovare facilmente ogni cittadino? Alcuni li abbiamo trovati. Per altri stiamo ancora cercando. Se sai dove sono — o se ne manca uno — dimmelo.</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>Aggiornato: maggio 2026</span>
+    <span>·</span>
+    <span>Lista aperta</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- PDF NOTE -->
+<div class="pdf-note">
+  <div class="pdf-note-inner">
+    <p>Una precisazione: molte informazioni esistono già, sepolte in bilanci da 300 pagine, note integrative, delibere nell'Albo Pretorio. Tutto formalmente pubblico. Ma <strong>un documento pubblicato non è la stessa cosa di un'informazione accessibile.</strong> La trasparenza è tale solo quando un cittadino normale riesce a trovarla in cinque minuti, senza essere un esperto.</p>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-strip">
+  <p class="summary-hed">Stato della ricerca — 26 dati cercati</p>
+  <div class="summary-cells">
+    <div class="summary-cell">
+      <div class="summary-number num-green">3</div>
+      <div class="summary-label">Trovati e accessibili</div>
+    </div>
+    <div class="summary-cell">
+      <div class="summary-number num-amber">3</div>
+      <div class="summary-label">Trovati in parte</div>
+    </div>
+    <div class="summary-cell">
+      <div class="summary-number num-red">20</div>
+      <div class="summary-label">Non trovati facilmente</div>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+
+  <aside class="toc">
+    <p class="toc-hed">Le categorie</p>
+    <ol>
+      <li><a href="#ambiente">Ambiente e territorio</a></li>
+      <li><a href="#infrastrutture">Infrastrutture</a></li>
+      <li><a href="#scuole">Scuole e giovani</a></li>
+      <li><a href="#economia">Economia e lavoro</a></li>
+      <li><a href="#bilancio">Bilancio e fondi</a></li>
+      <li><a href="#comunita">Comunità</a></li>
+      <li><a href="#suggerisci">Suggerisci un dato</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- AMBIENTE -->
+    <section id="ambiente" class="block">
+      <p class="block-num">01 — Ambiente e territorio</p>
+      <h2 class="block-title">Cosa respiriamo. Cosa beviamo. Cosa scarichiamo.</h2>
+      <p class="block-intro">Solofra ha un distretto conciario attivo, un fiume, aree agricole e un centro abitato. Ognuno di questi elementi ha un impatto ambientale misurabile.</p>
+      <div class="data-cards">
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Qualità dell'aria — PM10 e PM2.5</h4>
+          <p class="data-card-body">Concentrazioni di particolato fine, serie storica, confronto con i limiti europei. L'ARPAC fa monitoraggi periodici — ma non sono accessibili dal sito del Comune.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Qualità dell'acqua potabile</h4>
+          <p class="data-card-body">Analisi chimiche e microbiologiche periodiche, parametri, conformità, eventuali superamenti. Chi gestisce la rete? Con quali risultati?</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Qualità delle acque del Solofrana</h4>
+          <p class="data-card-body">Parametri chimici, biologici, presenza di metalli pesanti legati alla lavorazione delle pelli. Una risorsa del territorio che merita monitoraggio pubblico.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Scarichi industriali — conformità depuratore ASI</h4>
+          <p class="data-card-body">Quante aziende rispettano i limiti di scarico nel depuratore consortile? Quante violazioni ci sono state? Come sono state gestite?</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Raccolta differenziata</h4>
+          <p class="data-card-body">Percentuale mensile, trend degli ultimi anni, confronto con la media campana. Un dato semplice che molti comuni pubblicano regolarmente.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Verde pubblico</h4>
+          <p class="data-card-body">Metri quadri per abitante, stato di manutenzione, interventi programmati. Oggi il budget è €100.000/anno per tutto il patrimonio verde — dove va?</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INFRASTRUTTURE -->
+    <section id="infrastrutture" class="block">
+      <p class="block-num">02 — Infrastrutture e servizi</p>
+      <h2 class="block-title">Strade, acqua, luce, traffico.</h2>
+      <p class="block-intro">Il funzionamento quotidiano della città. Dati che servono per capire cosa funziona e cosa no — e per misurare se cambia nel tempo.</p>
+      <div class="data-cards">
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Stato delle strade</h4>
+          <p class="data-card-body">Segnalazioni aperte, interventi completati, tempi medi di risposta. Quante segnalazioni riceve il Comune? Quante vengono risolte e in quanto tempo?</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Rete idrica — perdite e dispersione</h4>
+          <p class="data-card-body">Percentuale di acqua dispersa prima di arrivare alle case. In molti comuni italiani supera il 40%. Qual è la situazione a Solofra?</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Illuminazione pubblica</h4>
+          <p class="data-card-body">Guasti aperti, copertura LED, consumi energetici, costo annuo. Una delle voci di spesa più facili da misurare — e da ottimizzare.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Traffico nel centro e a Turci</h4>
+          <p class="data-card-body">Flussi di traffico, transiti di mezzi pesanti, incidentalità. Dati che servono per capire se le misure adottate hanno funzionato.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Tempi di risposta del Comune</h4>
+          <p class="data-card-body">Quanto ci vuole mediamente perché il Comune risponda a una richiesta o una segnalazione? Un indicatore di efficienza che quasi nessuna PA pubblica — ma che cambierebbe la percezione del servizio.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SCUOLE -->
+    <section id="scuole" class="block">
+      <p class="block-num">03 — Scuole e giovani</p>
+      <h2 class="block-title">I bambini che restano. I giovani che partono.</h2>
+      <p class="block-intro">Solofra ha perso il 10,9% dei bambini in 5 anni. I dati scolastici sono fondamentali per capire dove stiamo andando — e per decidere cosa fare prima che sia troppo tardi.</p>
+      <div class="data-cards">
+
+        <div class="data-card partial">
+          <h4 class="data-card-title">Alunni per plesso e per classe</h4>
+          <p class="data-card-body">Quanti alunni ci sono in ogni scuola? Qual è la media per classe? Tre plessi su cinque sono già sotto soglia di stabilità. I dati esistono al MIUR — ne abbiamo ricostruito una parte per questa dashboard.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-partial">Trovato in parte</span>
+            <a href="scuole.html" class="signal-btn green">Vedi sezione →</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Stato edilizio degli edifici scolastici</h4>
+          <p class="data-card-body">Quando è stato fatto l'ultimo intervento su ogni plesso? Ci sono criticità aperte? I bambini trascorrono ore ogni giorno in questi edifici.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card partial">
+          <h4 class="data-card-title">Copertura del nido comunale</h4>
+          <p class="data-card-body">Quanti bambini 0-3 anni hanno accesso al nido "Piccino Picciò"? Stimiamo ~45 posti, copertura ~16% vs 31% media nazionale. Il dato puntuale non è pubblicato dal Comune.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-partial">Stima disponibile</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Confermi il dato?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Giovani che lasciano Solofra</h4>
+          <p class="data-card-body">Quanti ragazzi tra 18 e 35 anni si trasferiscono ogni anno? Dove vanno? Tornano? Questi dati si possono ricostruire dall'anagrafe — ma non vengono mai presentati in forma leggibile.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ECONOMIA -->
+    <section id="economia" class="block">
+      <p class="block-num">04 — Economia e lavoro</p>
+      <h2 class="block-title">Cosa c'è oltre la concia.</h2>
+      <p class="block-intro">Il distretto conciario ha perso il 76% del fatturato in trent'anni. Cosa sta succedendo al resto dell'economia di Solofra?</p>
+      <div class="data-cards">
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Aperture e chiusure di attività commerciali</h4>
+          <p class="data-card-body">Quante attività aprono ogni anno? Quante chiudono? Il saldo è positivo o negativo? Un indicatore diretto della vitalità economica del territorio.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card partial">
+          <h4 class="data-card-title">Cassa integrazione nel distretto</h4>
+          <p class="data-card-body">Quante ore di CIG vengono erogate ogni anno? Il 2024 ha visto un forte aumento. I dati UNIC e INPS esistono — abbiamo ricostruito il quadro qualitativo nella sezione Concia.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-partial">Trovato in parte</span>
+            <a href="concia.html" class="signal-btn green">Vedi sezione →</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Fondi europei disponibili non ancora richiesti</h4>
+          <p class="data-card-body">Quali bandi FSE+, FESR, PNRR erano disponibili per un comune come Solofra e non sono stati richiesti? Quante risorse potenziali rimangono inutilizzate ogni anno?</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">ZES — opportunità perse e recuperabili</h4>
+          <p class="data-card-body">Solofra è stata esclusa dalla ZES Campania nel 2018. Quali agevolazioni si è persa? Esiste ancora la possibilità di rientrare? Quali passi sono stati fatti?</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BILANCIO -->
+    <section id="bilancio" class="block">
+      <p class="block-num">05 — Bilancio e fondi pubblici</p>
+      <h2 class="block-title">I soldi del Comune sono soldi dei cittadini.</h2>
+      <p class="block-intro">Dovrebbe essere semplice sapere come vengono spesi. In alcuni casi i dati ci sono — ma non sono facilmente leggibili.</p>
+      <div class="data-cards">
+
+        <div class="data-card partial">
+          <h4 class="data-card-title">Spesa pubblica per categoria — in chiaro</h4>
+          <p class="data-card-body">Quanto spende il Comune per strade, scuole, ambiente, cultura, personale? I documenti ufficiali esistono — abbiamo già ricostruito una sintesi nella sezione Bilancio di questa dashboard.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-partial">Ricostruito</span>
+            <a href="bilancio.html" class="signal-btn green">Vedi sezione →</a>
+          </div>
+        </div>
+
+        <div class="data-card found">
+          <h4 class="data-card-title">Avanzamento fondi PNRR</h4>
+          <p class="data-card-body">6 progetti PNRR assegnati a Solofra su ItaliaDomani. Missione 1.4.1 (digitalizzazione): €155.000, pagamenti al 100%. Il dato è accessibile su portali nazionali — ed è un buon esempio di come dovrebbe funzionare.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-found">✓ Trovato</span>
+            <a href="https://www.italiadomani.gov.it" target="_blank" class="signal-btn green">Vai al portale →</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Tasso di riscossione delle entrate comunali</h4>
+          <p class="data-card-body">Il tasso di riscossione TARI è al 74,67% — quasi un quarto di quanto dovuto non arriva. Esiste un quadro complessivo delle entrate non riscosse? Chi non paga e perché?</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Beni pubblici — concessioni e canoni</h4>
+          <p class="data-card-body">Chi usa le palestre, le sale, i terreni comunali? A quale canone? Per quanto tempo? Queste concessioni sono pubbliche per legge ma non sono mai raccolte in un posto solo.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMUNITA -->
+    <section id="comunita" class="block">
+      <p class="block-num">06 — Comunità</p>
+      <h2 class="block-title">Come sta Solofra come luogo dove si vive.</h2>
+      <p class="block-intro">La vita di una comunità non si misura solo in numeri economici. Questi sono i dati che raccontano la traiettoria del paese.</p>
+      <div class="data-cards">
+
+        <div class="data-card found">
+          <h4 class="data-card-title">Saldo demografico annuo</h4>
+          <p class="data-card-body">Quante persone abitano a Solofra? Il trend degli ultimi 10 anni, nascite, morti, arrivi e partenze. Abbiamo ricostruito questa sezione su dati ISTAT — è la prima della dashboard.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-found">✓ Trovato</span>
+            <a href="demografia.html" class="signal-btn green">Vedi sezione →</a>
+          </div>
+        </div>
+
+        <div class="data-card found">
+          <h4 class="data-card-title">Infrastrutture e tempi di collegamento</h4>
+          <p class="data-card-body">Galleria Monte Pergola, cantieri raccordo, terza corsia, ferrovia. Quattro infrastrutture, quattro storie di ritardo. Dati ricostruiti su fonti ANAS, RFI e atti parlamentari.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-found">✓ Trovato</span>
+            <a href="mobilita.html" class="signal-btn green">Vedi sezione →</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Famiglie che lasciano Solofra</h4>
+          <p class="data-card-body">Non solo i giovani: quante famiglie complete si trasferiscono ogni anno? Questo dato, se raccolto e presentato, sarebbe uno dei più utili per capire la traiettoria reale del paese.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Patrimonio storico e architettonico</h4>
+          <p class="data-card-body">Quanti edifici storici o vincolati ci sono sul territorio? In che stato si trovano? Un censimento pubblico che non esiste da nessuna parte in forma leggibile.</p>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SUGGERISCI -->
+    <section id="suggerisci" class="block" style="border-bottom:none;">
+      <p class="block-num">07</p>
+      <h2 class="block-title">Manca qualcosa?</h2>
+
+      <div class="suggest-box">
+        <h3>Suggerisci un dato.</h3>
+        <p>Questa lista non è completa — e non pretende di esserlo. Se c'è un'informazione su Solofra che vorresti trovare facilmente, o se sai dove trovarne una che abbiamo segnato come "non trovata", scrivimi.</p>
+        <ul class="suggest-steps">
+          <li><strong>Scrivi cosa vorresti sapere</strong> — anche in modo informale. "Voglio sapere quanta acqua si spreca nella rete" è una richiesta perfettamente valida.</li>
+          <li><strong>Se conosci già la fonte</strong> — anche parziale — indicala. Aiuta ad aggiornare la pagina più in fretta.</li>
+          <li><strong>Mandamelo nei commenti del post o direttamente</strong> — rispondo a tutti e aggiorno la lista.</li>
+        </ul>
+        <a href="https://www.facebook.com/raf.dep/" target="_blank" class="suggest-btn">Scrivi a Raf →</a>
+      </div>
+
+      <div class="ai-notice">
+        <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+        <p class="ai-notice-text">La struttura di questa pagina è stata elaborata con il supporto di strumenti di intelligenza artificiale. Le valutazioni su cosa è stato trovato e cosa no sono basate su ricognizione diretta dei siti indicati. È possibile che alcuni dati esistano in sezioni non trovate: è esattamente per questo che chiediamo la collaborazione di chi li conosce.</p>
+      </div>
+
+      <div class="manifest">
+        <p class="manifest-hed">Il principio</p>
+        <p class="manifest-text">Un dato in un PDF da 300 pagine non è un dato pubblico. È un dato nascosto con una firma sopra.</p>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Tutti i dati sono pubblici e le fonti sono citate. I numeri sono mostrati per intero e verificabili da chiunque.
+    </div>
+    <div class="footer-r">Ultimo aggiornamento: maggio 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+</body>
+</html>
