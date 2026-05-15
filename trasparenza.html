@@ -62,13 +62,11 @@
 
   hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
 
-  /* PDF NOTE — lighter */
   .pdf-note { max-width: 1060px; margin: 0 auto; padding: clamp(20px,3vw,28px) clamp(20px,5vw,80px); }
-  .pdf-note-inner { border-left: 3px solid var(--ink-3); padding: 16px 20px; background: var(--paper-2); border-radius: 0 8px 8px 0; }
+  .pdf-note-inner { border-left: 3px solid var(--ink-3); padding: 14px 20px; background: var(--paper-2); border-radius: 0 8px 8px 0; }
   .pdf-note-inner p { font-size: 14px; color: var(--ink-2); line-height: 1.65; margin: 0; }
   .pdf-note-inner strong { color: var(--ink); font-weight: 500; }
 
-  /* SUMMARY */
   .summary-strip { max-width: 1060px; margin: 0 auto; padding: clamp(16px,3vw,24px) clamp(20px,5vw,80px); }
   .summary-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
   .summary-cells { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
@@ -80,7 +78,6 @@
   .num-green { color: var(--green); }
   @media (max-width: 560px) { .summary-cells { grid-template-columns: 1fr; } }
 
-  /* LAYOUT */
   .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
   @media (min-width: 960px) { .layout { grid-template-columns: 220px 1fr; gap: 64px; } }
 
@@ -106,16 +103,19 @@
   @media (min-width: 600px)  { .data-cards { grid-template-columns: repeat(2,1fr); } }
   @media (min-width: 1000px) { .data-cards { grid-template-columns: repeat(3,1fr); } }
 
-  .data-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px 14px; display: flex; flex-direction: column; gap: 0; transition: transform .15s; }
+  .data-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px 14px; display: flex; flex-direction: column; transition: transform .15s; }
   .data-card:hover { transform: translateY(-1px); }
   .data-card.found    { border-top: 3px solid var(--green); }
   .data-card.partial  { border-top: 3px solid var(--amber); }
   .data-card.notfound { border-top: 3px solid var(--paper-3); }
 
   .data-card-title { font-family: var(--serif); font-size: 16px; line-height: 1.25; margin-bottom: 8px; color: var(--ink); }
-  .data-card-body  { font-size: 13px; color: var(--ink-2); line-height: 1.6; flex: 1; margin-bottom: 14px; }
+  .data-card-body  { font-size: 13px; color: var(--ink-2); line-height: 1.6; flex: 1; margin-bottom: 10px; }
 
-  .data-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .data-card-utility { font-size: 12px; color: var(--ink-3); line-height: 1.5; padding: 8px 10px; background: var(--paper-2); border-radius: 4px; margin-bottom: 14px; }
+  .data-card-utility::before { content: "→ "; color: var(--accent); font-weight: 500; }
+
+  .data-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; border-top: 1px solid var(--border); margin-top: auto; }
 
   .badge { display: inline-flex; align-items: center; font-size: 10.5px; font-weight: 500; padding: 3px 7px; border-radius: 3px; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }
   .badge-found    { background: var(--green-bg); color: var(--green); }
@@ -126,6 +126,13 @@
   .signal-btn:hover { background: #fdf0ee; }
   .signal-btn.green { color: var(--green); border-color: rgba(42,107,60,0.3); }
   .signal-btn.green:hover { background: var(--green-bg); }
+
+  /* OPPORTUNITA NOTE */
+  .opportunita-note { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.2); border-radius: 10px; padding: 24px 28px; margin-bottom: 48px; }
+  .opportunita-note h3 { font-family: var(--serif); font-size: 20px; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .opportunita-note p { font-size: 14px; color: var(--ink-2); line-height: 1.65; margin: 0; }
+  .opportunita-note p + p { margin-top: 10px; }
+  .opportunita-note strong { color: var(--ink); font-weight: 500; }
 
   /* SUGGEST */
   .suggest-box { background: var(--paper-2); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; }
@@ -139,7 +146,6 @@
   .suggest-btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; padding: 11px 22px; border-radius: 6px; letter-spacing: 0.02em; transition: opacity .15s; }
   .suggest-btn:hover { opacity: 0.88; }
 
-  /* AI NOTICE */
   .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
   .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
   .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
@@ -165,7 +171,7 @@
 <body>
 
 <div class="disclaimer-bar">
-  <div class="inner"><strong>Nota:</strong> questa pagina raccoglie dati sulla vita di Solofra che ogni cittadino dovrebbe trovare facilmente. Alcuni li abbiamo trovati. Per altri ancora stiamo cercando. È una lista aperta.</div>
+  <div class="inner"><strong>Nota:</strong> questa pagina raccoglie dati sulla vita di Solofra che ogni cittadino dovrebbe trovare facilmente. Alcuni li abbiamo trovati. Per altri stiamo ancora cercando. È una lista aperta.</div>
 </div>
 
 <header>
@@ -198,24 +204,22 @@
 
 <hr class="div">
 
-<!-- PDF NOTE -->
 <div class="pdf-note">
   <div class="pdf-note-inner">
-    <p>Una precisazione: molte informazioni esistono già, sepolte in bilanci da 300 pagine, note integrative, delibere nell'Albo Pretorio. Tutto formalmente pubblico. Ma <strong>un documento pubblicato non è la stessa cosa di un'informazione accessibile.</strong> La trasparenza è tale solo quando un cittadino normale riesce a trovarla in cinque minuti, senza essere un esperto.</p>
+    <p>Una precisazione: molte informazioni esistono già, sepolte in bilanci tecnici, note integrative, delibere nell'Albo Pretorio. Tutto formalmente pubblico. Ma <strong>un documento pubblicato non è la stessa cosa di un'informazione accessibile.</strong> La trasparenza è tale solo quando un cittadino normale riesce a trovarla in cinque minuti, senza essere un esperto.</p>
   </div>
 </div>
 
-<!-- SUMMARY -->
 <div class="summary-strip">
-  <p class="summary-hed">Stato della ricerca — 26 dati cercati</p>
+  <p class="summary-hed">Stato della ricerca — 27 dati cercati</p>
   <div class="summary-cells">
     <div class="summary-cell">
-      <div class="summary-number num-green">3</div>
-      <div class="summary-label">Trovati e accessibili</div>
+      <div class="summary-number num-green">1</div>
+      <div class="summary-label">Trovato e accessibile</div>
     </div>
     <div class="summary-cell">
-      <div class="summary-number num-amber">3</div>
-      <div class="summary-label">Trovati in parte</div>
+      <div class="summary-number num-amber">5</div>
+      <div class="summary-label">Ricostruiti da fonti esterne</div>
     </div>
     <div class="summary-cell">
       <div class="summary-number num-red">20</div>
@@ -229,10 +233,11 @@
   <aside class="toc">
     <p class="toc-hed">Le categorie</p>
     <ol>
-      <li><a href="#ambiente">Ambiente e territorio</a></li>
+      <li><a href="#ambiente">Ambiente</a></li>
       <li><a href="#infrastrutture">Infrastrutture</a></li>
-      <li><a href="#scuole">Scuole e giovani</a></li>
-      <li><a href="#economia">Economia e lavoro</a></li>
+      <li><a href="#scuole">Scuole e servizi sociali</a></li>
+      <li><a href="#economia">Economia e tributi</a></li>
+      <li><a href="#ordine">Ordine pubblico</a></li>
       <li><a href="#bilancio">Bilancio e fondi</a></li>
       <li><a href="#comunita">Comunità</a></li>
       <li><a href="#suggerisci">Suggerisci un dato</a></li>
@@ -243,14 +248,15 @@
 
     <!-- AMBIENTE -->
     <section id="ambiente" class="block">
-      <p class="block-num">01 — Ambiente e territorio</p>
-      <h2 class="block-title">Cosa respiriamo. Cosa beviamo. Cosa scarichiamo.</h2>
-      <p class="block-intro">Solofra ha un distretto conciario attivo, un fiume, aree agricole e un centro abitato. Ognuno di questi elementi ha un impatto ambientale misurabile.</p>
+      <p class="block-num">01 — Ambiente</p>
+      <h2 class="block-title">Cosa respiriamo. Cosa beviamo.</h2>
+      <p class="block-intro">Dati ambientali elementari che il Comune può ottenere da ARPAC e dal gestore idrico — e rendere accessibili senza produrli da zero.</p>
       <div class="data-cards">
 
         <div class="data-card notfound">
           <h4 class="data-card-title">Qualità dell'aria — PM10 e PM2.5</h4>
-          <p class="data-card-body">Concentrazioni di particolato fine, serie storica, confronto con i limiti europei. L'ARPAC fa monitoraggi periodici — ma non sono accessibili dal sito del Comune.</p>
+          <p class="data-card-body">Concentrazioni di particolato fine rilevate dall'ARPAC, con serie storica e confronto con i limiti europei.</p>
+          <div class="data-card-utility">Capire l'impatto del distretto sulla salute pubblica e confrontarlo con i limiti di legge.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -259,7 +265,8 @@
 
         <div class="data-card notfound">
           <h4 class="data-card-title">Qualità dell'acqua potabile</h4>
-          <p class="data-card-body">Analisi chimiche e microbiologiche periodiche, parametri, conformità, eventuali superamenti. Chi gestisce la rete? Con quali risultati?</p>
+          <p class="data-card-body">Analisi periodiche del gestore idrico: parametri, conformità, eventuali superamenti e come sono stati gestiti.</p>
+          <div class="data-card-utility">Sapere cosa beviamo e se il gestore rispetta gli standard previsti dalla legge.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -267,8 +274,9 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Qualità delle acque del Solofrana</h4>
-          <p class="data-card-body">Parametri chimici, biologici, presenza di metalli pesanti legati alla lavorazione delle pelli. Una risorsa del territorio che merita monitoraggio pubblico.</p>
+          <h4 class="data-card-title">Raccolta differenziata — % mensile</h4>
+          <p class="data-card-body">Percentuale mensile di differenziata, trend degli ultimi anni, confronto con la media campana e nazionale.</p>
+          <div class="data-card-utility">Misurare se la città sta migliorando e dove si trova rispetto agli altri comuni.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -276,26 +284,9 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Scarichi industriali — conformità depuratore ASI</h4>
-          <p class="data-card-body">Quante aziende rispettano i limiti di scarico nel depuratore consortile? Quante violazioni ci sono state? Come sono state gestite?</p>
-          <div class="data-card-footer">
-            <span class="badge badge-notfound">Non trovato</span>
-            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
-          </div>
-        </div>
-
-        <div class="data-card notfound">
-          <h4 class="data-card-title">Raccolta differenziata</h4>
-          <p class="data-card-body">Percentuale mensile, trend degli ultimi anni, confronto con la media campana. Un dato semplice che molti comuni pubblicano regolarmente.</p>
-          <div class="data-card-footer">
-            <span class="badge badge-notfound">Non trovato</span>
-            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
-          </div>
-        </div>
-
-        <div class="data-card notfound">
-          <h4 class="data-card-title">Verde pubblico</h4>
-          <p class="data-card-body">Metri quadri per abitante, stato di manutenzione, interventi programmati. Oggi il budget è €100.000/anno per tutto il patrimonio verde — dove va?</p>
+          <h4 class="data-card-title">Verde pubblico — mq per abitante</h4>
+          <p class="data-card-body">Metri quadri di verde pubblico per abitante, stato di manutenzione delle aree, interventi programmati.</p>
+          <div class="data-card-utility">Capire quanto spazio verde esiste rispetto agli altri comuni e dove va il budget.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -308,13 +299,14 @@
     <!-- INFRASTRUTTURE -->
     <section id="infrastrutture" class="block">
       <p class="block-num">02 — Infrastrutture e servizi</p>
-      <h2 class="block-title">Strade, acqua, luce, traffico.</h2>
-      <p class="block-intro">Il funzionamento quotidiano della città. Dati che servono per capire cosa funziona e cosa no — e per misurare se cambia nel tempo.</p>
+      <h2 class="block-title">Strade, acqua, luce, cantieri.</h2>
+      <p class="block-intro">Dati operativi che gli uffici tecnici comunali producono ogni giorno — e che raramente escono in forma leggibile.</p>
       <div class="data-cards">
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Stato delle strade</h4>
-          <p class="data-card-body">Segnalazioni aperte, interventi completati, tempi medi di risposta. Quante segnalazioni riceve il Comune? Quante vengono risolte e in quanto tempo?</p>
+          <h4 class="data-card-title">Cantieri aperti — dove e da quando</h4>
+          <p class="data-card-body">Elenco dei cantieri attivi sul territorio: localizzazione, data di apertura, scadenza prevista, ente responsabile.</p>
+          <div class="data-card-utility">Sapere cosa sta succedendo per strada, da quanto tempo e quando finirà.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -322,8 +314,9 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Rete idrica — perdite e dispersione</h4>
-          <p class="data-card-body">Percentuale di acqua dispersa prima di arrivare alle case. In molti comuni italiani supera il 40%. Qual è la situazione a Solofra?</p>
+          <h4 class="data-card-title">Manutenzione straordinaria programmata</h4>
+          <p class="data-card-body">Cosa è previsto nei prossimi mesi: interventi su strade, edifici pubblici, impianti. Con indicazione dei fondi utilizzati.</p>
+          <div class="data-card-utility">Capire cosa verrà fatto, con quali risorse e secondo quale priorità.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -331,8 +324,9 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Illuminazione pubblica</h4>
-          <p class="data-card-body">Guasti aperti, copertura LED, consumi energetici, costo annuo. Una delle voci di spesa più facili da misurare — e da ottimizzare.</p>
+          <h4 class="data-card-title">Segnalazioni strade — aperte e chiuse</h4>
+          <p class="data-card-body">Quante segnalazioni di buche o danni riceve il Comune? Quante vengono risolte? In quanto tempo mediamente?</p>
+          <div class="data-card-utility">Misurare se il Comune risponde ai cittadini — e quanto impiega a farlo.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -340,8 +334,9 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Traffico nel centro e a Turci</h4>
-          <p class="data-card-body">Flussi di traffico, transiti di mezzi pesanti, incidentalità. Dati che servono per capire se le misure adottate hanno funzionato.</p>
+          <h4 class="data-card-title">Perdite rete idrica — % dispersione</h4>
+          <p class="data-card-body">Percentuale di acqua che si perde nella rete prima di arrivare nelle case. In molti comuni italiani supera il 40%.</p>
+          <div class="data-card-utility">Capire quanta acqua pubblica viene sprecata e se si sta migliorando nel tempo.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -349,8 +344,39 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Tempi di risposta del Comune</h4>
-          <p class="data-card-body">Quanto ci vuole mediamente perché il Comune risponda a una richiesta o una segnalazione? Un indicatore di efficienza che quasi nessuna PA pubblica — ma che cambierebbe la percezione del servizio.</p>
+          <h4 class="data-card-title">Illuminazione pubblica — guasti e LED</h4>
+          <p class="data-card-body">Numero di guasti aperti, percentuale di copertura con lampade LED, consumi energetici e costo annuo del servizio.</p>
+          <div class="data-card-utility">Misurare efficienza energetica e qualità del servizio — e confrontarlo con anni precedenti.</div>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Traffico e incidentalità</h4>
+          <p class="data-card-body">Flussi di traffico nel centro e a Turci, transiti di mezzi pesanti, numero e tipologia di incidenti per strada.</p>
+          <div class="data-card-utility">Capire dove è pericoloso e se le misure adottate hanno avuto effetto.</div>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Permessi di costruire — trend annuale</h4>
+          <p class="data-card-body">Quanti permessi di costruire vengono rilasciati ogni anno? Di che tipologia? Confronto con gli anni precedenti.</p>
+          <div class="data-card-utility">Misurare se ci sono investimenti privati sul territorio e in quale direzione.</div>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Abusi edilizi — pratiche aperte e sanzioni</h4>
+          <p class="data-card-body">Segnalazioni ricevute, pratiche in corso, sanzioni emesse e riscosse. Trend annuale.</p>
+          <div class="data-card-utility">Verificare se il territorio viene tutelato e con quale efficacia.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -360,25 +386,27 @@
       </div>
     </section>
 
-    <!-- SCUOLE -->
+    <!-- SCUOLE E SOCIALE -->
     <section id="scuole" class="block">
-      <p class="block-num">03 — Scuole e giovani</p>
-      <h2 class="block-title">I bambini che restano. I giovani che partono.</h2>
-      <p class="block-intro">Solofra ha perso il 10,9% dei bambini in 5 anni. I dati scolastici sono fondamentali per capire dove stiamo andando — e per decidere cosa fare prima che sia troppo tardi.</p>
+      <p class="block-num">03 — Scuole e servizi sociali</p>
+      <h2 class="block-title">I bambini, le famiglie, gli anziani.</h2>
+      <p class="block-intro">Dati che il Comune produce internamente o riceve da MIUR e ASL — e che permettono di capire dove vanno le risorse dedicate alle persone più fragili.</p>
       <div class="data-cards">
 
         <div class="data-card partial">
           <h4 class="data-card-title">Alunni per plesso e per classe</h4>
-          <p class="data-card-body">Quanti alunni ci sono in ogni scuola? Qual è la media per classe? Tre plessi su cinque sono già sotto soglia di stabilità. I dati esistono al MIUR — ne abbiamo ricostruito una parte per questa dashboard.</p>
+          <p class="data-card-body">Numero di alunni, classi e media per classe in ogni scuola di Solofra. Tre plessi su cinque sono già sotto soglia di stabilità.</p>
+          <div class="data-card-utility">Monitorare il calo demografico scuola per scuola e anticipare chiusure prima che diventino emergenze.</div>
           <div class="data-card-footer">
-            <span class="badge badge-partial">Trovato in parte</span>
+            <span class="badge badge-partial">Ricostruito</span>
             <a href="scuole.html" class="signal-btn green">Vedi sezione →</a>
           </div>
         </div>
 
         <div class="data-card notfound">
           <h4 class="data-card-title">Stato edilizio degli edifici scolastici</h4>
-          <p class="data-card-body">Quando è stato fatto l'ultimo intervento su ogni plesso? Ci sono criticità aperte? I bambini trascorrono ore ogni giorno in questi edifici.</p>
+          <p class="data-card-body">Quando è stato fatto l'ultimo intervento su ogni plesso? Ci sono criticità strutturali aperte? Quali interventi sono programmati?</p>
+          <div class="data-card-utility">Sapere se gli edifici dove passano le giornate i nostri figli sono sicuri.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -387,16 +415,28 @@
 
         <div class="data-card partial">
           <h4 class="data-card-title">Copertura del nido comunale</h4>
-          <p class="data-card-body">Quanti bambini 0-3 anni hanno accesso al nido "Piccino Picciò"? Stimiamo ~45 posti, copertura ~16% vs 31% media nazionale. Il dato puntuale non è pubblicato dal Comune.</p>
+          <p class="data-card-body">Posti disponibili al nido "Piccino Picciò": ~45. Domande ricevute e lista d'attesa: dato non pubblicato dal Comune.</p>
+          <div class="data-card-utility">Capire quante famiglie con bambini piccoli sono escluse dal servizio — e quali risorse sarebbero necessarie.</div>
           <div class="data-card-footer">
-            <span class="badge badge-partial">Stima disponibile</span>
-            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Confermi il dato?</a>
+            <span class="badge badge-partial">Dato parziale</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Confermi i posti?</a>
           </div>
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Giovani che lasciano Solofra</h4>
-          <p class="data-card-body">Quanti ragazzi tra 18 e 35 anni si trasferiscono ogni anno? Dove vanno? Tornano? Questi dati si possono ricostruire dall'anagrafe — ma non vengono mai presentati in forma leggibile.</p>
+          <h4 class="data-card-title">Famiglie in carico ai servizi sociali</h4>
+          <p class="data-card-body">Numero di famiglie seguite, minori in carico, tipologia di interventi. Trend annuale.</p>
+          <div class="data-card-utility">Misurare il disagio sul territorio e pianificare le risorse dove servono davvero.</div>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Anziani soli over 75</h4>
+          <p class="data-card-body">Numero di anziani che vivono soli, distribuzione per zona del paese, eventuali servizi di assistenza attivi.</p>
+          <div class="data-card-utility">Anticipare la domanda di servizi, prevenire l'isolamento e pianificare le risorse con anticipo.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -408,32 +448,15 @@
 
     <!-- ECONOMIA -->
     <section id="economia" class="block">
-      <p class="block-num">04 — Economia e lavoro</p>
-      <h2 class="block-title">Cosa c'è oltre la concia.</h2>
-      <p class="block-intro">Il distretto conciario ha perso il 76% del fatturato in trent'anni. Cosa sta succedendo al resto dell'economia di Solofra?</p>
+      <p class="block-num">04 — Economia e tributi</p>
+      <h2 class="block-title">Il tessuto economico e le entrate comunali.</h2>
+      <p class="block-intro">Dati che Camera di Commercio e ufficio tributi hanno già — e che raccontano la salute economica del paese.</p>
       <div class="data-cards">
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Aperture e chiusure di attività commerciali</h4>
-          <p class="data-card-body">Quante attività aprono ogni anno? Quante chiudono? Il saldo è positivo o negativo? Un indicatore diretto della vitalità economica del territorio.</p>
-          <div class="data-card-footer">
-            <span class="badge badge-notfound">Non trovato</span>
-            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
-          </div>
-        </div>
-
-        <div class="data-card partial">
-          <h4 class="data-card-title">Cassa integrazione nel distretto</h4>
-          <p class="data-card-body">Quante ore di CIG vengono erogate ogni anno? Il 2024 ha visto un forte aumento. I dati UNIC e INPS esistono — abbiamo ricostruito il quadro qualitativo nella sezione Concia.</p>
-          <div class="data-card-footer">
-            <span class="badge badge-partial">Trovato in parte</span>
-            <a href="concia.html" class="signal-btn green">Vedi sezione →</a>
-          </div>
-        </div>
-
-        <div class="data-card notfound">
-          <h4 class="data-card-title">Fondi europei disponibili non ancora richiesti</h4>
-          <p class="data-card-body">Quali bandi FSE+, FESR, PNRR erano disponibili per un comune come Solofra e non sono stati richiesti? Quante risorse potenziali rimangono inutilizzate ogni anno?</p>
+          <h4 class="data-card-title">Aperture e chiusure attività commerciali</h4>
+          <p class="data-card-body">Quante attività aprono ogni anno a Solofra? Quante chiudono? Saldo netto per anno e per categoria.</p>
+          <div class="data-card-utility">Misurare se il tessuto commerciale cresce o si svuota — e in quali settori.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -441,8 +464,49 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">ZES — opportunità perse e recuperabili</h4>
-          <p class="data-card-body">Solofra è stata esclusa dalla ZES Campania nel 2018. Quali agevolazioni si è persa? Esiste ancora la possibilità di rientrare? Quali passi sono stati fatti?</p>
+          <h4 class="data-card-title">Aliquote IMU e TARI — confronto</h4>
+          <p class="data-card-body">Le aliquote applicate a Solofra confrontate con la media dei comuni campani di pari dimensione.</p>
+          <div class="data-card-utility">Sapere se i cittadini di Solofra pagano più o meno degli altri — e perché.</div>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Tasso di riscossione TARI</h4>
+          <p class="data-card-body">Quanto viene effettivamente riscosso rispetto al dovuto. Il dato attuale è 74,67% — quasi un quarto non arriva. Trend annuale.</p>
+          <div class="data-card-utility">Misurare l'entità dell'evasione e capire se migliora nel tempo — e con quali strumenti.</div>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ORDINE PUBBLICO -->
+    <section id="ordine" class="block">
+      <p class="block-num">05 — Ordine pubblico</p>
+      <h2 class="block-title">Cosa monitora la polizia municipale.</h2>
+      <p class="block-intro">Dati che la polizia municipale produce per obbligo interno — e che raramente diventano informazione pubblica.</p>
+      <div class="data-cards">
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Incidentalità stradale</h4>
+          <p class="data-card-body">Numero di incidenti per anno, strade coinvolte, tipologia (auto-pedone, auto-auto, mezzi pesanti). Trend.</p>
+          <div class="data-card-utility">Sapere dove è pericoloso girare per Solofra e se le misure adottate hanno ridotto gli incidenti.</div>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Verbali polizia municipale per categoria</h4>
+          <p class="data-card-body">Quanti verbali vengono emessi ogni anno e per quale tipo di infrazione: traffico, commercio abusivo, rumore, rifiuti, edilizia.</p>
+          <div class="data-card-utility">Capire dove si concentrano i problemi sul territorio e se l'attività di controllo è proporzionata.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -454,14 +518,15 @@
 
     <!-- BILANCIO -->
     <section id="bilancio" class="block">
-      <p class="block-num">05 — Bilancio e fondi pubblici</p>
+      <p class="block-num">06 — Bilancio e fondi pubblici</p>
       <h2 class="block-title">I soldi del Comune sono soldi dei cittadini.</h2>
-      <p class="block-intro">Dovrebbe essere semplice sapere come vengono spesi. In alcuni casi i dati ci sono — ma non sono facilmente leggibili.</p>
+      <p class="block-intro">Dovrebbe essere semplice sapere come vengono spesi. In alcuni casi i dati ci sono — ma non sono leggibili senza formazione tecnica.</p>
       <div class="data-cards">
 
         <div class="data-card partial">
           <h4 class="data-card-title">Spesa pubblica per categoria — in chiaro</h4>
-          <p class="data-card-body">Quanto spende il Comune per strade, scuole, ambiente, cultura, personale? I documenti ufficiali esistono — abbiamo già ricostruito una sintesi nella sezione Bilancio di questa dashboard.</p>
+          <p class="data-card-body">Quanto spende il Comune per strade, scuole, ambiente, cultura, personale? Con confronto rispetto all'anno precedente.</p>
+          <div class="data-card-utility">Capire dove vanno i soldi pubblici — senza dover leggere documenti tecnici che richiedono formazione contabile.</div>
           <div class="data-card-footer">
             <span class="badge badge-partial">Ricostruito</span>
             <a href="bilancio.html" class="signal-btn green">Vedi sezione →</a>
@@ -470,7 +535,8 @@
 
         <div class="data-card found">
           <h4 class="data-card-title">Avanzamento fondi PNRR</h4>
-          <p class="data-card-body">6 progetti PNRR assegnati a Solofra su ItaliaDomani. Missione 1.4.1 (digitalizzazione): €155.000, pagamenti al 100%. Il dato è accessibile su portali nazionali — ed è un buon esempio di come dovrebbe funzionare.</p>
+          <p class="data-card-body">6 progetti PNRR assegnati a Solofra. Missione 1.4.1 (digitalizzazione): €155.000, pagamenti al 100%. Dati su ItaliaDomani.</p>
+          <div class="data-card-utility">Verificare che i fondi pubblici straordinari vengano effettivamente spesi e con quali risultati.</div>
           <div class="data-card-footer">
             <span class="badge badge-found">✓ Trovato</span>
             <a href="https://www.italiadomani.gov.it" target="_blank" class="signal-btn green">Vai al portale →</a>
@@ -478,17 +544,9 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Tasso di riscossione delle entrate comunali</h4>
-          <p class="data-card-body">Il tasso di riscossione TARI è al 74,67% — quasi un quarto di quanto dovuto non arriva. Esiste un quadro complessivo delle entrate non riscosse? Chi non paga e perché?</p>
-          <div class="data-card-footer">
-            <span class="badge badge-notfound">Non trovato</span>
-            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
-          </div>
-        </div>
-
-        <div class="data-card notfound">
-          <h4 class="data-card-title">Beni pubblici — concessioni e canoni</h4>
-          <p class="data-card-body">Chi usa le palestre, le sale, i terreni comunali? A quale canone? Per quanto tempo? Queste concessioni sono pubbliche per legge ma non sono mai raccolte in un posto solo.</p>
+          <h4 class="data-card-title">Concessioni beni pubblici — chi, quanto, per quanto</h4>
+          <p class="data-card-body">Chi usa le palestre, le sale, i terreni comunali? A quale canone? Per quanto tempo? Quante concessioni sono attive oggi?</p>
+          <div class="data-card-utility">Sapere come vengono usati gli spazi di tutti — e a quali condizioni economiche.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -500,32 +558,25 @@
 
     <!-- COMUNITA -->
     <section id="comunita" class="block">
-      <p class="block-num">06 — Comunità</p>
-      <h2 class="block-title">Come sta Solofra come luogo dove si vive.</h2>
-      <p class="block-intro">La vita di una comunità non si misura solo in numeri economici. Questi sono i dati che raccontano la traiettoria del paese.</p>
+      <p class="block-num">07 — Comunità</p>
+      <h2 class="block-title">Come sta Solofra come luogo in cui si vive.</h2>
+      <p class="block-intro">Dati demografici e sociali che l'anagrafe comunale produce già — e che raccontano la traiettoria reale del paese.</p>
       <div class="data-cards">
 
-        <div class="data-card found">
+        <div class="data-card partial">
           <h4 class="data-card-title">Saldo demografico annuo</h4>
-          <p class="data-card-body">Quante persone abitano a Solofra? Il trend degli ultimi 10 anni, nascite, morti, arrivi e partenze. Abbiamo ricostruito questa sezione su dati ISTAT — è la prima della dashboard.</p>
+          <p class="data-card-body">Residenti, nascite, morti, arrivi, partenze. Trend degli ultimi 10 anni. Ricostruito su dati ISTAT — non pubblicato direttamente dal Comune.</p>
+          <div class="data-card-utility">Capire se Solofra sta crescendo o spopolando — e a quale velocità.</div>
           <div class="data-card-footer">
-            <span class="badge badge-found">✓ Trovato</span>
+            <span class="badge badge-partial">Ricostruito</span>
             <a href="demografia.html" class="signal-btn green">Vedi sezione →</a>
           </div>
         </div>
 
-        <div class="data-card found">
-          <h4 class="data-card-title">Infrastrutture e tempi di collegamento</h4>
-          <p class="data-card-body">Galleria Monte Pergola, cantieri raccordo, terza corsia, ferrovia. Quattro infrastrutture, quattro storie di ritardo. Dati ricostruiti su fonti ANAS, RFI e atti parlamentari.</p>
-          <div class="data-card-footer">
-            <span class="badge badge-found">✓ Trovato</span>
-            <a href="mobilita.html" class="signal-btn green">Vedi sezione →</a>
-          </div>
-        </div>
-
         <div class="data-card notfound">
-          <h4 class="data-card-title">Famiglie che lasciano Solofra</h4>
-          <p class="data-card-body">Non solo i giovani: quante famiglie complete si trasferiscono ogni anno? Questo dato, se raccolto e presentato, sarebbe uno dei più utili per capire la traiettoria reale del paese.</p>
+          <h4 class="data-card-title">Cittadini stranieri residenti</h4>
+          <p class="data-card-body">Numero, provenienza per paese, trend annuale. Dato disponibile all'anagrafe comunale.</p>
+          <div class="data-card-utility">Capire come cambia la composizione della comunità — e pianificare i servizi di conseguenza.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -533,8 +584,19 @@
         </div>
 
         <div class="data-card notfound">
-          <h4 class="data-card-title">Patrimonio storico e architettonico</h4>
-          <p class="data-card-body">Quanti edifici storici o vincolati ci sono sul territorio? In che stato si trovano? Un censimento pubblico che non esiste da nessuna parte in forma leggibile.</p>
+          <h4 class="data-card-title">Nuclei familiari monopersonali</h4>
+          <p class="data-card-body">Quante persone vivono sole a Solofra? Trend annuale. Proxy diretto di spopolamento e invecchiamento della popolazione.</p>
+          <div class="data-card-utility">Anticipare la domanda di servizi per chi vive solo — anziani, giovani, separati.</div>
+          <div class="data-card-footer">
+            <span class="badge badge-notfound">Non trovato</span>
+            <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
+          </div>
+        </div>
+
+        <div class="data-card notfound">
+          <h4 class="data-card-title">Utilizzo impianti sportivi e culturali</h4>
+          <p class="data-card-body">Ore prenotate vs disponibili per palestre e impianti. Presenze a eventi comunali o patrocinati.</p>
+          <div class="data-card-utility">Capire se gli spazi pubblici vengono usati — e dove c'è domanda non soddisfatta.</div>
           <div class="data-card-footer">
             <span class="badge badge-notfound">Non trovato</span>
             <a href="https://www.facebook.com/raf.dep/" target="_blank" class="signal-btn">Sai dove trovarlo?</a>
@@ -546,15 +608,15 @@
 
     <!-- SUGGERISCI -->
     <section id="suggerisci" class="block" style="border-bottom:none;">
-      <p class="block-num">07</p>
+      <p class="block-num">08</p>
       <h2 class="block-title">Manca qualcosa?</h2>
 
       <div class="suggest-box">
         <h3>Suggerisci un dato.</h3>
-        <p>Questa lista non è completa — e non pretende di esserlo. Se c'è un'informazione su Solofra che vorresti trovare facilmente, o se sai dove trovarne una che abbiamo segnato come "non trovata", scrivimi.</p>
+        <p>Questa lista non è completa. Se c'è un'informazione su Solofra che vorresti trovare facilmente — o se sai dove trovare uno dei dati che abbiamo segnato come "non trovato" — scrivimi.</p>
         <ul class="suggest-steps">
-          <li><strong>Scrivi cosa vorresti sapere</strong> — anche in modo informale. "Voglio sapere quanta acqua si spreca nella rete" è una richiesta perfettamente valida.</li>
-          <li><strong>Se conosci già la fonte</strong> — anche parziale — indicala. Aiuta ad aggiornare la pagina più in fretta.</li>
+          <li><strong>Scrivi cosa vorresti sapere</strong> — anche in modo informale. "Voglio sapere quanta acqua si spreca nella rete" va benissimo.</li>
+          <li><strong>Se conosci già la fonte</strong>, anche parziale, indicala — aiuta ad aggiornare la pagina più in fretta.</li>
           <li><strong>Mandamelo nei commenti del post o direttamente</strong> — rispondo a tutti e aggiorno la lista.</li>
         </ul>
         <a href="https://www.facebook.com/raf.dep/" target="_blank" class="suggest-btn">Scrivi a Raf →</a>
@@ -567,7 +629,7 @@
 
       <div class="manifest">
         <p class="manifest-hed">Il principio</p>
-        <p class="manifest-text">Un dato in un PDF da 300 pagine non è un dato pubblico. È un dato nascosto con una firma sopra.</p>
+        <p class="manifest-text">Un dato in un documento tecnico che nessuno sa leggere non è un dato pubblico. È un dato nascosto con una firma sopra.</p>
       </div>
 
     </section>
