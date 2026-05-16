@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Periferie e Rioni — Come sta Solofra</title>
+  <meta name="description" content="Una mappa aperta delle istanze dei rioni di Solofra. Cosa non funziona, cosa si vuole vedere cambiare. Quartiere per quartiere." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:        #1a1814;
+      --ink-soft:   #3d3a34;
+      --ink-muted:  #7a7670;
+      --paper:      #f5f2ec;
+      --paper-warm: #ede9e1;
+      --paper-mid:  #e0dbd0;
+      --rust:       #b54a2a;
+      --rust-light: #d4795a;
+      --rust-faint: #f3ebe6;
+      --gold:       #9a7c3a;
+      --gold-faint: #f2ead8;
+      --green:      #3a6b3c;
+      --green-faint:#e4ede5;
+      --border:     rgba(26,24,20,0.12);
+      --border-soft:rgba(26,24,20,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .site-brand {
+      font-family: 'Instrument Serif', serif;
+      font-size: 17px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .site-brand span { color: var(--rust); }
+    nav { display: flex; gap: 4px; flex-wrap: wrap; }
+    nav a {
+      font-size: 13px;
+      color: var(--ink-muted);
+      text-decoration: none;
+      padding: 3px 9px;
+      border-radius: 20px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover { background: var(--paper-warm); color: var(--ink); }
+    nav a.active { background: var(--rust-faint); color: var(--rust); }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 56px 0 40px;
+      border-bottom: 1px solid var(--border-soft);
+      margin-bottom: 48px;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rust);
+      background: var(--rust-faint);
+      border: 1px solid rgba(181,74,42,0.15);
+      border-radius: 20px;
+      padding: 3px 12px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 20px;
+      max-width: 640px;
+    }
+    .hero h1 em { font-style: italic; color: var(--rust); }
+    .hero-lead {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 28px;
+    }
+    .hero-meta {
+      font-size: 13px;
+      color: var(--ink-muted);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── BODY LAYOUT ── */
+    .body-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 700px) {
+      .body-layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+    }
+
+    /* ── TOC ── */
+    .toc {
+      position: sticky;
+      top: 72px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+    }
+    .toc a {
+      display: block;
+      font-size: 13px;
+      color: var(--ink-muted);
+      text-decoration: none;
+      padding: 5px 0;
+      border-left: 2px solid transparent;
+      padding-left: 10px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .toc a:hover { color: var(--ink); border-left-color: var(--rust-light); }
+    .toc a.active { color: var(--rust); border-left-color: var(--rust); font-weight: 500; }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 56px; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 26px;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .section p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-bottom: 14px;
+      max-width: 620px;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 3px solid var(--rust);
+      padding: 14px 20px;
+      margin: 28px 0;
+      background: var(--rust-faint);
+      border-radius: 0 8px 8px 0;
+    }
+    .pull-quote p {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0;
+      max-width: none;
+    }
+
+    /* ── DATO MANCANTE ── */
+    .dato-box {
+      border: 1px solid rgba(181,74,42,0.2);
+      border-radius: 10px;
+      padding: 18px 22px;
+      background: var(--rust-faint);
+      margin: 28px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .dato-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--rust);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .dato-content { flex: 1; }
+    .dato-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 4px;
+    }
+    .dato-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+
+    /* ── RIONI GRID ── */
+    .rioni-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .rione-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      background: var(--paper);
+      transition: border-color 0.15s, background 0.15s;
+      cursor: default;
+    }
+    .rione-card:hover {
+      border-color: rgba(181,74,42,0.3);
+      background: var(--rust-faint);
+    }
+    .rione-name {
+      font-family: 'Instrument Serif', serif;
+      font-size: 15px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .rione-meta {
+      font-size: 12px;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .rione-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--paper-mid);
+    }
+    .rione-dot.has-data { background: var(--green); }
+    .rione-dot.partial { background: var(--gold); }
+
+    /* ── FORM SECTION ── */
+    .form-box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 28px 0;
+    }
+    .form-header {
+      padding: 20px 24px 18px;
+      background: var(--paper-warm);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .form-header h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .form-header p {
+      font-size: 14px;
+      color: var(--ink-muted);
+      margin: 0;
+      max-width: none;
+    }
+    .form-embed {
+      background: var(--paper);
+    }
+    .form-embed iframe {
+      display: block;
+      width: 100%;
+      border: none;
+      min-height: 520px;
+    }
+    .form-placeholder {
+      padding: 48px 24px;
+      text-align: center;
+      color: var(--ink-muted);
+      font-size: 14px;
+    }
+
+    /* ── METODOLOGIA ── */
+    .method-box {
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      padding: 20px 24px;
+      background: var(--paper-warm);
+      margin-top: 40px;
+    }
+    .method-box h4 {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+    }
+    .method-box p {
+      font-size: 13px;
+      color: var(--ink-muted);
+      line-height: 1.7;
+      margin-bottom: 8px;
+      max-width: none;
+    }
+    .method-box p:last-child { margin-bottom: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border-soft);
+      margin-top: 80px;
+      padding: 32px 24px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    footer p {
+      font-size: 12px;
+      color: var(--ink-muted);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+    footer a { color: var(--ink-muted); }
+
+    /* ── DIVIDER ── */
+    hr { border: none; border-top: 1px solid var(--border-soft); margin: 40px 0; }
+
+    /* ── STATUS BADGE ── */
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 9px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+    }
+    .badge-open { background: var(--gold-faint); color: var(--gold); border: 1px solid rgba(154,124,58,0.2); }
+    .badge-empty { background: var(--paper-mid); color: var(--ink-muted); border: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="index.html">Come sta <span>Solofra</span></a>
+    <nav>
+      <a href="demografia.html">Popolazione</a>
+      <a href="bilancio.html">Bilancio</a>
+      <a href="mobilita.html">Mobilità</a>
+      <a href="concia.html">Concia</a>
+      <a href="bambini.html">Bambini</a>
+      <a href="trasparenza.html">Trasparenza</a>
+      <a href="periferie.html" class="active">Periferie</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="page-wrap">
+  <div class="hero">
+    <div class="hero-tag">Sezione 07 — Periferie e Rioni</div>
+    <h1>I rioni sanno chi sono.<br><em>Sanno anche cosa manca.</em></h1>
+    <p class="hero-lead">
+      Ogni anno Rioniamoci dimostra che l'identità di rione è viva e forte. Questa pagina prova a raccogliere quello che succede il resto dell'anno — le strade, i marciapiedi, i servizi, le cose che non funzionano e quelle che si vorrebbero vedere cambiare.
+    </p>
+    <div class="hero-meta">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Avviata maggio 2026
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Contribuisci con la tua segnalazione
+      </span>
+      <span class="badge badge-open">Raccolta aperta</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-layout">
+
+    <!-- TOC -->
+    <aside class="toc" aria-label="Indice della pagina">
+      <div class="toc-title">In questa pagina</div>
+      <a href="#perche">Perché questa pagina</a>
+      <a href="#il-dato">Il dato che manca</a>
+      <a href="#rioni">I rioni di Solofra</a>
+      <a href="#segnala">Segnala un'istanza</a>
+      <a href="#metodo">Nota metodologica</a>
+    </aside>
+
+    <!-- CONTENT -->
+    <main>
+
+      <!-- PERCHÉ -->
+      <section class="section" id="perche">
+        <div class="section-label">Il punto di partenza</div>
+        <h2>Rioniamoci non dovrebbe essere l'unica occasione</h2>
+        <p>
+          Ogni anno la Pro Loco di Solofra costruisce qualcosa di notevole: otto rioni che si organizzano, gareggiano, si riconoscono. La gente risponde. L'identità di quartiere esiste ed è forte.
+        </p>
+        <p>
+          Finita la festa, quella stessa capacità di mobilitarsi tende a scomparire. I rioni tornano ad aspettare — strade da sistemare, illuminazione che manca, marciapiedi impraticabili. Chi ci abita lo sa.
+        </p>
+
+        <div class="pull-quote">
+          <p>Quello spirito che funziona a Rioniamoci potrebbe diventare qualcosa di più strutturato: un modo per portare le istanze dei rioni in modo organizzato, tutto l'anno — non aspettare che qualcuno se ne ricordi sotto elezione.</p>
+        </div>
+
+        <p>
+          Questa pagina è un primo passo in quella direzione. Non è uno sportello di lamentele — è una mappa aperta di quello che non funziona e di quello che si vorrebbe vedere cambiare, quartiere per quartiere.
+        </p>
+      </section>
+
+      <hr />
+
+      <!-- IL DATO CHE MANCA -->
+      <section class="section" id="il-dato">
+        <div class="section-label">Il dato che manca</div>
+        <h2>Centro e periferia nella stessa voce</h2>
+        <p>
+          Nel bilancio comunale di Solofra non esiste una distinzione tra spesa per il centro e spesa per le zone periferiche. Le voci di manutenzione ordinaria — strade, marciapiedi, verde, illuminazione — coprono l'intero territorio comunale senza disaggregazione geografica.
+        </p>
+        <p>
+          Questo significa che non è possibile sapere, dai documenti pubblici, quanto viene allocato rione per rione. Né se la distribuzione è equa, né se alcune zone ricevono sistematicamente meno risorse di altre.
+        </p>
+
+        <p>
+          Il dato potrebbe esistere in delibere di giunta o nei piani esecutivi di gestione — documenti tecnici non accessibili nella forma leggibile di questa pagina. Se lo conosci o sai dove trovarlo, <a href="#segnala" style="color:var(--rust);">segnalacelo</a>.
+        </p>
+      </section>
+
+      <hr />
+
+      <!-- RIONI -->
+      <section class="section" id="rioni">
+        <div class="section-label">I rioni</div>
+        <h2>Solofra divisa in otto quartieri</h2>
+        <p>
+          Questi sono gli otto rioni partecipanti ufficiali a Rioniamoci 2025 — l'edizione più recente. Derivano dai casali storici documentati fin dal 1528 e dal Catasto Onciario del 1754. Nel tempo si sono aggregati in questi gruppi.
+        </p>
+        <p>
+          Per ciascun rione raccogliamo le segnalazioni dei residenti. Lo stato di ogni card si aggiornerà man mano che arrivano contributi.
+        </p>
+
+        <div class="rioni-grid">
+          <div class="rione-card">
+            <div class="rione-name">Fratta · Toro · Carcarella</div>
+            <div class="rione-meta">
+              <div class="rione-dot"></div>
+              <span class="badge badge-empty">Nessuna segnalazione</span>
+            </div>
+          </div>
+          <div class="rione-card">
+            <div class="rione-name">Caposolofra</div>
+            <div class="rione-meta">
+              <div class="rione-dot"></div>
+              <span class="badge badge-empty">Nessuna segnalazione</span>
+            </div>
+          </div>
+          <div class="rione-card">
+            <div class="rione-name">San Domenico · Piazza</div>
+            <div class="rione-meta">
+              <div class="rione-dot"></div>
+              <span class="badge badge-empty">Nessuna segnalazione</span>
+            </div>
+          </div>
+          <div class="rione-card">
+            <div class="rione-name">Sant'Agata</div>
+            <div class="rione-meta">
+              <div class="rione-dot"></div>
+              <span class="badge badge-empty">Nessuna segnalazione</span>
+            </div>
+          </div>
+          <div class="rione-card">
+            <div class="rione-name">Turci · Castello</div>
+            <div class="rione-meta">
+              <div class="rione-dot"></div>
+              <span class="badge badge-empty">Nessuna segnalazione</span>
+            </div>
+          </div>
+          <div class="rione-card">
+            <div class="rione-name">Balsami · Sorbo · Forna</div>
+            <div class="rione-meta">
+              <div class="rione-dot"></div>
+              <span class="badge badge-empty">Nessuna segnalazione</span>
+            </div>
+          </div>
+          <div class="rione-card">
+            <div class="rione-name">Sant'Andrea</div>
+            <div class="rione-meta">
+              <div class="rione-dot"></div>
+              <span class="badge badge-empty">Nessuna segnalazione</span>
+            </div>
+          </div>
+          <div class="rione-card">
+            <div class="rione-name">San Michele · Centro Storico</div>
+            <div class="rione-meta">
+              <div class="rione-dot"></div>
+              <span class="badge badge-empty">Nessuna segnalazione</span>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:13px; color:var(--ink-muted);">
+          Le card si aggiorneranno con un contatore delle segnalazioni ricevute per ogni rione. Il contenuto delle segnalazioni — anonimizzato — sarà pubblicato man mano che si consolida un quadro utile.
+        </p>
+      </section>
+
+      <hr />
+
+      <!-- FORM -->
+      <section class="section" id="segnala">
+        <div class="section-label">Contribuisci</div>
+        <h2>Cosa vedi nel tuo rione?</h2>
+        <p>
+          Se abiti in uno dei rioni di Solofra, puoi contribuire con una segnalazione: cosa non funziona, cosa vorresti vedere cambiare. Non è necessario avere soluzioni — basta descrivere quello che conosci.
+        </p>
+        <p>
+          Le segnalazioni raccolte alimenteranno questa pagina e potranno diventare la base per portare le istanze dei rioni in modo organizzato.
+        </p>
+
+        <div class="form-box">
+          <div class="form-header">
+            <h3>Segnala un'istanza</h3>
+            <p>Il form richiede circa 2 minuti. Il nome è facoltativo.</p>
+          </div>
+          <div class="form-embed">
+            <!-- SOSTITUIRE L'URL DEL FORM QUI -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQnLB4ymq6nLEHjY-wrdUb66hoYgrzChDEOh4q_AQLQqFoZA/viewform?embedded=true" width="100%" height="680" frameborder="0" marginheight="0" marginwidth="0" title="Segnalazione rioni Solofra">Caricamento…</iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- METODOLOGIA -->
+      <div class="method-box" id="metodo">
+        <h4>Nota metodologica</h4>
+        <p>
+          Questa pagina raccoglie segnalazioni qualitative dei residenti — non dati statistici ufficiali. Le istanze sono riportate così come arrivano, senza verifica di merito da parte dell'autore. Lo scopo è costruire una mappa delle percezioni, non un rapporto tecnico.
+        </p>
+        <p>
+          Il dato sulla spesa comunale per zona geografica è stato cercato nel Bilancio di Previsione 2025-2027 del Comune di Solofra e non è stato trovato in forma disaggregata. Fonte: <a href="https://rafdepprj.github.io/comestasolofra/bilancio.html" style="color:var(--ink-muted);">sezione bilancio di questa dashboard</a>.
+        </p>
+        <p>
+          La divisione in rioni riflette quella ufficiale di Rioniamoci 2025, organizzato dalla Pro Loco di Solofra. I casali storici di riferimento sono documentati dal Catasto Onciario del 1754.
+        </p>
+        <p>
+          Curato da Raffaele De Piano · <a href="index.html" style="color:var(--ink-muted);">Come sta Solofra</a> · Dati pubblici, resi leggibili.
+        </p>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    "Come sta Solofra" è un progetto di raccolta e visualizzazione di dati pubblici su Solofra (AV).
+    I dati sono estratti da fonti ufficiali e pubblicamente accessibili.
+    Questo sito non è affiliato al Comune di Solofra né ad alcun partito politico.
+    Curato da <strong>Raffaele De Piano</strong> · <a href="index.html">torna alla home</a>
+  </p>
+</footer>
+
+<script>
+  // TOC active state on scroll
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const tocLinks = document.querySelectorAll('.toc a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => link.classList.remove('active'));
+        const active = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
