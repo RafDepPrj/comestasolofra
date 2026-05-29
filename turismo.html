@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turismo — Come sta Solofra</title>
+<meta name="description" content="Turismo di prossimità a Solofra: flussi, potenziale economico, cosa abbiamo e cosa manca. Dati e stime ragionate.">
+<meta property="og:title" content="Turismo — Come sta Solofra">
+<meta property="og:description" content="Ogni weekend estivo passano davanti a Solofra migliaia di persone dirette a Serino. Quanto vale quello che stiamo perdendo?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; overflow-x: auto; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+  .insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+  .ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+  .tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 700px; }
+  .tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); }
+  .tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+  .tbl-insights tr:last-child td { border-bottom: none; }
+  .tbl-insights .col-ind { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; }
+  .tbl-insights .big { font-family: var(--serif); font-size: 22px; line-height: 1.05; letter-spacing: -0.02em; display: block; }
+  .tbl-insights .big.neg { color: var(--accent); }
+  .tbl-insights .big.ok  { color: var(--green); }
+  .tbl-insights .big.neu { color: var(--ink); }
+  .tbl-insights .big.amb { color: var(--amber); }
+  .tbl-insights .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-top: 2px; }
+  .tbl-insights .col-src { color: var(--ink-3); font-size: 12px; }
+
+  .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+  @media (min-width: 960px) { .layout { grid-template-columns: 220px 1fr; gap: 64px; } }
+
+  .toc { font-size: 13px; }
+  @media (min-width: 960px) { .toc { position: sticky; top: 78px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; } }
+  .toc-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 10px; }
+  .toc li a { color: var(--ink-2); text-decoration: none; display: block; padding: 6px 0; line-height: 1.4; transition: color .15s; border-left: 2px solid transparent; padding-left: 10px; }
+  .toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--serif); font-size: 12px; color: var(--accent); margin-right: 8px; }
+  .toc li a:hover { color: var(--ink); border-left-color: var(--accent); }
+
+  .block { padding-bottom: clamp(48px,6vw,72px); margin-bottom: clamp(48px,6vw,72px); border-bottom: 1px solid var(--border); }
+  .block:last-of-type { border-bottom: none; }
+  .block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .block-title { font-family: var(--serif); font-size: clamp(28px,3.8vw,42px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--ink); }
+  .block-intro { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 32px; max-width: 680px; }
+
+  h3.sub { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; margin-top: 40px; margin-bottom: 18px; color: var(--ink); }
+  h3.sub:first-child { margin-top: 0; }
+
+  p { margin-bottom: 14px; color: var(--ink); }
+  p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 16px 0; }
+
+  .tbl-wrap { margin: 16px 0 8px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--paper); }
+  table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.data th { text-align: left; padding: 12px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--paper-2); }
+  table.data td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); line-height: 1.5; }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data td:first-child { color: var(--ink-2); }
+  table.data td strong { font-weight: 500; color: var(--ink); }
+  table.data td.val { font-family: var(--serif); font-size: 16px; color: var(--ink); white-space: nowrap; }
+  table.data td.val.neg { color: var(--accent); }
+  table.data td.val.ok  { color: var(--green); }
+  table.data td.val.amb { color: var(--amber); }
+
+  .scenario-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0; }
+  @media (min-width: 600px) { .scenario-grid { grid-template-columns: repeat(3, 1fr); } }
+  .scenario-card { border: 1px solid var(--border); border-radius: 8px; padding: 24px 20px; background: var(--paper); }
+  .scenario-card.highlight { border-color: var(--accent); border-top: 3px solid var(--accent); }
+  .scenario-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .scenario-pct { font-family: var(--serif); font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 6px; }
+  .scenario-pct.highlight { color: var(--accent); }
+  .scenario-visitors { font-size: 13px; color: var(--ink-2); margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .scenario-val { font-family: var(--serif); font-size: 22px; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 4px; }
+  .scenario-val-sub { font-size: 12px; color: var(--ink-3); }
+  .scenario-detail { font-size: 13px; color: var(--ink-2); margin-top: 12px; line-height: 1.55; }
+
+  .asset-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0; }
+  @media (min-width: 640px) { .asset-grid { grid-template-columns: repeat(2, 1fr); } }
+  .asset-item { display: flex; gap: 14px; padding: 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--paper); align-items: flex-start; }
+  .asset-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .asset-name { font-weight: 500; font-size: 14px; color: var(--ink); margin-bottom: 3px; }
+  .asset-desc { font-size: 13px; color: var(--ink-2); line-height: 1.5; }
+
+  .missing-list { margin: 20px 0; }
+  .missing-item { display: grid; grid-template-columns: 24px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); align-items: start; }
+  .missing-item:first-child { border-top: 1px solid var(--border); }
+  .missing-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 6px; }
+  .missing-dot.amber { background: var(--amber); }
+  .missing-title { font-weight: 500; font-size: 15px; color: var(--ink); margin-bottom: 4px; }
+  .missing-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+  .missing-body strong { color: var(--ink); font-weight: 500; }
+
+  .src-flag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+  .src-flag.verified { color: var(--green); background: var(--green-bg); }
+  .src-flag.estimate { color: var(--amber); background: var(--amber-bg); }
+
+  .fonti { font-size: 13px; }
+  .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+  .fonti h4:first-child { margin-top: 0; }
+  .fonti ul { list-style: none; }
+  .fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+  .fonti li:last-child { border-bottom: none; }
+  .fonti li strong { color: var(--ink); font-weight: 500; }
+  .fonti li a { color: var(--ink-2); text-decoration: none; border-bottom: 1px dotted var(--ink-3); word-break: break-all; }
+  .fonti li a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale su fonti pubbliche: Unioncamere/Isnart, Regione Campania, TripAdvisor, VesuvioLive. I dati certificati sono distinti dalle stime ragionate. Segnalazioni e correzioni sono benvenute.</div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="site-title">Come sta <span>Solofra</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="demografia.html">Demografia</a>
+      <a href="bilancio.html">Bilancio</a>
+      <a href="mobilita.html">Mobilità</a>
+      <a href="concia.html">Concia</a>
+      <a href="scuole.html">Bambini e scuole</a>
+      <a href="trasparenza.html">I dati che vorremmo</a>
+      <a href="crisi_mandato.html">Crisi di fine mandato</a>
+      <a href="turismo.html" class="active">Turismo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">08 — Economia locale · aggiornato maggio 2026</p>
+  <h1 class="hero-title">Ci passano davanti<br><em>e non si fermano.</em></h1>
+  <p class="hero-sub">Ogni weekend estivo migliaia di escursionisti da Salerno, Napoli e dai Paesi Vesuviani attraversano la Valle dell'Irno diretti a Serino. Solofra ha le stesse risorse — e anche di più. Quanto vale quello che stiamo perdendo?</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>Ultima consultazione fonti: maggio 2026</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<div class="insights-wrap">
+  <p class="insights-hed">I numeri, in sintesi</p>
+  <p class="insights-sub">Flussi stimati, potenziale economico e stato attuale della presenza turistica di Solofra. I dati certificati sono distinti dalle stime ragionate.</p>
+  <div class="ins-tbl-wrap">
+    <table class="tbl-insights">
+      <thead>
+        <tr>
+          <th>Indicatore</th>
+          <th>Dato</th>
+          <th>Nota</th>
+          <th class="col-src">Fonte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-ind">Sagra della Castagna IGP di Serino — visitatori in 3 giorni</td>
+          <td><span class="big neu">~35.000</span><span class="sub">in 3 giorni (ottobre)</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Dato usato come proxy per stimare la capacità attrattiva dell'area. ~11.600 persone/giorno nell'evento di punta</td>
+          <td class="col-src"><a href="https://www.vesuviolive.it/eventi/529637-sagra-castagna-serino-2025-programma/" target="_blank">VesuvioLive 2025</a> <span class="src-flag verified">verificato</span></td>
+        </tr>
+        <tr>
+          <td class="col-ind">Stima flusso escursionisti area Serino — weekend festivi ordinari</td>
+          <td><span class="big amb">~5.000</span><span class="sub">persone al giorno</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Stima prudente: metà del flusso della Sagra della Castagna. I weekend ordinari attirano meno della sagra di punta</td>
+          <td class="col-src">Stima <span class="src-flag estimate">stima</span></td>
+        </tr>
+        <tr>
+          <td class="col-ind">Spesa media escursionista giornaliero in Irpinia</td>
+          <td><span class="big neu">€35–45</span><span class="sub">a persona</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Quasi interamente in ristorazione e prodotti locali. Chi pernotta spende €120–140/giorno</td>
+          <td class="col-src">Unioncamere/Isnart 2024 <span class="src-flag verified">verificato</span></td>
+        </tr>
+        <tr>
+          <td class="col-ind">Giornate ad alto flusso turistico (apr–ott)</td>
+          <td><span class="big neu">~35</span><span class="sub">weekend + ponti festivi</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Pasquetta, 2 giugno, tutti i weekend estivi, Ferragosto, ponti autunnali</td>
+          <td class="col-src">Stima <span class="src-flag estimate">stima</span></td>
+        </tr>
+        <tr>
+          <td class="col-ind">Attrazioni schedate su TripAdvisor</td>
+          <td><span class="big ok">39</span><span class="sub">attività totali, 26 ristoranti</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Presenza digitale frammentata, nessuna strategia coordinata di promozione</td>
+          <td class="col-src">TripAdvisor, maggio 2026 <span class="src-flag verified">verificato</span></td>
+        </tr>
+        <tr>
+          <td class="col-ind">Piano turistico comunale</td>
+          <td><span class="big neg">Nessuno</span><span class="sub">non documentato</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Non risulta un piano strategico turistico comunale pubblico e aggiornato</td>
+          <td class="col-src">Comune di Solofra <span class="src-flag verified">verificato</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="layout">
+
+  <aside class="toc">
+    <p class="toc-hed">Le sezioni</p>
+    <ol>
+      <li><a href="#flusso">Il flusso che passa</a></li>
+      <li><a href="#risorse">Cosa ha Solofra</a></li>
+      <li><a href="#calcolo">Il calcolo</a></li>
+      <li><a href="#manca">Cosa manca</a></li>
+      <li><a href="#fonti">Fonti</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <section id="flusso" class="block">
+      <p class="block-num">01 — Il flusso</p>
+      <h2 class="block-title">Le macchine che passano.</h2>
+      <p class="block-intro">Il turismo di prossimità irpino è prevalentemente escursionistico — la maggioranza dei visitatori non pernotta. Vengono per una giornata, mangiano, comprano qualcosa e tornano. Questo rende i dati difficili da misurare ufficialmente, ma il fenomeno è reale e documentabile indirettamente.</p>
+
+      <h3 class="sub">Il punto di riferimento: la Sagra della Castagna di Serino</h3>
+      <p>L'unico dato pubblico disponibile sull'attrattività dell'area è la <strong>Sagra della Castagna IGP di Serino</strong>: circa 35.000 visitatori in 3 giorni (ottobre 2025, 48ª edizione). Sono circa 11.600 persone al giorno nell'evento di maggior richiamo dell'anno.</p>
+      <p>Un weekend festivo ordinario — come il 2 giugno, Pasquetta o Ferragosto — attira meno di un evento di punta. La stima usata in questa pagina è <strong>~5.000 escursionisti al giorno</strong>: la metà della sagra, una soglia prudente.</p>
+
+      <p class="note">I dati ISTAT sul turismo per piccoli comuni irpini come Serino non sono disaggregati: la maggior parte dei visitatori è escursionista giornaliero e non viene censita dalle strutture ricettive. Il fenomeno è strutturalmente sottostimato dalle statistiche ufficiali.</p>
+
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Riferimento</th><th>Flusso</th><th>Nota</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Sagra della Castagna IGP Serino (ottobre, evento di punta)</td>
+              <td class="val">~35.000 in 3 giorni</td>
+              <td>~11.600/giorno. Fonte: VesuvioLive 2025</td>
+            </tr>
+            <tr>
+              <td>Weekend festivi ordinari area Serino/Valle dell'Irno</td>
+              <td class="val amb">~5.000/giorno</td>
+              <td>Stima prudente — metà della sagra di punta</td>
+            </tr>
+            <tr>
+              <td>Provincia di Avellino (annuale, strutture ricettive)</td>
+              <td class="val">~230.000–260.000 presenze</td>
+              <td>ISTAT — solo pernottanti, sottostima il reale</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="risorse" class="block">
+      <p class="block-num">02 — Le risorse</p>
+      <h2 class="block-title">Cosa ha Solofra.</h2>
+      <p class="block-intro">Solofra ha le stesse risorse naturali di Serino — e in più un patrimonio storico-artistico, una tradizione artigianale unica e un'offerta enogastronomica che pochi comuni irpini possono vantare. Il problema non è l'offerta: è la visibilità.</p>
+
+      <div class="asset-grid">
+        <div class="asset-item">
+          <div class="asset-icon">⛪</div>
+          <div>
+            <div class="asset-name">Collegiata di San Michele Arcangelo</div>
+            <div class="asset-desc">Monumento nazionale. Costruita dal 1522, facciata barocca, tre navate con opere di Francesco Guarini. Cripta sotterranea visitabile. Uno dei principali edifici barocchi della provincia di Avellino.</div>
+          </div>
+        </div>
+        <div class="asset-item">
+          <div class="asset-icon">🏛️</div>
+          <div>
+            <div class="asset-name">Palazzo Ducale Orsini e Museo della Concia</div>
+            <div class="asset-desc">Seconda metà del '500, oggi sede comunale. Ospita il Museo della Concia — storia della lavorazione delle pelli dal XVI secolo a oggi. Aperto dal lunedì al venerdì, weekend su prenotazione.</div>
+          </div>
+        </div>
+        <div class="asset-item">
+          <div class="asset-icon">⛲</div>
+          <div>
+            <div class="asset-name">Centro storico rinascimentale</div>
+            <div class="asset-desc">Fontana dei Quattro Leoni (barocca, 1733), vicoli, chiese minori (San Domenico, Sant'Agata, San Giuliano), resti del Castello longobardo. Un centro storico che pochi comuni della provincia possono vantare.</div>
+          </div>
+        </div>
+        <div class="asset-item">
+          <div class="asset-icon">🥾</div>
+          <div>
+            <div class="asset-name">Monti Picentini e sentieri</div>
+            <div class="asset-desc">Parco Regionale dei Monti Picentini. Sentieri CAI, faggete, fauna appenninica. Stesse montagne che attirano escursionisti nell'area — meno conosciute come accesso da Solofra, meno promosse.</div>
+          </div>
+        </div>
+        <div class="asset-item">
+          <div class="asset-icon">🧴</div>
+          <div>
+            <div class="asset-name">Confezioni e showroom in pelle</div>
+            <div class="asset-desc">Solofra è il principale distretto conciario del Mezzogiorno. Numerosi showroom e punti vendita diretti con prodotti che non si trovano altrove a questi prezzi. Un asset commerciale unico nel raggio di decine di chilometri.</div>
+          </div>
+        </div>
+        <div class="asset-item">
+          <div class="asset-icon">🍰</div>
+          <div>
+            <div class="asset-name">Pasticcerie di qualità</div>
+            <div class="asset-desc">In un paese di 12.000 abitanti. L'enogastronomia è la prima motivazione di visita in Irpinia (28,9% dei turisti secondo Unioncamere/SRM 2024). Un asset sottovalutato e sottopromosso.</div>
+          </div>
+        </div>
+        <div class="asset-item">
+          <div class="asset-icon">🍽️</div>
+          <div>
+            <div class="asset-name">Ristorazione locale</div>
+            <div class="asset-desc">26 ristoranti schedate su TripAdvisor. D'Arì Braceria (153 recensioni) e La Taverna del Principe (209 recensioni) tra i più recensiti della zona. Offerta reale, non promossa.</div>
+          </div>
+        </div>
+        <div class="asset-item">
+          <div class="asset-icon">🎨</div>
+          <div>
+            <div class="asset-name">Patrimonio artistico e culturale</div>
+            <div class="asset-desc">Scuola pittorica solofrana (famiglia Guarini, XVII sec.). Pro Loco attiva con visite guidate alla Collegiata. Potenziale per itinerari culturali tematici ancora da sviluppare.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calcolo" class="block">
+      <p class="block-num">03 — Il calcolo</p>
+      <h2 class="block-title">Quanto vale quello che stiamo perdendo.</h2>
+      <p class="block-intro">Se Solofra intercettasse anche solo una quota del flusso che già attraversa la Valle dell'Irno, l'impatto economico sulla comunità locale sarebbe significativo. Il calcolo è una stima — ma è una stima ragionata su dati reali.</p>
+
+      <h3 class="sub">Le ipotesi di base</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Parametro</th><th>Valore</th><th>Fonte</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Escursionisti giornalieri area Serino (weekend festivi)</td>
+              <td class="val">~5.000 persone</td>
+              <td>Stima prudente — metà Sagra Castagna</td>
+            </tr>
+            <tr>
+              <td>Spesa media escursionista giornaliero Irpinia</td>
+              <td class="val">€40 a persona</td>
+              <td>Unioncamere/Isnart 2024</td>
+            </tr>
+            <tr>
+              <td>Giornate ad alto flusso per stagione (apr–ott)</td>
+              <td class="val">35 giornate</td>
+              <td>Stima: weekend + ponti festivi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Tre scenari</h3>
+      <div class="scenario-grid">
+        <div class="scenario-card">
+          <div class="scenario-label">Scenario prudente</div>
+          <div class="scenario-pct">10%</div>
+          <div class="scenario-visitors">500 persone/giornata · 17.500 stagione</div>
+          <div class="scenario-val">~€700.000</div>
+          <div class="scenario-val-sub">impatto economico stagionale</div>
+          <div class="scenario-detail">~33 clienti in più a giornata per ogni bar, ristorante, pasticceria, negozio. Raggiungibile con segnaletica e presenza online di base.</div>
+        </div>
+        <div class="scenario-card highlight">
+          <div class="scenario-label">Scenario realistico</div>
+          <div class="scenario-pct highlight">20%</div>
+          <div class="scenario-visitors">1.000 persone/giornata · 35.000 stagione</div>
+          <div class="scenario-val">~€1,4 milioni</div>
+          <div class="scenario-val-sub">impatto economico stagionale</div>
+          <div class="scenario-detail">~65 clienti in più a giornata per esercizio. Paragonabile a quasi raddoppiare il giro domenicale di una pasticceria.</div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-label">Scenario ottimistico</div>
+          <div class="scenario-pct">30%</div>
+          <div class="scenario-visitors">1.500 persone/giornata · 52.500 stagione</div>
+          <div class="scenario-val">~€2,1 milioni</div>
+          <div class="scenario-val-sub">impatto economico stagionale</div>
+          <div class="scenario-detail">Richiede una strategia strutturata: promozione attiva, segnaletica, accordi intercomunali, presenza digitale coordinata.</div>
+        </div>
+      </div>
+
+      <p class="note">Tutti e tre gli scenari si basano sulla stessa stima di flusso base (5.000 escursionisti/giorno nell'area). La variabile è la percentuale intercettata da Solofra. L'impatto reale dipende dalla qualità dell'offerta e dalla capacità di promozione.</p>
+    </section>
+
+    <section id="manca" class="block">
+      <p class="block-num">04 — Cosa manca</p>
+      <h2 class="block-title">Perché non si fermano.</h2>
+      <p class="block-intro">Il problema non è la mancanza di risorse. È la mancanza di organizzazione, visibilità e strategia. Alcuni elementi richiedono investimenti. La maggior parte no.</p>
+
+      <div class="missing-list">
+        <div class="missing-item">
+          <div class="missing-dot"></div>
+          <div>
+            <div class="missing-title">Nessun piano turistico comunale</div>
+            <div class="missing-body">Non risulta un piano strategico turistico comunale pubblico e aggiornato. Nessuna mappatura delle attrazioni, nessun obiettivo di flusso, nessuna linea di promozione coordinata. La Pro Loco organizza visite guidate — ma è un'iniziativa civica, non una strategia istituzionale.</div>
+          </div>
+        </div>
+        <div class="missing-item">
+          <div class="missing-dot"></div>
+          <div>
+            <div class="missing-title">Segnaletica turistica assente o insufficiente</div>
+            <div class="missing-body">Non risultano cartelli turistici agli ingressi del paese né segnalazione dei principali attrattori lungo le strade di accesso. Chi non sa già dove andare non ha modo di scoprirlo mentre passa.</div>
+          </div>
+        </div>
+        <div class="missing-item">
+          <div class="missing-dot amber"></div>
+          <div>
+            <div class="missing-title">Presenza digitale frammentata</div>
+            <div class="missing-body">39 attrazioni su TripAdvisor — ma nessuna strategia coordinata. Nessun sito turistico istituzionale aggiornato, nessuna campagna di posizionamento strutturata. Chi cerca "cosa fare vicino Salerno" o "gita fuori porta Campania" non trova Solofra tra le prime opzioni.</div>
+          </div>
+        </div>
+        <div class="missing-item">
+          <div class="missing-dot amber"></div>
+          <div>
+            <div class="missing-title">Nessun accordo di promozione con i comuni vicini</div>
+            <div class="missing-body">Serino e Solofra condividono lo stesso bacino di visitatori e le stesse montagne. Un accordo di promozione incrociata permetterebbe di offrire itinerari combinati: natura e aria aperta, poi cultura e shopping. Non risultano accordi di questo tipo.</div>
+          </div>
+        </div>
+        <div class="missing-item">
+          <div class="missing-dot amber"></div>
+          <div>
+            <div class="missing-title">Aree attrezzate in montagna sottosviluppate</div>
+            <div class="missing-body">I Monti Picentini sopra Solofra offrono paesaggi e sentieri di qualità. Le aree attrezzate per famiglie potrebbero essere ampliate e meglio segnalate — abbassando la soglia di accesso per chi non è escursionista esperto e cercando una gita tranquilla con i bambini.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fonti" class="block" style="border-bottom:none;">
+      <p class="block-num">Fonti</p>
+      <h2 class="block-title">Mappa numeri → fonti.</h2>
+      <p class="block-intro">Ogni dato in questa pagina è tratto da un documento pubblico o dichiarato come stima ragionata.</p>
+
+      <div class="fonti">
+        <h4>Dati verificati</h4>
+        <ul>
+          <li><strong>Sagra della Castagna IGP Serino — ~35.000 visitatori in 3 giorni</strong> <span class="src-flag verified">verificato</span> — <a href="https://www.vesuviolive.it/eventi/529637-sagra-castagna-serino-2025-programma/" target="_blank">VesuvioLive, Sagra della Castagna Serino 2025</a>. Dato usato come proxy per la capacità attrattiva dell'area, non come evento solofrano.</li>
+          <li><strong>Spesa media escursionista giornaliero Irpinia €35–45</strong> <span class="src-flag verified">verificato</span> — Osservatorio sull'Economia del Turismo, Unioncamere/Isnart 2024.</li>
+          <li><strong>Provincia di Avellino: 230.000–260.000 presenze annue nelle strutture ricettive</strong> <span class="src-flag verified">verificato</span> — ISTAT, Movimento turistico negli esercizi ricettivi.</li>
+          <li><strong>TripAdvisor Solofra: 39 attrazioni totali, 26 ristoranti</strong> <span class="src-flag verified">verificato</span> — TripAdvisor, consultazione maggio 2026.</li>
+          <li><strong>Enogastronomia prima motivazione di visita in Irpinia: 28,9%</strong> <span class="src-flag verified">verificato</span> — SRM Rapporto Turismo 2024.</li>
+        </ul>
+
+        <h4>Stime ragionate</h4>
+        <ul>
+          <li><strong>~5.000 escursionisti/giorno area Serino nei weekend festivi</strong> <span class="src-flag estimate">stima</span> — Metà del flusso giornaliero della Sagra della Castagna (35.000 ÷ 3 = ~11.600/giorno). Scelta prudente: i weekend ordinari attraggono meno di un evento di punta. Non esistono conteggi ufficiali per piccoli comuni irpini nei giorni non-sagra.</li>
+          <li><strong>~35 giornate ad alto flusso per stagione</strong> <span class="src-flag estimate">stima</span> — Conteggio dei ponti festivi (Pasquetta, 2 giugno, Ferragosto, 1 novembre) più i weekend da maggio a settembre.</li>
+          <li><strong>Impatto economico per scenario (€700K / €1,4M / €2,1M)</strong> <span class="src-flag estimate">stima</span> — Calcolo: escursionisti intercettati × spesa media €40 × 35 giornate. La spesa media è il dato Unioncamere; il resto è stima su stima dichiarata.</li>
+        </ul>
+      </div>
+
+      <div class="ai-notice">
+        <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+        <p class="ai-notice-text">Nella stesura dei testi e nell'elaborazione delle stime è stato utilizzato un modello di intelligenza artificiale come strumento di lavoro. I dati verificati sono stati confrontati con le fonti primarie. Le stime sono dichiarate come tali con la catena di ragionamento che le produce. <strong>Se individui un errore o un'imprecisione, segnalamelo</strong>: la pagina verrà aggiornata.</p>
+      </div>
+
+      <div class="manifest">
+        <p class="manifest-hed">Il metodo</p>
+        <p class="manifest-text">I dati sono pubblici. Le fonti sono citate. Le stime sono dichiarate come tali — con la catena di ragionamento che le produce. La differenza tra un dato e un'opinione deve essere sempre leggibile.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Tutti i dati sono pubblici e le fonti sono citate. I numeri sono mostrati per intero e verificabili da chiunque.
+    </div>
+    <div class="footer-r">Ultimo aggiornamento: maggio 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+</body>
+</html>
