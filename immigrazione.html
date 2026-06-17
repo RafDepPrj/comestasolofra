@@ -201,6 +201,8 @@
     nav a { font-size: 12px; }
   }
 </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme-mandarin.css">
 </head>
 <body>
 
@@ -208,19 +210,24 @@
   <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale sui dati pubblici di ISTAT, della Fondazione Leone Moressa e della ricerca accademica citata. Le fonti sono indicate e verificabili. Errori o imprecisioni sono possibili: segnalazioni e correzioni sono benvenute.</div>
 </div>
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="site-title">Come sta <span>Solofra</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="demografia.html">Demografia</a>
-      <a href="bilancio.html">Bilancio</a>
-      <a href="mobilita.html">Mobilità</a>
-      <a href="concia.html">Concia</a>
-      <a href="scuole.html">Bambini e scuole</a>
-      <a href="trasparenza.html">I dati che vorremmo</a>
-      <a href="turismo.html" class="active">Turismo</a>
-      <a href="immigrazione.html" class="active">Chi arriva</a>
+<header class="mn-header">
+  <div class="mn-header-inner">
+    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
+    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="mn-nav" id="mnNav">
+        <a href="index.html">Home</a>
+        <a href="demografia.html">Demografia</a>
+        <a href="bilancio.html">Bilancio</a>
+        <a href="crisi_mandato.html">Crisi di fine mandato</a>
+
+        <a href="concia.html">Concia</a>
+        <a href="mobilita.html">Mobilità</a>
+        <a href="scuole.html">Bambini e scuole</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="immigrazione.html" class="active">Chi arriva</a>
+        <a href="trasparenza.html">I dati che vorremmo</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="suolo.html">Suolo</a>
     </nav>
   </div>
 </header>
@@ -610,5 +617,6 @@
   </div>
 </footer>
 
+  <script src="theme-mandarin.js" defer></script>
 </body>
 </html>
