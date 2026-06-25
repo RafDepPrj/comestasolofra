@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altrove — Come sta Solofra</title>
+<meta name="description" content="L'hanno già fatto altri: città e piccoli borghi che, partendo spesso messi peggio di noi, hanno scelto che cosa diventare. Spunti da altre realtà per immaginare la Solofra dei prossimi vent'anni.">
+<meta property="og:title" content="Altrove — Come sta Solofra">
+<meta property="og:description" content="Da Liverpool a Matera, da Bilbao al Rione Sanità: posti che hanno scelto una direzione e l'hanno resa concreta. Spunti, non modelli — per immaginare Solofra tra vent'anni.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  /* Fallback header: si attiva SOLO se theme-mandarin.css non è caricato (es. anteprima isolata). Sul sito theme-mandarin.css è linkato dopo e lo sovrascrive. */
+  .mn-header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .mn-header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .mn-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); white-space: nowrap; }
+  .mn-logo { height: 26px; width: auto; }
+  .mn-wordmark { font-family: var(--serif); font-size: 19px; color: var(--ink); letter-spacing: -0.01em; }
+  .mn-wordmark em { font-style: italic; color: var(--accent); }
+  .mn-toggle { display: none; background: none; border: none; cursor: pointer; }
+  .mn-nav { display: flex; flex-wrap: wrap; gap: 22px; justify-content: flex-end; }
+  .mn-nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s; }
+  .mn-nav a:hover { color: var(--ink); }
+  .mn-nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+  @media (max-width: 760px) { .mn-nav { gap: 14px; overflow-x: auto; flex-wrap: nowrap; } }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  .solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+  .solofra-intro { margin-bottom: 32px; max-width: 720px; }
+  .solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .solofra-lede strong { color: var(--ink); font-weight: 500; }
+  .solofra-quote { font-family: var(--serif); font-style: italic; font-size: clamp(18px,2.2vw,22px); line-height: 1.4; color: var(--ink); padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--paper); border-radius: 0 6px 6px 0; margin-top: 18px; }
+
+  .cao-group { margin-top: 44px; }
+  .cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; background: var(--accent); }
+  .cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; color: var(--ink); }
+  .cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+
+  .cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+  .cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+  .cao-card:hover { transform: translateY(-2px); border-color: rgba(26,26,24,0.22); }
+  .cao-card-place { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .cao-card-title { font-family: var(--serif); font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .cao-card-body { font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+  .cao-card-body strong { font-weight: 500; color: var(--ink); }
+  .cao-card-idea { display: block; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 13.5px; color: var(--ink); }
+  .cao-card-idea b { font-weight: 500; }
+
+  .cta { max-width: 1060px; margin: 0 auto; padding: 0 clamp(20px,5vw,80px) clamp(8px,2vw,16px); }
+  .cta-box { background: var(--ink); border-radius: 12px; padding: clamp(28px,4vw,40px); color: var(--paper); }
+  .cta-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .cta-q { font-family: var(--serif); font-size: clamp(24px,3.2vw,34px); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 14px; color: var(--paper); }
+  .cta-sub { font-size: 15px; color: rgba(247,245,240,0.75); line-height: 1.6; margin-bottom: 24px; max-width: 560px; }
+  .cta-btn { display: inline-block; background: var(--accent); color: #fff; font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; padding: 13px 26px; border-radius: 8px; transition: opacity .15s, transform .15s; }
+  .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .form-embed { max-width: 1060px; margin: 0 auto; padding: clamp(18px,2.5vw,24px) clamp(20px,5vw,80px) clamp(8px,2vw,16px); }
+  .form-frame-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 1px 3px rgba(26,26,24,0.06); }
+  .form-frame { width: 100%; height: 1400px; border: 0; display: block; }
+  .form-fallback { font-size: 13px; color: var(--ink-3); margin-top: 14px; text-align: center; }
+  .form-fallback a { color: var(--ink-2); border-bottom: 1px solid var(--border); text-decoration: none; }
+  .form-fallback a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .ai-notice-text strong { color: var(--ink); font-weight: 500; }
+
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 24px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+
+  @media (max-width: 640px) {
+    nav { gap: 16px; overflow-x: auto; }
+    nav a { font-size: 12px; }
+  }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è diversa dalle altre. Non mostra dati su Solofra: raccoglie esempi da altri luoghi per far venire idee. I posti e le trasformazioni sono reali e documentati, ma le cifre esatte vanno sempre verificate alla fonte. Sono spunti, non modelli da copiare.</div>
+</div>
+
+<header class="mn-header">
+  <div class="mn-header-inner">
+    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
+    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="mn-nav" id="mnNav">
+        <a href="index.html">Home</a>
+        <a href="demografia.html">Demografia</a>
+        <a href="bilancio.html">Bilancio</a>
+        <a href="crisi_mandato.html">Crisi di fine mandato</a>
+        <a href="concia.html">Concia</a>
+        <a href="mobilita.html">Mobilità</a>
+        <a href="scuole.html">Bambini e scuole</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="immigrazione.html">Chi arriva</a>
+        <a href="trasparenza.html">I dati che vorremmo</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="suolo.html">Suolo</a>
+        <a href="altrove.html" class="active">Altrove</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">Spunti da altre realtà · aggiornato giugno 2026</p>
+  <h1 class="hero-title">Una direzione<br><em>si può scegliere.</em></h1>
+  <p class="hero-sub">Posti lontanissimi da Solofra, e lontanissimi tra loro: grandi città e piccoli borghi, fabbriche e fortezze. Hanno in comune una cosa sola — a un certo punto hanno deciso che cosa volevano diventare, e ci hanno lavorato. Non sono ricette da copiare: servono a far vedere che la scelta esiste.</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>Casi pubblici e documentati — cifre da verificare alla fonte</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<div class="solofra-wrap">
+  <div class="solofra-intro">
+    <h2 class="solofra-hed">L'hanno già fatto.</h2>
+    <p class="solofra-lede">Nessuno di questi luoghi era partito avvantaggiato. Molti stavano peggio di noi: fabbriche chiuse, quartieri abbandonati, una sola industria che non bastava più. La differenza non è stata la fortuna. È stata una domanda fatta in tempo: <strong>che cosa vogliamo diventare?</strong></p>
+    <p class="solofra-lede">Qui sotto, alcune storie raggruppate per tema. Alcune enormi, alcune minuscole. Alcune non c'entrano niente con noi — e va bene così: servono solo a far venire un'idea.</p>
+    <div class="solofra-quote">La visione non è un sogno astratto. È una cosa che altri hanno già scelto — e si vede.</div>
+  </div>
+
+  <!-- GRUPPO 1 -->
+  <div class="cao-group">
+    <div class="cao-group-hed">
+      <span class="dot"></span>
+      <h3>Da città industriale a nuova vita</h3>
+      <span class="cao-count">5 storie</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card">
+        <p class="cao-card-place">Liverpool · Regno Unito</p>
+        <h4 class="cao-card-title">Il porto che è tornato cultura</h4>
+        <p class="cao-card-body">Grande città di porto e di fabbriche, travolta dal declino industriale del secondo Novecento. Ha recuperato i moli abbandonati sul fiume — l'Albert Dock — trasformandoli in musei, locali e spazi pubblici, ed è stata <strong>Capitale Europea della Cultura nel 2008</strong>.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> una città operaia che ha rimesso al centro il suo lungofiume e la sua identità.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Bilbao · Spagna</p>
+        <h4 class="cao-card-title">Una scommessa sulla cultura</h4>
+        <p class="cao-card-body">Città di acciaierie in crisi, grigia e in fuga. Ha scommesso su un grande museo (<strong>1997</strong>) e sul recupero del fiume, reinventandosi attorno a cultura e turismo.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> una città "perdente" che ha scelto di guardare avanti invece di rimpiangere.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Essen · Germania</p>
+        <h4 class="cao-card-title">Zollverein, la miniera che insegna</h4>
+        <p class="cao-card-body">Una delle più grandi miniere di carbone d'Europa, poi un relitto industriale. Invece di demolirla, l'hanno trasformata in luogo di cultura, eventi e visite: oggi è <strong>patrimonio UNESCO</strong>.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> il passato industriale come identità, non come vergogna da nascondere.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Torino · Italia</p>
+        <h4 class="cao-card-title">Lingotto, dalla catena di montaggio alla città</h4>
+        <p class="cao-card-body">La fabbrica simbolo della FIAT, dismessa. Oggi ospita università, auditorium e spazi pubblici, e la vecchia <strong>pista di collaudo sul tetto è diventata un giardino</strong>.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> un'icona della produzione di massa riaperta alla città e alla conoscenza.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Barcellona · Spagna</p>
+        <h4 class="cao-card-title">22@, le fabbriche diventate innovazione</h4>
+        <p class="cao-card-body">Un quartiere di opifici abbandonati, la "Manchester catalana". Ricucito come distretto dell'innovazione, con le <strong>imprese nuove cresciute accanto agli edifici storici conservati</strong>.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> il declino industriale convertito in lavoro qualificato, senza cancellare le tracce.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GRUPPO 2 -->
+  <div class="cao-group">
+    <div class="cao-group-hed">
+      <span class="dot"></span>
+      <h3>Piccoli centri che ci hanno creduto</h3>
+      <span class="cao-count">3 storie</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card">
+        <p class="cao-card-place">Matera · Italia</p>
+        <h4 class="cao-card-title">Dai Sassi alla Capitale della Cultura</h4>
+        <p class="cao-card-body">I Sassi, abbandonati negli anni '50 come simbolo di arretratezza e povertà. Recuperati e tutelati, sono diventati patrimonio UNESCO e nel <strong>2019 Capitale Europea della Cultura</strong>.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> uno stigma ribaltato in orgoglio, qui al Sud.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Napoli · Italia</p>
+        <h4 class="cao-card-title">Rione Sanità, la rinascita dal basso</h4>
+        <p class="cao-card-body">Un quartiere con fragilità sociali profonde ma una storia fortissima. Cultura, turismo di comunità e <strong>cooperative di giovani</strong> ne hanno fatto un caso nazionale di rinascita.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> l'identità che diventa lavoro per i ragazzi, senza sradicarli.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Šibenik · Croazia</p>
+        <h4 class="cao-card-title">Le fortezze che fanno cultura</h4>
+        <p class="cao-card-body">Fortezze storiche lasciate andare al degrado, riaperte come <strong>luoghi di cultura ed eventi tutto l'anno</strong>.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> un piccolo centro che ha fatto del proprio patrimonio un motore economico.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GRUPPO 3 -->
+  <div class="cao-group">
+    <div class="cao-group-hed">
+      <span class="dot"></span>
+      <h3>Spazi, ambiente e comunità</h3>
+      <span class="cao-count">5 storie</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card">
+        <p class="cao-card-place">Freiburg · Germania</p>
+        <h4 class="cao-card-title">Vauban, il quartiere che respira</h4>
+        <p class="cao-card-body">Un quartiere costruito mettendo fin dal progetto energia, risparmio e mobilità al centro: <strong>una parte importante dei residenti vive senza auto privata</strong>.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> l'ambiente come scelta di disegno, non come divieto.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">New York · Stati Uniti</p>
+        <h4 class="cao-card-title">High Line, la ferrovia diventata parco</h4>
+        <p class="cao-card-body">Una ferrovia sopraelevata abbandonata, destinata alla demolizione. È diventata un <strong>parco lineare sospeso</strong> nel cuore della città.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> anche un rudere può tornare un luogo di tutti.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Torino · Italia</p>
+        <h4 class="cao-card-title">Parco Dora, il verde sulla fabbrica</h4>
+        <p class="cao-card-body">Aree industriali ex Fiat e Michelin ridotte a vuoti e ruggine, trasformate in un grande parco urbano che ha <strong>conservato le strutture di ferro delle fabbriche</strong>.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> il paesaggio della fabbrica diventa spazio pubblico.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Torino · Italia</p>
+        <h4 class="cao-card-title">Le Case del Quartiere</h4>
+        <p class="cao-card-body">Non una grande opera, ma una <strong>rete di luoghi di vicinato</strong> dove la comunità si incontra, fa attività, si tiene insieme.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> una città si rigenera anche moltiplicando i posti dove stare.</span>
+      </div>
+
+      <div class="cao-card">
+        <p class="cao-card-place">Bologna · Italia</p>
+        <h4 class="cao-card-title">I cittadini che progettano la città</h4>
+        <p class="cao-card-body">La città ha creato strumenti stabili per far progettare ai cittadini, <strong>insieme al Comune</strong>, il riuso di spazi e beni comuni.</p>
+        <span class="cao-card-idea"><b>Perché ispira:</b> conta anche <em>come</em> si decide, non solo cosa si costruisce.</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA + SONDAGGIO INCORPORATO -->
+<div class="cta">
+  <div class="cta-box">
+    <p class="cta-eyebrow">E Solofra?</p>
+    <p class="cta-q">Adesso la parola che conta di più è la tua.</p>
+    <p class="cta-sub">Che Solofra immagini tra vent'anni? Rispondi qui sotto: è anonimo, senza nome e senza bandiera. Bastano pochi tocchi.</p>
+  </div>
+</div>
+
+<div class="form-embed">
+  <div class="form-frame-wrap">
+    <iframe class="form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLScYMyz_25TG0nc3k60JYoPdQww-HhCU19TMOewN44p_5hmRbw/viewform?embedded=true" title="Sondaggio: che Solofra immagini tra vent'anni?" loading="lazy">Caricamento del modulo…</iframe>
+  </div>
+  <p class="form-fallback">Non vedi il modulo? <a href="https://forms.gle/N3bnoUPWRXyk4PhS7" target="_blank" rel="noopener">Aprilo in una nuova scheda →</a></p>
+</div>
+
+<div class="solofra-wrap" style="padding-top:clamp(28px,4vw,40px);">
+
+  <div class="ai-notice">
+    <p class="ai-notice-hed">Una nota sul metodo</p>
+    <p class="ai-notice-text">Questa pagina, a differenza delle altre della dashboard, non presenta dati su Solofra: raccoglie esempi da altri territori, scelti per far venire idee. I luoghi e le trasformazioni descritte sono reali e documentati; i numeri sono ridotti al minimo e indicati solo dove solidi. <strong>Se trovi un esempio impreciso o una fonte da aggiornare, segnalamelo</strong>: la pagina verrà corretta. L'obiettivo non è dire cosa fare, ma mostrare che una direzione si può scegliere.</p>
+  </div>
+
+  <div class="manifest">
+    <p class="manifest-hed">Il senso di questa pagina</p>
+    <p class="manifest-text">Sono spunti, non modelli. I luoghi sono reali, le trasformazioni documentate, i numeri da verificare alla fonte. Quello che conta qui non sono le cifre: è l'idea che una direzione si può scegliere.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Spunti da casi pubblici e documentati. Le cifre esatte vanno verificate alla fonte.
+    </div>
+    <div class="footer-r">Ultimo aggiornamento: giugno 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+  <script src="theme-mandarin.js" defer></script>
+</body>
+</html>
