@@ -125,6 +125,38 @@
   .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
   .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
 
+  p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 18px 0; line-height:1.55; }
+  p.note strong { color: var(--ink-2); font-weight:500; }
+  p.note .todo { color: var(--accent); font-weight:500; font-style:normal; }
+  h3.sub2 { font-family: var(--serif); font-size: 20px; letter-spacing:-0.01em; color: var(--ink); margin: 40px 0 16px; }
+  .prov { margin: 6px 0 4px; }
+  .prov-row { display: grid; grid-template-columns: 180px 1fr 80px; align-items: center; gap: 12px; margin: 9px 0; font-size: 14px; }
+  .prov-row .lab { color: var(--ink); }
+  .prov-track { height: 16px; background: var(--paper-2); border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+  .prov-fill { height: 100%; background: var(--green); opacity: .82; display: block; }
+  .prov-fill.neg { background: var(--accent); opacity:1; }
+  .prov-row .val { text-align: right; font-family: var(--serif); font-size: 15px; color: var(--ink-2); white-space: nowrap; }
+  @media (max-width: 640px) { .prov-row { grid-template-columns: 120px 1fr 64px; gap: 8px; font-size: 13px; } }
+  .econ-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:860px){ .econ-grid{ grid-template-columns:repeat(2,1fr);} }
+  .econ-card { background:var(--paper); border:1px solid var(--border); border-radius:8px; padding:16px 18px; border-top:3px solid var(--ink-3); }
+  .econ-hed { font-family:var(--serif); font-size:18px; color:var(--ink); margin-bottom:10px; letter-spacing:-0.01em; }
+  .econ-hed span { font-family:var(--sans); font-size:11px; color:var(--ink-3); letter-spacing:0.03em; text-transform:uppercase; display:block; margin-top:2px; }
+  .econ-tbl { width:100%; border-collapse:collapse; font-size:13px; }
+  .econ-tbl thead th { font-family:var(--sans); font-weight:500; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-3); padding:0 0 7px; border-bottom:1px solid var(--border); }
+  .econ-tbl thead th.econ-act { text-align:left; }
+  .econ-tbl thead th.econ-num { text-align:right; }
+  .econ-tbl td { padding:8px 0; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.3; }
+  .econ-tbl tr:last-child td { border-bottom:none; }
+  td.econ-act { color:var(--ink-2); padding-right:10px; }
+  th.econ-num, td.econ-num { text-align:right; white-space:nowrap; padding-left:10px; }
+  td.econ-num { width:84px; }
+  .econ-abs { display:block; font-family:var(--serif); font-size:15px; color:var(--ink); line-height:1.1; }
+  .econ-pct { display:block; font-size:10.5px; color:var(--ink-3); margin-top:1px; }
+  .econ-nd { display:block; font-size:12px; font-style:italic; color:var(--ink-3); opacity:.8; }
+  .econ-code { display:inline-block; font-size:10px; color:var(--ink-3); letter-spacing:0.03em; margin-left:3px; }
+
+
   footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
   .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
   .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
@@ -317,6 +349,126 @@
     </div>
   </div>
 
+</div>
+
+<hr class="div">
+
+<div class="solofra-wrap" id="economie">
+  <div class="solofra-intro">
+    <h2 class="solofra-hed">Cosa fanno, di mestiere, qui intorno.</h2>
+    <p class="solofra-lede">Dagli esempi del mondo a uno sguardo a casa nostra. Per ogni comune dell'hinterland — Solofra compresa — le <strong>dieci attività più diffuse</strong> e quanto pesano: per numero di aziende e per fatturato.</p>
+    <p class="solofra-lede">Nessuna classifica e nessun confronto: solo la fotografia di come è fatta l'economia di ogni paese. Le due colonne raccontano cose diverse — quante imprese fanno una certa cosa, e quanto quella cosa produce.</p>
+  </div>
+
+      <div class="econ-grid">
+        <div class="econ-card">
+          <p class="econ-hed">Solofra <span>· ≈ 11.900 abitanti · 1.970 aziende</span></p>
+          <table class="econ-tbl"><thead><tr><th class="econ-act">Attività</th><th class="econ-num">Aziende</th><th class="econ-num">Fatturato</th></tr></thead><tbody>
+            <tr><td class="econ-act">Concia del cuoio e delle pelli <span class="econ-code">15.11</span></td><td class="econ-num"><span class="econ-abs">536</span><span class="econ-pct">27,21%</span></td><td class="econ-num"><span class="econ-abs">252,8 mln</span><span class="econ-pct">47,8%</span></td></tr>
+            <tr><td class="econ-act">Commercio all’ingrosso di cuoio e pelli <span class="econ-code">46.24.1</span></td><td class="econ-num"><span class="econ-abs">160</span><span class="econ-pct">8,12%</span></td><td class="econ-num"><span class="econ-abs">48,7 mln</span><span class="econ-pct">9,21%</span></td></tr>
+            <tr><td class="econ-act">Costruzione di edifici <span class="econ-code">41.2</span></td><td class="econ-num"><span class="econ-abs">94</span><span class="econ-pct">4,77%</span></td><td class="econ-num"><span class="econ-abs">13,5 mln</span><span class="econ-pct">2,55%</span></td></tr>
+            <tr><td class="econ-act">Bar ed esercizi senza cucina <span class="econ-code">56.3</span></td><td class="econ-num"><span class="econ-abs">44</span><span class="econ-pct">2,23%</span></td><td class="econ-num"><span class="econ-abs">1,4 mln</span><span class="econ-pct">0,26%</span></td></tr>
+            <tr><td class="econ-act">Ristoranti <span class="econ-code">56.10.11</span></td><td class="econ-num"><span class="econ-abs">31</span><span class="econ-pct">1,57%</span></td><td class="econ-num"><span class="econ-abs">2,1 mln</span><span class="econ-pct">0,4%</span></td></tr>
+            <tr><td class="econ-act">Abbigliamento in pelle <span class="econ-code">14.11</span></td><td class="econ-num"><span class="econ-abs">30</span><span class="econ-pct">1,52%</span></td><td class="econ-num"><span class="econ-abs">4,4 mln</span><span class="econ-pct">0,83%</span></td></tr>
+            <tr><td class="econ-act">Affitto di immobili propri <span class="econ-code">68.20.01</span></td><td class="econ-num"><span class="econ-abs">30</span><span class="econ-pct">1,52%</span></td><td class="econ-num"><span class="econ-abs">2,7 mln</span><span class="econ-pct">0,51%</span></td></tr>
+            <tr><td class="econ-act">Commercio all’ingrosso di prodotti chimici <span class="econ-code">46.75.02</span></td><td class="econ-num"><span class="econ-abs">30</span><span class="econ-pct">1,52%</span></td><td class="econ-num"><span class="econ-abs">25,7 mln</span><span class="econ-pct">4,86%</span></td></tr>
+            <tr><td class="econ-act">Negozi di abbigliamento <span class="econ-code">47.71.1</span></td><td class="econ-num"><span class="econ-abs">24</span><span class="econ-pct">1,22%</span></td><td class="econ-num"><span class="econ-abs">279 mila</span><span class="econ-pct">0,05%</span></td></tr>
+            <tr><td class="econ-act">Compravendita di immobili <span class="econ-code">68.1</span></td><td class="econ-num"><span class="econ-abs">23</span><span class="econ-pct">1,17%</span></td><td class="econ-num"><span class="econ-abs">914 mila</span><span class="econ-pct">0,17%</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="econ-card">
+          <p class="econ-hed">Avellino <span>· ≈ 52.100 abitanti · 5.563 aziende</span></p>
+          <table class="econ-tbl"><thead><tr><th class="econ-act">Attività</th><th class="econ-num">Aziende</th><th class="econ-num">Fatturato</th></tr></thead><tbody>
+            <tr><td class="econ-act">Costruzione di edifici <span class="econ-code">41.2</span></td><td class="econ-num"><span class="econ-abs">370</span><span class="econ-pct">6,65%</span></td><td class="econ-num"><span class="econ-abs">177,3 mln</span><span class="econ-pct">7,35%</span></td></tr>
+            <tr><td class="econ-act">Ristoranti <span class="econ-code">56.10.11</span></td><td class="econ-num"><span class="econ-abs">241</span><span class="econ-pct">4,33%</span></td><td class="econ-num"><span class="econ-abs">28,0 mln</span><span class="econ-pct">1,16%</span></td></tr>
+            <tr><td class="econ-act">Bar ed esercizi senza cucina <span class="econ-code">56.3</span></td><td class="econ-num"><span class="econ-abs">211</span><span class="econ-pct">3,79%</span></td><td class="econ-num"><span class="econ-abs">14,3 mln</span><span class="econ-pct">0,59%</span></td></tr>
+            <tr><td class="econ-act">Affitto di immobili propri <span class="econ-code">68.20.01</span></td><td class="econ-num"><span class="econ-abs">169</span><span class="econ-pct">3,04%</span></td><td class="econ-num"><span class="econ-abs">15,9 mln</span><span class="econ-pct">0,66%</span></td></tr>
+            <tr><td class="econ-act">Consulenza aziendale <span class="econ-code">70.22.09</span></td><td class="econ-num"><span class="econ-abs">133</span><span class="econ-pct">2,39%</span></td><td class="econ-num"><span class="econ-abs">34,7 mln</span><span class="econ-pct">1,44%</span></td></tr>
+            <tr><td class="econ-act">Parrucchieri e barbieri <span class="econ-code">96.02.01</span></td><td class="econ-num"><span class="econ-abs">115</span><span class="econ-pct">2,07%</span></td><td class="econ-num"><span class="econ-abs">1,0 mln</span><span class="econ-pct">0,04%</span></td></tr>
+            <tr><td class="econ-act">Compravendita di immobili <span class="econ-code">68.1</span></td><td class="econ-num"><span class="econ-abs">110</span><span class="econ-pct">1,98%</span></td><td class="econ-num"><span class="econ-abs">8,4 mln</span><span class="econ-pct">0,35%</span></td></tr>
+            <tr><td class="econ-act">Negozi di abbigliamento <span class="econ-code">47.71.1</span></td><td class="econ-num"><span class="econ-abs">94</span><span class="econ-pct">1,69%</span></td><td class="econ-num"><span class="econ-abs">27,3 mln</span><span class="econ-pct">1,13%</span></td></tr>
+            <tr><td class="econ-act">Coltivazione di frutta in guscio (noccioleti) <span class="econ-code">01.25</span></td><td class="econ-num"><span class="econ-abs">72</span><span class="econ-pct">1,29%</span></td><td class="econ-num"><span class="econ-abs">560 mila</span><span class="econ-pct">0,02%</span></td></tr>
+            <tr><td class="econ-act">Concessionarie di auto <span class="econ-code">45.11.01</span></td><td class="econ-num"><span class="econ-abs">66</span><span class="econ-pct">1,19%</span></td><td class="econ-num"><span class="econ-abs">9,2 mln</span><span class="econ-pct">0,38%</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="econ-card">
+          <p class="econ-hed">Atripalda <span>· ≈ 10.700 abitanti · 1.179 aziende</span></p>
+          <table class="econ-tbl"><thead><tr><th class="econ-act">Attività</th><th class="econ-num">Aziende</th><th class="econ-num">Fatturato</th></tr></thead><tbody>
+            <tr><td class="econ-act">Ristoranti <span class="econ-code">56.10.11</span></td><td class="econ-num"><span class="econ-abs">45</span><span class="econ-pct">3,82%</span></td><td class="econ-num"><span class="econ-abs">1,4 mln</span><span class="econ-pct">0,44%</span></td></tr>
+            <tr><td class="econ-act">Costruzione di edifici <span class="econ-code">41.2</span></td><td class="econ-num"><span class="econ-abs">44</span><span class="econ-pct">3,73%</span></td><td class="econ-num"><span class="econ-abs">9,5 mln</span><span class="econ-pct">3,04%</span></td></tr>
+            <tr><td class="econ-act">Bar ed esercizi senza cucina <span class="econ-code">56.3</span></td><td class="econ-num"><span class="econ-abs">42</span><span class="econ-pct">3,56%</span></td><td class="econ-num"><span class="econ-abs">3,9 mln</span><span class="econ-pct">1,24%</span></td></tr>
+            <tr><td class="econ-act">Parrucchieri e barbieri <span class="econ-code">96.02.01</span></td><td class="econ-num"><span class="econ-abs">34</span><span class="econ-pct">2,88%</span></td><td class="econ-num"><span class="econ-abs">233 mila</span><span class="econ-pct">0,07%</span></td></tr>
+            <tr><td class="econ-act">Affitto di immobili propri <span class="econ-code">68.20.01</span></td><td class="econ-num"><span class="econ-abs">30</span><span class="econ-pct">2,54%</span></td><td class="econ-num"><span class="econ-abs">1,1 mln</span><span class="econ-pct">0,34%</span></td></tr>
+            <tr><td class="econ-act">Negozi di abbigliamento <span class="econ-code">47.71.1</span></td><td class="econ-num"><span class="econ-abs">21</span><span class="econ-pct">1,78%</span></td><td class="econ-num"><span class="econ-abs">158 mila</span><span class="econ-pct">0,05%</span></td></tr>
+            <tr><td class="econ-act">Concessionarie di auto <span class="econ-code">45.11.01</span></td><td class="econ-num"><span class="econ-abs">21</span><span class="econ-pct">1,78%</span></td><td class="econ-num"><span class="econ-abs">447 mila</span><span class="econ-pct">0,14%</span></td></tr>
+            <tr><td class="econ-act">Agenzie immobiliari <span class="econ-code">68.31</span></td><td class="econ-num"><span class="econ-abs">20</span><span class="econ-pct">1,7%</span></td><td class="econ-num"><span class="econ-abs">239 mila</span><span class="econ-pct">0,08%</span></td></tr>
+            <tr><td class="econ-act">Trasporto merci su strada <span class="econ-code">49.41</span></td><td class="econ-num"><span class="econ-abs">18</span><span class="econ-pct">1,53%</span></td><td class="econ-num"><span class="econ-abs">6,1 mln</span><span class="econ-pct">1,93%</span></td></tr>
+            <tr><td class="econ-act">Consulenza aziendale <span class="econ-code">70.22.09</span></td><td class="econ-num"><span class="econ-abs">18</span><span class="econ-pct">1,53%</span></td><td class="econ-num"><span class="econ-abs">1,5 mln</span><span class="econ-pct">0,47%</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="econ-card">
+          <p class="econ-hed">Montoro <span>· ≈ 19.500 abitanti · 1.670 aziende</span></p>
+          <table class="econ-tbl"><thead><tr><th class="econ-act">Attività</th><th class="econ-num">Aziende</th><th class="econ-num">Fatturato</th></tr></thead><tbody>
+            <tr><td class="econ-act">Costruzione di edifici <span class="econ-code">41.2</span></td><td class="econ-num"><span class="econ-abs">115</span><span class="econ-pct">6,89%</span></td><td class="econ-num"><span class="econ-abs">15,1 mln</span><span class="econ-pct">2,33%</span></td></tr>
+            <tr><td class="econ-act">Concia del cuoio e delle pelli <span class="econ-code">15.11</span></td><td class="econ-num"><span class="econ-abs">85</span><span class="econ-pct">5,09%</span></td><td class="econ-num"><span class="econ-abs">17,9 mln</span><span class="econ-pct">2,76%</span></td></tr>
+            <tr><td class="econ-act">Ristoranti <span class="econ-code">56.10.11</span></td><td class="econ-num"><span class="econ-abs">55</span><span class="econ-pct">3,29%</span></td><td class="econ-num"><span class="econ-abs">1,9 mln</span><span class="econ-pct">0,29%</span></td></tr>
+            <tr><td class="econ-act">Bar ed esercizi senza cucina <span class="econ-code">56.3</span></td><td class="econ-num"><span class="econ-abs">54</span><span class="econ-pct">3,23%</span></td><td class="econ-num"><span class="econ-abs">3,0 mln</span><span class="econ-pct">0,46%</span></td></tr>
+            <tr><td class="econ-act">Coltivazione di frutta in guscio (noccioleti) <span class="econ-code">01.25</span></td><td class="econ-num"><span class="econ-abs">49</span><span class="econ-pct">2,93%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Parrucchieri e barbieri <span class="econ-code">96.02.01</span></td><td class="econ-num"><span class="econ-abs">36</span><span class="econ-pct">2,16%</span></td><td class="econ-num"><span class="econ-abs">218 mila</span><span class="econ-pct">0,03%</span></td></tr>
+            <tr><td class="econ-act">Trasporto merci su strada <span class="econ-code">49.41</span></td><td class="econ-num"><span class="econ-abs">35</span><span class="econ-pct">2,1%</span></td><td class="econ-num"><span class="econ-abs">310,5 mln</span><span class="econ-pct">47,92%</span></td></tr>
+            <tr><td class="econ-act">Commercio all’ingrosso di cuoio e pelli <span class="econ-code">46.24.1</span></td><td class="econ-num"><span class="econ-abs">31</span><span class="econ-pct">1,86%</span></td><td class="econ-num"><span class="econ-abs">25,4 mln</span><span class="econ-pct">3,92%</span></td></tr>
+            <tr><td class="econ-act">Impianti idraulici e di riscaldamento <span class="econ-code">43.22.01</span></td><td class="econ-num"><span class="econ-abs">29</span><span class="econ-pct">1,74%</span></td><td class="econ-num"><span class="econ-abs">984 mila</span><span class="econ-pct">0,15%</span></td></tr>
+            <tr><td class="econ-act">Officine meccaniche auto <span class="econ-code">45.20.1</span></td><td class="econ-num"><span class="econ-abs">29</span><span class="econ-pct">1,74%</span></td><td class="econ-num"><span class="econ-abs">32,9 mln</span><span class="econ-pct">5,07%</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="econ-card">
+          <p class="econ-hed">Serino <span>· ≈ 6.700 abitanti · 895 aziende</span></p>
+          <table class="econ-tbl"><thead><tr><th class="econ-act">Attività</th><th class="econ-num">Aziende</th><th class="econ-num">Fatturato</th></tr></thead><tbody>
+            <tr><td class="econ-act">Coltivazione di frutta in guscio (noccioleti) <span class="econ-code">01.25</span></td><td class="econ-num"><span class="econ-abs">133</span><span class="econ-pct">14,86%</span></td><td class="econ-num"><span class="econ-abs">127 mila</span><span class="econ-pct">0,21%</span></td></tr>
+            <tr><td class="econ-act">Coltivazioni permanenti (frutteti) <span class="econ-code">01.2</span></td><td class="econ-num"><span class="econ-abs">120</span><span class="econ-pct">13,41%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Costruzione di edifici <span class="econ-code">41.2</span></td><td class="econ-num"><span class="econ-abs">50</span><span class="econ-pct">5,59%</span></td><td class="econ-num"><span class="econ-abs">6,9 mln</span><span class="econ-pct">11,27%</span></td></tr>
+            <tr><td class="econ-act">Ristoranti <span class="econ-code">56.10.11</span></td><td class="econ-num"><span class="econ-abs">39</span><span class="econ-pct">4,36%</span></td><td class="econ-num"><span class="econ-abs">965 mila</span><span class="econ-pct">1,58%</span></td></tr>
+            <tr><td class="econ-act">Allevamento di bovini da latte <span class="econ-code">01.41</span></td><td class="econ-num"><span class="econ-abs">17</span><span class="econ-pct">1,9%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Bar ed esercizi senza cucina <span class="econ-code">56.3</span></td><td class="econ-num"><span class="econ-abs">17</span><span class="econ-pct">1,9%</span></td><td class="econ-num"><span class="econ-abs">4 mila</span><span class="econ-pct">0,01%</span></td></tr>
+            <tr><td class="econ-act">Parrucchieri e barbieri <span class="econ-code">96.02.01</span></td><td class="econ-num"><span class="econ-abs">15</span><span class="econ-pct">1,68%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Macellerie <span class="econ-code">47.22</span></td><td class="econ-num"><span class="econ-abs">15</span><span class="econ-pct">1,68%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Tinteggiatura e posa vetri <span class="econ-code">43.34</span></td><td class="econ-num"><span class="econ-abs">15</span><span class="econ-pct">1,68%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Coltivazione di frutta (pomacee e drupacee) <span class="econ-code">01.24</span></td><td class="econ-num"><span class="econ-abs">13</span><span class="econ-pct">1,45%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="econ-card">
+          <p class="econ-hed">Mercato San Severino <span>· ≈ 21.300 abitanti · 2.262 aziende</span></p>
+          <table class="econ-tbl"><thead><tr><th class="econ-act">Attività</th><th class="econ-num">Aziende</th><th class="econ-num">Fatturato</th></tr></thead><tbody>
+            <tr><td class="econ-act">Costruzione di edifici <span class="econ-code">41.2</span></td><td class="econ-num"><span class="econ-abs">163</span><span class="econ-pct">7,21%</span></td><td class="econ-num"><span class="econ-abs">19,4 mln</span><span class="econ-pct">2,2%</span></td></tr>
+            <tr><td class="econ-act">Bar ed esercizi senza cucina <span class="econ-code">56.3</span></td><td class="econ-num"><span class="econ-abs">76</span><span class="econ-pct">3,36%</span></td><td class="econ-num"><span class="econ-abs">2,9 mln</span><span class="econ-pct">0,32%</span></td></tr>
+            <tr><td class="econ-act">Ristoranti <span class="econ-code">56.10.11</span></td><td class="econ-num"><span class="econ-abs">71</span><span class="econ-pct">3,14%</span></td><td class="econ-num"><span class="econ-abs">5,6 mln</span><span class="econ-pct">0,64%</span></td></tr>
+            <tr><td class="econ-act">Parrucchieri e barbieri <span class="econ-code">96.02.01</span></td><td class="econ-num"><span class="econ-abs">54</span><span class="econ-pct">2,39%</span></td><td class="econ-num"><span class="econ-abs">176 mila</span><span class="econ-pct">0,02%</span></td></tr>
+            <tr><td class="econ-act">Trasporto merci su strada <span class="econ-code">49.41</span></td><td class="econ-num"><span class="econ-abs">38</span><span class="econ-pct">1,68%</span></td><td class="econ-num"><span class="econ-abs">194,1 mln</span><span class="econ-pct">22,0%</span></td></tr>
+            <tr><td class="econ-act">Affitto di immobili propri <span class="econ-code">68.20.01</span></td><td class="econ-num"><span class="econ-abs">34</span><span class="econ-pct">1,5%</span></td><td class="econ-num"><span class="econ-abs">3,2 mln</span><span class="econ-pct">0,36%</span></td></tr>
+            <tr><td class="econ-act">Negozi di abbigliamento <span class="econ-code">47.71.1</span></td><td class="econ-num"><span class="econ-abs">32</span><span class="econ-pct">1,41%</span></td><td class="econ-num"><span class="econ-abs">2,9 mln</span><span class="econ-pct">0,33%</span></td></tr>
+            <tr><td class="econ-act">Commercio al dettaglio online <span class="econ-code">47.91.1</span></td><td class="econ-num"><span class="econ-abs">31</span><span class="econ-pct">1,37%</span></td><td class="econ-num"><span class="econ-abs">11,8 mln</span><span class="econ-pct">1,34%</span></td></tr>
+            <tr><td class="econ-act">Impianti elettrici <span class="econ-code">43.21.01</span></td><td class="econ-num"><span class="econ-abs">28</span><span class="econ-pct">1,24%</span></td><td class="econ-num"><span class="econ-abs">1,8 mln</span><span class="econ-pct">0,2%</span></td></tr>
+            <tr><td class="econ-act">Macellerie <span class="econ-code">47.22</span></td><td class="econ-num"><span class="econ-abs">25</span><span class="econ-pct">1,11%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="econ-card">
+          <p class="econ-hed">Baronissi <span>· ≈ 16.800 abitanti · 1.618 aziende</span></p>
+          <table class="econ-tbl"><thead><tr><th class="econ-act">Attività</th><th class="econ-num">Aziende</th><th class="econ-num">Fatturato</th></tr></thead><tbody>
+            <tr><td class="econ-act">Costruzione di edifici <span class="econ-code">41.2</span></td><td class="econ-num"><span class="econ-abs">106</span><span class="econ-pct">6,55%</span></td><td class="econ-num"><span class="econ-abs">17,7 mln</span><span class="econ-pct">7,58%</span></td></tr>
+            <tr><td class="econ-act">Ristoranti <span class="econ-code">56.10.11</span></td><td class="econ-num"><span class="econ-abs">49</span><span class="econ-pct">3,03%</span></td><td class="econ-num"><span class="econ-abs">1,7 mln</span><span class="econ-pct">0,75%</span></td></tr>
+            <tr><td class="econ-act">Bar ed esercizi senza cucina <span class="econ-code">56.3</span></td><td class="econ-num"><span class="econ-abs">46</span><span class="econ-pct">2,84%</span></td><td class="econ-num"><span class="econ-abs">1,9 mln</span><span class="econ-pct">0,79%</span></td></tr>
+            <tr><td class="econ-act">Agenti e rappresentanti <span class="econ-code">46.19.01</span></td><td class="econ-num"><span class="econ-abs">36</span><span class="econ-pct">2,22%</span></td><td class="econ-num"><span class="econ-abs">579 mila</span><span class="econ-pct">0,25%</span></td></tr>
+            <tr><td class="econ-act">Impianti elettrici <span class="econ-code">43.21.01</span></td><td class="econ-num"><span class="econ-abs">36</span><span class="econ-pct">2,22%</span></td><td class="econ-num"><span class="econ-abs">4,3 mln</span><span class="econ-pct">1,86%</span></td></tr>
+            <tr><td class="econ-act">Parrucchieri e barbieri <span class="econ-code">96.02.01</span></td><td class="econ-num"><span class="econ-abs">30</span><span class="econ-pct">1,85%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Ambulanti (chincaglieria e bigiotteria) <span class="econ-code">47.89.04</span></td><td class="econ-num"><span class="econ-abs">28</span><span class="econ-pct">1,73%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Officine meccaniche auto <span class="econ-code">45.20.1</span></td><td class="econ-num"><span class="econ-abs">24</span><span class="econ-pct">1,48%</span></td><td class="econ-num"><span class="econ-abs">355 mila</span><span class="econ-pct">0,15%</span></td></tr>
+            <tr><td class="econ-act">Procacciatori d’affari <span class="econ-code">46.19.02</span></td><td class="econ-num"><span class="econ-abs">21</span><span class="econ-pct">1,3%</span></td><td class="econ-num"><span class="econ-nd">n.d.</span></td></tr>
+            <tr><td class="econ-act">Lavori edili (muratori) <span class="econ-code">43.39.01</span></td><td class="econ-num"><span class="econ-abs">19</span><span class="econ-pct">1,17%</span></td><td class="econ-num"><span class="econ-abs">706 mila</span><span class="econ-pct">0,3%</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+
+      <p class="note"><strong>Come leggere questa sezione.</strong> Per ogni comune sono riportate le dieci attività con più aziende registrate. Di ciascuna sono indicate due grandezze, in valore assoluto e in percentuale: il numero di imprese (quante fanno quella cosa) e il fatturato (quanto quella cosa produce). Le categorie seguono la classificazione ATECO a livelli di dettaglio diversi, come nella fonte — alcune molto specifiche (es. «concia», 15.11), altre più ampie (es. «costruzione di edifici», 41.2): le percentuali vanno quindi lette come ordine di grandezza, non come una ripartizione esatta. I valori di fatturato sono in buona parte dichiarati o stimati; dove la fonte non riporta alcun importo è indicato <strong>«n.d.»</strong> (dato non disponibile), che non significa fatturato pari a zero ma assenza del dato — una situazione più frequente per le attività artigiane e agricole e per i comuni più piccoli. La quota di fatturato di ogni attività è calcolata sul totale effettivamente rilevato nel comune. È una fotografia descrittiva, non una classifica né un confronto. <strong>Fonti:</strong> aziende e fatturato da registroaziende.it (aggregatore di informazioni camerali); popolazione residente ISTAT, ultimo dato disponibile, valori arrotondati.</p>
 </div>
 
 <!-- CTA + SONDAGGIO INCORPORATO -->
