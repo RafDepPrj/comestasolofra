@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Solofra che immaginate — Come sta Solofra</title>
+<meta name="description" content="Più di trenta persone hanno risposto a una domanda sola: come immagini Solofra fra vent'anni. Le idee raccolte, per intero. Non è un sondaggio rappresentativo: è una raccolta di idee.">
+<meta property="og:title" content="La Solofra che immaginate">
+<meta property="og:description" content="Le idee dei solofrani sul paese fra vent'anni, raccolte con un sondaggio anonimo aperto. Pubblicate per intero, comprese quelle critiche.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  /* Fallback header: si attiva SOLO se theme-mandarin.css non è caricato (es. anteprima isolata). Sul sito theme-mandarin.css è linkato dopo e lo sovrascrive. */
+  .mn-header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .mn-header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .mn-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); white-space: nowrap; }
+  .mn-logo { height: 26px; width: auto; }
+  .mn-wordmark { font-family: var(--serif); font-size: 19px; color: var(--ink); letter-spacing: -0.01em; }
+  .mn-wordmark em { font-style: italic; color: var(--accent); }
+  .mn-toggle { display: none; background: none; border: none; cursor: pointer; }
+  .mn-nav { display: flex; flex-wrap: wrap; gap: 22px; justify-content: flex-end; }
+  .mn-nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s; }
+  .mn-nav a:hover { color: var(--ink); }
+  .mn-nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+  @media (max-width: 760px) { .mn-nav { gap: 14px; overflow-x: auto; flex-wrap: nowrap; } }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  .solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+  .solofra-intro { margin-bottom: 32px; max-width: 720px; }
+  .solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .solofra-lede strong { color: var(--ink); font-weight: 500; }
+  .solofra-quote { font-family: var(--serif); font-style: italic; font-size: clamp(18px,2.2vw,22px); line-height: 1.4; color: var(--ink); padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--paper); border-radius: 0 6px 6px 0; margin-top: 18px; }
+
+  .cao-group { margin-top: 44px; }
+  .cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; background: var(--accent); }
+  .cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; color: var(--ink); }
+  .cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+
+  .cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+  .cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+  .cao-card:hover { transform: translateY(-2px); border-color: rgba(26,26,24,0.22); }
+  .cao-card-place { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .cao-card-title { font-family: var(--serif); font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .cao-card-body { font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+  .cao-card-body strong { font-weight: 500; color: var(--ink); }
+  .cao-card-idea { display: block; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 13.5px; color: var(--ink); }
+  .cao-card-idea b { font-weight: 500; }
+
+  .cta { max-width: 1060px; margin: 0 auto; padding: 0 clamp(20px,5vw,80px) clamp(8px,2vw,16px); }
+  .cta-box { background: var(--ink); border-radius: 12px; padding: clamp(28px,4vw,40px); color: var(--paper); }
+  .cta-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .cta-q { font-family: var(--serif); font-size: clamp(24px,3.2vw,34px); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 14px; color: var(--paper); }
+  .cta-sub { font-size: 15px; color: rgba(247,245,240,0.75); line-height: 1.6; margin-bottom: 24px; max-width: 560px; }
+  .cta-btn { display: inline-block; background: var(--accent); color: #fff; font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; padding: 13px 26px; border-radius: 8px; transition: opacity .15s, transform .15s; }
+  .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .form-embed { max-width: 1060px; margin: 0 auto; padding: clamp(18px,2.5vw,24px) clamp(20px,5vw,80px) clamp(8px,2vw,16px); }
+  .form-frame-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 1px 3px rgba(26,26,24,0.06); }
+  .form-frame { width: 100%; height: 1400px; border: 0; display: block; }
+  .form-fallback { font-size: 13px; color: var(--ink-3); margin-top: 14px; text-align: center; }
+  .form-fallback a { color: var(--ink-2); border-bottom: 1px solid var(--border); text-decoration: none; }
+  .form-fallback a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .ai-notice-text strong { color: var(--ink); font-weight: 500; }
+
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 24px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 18px 0; line-height:1.55; }
+  p.note strong { color: var(--ink-2); font-weight:500; }
+  p.note .todo { color: var(--accent); font-weight:500; font-style:normal; }
+  h3.sub2 { font-family: var(--serif); font-size: 20px; letter-spacing:-0.01em; color: var(--ink); margin: 40px 0 16px; }
+  .prov { margin: 6px 0 4px; }
+  .prov-row { display: grid; grid-template-columns: 180px 1fr 80px; align-items: center; gap: 12px; margin: 9px 0; font-size: 14px; }
+  .prov-row .lab { color: var(--ink); }
+  .prov-track { height: 16px; background: var(--paper-2); border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+  .prov-fill { height: 100%; background: var(--green); opacity: .82; display: block; }
+  .prov-fill.neg { background: var(--accent); opacity:1; }
+  .prov-row .val { text-align: right; font-family: var(--serif); font-size: 15px; color: var(--ink-2); white-space: nowrap; }
+  @media (max-width: 640px) { .prov-row { grid-template-columns: 120px 1fr 64px; gap: 8px; font-size: 13px; } }
+  .econ-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:860px){ .econ-grid{ grid-template-columns:repeat(2,1fr);} }
+  .econ-card { background:var(--paper); border:1px solid var(--border); border-radius:8px; padding:16px 18px; border-top:3px solid var(--ink-3); }
+  .econ-hed { font-family:var(--serif); font-size:18px; color:var(--ink); margin-bottom:10px; letter-spacing:-0.01em; }
+  .econ-hed span { font-family:var(--sans); font-size:11px; color:var(--ink-3); letter-spacing:0.03em; text-transform:uppercase; display:block; margin-top:2px; }
+  .econ-tbl { width:100%; border-collapse:collapse; font-size:13px; }
+  .econ-tbl thead th { font-family:var(--sans); font-weight:500; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-3); padding:0 0 7px; border-bottom:1px solid var(--border); }
+  .econ-tbl thead th.econ-act { text-align:left; }
+  .econ-tbl thead th.econ-num { text-align:right; }
+  .econ-tbl td { padding:8px 0; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.3; }
+  .econ-tbl tr:last-child td { border-bottom:none; }
+  td.econ-act { color:var(--ink-2); padding-right:10px; }
+  th.econ-num, td.econ-num { text-align:right; white-space:nowrap; padding-left:10px; }
+  td.econ-num { width:84px; }
+  .econ-abs { display:block; font-family:var(--serif); font-size:15px; color:var(--ink); line-height:1.1; }
+  .econ-pct { display:block; font-size:10.5px; color:var(--ink-3); margin-top:1px; }
+  .econ-nd { display:block; font-size:12px; font-style:italic; color:var(--ink-3); opacity:.8; }
+  .econ-code { display:inline-block; font-size:10px; color:var(--ink-3); letter-spacing:0.03em; margin-left:3px; }
+
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+
+  @media (max-width: 640px) {
+    nav { gap: 16px; overflow-x: auto; }
+    nav a { font-size: 12px; }
+  }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina raccoglie le risposte a un sondaggio anonimo aperto. Hanno risposto 33 persone. <strong>Non è un campione rappresentativo del paese</strong> (vedi il riquadro più sotto): vale come raccolta di idee, non come misura di cosa pensa Solofra.</div>
+</div>
+
+<header class="mn-header">
+  <div class="mn-header-inner">
+    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
+    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="mn-nav" id="mnNav">
+        <a href="index.html">Home</a>
+        <a href="demografia.html">Demografia</a>
+        <a href="bilancio.html">Bilancio</a>
+        <a href="crisi_mandato.html">Crisi di fine mandato</a>
+        <a href="concia.html">Concia</a>
+        <a href="mobilita.html">Mobilità</a>
+        <a href="scuole.html">Bambini e scuole</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="immigrazione.html">Chi arriva</a>
+        <a href="trasparenza.html">I dati che vorremmo</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="suolo.html">Suolo</a>
+        <a href="altrove.html">Altrove</a>
+        <a href="idee.html" class="active">Le vostre idee</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">La Solofra che immaginate · giugno 2026</p>
+  <h1 class="hero-title">Una domanda sola,<br><em>più di trenta risposte.</em></h1>
+  <p class="hero-sub">Ho chiesto come immaginate Solofra fra vent’anni. Anonimo, nessun nome, nessuna bandiera. Hanno risposto in 33. Qui sotto trovate tutto: prima cosa è venuto fuori, poi le idee per intero — comprese quelle critiche. Sono di Solofra, non mie.</p>
+  <div class="hero-meta">A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a><span>·</span><span>Raccolta di idee, non sondaggio rappresentativo</span></div>
+</div>
+
+<hr class="div">
+
+<div class="solofra-wrap">
+  <div class="ai-notice" style="margin-top:0;">
+    <p class="ai-notice-hed">Attenzione: cosa è (e cosa non è) questo dato</p>
+    <p class="ai-notice-text">Hanno risposto le persone che hanno visto il sondaggio e hanno voluto partecipare — più presenti sui social, più attive e interessate. <strong>Non è la fotografia del paese</strong> e non lo è nemmeno con più risposte: un sondaggio rappresentativo si costruisce scegliendo chi intervistare e correggendo per età e zona, non raccogliendo adesioni libere. Con 33 risposte, inoltre, i numeri hanno un margine d’errore largo. Quindi: le percentuali qui sotto descrivono <strong>solo chi ha risposto</strong>, non i solofrani. Quello che conta davvero, qui, sono le idee.</p>
+  </div>
+
+  <h3 class="sub2">Cosa torna nelle vostre risposte</h3>
+  <p class="solofra-lede">Più di trenta risposte, diversissime tra loro. Eppure, lette una dietro l’altra, certe cose tornano. Non le ho decise io: le avete scritte voi, in tanti modi diversi. Provo solo a metterle in fila.</p>
+  <p class="solofra-lede"><strong>I giovani che restano.</strong> È il filo più forte di tutti. Torna di continuo: i figli che vorremmo non dovessero partire, un paese che dia loro un motivo per restare — e per tornare.</p>
+  <p class="solofra-lede"><strong>Un lavoro che non sia uno solo.</strong> La concia resta, nessuno la mette in discussione: ma deve crescere e diventare più pulita. E accanto chiedete varietà — tecnologia, nuove imprese, una formazione che prepari davvero.</p>
+  <p class="solofra-lede"><strong>Una città pulita e verde.</strong> Aria, acqua, verde. Una Solofra che si possa respirare.</p>
+  <p class="solofra-lede"><strong>Luoghi dove stare.</strong> Un centro vivo, parchi, spazi per i bambini, posti dove incontrarsi la sera e nel weekend, cultura.</p>
+  <p class="solofra-lede"><strong>Un Comune che funziona.</strong> Meritocrazia al posto della raccomandazione, scelte fatte per il bene comune e non per la convenienza, una visione che guardi a dieci, vent’anni.</p>
+  <p class="solofra-lede"><strong>Una Solofra di cui si parla in bene.</strong> Non più “quella della puzza”, ma un paese conosciuto fuori per qualcosa di cui andare fieri.</p>
+
+  <h3 class="sub2">Cosa vorreste cambiare di più</h3>
+      <div class="prov">
+        <div class="prov-row"><span class="lab">I giovani non se ne vanno più</span><span class="prov-track"><span class="prov-fill" style="width:100.0%"></span></span><span class="val">12 · 36,4%</span></div>
+        <div class="prov-row"><span class="lab">Un centro vivo, posti dove incontrarsi</span><span class="prov-track"><span class="prov-fill" style="width:41.7%"></span></span><span class="val">5 · 15,2%</span></div>
+        <div class="prov-row"><span class="lab">Aria pulita e acqua sicura</span><span class="prov-track"><span class="prov-fill" style="width:33.3%"></span></span><span class="val">4 · 12,1%</span></div>
+        <div class="prov-row"><span class="lab">Solofra conosciuta fuori, in bene</span><span class="prov-track"><span class="prov-fill" style="width:33.3%"></span></span><span class="val">4 · 12,1%</span></div>
+        <div class="prov-row"><span class="lab">Comune e servizi che funzionano</span><span class="prov-track"><span class="prov-fill" style="width:25.0%"></span></span><span class="val">3 · 9,1%</span></div>
+        <div class="prov-row"><span class="lab">Più verde e spazi per stare</span><span class="prov-track"><span class="prov-fill" style="width:16.7%"></span></span><span class="val">2 · 6,1%</span></div>
+        <div class="prov-row"><span class="lab">Altre risposte</span><span class="prov-track"><span class="prov-fill" style="width:25.0%"></span></span><span class="val">3 · 9,1%</span></div>
+      </div>
+
+  <h3 class="sub2">Su quale settore puntare</h3>
+      <div class="prov">
+        <div class="prov-row"><span class="lab">Tecnologia, digitale e innovazione</span><span class="prov-track"><span class="prov-fill" style="width:100.0%"></span></span><span class="val">11 · 33,3%</span></div>
+        <div class="prov-row"><span class="lab">Concia di alta gamma e pelle sostenibile</span><span class="prov-track"><span class="prov-fill" style="width:72.7%"></span></span><span class="val">8 · 24,2%</span></div>
+        <div class="prov-row"><span class="lab">Formazione e scuola legata al lavoro</span><span class="prov-track"><span class="prov-fill" style="width:45.5%"></span></span><span class="val">5 · 15,2%</span></div>
+        <div class="prov-row"><span class="lab">Energia e comunità energetiche</span><span class="prov-track"><span class="prov-fill" style="width:27.3%"></span></span><span class="val">3 · 9,1%</span></div>
+        <div class="prov-row"><span class="lab">Altre indicazioni</span><span class="prov-track"><span class="prov-fill" style="width:54.5%"></span></span><span class="val">6 · 18,2%</span></div>
+      </div>
+  <p class="note">Numeri riferiti alle 33 persone che hanno risposto, non alla popolazione. Servono a vedere quali idee ricorrono tra chi ha partecipato, non a misurare il paese.</p>
+</div>
+
+<hr class="div">
+
+<div class="solofra-wrap">
+  <div class="solofra-intro">
+    <h2 class="solofra-hed">Le idee, per intero.</h2>
+    <p class="solofra-lede">Le ho lasciate <strong>tutte</strong>, intere e così come sono state scritte — in ordine di arrivo, anche quelle che mi punzecchiano o che la pensano all’opposto. Ho solo oscurato con asterischi i pochi dettagli che potevano far riconoscere chi ha scritto.</p>
+  </div>
+  <div class="cao-cards">
+      <div class="cao-card"><p class="cao-card-body">«Vorrei che il mio paese tornasse agli alla vecchia gloria come punto di riferimento industriale ed economico del Sud Italia»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Trovare un contesto in linea con le aspettative delle persone del 2046. Industria ridotta e realtà digitali-tech che abbracciano le potenzialità del territorio, dall’agricoltura nel montorese fino al turismo nel serinese. 
+
+Con un bel ricordo della classe politica del 2026 che ha saputo scegliere e attivare politiche per attrarre imprese tramite fiscalità agevolata e locazioni a costi bassi, stringendo anche partnership con UniSa per la realizzazione di hub di ricerca nel nostro territorio. 
+
+Il bello è che tutto questo è fattibile.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei una cittadina pulita e vivibile , a misura di tutti»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Luoghi dove potersi incontrare»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei si potesse trovare lavoro ma non solo fatto di concia, vorrei poter trovare una varietà d'aziende (es. Come a Fisciano ) . Vorrei trovare il parco San Nicola aperto e valorizzato, magari con una palestra all'aperto(intendo quegli attrezzi fatti apposta per i parchi) , la Scorza valorizzata con aree Picnik fatte bene e un po' di movida al centro»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Aria pulita, acque limpide, lavoro di qualità, scuole sempre più specializzate.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Basterebbe sfruttare ciò che abbiamo, anche riconvertendo, ma soprattutto serve una guida politica che abbia una visione di lunga durata. Servirebbe un piano decennale di sviluppo economico, evitando di guardare agli interessi particolari, agendo solo per il bene comune (in pratica un'utopia)»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Una città degna di questo nome»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei vorrei x volere si deve lavorare»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei che mia figlia restasse a Solofra, paese che con un rinnovo generazionale, diversificazione delle attività e una giusta politica potrebbe ritornare un piccolo fiore all’occhiello.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei una solofra pulita e rispettosa...una solofra che dia garanzia lavorativa...parco giochi immensi puliti e giostre di ogni tipo e con tanta di sicurezza se vengono vandallizate... Areee di parcheggi gratis ... Tratto san Michele san Domenico chiuso al traffico... discoteche cinema e negozi ..sistemazione in generale anche alle PERIFERIE senza lasciare nel degrado totale..strdate Illuminate e con tanta di segnaletica...CHE AL COMUNE CI SIA GENTE CHE LAVORA ONESTAMENTE PER IL POPOLO E CHE DIA UNA MANO VERAMENTE A CHI NE HA BISOGNO...un sogno tutto questo...SI!!!»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Trovare meno cattiveria e invidia»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei trovare un polo culturale attivo, una economia fiorente che usa le più innovative tecnologie. Vorrei trovare un luogo di lavoro sicuro.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Più fatti, meno sondaggi»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei un futuro per i miei figli,scuole specialiazzate così si realizzano nel proprio paese più parchi una piscina un punto di ritrovo per i giovani»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei una città pulita, rispettata. Una città che valorizza i propri monumenti e non li lasci al degrado. Una città prospera, florida che finalmente ha trovato nuovi orizzonti. Una città governata dalla POLITICA e non dalla convenienza.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«I giovani avessero un motivo per restare e crescere nel e sul territorio»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei trovare modificata la mentalità dei solofrani»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Una Solofra viva e unita»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei che tra vent’anni Solofra fosse conosciuta non solo per la sua storica tradizione conciaria, ma anche come esempio virtuoso a livello ambientale ed ecologico: un luogo da cui altri possano prendere ispirazione per un modello industriale sostenibile.
+
+La concia delle pelli resta un settore fondamentale e identitario, ma deve evolversi ulteriormente attraverso innovazione tecnologica e digitale, diventando più pulita, efficiente e all’avanguardia.
+
+Vorrei una città capace di trattenere i giovani e, anzi, di attrarli: un posto dove si possa scegliere di restare perché ci sono opportunità, qualità della vita e futuro.
+
+Inoltre immagino una Solofra più diversificata e aperta anche al turismo sostenibile, valorizzando il suo patrimonio naturale e montano con parchi avventura, percorsi trekking e attività all’aria aperta. Accanto a questo, si potrebbe sviluppare un vero e proprio museo conciario, dove raccontare e mostrare l’intero processo di lavorazione della pelle: la storia della tradizione locale, i vecchi macchinari e attrezzi, con guide che accompagnino i visitatori (immagino si parta da gite scolastiche di scuole del territorio con l’obiettivo di allargarsi a tutta la regione campania) nella comprensione del ciclo produttivo. Un luogo che esponga anche i prodotti finiti, mettendo in evidenza in modo trasparente gli aspetti ecologici di una filiera sostenibile e tecnologica.
+
+Quando dico Solofra a qualche forestiero spesso la risposta è “ahh sì dove c’è la puzza!”. Tra vent’anni vorrei che la risposta fosse diversa e in accezione positiva.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Colori. Oggi è diventato un paese sempre più grigio. Se la gente è viva, vitale, vivace, tutto si colora e splende, da ogni punto di vista»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei una Solofra più viva,pulita e all avanguardia»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei meno morti per tumori, quindi qualità della vita migliore di adesso»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Piste ciclabibili, marciapiedi dappertutto, viali pieni di alberi (non solo Viale Principe Amedeo e Via F. De Stefano), parchi attrezzati. Ma soprattutto, vorrei trovare un paese civile, con gente civile che ha scelto di vivere nella legalità, nella trasparenza e nella meritocrazia. Non come ora dove gli alloggi popolari e comunali sono occupati da persone che non lo meritano. Non come ora che si fa la corsa ad andare nel politico di turno per raccomandare il figlio o la figlia per un posto fisso. Eccetera, eccetera, eccetera.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Una città viva e piena di iniziative con più spazi e attività per i bambini. Maggiore risposta lavorativa, basta con ste concerie e puntiamo al cambio del piano regolatore. Serino ha un'area PIP, quella poteva benissimamente fare il caso nostro con tutti gli opifici  abbandonati. Diamo largo ai giovani che i "vecchi" hanno fatto solo danni fino a mo'!»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei tornare a Solofra tra vent’anni e trovare un ambiente più funzionale e meritocratico, dove i miei figli e i giovani del territorio possano esprimere davvero le proprie potenzialità.
+
+Un luogo capace di valorizzare competenze, impegno e idee, senza costringere chi ha talento a cercare altrove le condizioni per crescere.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei dei parchi gioco adeguati. Attualmente sono pietosi. Ieri ho portato mia figlia di ** anni nell'area giochi di aiello, grande, pulita e ordinata. Come mamma originaria di Solofra (adesso vivo a R***), mi sono vergognata.»</p></div>
+      <div class="cao-card"><p class="cao-card-body">«Vorrei che le mie figlie potessero lavorare qui, in un ambiente pulito, con un luogo vivo.»</p></div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="cta-box">
+    <p class="cta-eyebrow">Il sondaggio è ancora aperto</p>
+    <p class="cta-q">Manca la tua idea.</p>
+    <p class="cta-sub">Se non hai ancora detto la tua: come immagini Solofra fra vent’anni? Anonimo, due minuti.</p>
+    <a href="https://forms.gle/N3bnoUPWRXyk4PhS7" class="cta-btn" target="_blank" rel="noopener">Aggiungi la tua idea →</a>
+  </div>
+</div>
+
+<div class="solofra-wrap" style="padding-top:clamp(28px,4vw,40px);">
+  <p class="note"><strong>Come è stata fatta questa pagina.</strong> Le risposte vengono da un sondaggio anonimo aperto, lanciato sulla pagina Facebook di Raffaele De Piano e in alcuni gruppi solofrani. Hanno risposto 33 persone. Non è un campione rappresentativo: è una raccolta libera di idee, utile per le idee e le parole, non per misurare l’opinione del paese — le percentuali descrivono solo chi ha risposto. Le risposte aperte sono pubblicate <strong>tutte</strong>, per intero e così come scritte, nell’ordine in cui sono arrivate. Sono stati oscurati con asterischi solo i pochi riferimenti che potevano rendere riconoscibile chi ha scritto. Niente è stato escluso. <strong>Fonte:</strong> risposte al modulo «Solofra tra vent’anni».</p>
+  <div class="manifest">
+    <p class="manifest-hed">Il metodo</p>
+    <p class="manifest-text">Le idee sono dei cittadini. I numeri dicono chi ha risposto, non cosa pensa il paese. Le voci critiche sono rimaste dentro. Niente è stato gonfiato.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">Curata da <strong>Raffaele De Piano</strong> — <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>Raccolta di idee da sondaggio anonimo aperto. Non è un sondaggio rappresentativo.</div>
+    <div class="footer-r">Ultimo aggiornamento: giugno 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+  <script src="theme-mandarin.js" defer></script>
+</body>
+</html>
