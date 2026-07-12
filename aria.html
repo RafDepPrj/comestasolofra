@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'aria — Come sta Solofra</title>
+<meta name="description" content="Come funziona il servizio sulla qualità dell'aria di Solofra: quando arrivano gli aggiornamenti, perché così, e dove seguirli su Telegram.">
+<meta property="og:title" content="L'aria — Come sta Solofra">
+<meta property="og:description" content="Un dato pubblico di ARPA Campania, controllato più volte al giorno, che diventa un messaggio solo quando cambia davvero qualcosa. Nessuno spam, un riepilogo ogni lunedì.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--ink: #1a1a18;
+--ink-2: #4a4a47;
+--ink-3: #8a8a85;
+--paper: #f7f5f0;
+--paper-2: #eeece6;
+--paper-3: #e3e0d8;
+--accent: #c8401a;
+--green: #2a6b3c;
+--green-bg:#e8f2ec;
+--amber: #8a5a0a;
+--amber-bg:#fef3e0;
+--border: rgba(26,26,24,0.12);
+--serif: 'Instrument Serif', Georgia, serif;
+--sans: 'DM Sans', system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+.header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+.site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.site-title span { color: var(--accent); }
+nav { display: flex; gap: 24px; }
+nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+nav a:hover { color: var(--ink); }
+nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+.disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+.disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+.disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+.hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+.hero-title em { font-style: italic; color: var(--ink-2); }
+.hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+.hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+.hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+.btn-cta { display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 14px; font-weight: 500; padding: 12px 22px; border-radius: 8px; letter-spacing: 0.01em; transition: opacity .15s; }
+.btn-cta:hover { opacity: .85; }
+hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+.insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+.insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+.ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+.tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 720px; }
+.tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+.tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+.tbl-insights tr:last-child td { border-bottom: none; }
+.tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+.tbl-insights .col-num { white-space: nowrap; }
+.tbl-insights .col-num .big { font-family: var(--serif); font-size: 22px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); display: block; }
+.tbl-insights .col-num .big.ok { color: var(--green); }
+.tbl-insights .col-num .big.amb { color: var(--amber); }
+.tbl-insights .col-num .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-top: 2px; font-family: var(--sans); }
+.tbl-insights .col-lbl { color: var(--ink-2); font-size: 13.5px; }
+.tbl-insights .col-lbl b { color: var(--ink); font-weight: 500; }
+.tbl-insights .col-src { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
+@media (max-width: 720px) {
+.tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+.tbl-insights .col-num .big { font-size: 19px; }
+.tbl-insights .col-infra { font-size: 14px; }
+}
+.solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+.solofra-intro { margin-bottom: 32px; max-width: 720px; }
+.solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+.solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+.solofra-lede strong { color: var(--ink); font-weight: 500; }
+.cao-group { margin-top: 36px; }
+.cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.cao-group-hed .dot.amber { background: var(--amber); }
+.cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+.cao-group.a h3 { color: var(--amber); }
+.cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+.cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+.cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+.cao-card:hover { transform: translateY(-2px); }
+.cao-card.a { border-top-color: var(--amber); }
+.cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+.cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.cao-card-body strong { font-weight: 500; color: var(--ink); }
+.layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+@media (min-width: 960px) {
+.layout { grid-template-columns: 220px 1fr; gap: 64px; }
+}
+.toc { font-size: 13px; }
+@media (min-width: 960px) {
+.toc { position: sticky; top: 78px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; }
+}
+.toc-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.toc ol { list-style: none; counter-reset: toc; }
+.toc li { counter-increment: toc; margin-bottom: 10px; }
+.toc li a { color: var(--ink-2); text-decoration: none; display: block; padding: 6px 0; line-height: 1.4; transition: color .15s; border-left: 2px solid transparent; padding-left: 10px; }
+.toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--serif); font-size: 12px; color: var(--accent); margin-right: 8px; }
+.toc li a:hover { color: var(--ink); border-left-color: var(--accent); }
+.block { padding-bottom: clamp(48px,6vw,72px); margin-bottom: clamp(48px,6vw,72px); border-bottom: 1px solid var(--border); }
+.block:last-of-type { border-bottom: none; }
+.block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+.block-title { font-family: var(--serif); font-size: clamp(28px,3.8vw,42px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--ink); }
+.block-intro { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 32px; max-width: 680px; }
+h3.sub { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; margin-top: 40px; margin-bottom: 18px; color: var(--ink); }
+h3.sub:first-child { margin-top: 0; }
+p { margin-bottom: 14px; color: var(--ink); }
+p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 16px 0; }
+a.inline { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .15s, border-color .15s; }
+a.inline:hover { color: var(--accent); border-color: var(--accent); }
+.tbl-wrap { margin: 16px 0 8px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--paper); }
+table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.data th { text-align: left; padding: 12px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--paper-2); }
+table.data td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); line-height: 1.5; }
+table.data tr:last-child td { border-bottom: none; }
+table.data td:first-child { color: var(--ink-2); }
+table.data td strong { font-weight: 500; color: var(--ink); }
+table.data td.val { font-family: var(--serif); font-size: 16px; color: var(--ink); white-space: nowrap; }
+table.data td.val.ok { color: var(--green); }
+table.data td.val.amb { color: var(--amber); }
+@media (max-width: 640px) {
+table.data { font-size: 13px; }
+table.data th, table.data td { padding: 10px 12px; }
+}
+.fonti { font-size: 13px; }
+.fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+.fonti h4:first-child { margin-top: 0; }
+.fonti ul { list-style: none; }
+.fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+.fonti li:last-child { border-bottom: none; }
+.fonti li strong { color: var(--ink); font-weight: 500; }
+.fonti li a { color: var(--ink-2); text-decoration: none; border-bottom: 1px dotted var(--ink-3); word-break: break-all; }
+.fonti li a:hover { color: var(--accent); border-color: var(--accent); }
+.ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
+.ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+.ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+.ai-notice-text strong { color: var(--ink); font-weight: 500; }
+.manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+.manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+.manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+.footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+.footer-l strong { color: var(--ink-2); font-weight: 500; }
+.footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+.footer-l a:hover { color: var(--ink); }
+.footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+@media (max-width: 640px) {
+nav { gap: 16px; overflow-x: auto; }
+nav a { font-size: 12px; }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+<div class="disclaimer">
+<div class="disclaimer-inner"><strong>Nota:</strong> questo servizio elabora automaticamente dati pubblici di ARPA Campania, distribuiti tramite il World Air Quality Index Project. Sono dati grezzi, non validati: possono essere corretti a posteriori dall'ente di riferimento. Errori o imprecisioni sono possibili: segnalazioni e correzioni sono benvenute.</div>
+</div>
+<header class="mn-header">
+<div class="mn-header-inner">
+<a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
+<button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="mn-nav" id="mnNav">
+<a href="index.html">Home</a>
+<a href="demografia.html">Demografia</a>
+<a href="bilancio.html">Bilancio</a>
+<a href="crisi_mandato.html">Crisi di fine mandato</a>
+<a href="concia.html">Concia</a>
+<a href="mobilita.html">Mobilità</a>
+<a href="scuole.html">Bambini e scuole</a>
+<a href="turismo.html">Turismo</a>
+<a href="immigrazione.html">Chi arriva</a>
+<a href="trasparenza.html">I dati che vorremmo</a>
+<a href="biblioteca.html">Biblioteca</a>
+<a href="suolo.html">Suolo</a>
+<a href="altrove.html">Altrove</a>
+<a href="idee.html">Le vostre idee</a>
+<a href="resilienza.html">Il caldo</a>
+<a href="aria.html" class="active">Aria</a>
+</nav>
+</div>
+</header>
+
+<div class="hero">
+<p class="hero-eyebrow">Servizio · aggiornato luglio 2026</p>
+<h1 class="hero-title">L'aria si controlla,<br><em>non si racconta.</em></h1>
+<p class="hero-sub">Un dato pubblico di ARPA Campania, controllato più volte al giorno da un sistema automatico, che diventa un messaggio solo quando cambia davvero qualcosa. Questa pagina spiega come funziona: quando arrivano gli aggiornamenti, perché sono stati pensati così, e dove seguirli.</p>
+<div class="hero-meta">
+A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+<span>·</span>
+<span>ARPA Campania · World Air Quality Index Project</span>
+</div>
+<div style="margin-top:20px;">
+<a class="btn-cta" href="https://t.me/comestasolofra" target="_blank">Segui il canale su Telegram →</a>
+</div>
+<p style="margin-top:14px; font-size:13px; color:var(--ink-3);">Gratuito, nessuna registrazione, nessun dato personale richiesto. Ci si può disiscrivere in qualunque momento.</p>
+</div>
+
+<hr class="div">
+
+<!-- IN SINTESI -->
+<div class="insights-wrap">
+<p class="insights-hed">In sintesi</p>
+<p class="insights-sub">Le domande più immediate — quanto spesso, quando arriva un messaggio, cosa succede se non cambia nulla — con la risposta diretta. Il dettaglio di ciascun punto è nelle sezioni sotto.</p>
+<div class="ins-tbl-wrap">
+<table class="tbl-insights">
+<thead>
+<tr>
+<th class="col-infra">Domanda</th>
+<th class="col-num">Risposta</th>
+<th class="col-lbl">Perché</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-infra">Ogni quanto si controlla l'aria</td>
+<td class="col-num"><span class="big">ogni 2 ore</span></td>
+<td class="col-lbl">il sistema verifica il dato più volte al giorno, ma <b>controllare non vuol dire pubblicare</b></td>
+</tr>
+<tr>
+<td class="col-infra">Quando arriva un messaggio</td>
+<td class="col-num"><span class="big ok">solo se cambia la fascia</span></td>
+<td class="col-lbl">da Buona ad Accettabile, o viceversa — non per piccole oscillazioni del numero dentro la stessa fascia</td>
+</tr>
+<tr>
+<td class="col-infra">Margine di sicurezza</td>
+<td class="col-num"><span class="big">4 ore</span></td>
+<td class="col-lbl">tempo minimo tra un messaggio e l'altro, per non rincorrere un valore che oscilla al confine tra due fasce</td>
+</tr>
+<tr>
+<td class="col-infra">Se l'aria resta stabile a lungo</td>
+<td class="col-num"><span class="big amb">max 7 giorni</span></td>
+<td class="col-lbl">di silenzio: oltre, arriva comunque un messaggio di controllo, per confermare che il sistema sta ancora monitorando</td>
+</tr>
+<tr>
+<td class="col-infra">Riepilogo della settimana</td>
+<td class="col-num"><span class="big ok">ogni lunedì</span></td>
+<td class="col-lbl">sempre, a prescindere da quanti messaggi siano arrivati nei sette giorni precedenti</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- COSA VA LETTO CON ONESTÀ -->
+<div class="solofra-wrap" style="padding-top:0;">
+<div class="cao-group a">
+<div class="cao-group-hed">
+<span class="dot amber"></span>
+<h3>Cosa va letto con onestà</h3>
+<span class="cao-count">3 punti</span>
+</div>
+<div class="cao-cards">
+<div class="cao-card a">
+<h4 class="cao-card-title">Un solo punto di misura</h4>
+<p class="cao-card-body">Il dato viene dalla stazione <strong>Solofra Zona Industriale</strong>. È il riferimento più vicino e continuo che esiste, ma resta un solo punto: non descrive necessariamente ogni via del paese allo stesso modo.</p>
+</div>
+<div class="cao-card a">
+<h4 class="cao-card-title">Dati non validati</h4>
+<p class="cao-card-body">Le letture di ARPA Campania distribuite in tempo reale sono <strong>dati grezzi</strong>: provvisori, e possono essere corretti a posteriori dall'ente. Il servizio li mostra così come arrivano, senza filtri propri.</p>
+</div>
+<div class="cao-card a">
+<h4 class="cao-card-title">Un margine, non un secondo</h4>
+<p class="cao-card-body">Le 4 ore di margine tra un messaggio e l'altro significano che un cambiamento reale può metterci fino a 4 ore per comparire sul canale. Non è un servizio di allerta immediata: è un bollettino informativo.</p>
+</div>
+</div>
+</div>
+</div>
+
+<hr class="div">
+
+<div class="layout">
+<aside class="toc">
+<p class="toc-hed">In questa pagina</p>
+<ol>
+<li><a href="#cosa">Cos'è</a></li>
+<li><a href="#frequenza">Quando arrivano gli aggiornamenti</a></li>
+<li><a href="#settimanale">Il riepilogo del lunedì</a></li>
+<li><a href="#canale">Il canale Telegram</a></li>
+<li><a href="#fonti">Mappa numeri → fonti</a></li>
+<li><a href="#metodo">Nota metodologica</a></li>
+</ol>
+</aside>
+<main>
+
+<!-- 1 COS'È -->
+<section id="cosa" class="block">
+<p class="block-num">01 — Il servizio</p>
+<h2 class="block-title">Cos'è.</h2>
+<p class="block-intro">Un canale Telegram che pubblica come sta l'aria a Solofra: un semaforo, un numero, un consiglio pratico su cosa fare. Il dato è di ARPA Campania, già pubblico — questo servizio lo prende e lo rende leggibile e continuo, senza bisogno di sapere cos'è un indice AQI.</p>
+<p>È il primo servizio di "Come sta Solofra" pensato per arrivare direttamente sul telefono, invece che essere consultato su una pagina. Altri se ne aggiungeranno, con lo stesso metodo: dati pubblici, resi semplici.</p>
+</section>
+
+<!-- 2 FREQUENZA -->
+<section id="frequenza" class="block">
+<p class="block-num">02 — La logica</p>
+<h2 class="block-title">Quando arrivano gli aggiornamenti.</h2>
+<p class="block-intro">La domanda più naturale è "ogni quanto arriva un messaggio". La risposta breve è: <strong>non a orario fisso</strong>. Il sistema controlla l'aria ogni due ore, ma pubblica un messaggio solo quando succede qualcosa che vale la pena sapere.</p>
+<h3 class="sub">Perché non un messaggio ogni ora</h3>
+<p>L'aria cambia poco nell'arco di poche ore. Un messaggio ogni ora che dice quasi sempre "tutto bene" smette presto di essere un'informazione e diventa rumore: ci si abitua a ignorarlo, e il giorno in cui davvero peggiora, nessuno se ne accorge più. Per questo il criterio non è il tempo trascorso, ma <strong>se è cambiata la fascia</strong> — da Buona ad Accettabile, per esempio, o viceversa.</p>
+<h3 class="sub">Il margine di sicurezza</h3>
+<p>Un valore che oscilla proprio al confine tra due fasce (49, poi 51, poi 48...) rischierebbe di far rimbalzare il canale con messaggi ravvicinati e poco utili. Per questo tra un messaggio e l'altro deve passare <strong>almeno 4 ore</strong>, anche quando la fascia è appena cambiata: un margine che filtra il rumore senza nascondere un peggioramento vero.</p>
+<h3 class="sub">Se non cambia nulla per giorni</h3>
+<p>Un sistema che controlla ma non parla mai non si distingue da un sistema che si è fermato. Per questo, se l'aria resta nella stessa fascia per <strong>più di 7 giorni</strong>, arriva comunque un messaggio: non perché sia successo qualcosa, ma perché è l'unico modo per sapere con certezza che il controllo è ancora attivo, invece di doverlo semplicemente supporre.</p>
+<p class="note">In pratica: nella maggior parte delle settimane arrivano pochi messaggi, quasi tutti legati a un cambiamento reale. È una scelta deliberata: meglio pochi messaggi che contano, che molti che si smette di leggere.</p>
+</section>
+
+<!-- 3 SETTIMANALE -->
+<section id="settimanale" class="block">
+<p class="block-num">03 — Il quadro d'insieme</p>
+<h2 class="block-title">Il riepilogo del lunedì.</h2>
+<p class="block-intro">Ogni lunedì mattina, sempre — a prescindere da quanti messaggi siano arrivati nei sette giorni precedenti — il canale pubblica un grafico con l'andamento della settimana appena conclusa.</p>
+<p>Il grafico mostra una barra per ogni giorno, con il valore più alto raggiunto (non la media): è il modo più onesto di far vedere se c'è stato un momento di peggioramento, anche breve, dentro una giornata altrimenti buona. Accanto, il confronto con la media settimanale dei comuni vicini che hanno una centralina attiva.</p>
+<p>Se durante la settimana l'aria è cambiata fascia, il riepilogo lo racconta in una riga di testo semplice — es. "martedì l'aria è peggiorata per alcune ore, poi è tornata buona". Se la settimana è stata piatta, il messaggio lo dice altrettanto chiaramente, invece di forzare una notizia dove non c'è.</p>
+</section>
+
+<!-- 4 CANALE -->
+<section id="canale" class="block">
+<p class="block-num">04 — Dove seguirlo</p>
+<h2 class="block-title">Il canale Telegram.</h2>
+<p class="block-intro">Il servizio vive su Telegram, in un canale pubblico e gratuito: chi si iscrive riceve i messaggi descritti sopra, direttamente, senza dover controllare questa pagina.</p>
+<p><a class="btn-cta" href="https://t.me/comestasolofra" target="_blank">Segui "Come sta Solofra" su Telegram →</a></p>
+</section>
+
+<!-- FONTI -->
+<section id="fonti" class="block">
+<p class="block-num">Fonti</p>
+<h2 class="block-title">Mappa numeri → fonti</h2>
+<p class="block-intro">Ogni dato di questa pagina è tratto da una fonte pubblica e verificabile.</p>
+<div class="fonti">
+<h4>Qualità dell'aria</h4>
+<ul>
+<li><strong>Dato AQI, per inquinante e nel tempo</strong> — stazione "Solofra Zona Industriale", rete di monitoraggio ARPA Campania, distribuita tramite il World Air Quality Index Project. <a href="https://aqicn.org/city/italy/campania/solofra/solofra-zona-industriale/" target="_blank">aqicn.org</a></li>
+<li><strong>Fasce e soglie AQI</strong> — scala standard internazionale (basata sui criteri EPA), la stessa usata da aqicn.org e dalla maggior parte dei servizi di qualità dell'aria.</li>
+</ul>
+</div>
+</section>
+
+<!-- METODO -->
+<section id="metodo" class="block" style="border-bottom:none;">
+<p class="block-num">Metodo</p>
+<h2 class="block-title">Come funziona, dietro le quinte</h2>
+<p>Il servizio è un sistema automatico: nessuna persona decide caso per caso se pubblicare un messaggio. Il controllo del dato, il confronto con la fascia precedente, e la decisione se pubblicare seguono sempre la stessa logica descritta in questa pagina — la stessa per ogni controllo, ogni giorno.</p>
+<p><strong>Non è un servizio di allerta sanitaria.</strong> È un bollettino informativo con un margine di alcune ore prima che un cambiamento compaia sul canale. Per informazioni sanitarie o situazioni di emergenza, il riferimento restano i canali ufficiali di ARPA Campania e delle autorità sanitarie.</p>
+<div class="ai-notice">
+<p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+<p class="ai-notice-text">Il sistema che genera i messaggi — dalla lettura del dato alla decisione se pubblicare, fino al testo e all'immagine — è stato costruito con il supporto di strumenti di intelligenza artificiale. Il dato di partenza resta sempre quello pubblico di ARPA Campania, non elaborato nel merito: l'intelligenza artificiale ha aiutato a costruire la logica e la forma, non a interpretare i numeri. <strong>Se noti un'anomalia o un comportamento che non torna</strong>, segnalamelo: verrà verificato e corretto.</p>
+</div>
+<div class="manifest">
+<p class="manifest-hed">Il metodo</p>
+<p class="manifest-text">I dati sono pubblici. I calcoli sono mostrati per intero. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le opinioni sono separate dai fatti.</p>
+</div>
+</section>
+
+</main>
+</div>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-l">
+Curata da <strong>Raffaele De Piano</strong> —
+<a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+Tutti i dati sono pubblici e le fonti sono citate. I numeri sono verificabili da chiunque.
+</div>
+<div class="footer-r">Ultimo aggiornamento: luglio 2026<br>Solofra (AV), Campania</div>
+</div>
+</footer>
+<script src="theme-mandarin.js" defer></script>
+</body>
+</html>

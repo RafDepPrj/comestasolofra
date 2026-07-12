@@ -1,0 +1,87 @@
+/* ===========================================================
+   TEMA MANDARIN — override per "Come sta Solofra"
+   Va caricato DOPO il <style> di ogni pagina.
+   Ridefinisce le variabili di tema: il nuovo look si propaga
+   a tutti i componenti (anche quelli su misura) senza toccare
+   il markup dei contenuti.
+   =========================================================== */
+
+:root{
+  --ink:#212529;
+  --ink-2:#495057;
+  --ink-3:#868e96;
+  --paper:#ffffff;
+  --paper-2:#faf8f6;
+  --paper-3:#f1ece8;
+  --accent:#d8815f;          /* terracotta Mandarin */
+  --green:#2a6b3c;  --green-bg:#e8f2ec;
+  --amber:#9a6a12;  --amber-bg:#fbf1df;
+  --border:rgba(33,37,41,0.12);
+  --serif:'Playfair Display', Georgia, serif;
+  --sans:'DM Sans', system-ui, sans-serif;
+  /* alias usati da alcune pagine */
+  --rust:#d8815f; --rust-light:#e6a385; --rust-faint:#f6e7df;
+  --gold:#9a6a12; --gold-faint:#fbf1df;
+  --ink-soft:#495057; --ink-muted:#868e96;
+  --paper-warm:#faf8f6; --paper-mid:#f1ece8; --border-soft:rgba(33,37,41,0.06);
+}
+
+/* accento rosso per i link testuali, in stile rivista */
+a.inline, .fonti li a, .hero-meta a { --accent:#c41d1d; }
+
+/* ---------- HEADER condiviso (classi mn-*) ---------- */
+.mn-header{ position:sticky; top:0; z-index:200; background:var(--paper);
+  border-bottom:1px solid var(--border); padding:0 clamp(18px,5vw,80px); }
+.mn-header-inner{ max-width:1080px; margin:0 auto; min-height:62px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px; position:relative; }
+.mn-brand{ display:flex; align-items:center; gap:11px; text-decoration:none; flex-shrink:0; }
+.mn-logo{ width:40px; height:40px; border-radius:50%; object-fit:cover;
+  border:1px solid var(--border); display:block; }
+.mn-wordmark{ font-family:var(--serif); font-weight:700; font-size:21px;
+  color:var(--ink); letter-spacing:-0.01em; line-height:1; }
+.mn-wordmark em{ font-style:italic; color:#c41d1d; }
+
+.mn-toggle{ display:flex; flex-direction:column; justify-content:center; gap:5px;
+  width:42px; height:42px; padding:9px; background:none; border:1px solid var(--border);
+  border-radius:6px; cursor:pointer; }
+.mn-toggle span{ display:block; height:2px; width:100%; background:var(--ink); border-radius:2px;
+  transition:transform .2s, opacity .2s; }
+.mn-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.mn-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.mn-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+/* nav: mobile-first (a tendina) */
+.mn-nav{ display:none; position:absolute; top:100%; left:0; right:0;
+  flex-direction:column; padding:6px 0 10px; background:var(--paper);
+  border-bottom:1px solid var(--border); box-shadow:0 12px 28px rgba(0,0,0,0.07); }
+.mn-nav.open{ display:flex; }
+.mn-nav a{ font-family:var(--sans); font-size:15px; color:var(--ink-2); text-decoration:none;
+  padding:13px clamp(18px,5vw,80px); border-left:3px solid transparent; }
+.mn-nav a:hover{ color:#c41d1d; background:var(--paper-2); }
+.mn-nav a.active{ color:var(--ink); border-left-color:var(--accent); font-weight:500; }
+
+@media (min-width:980px){
+  .mn-toggle{ display:none; }
+  .mn-nav{ display:flex; position:static; flex-direction:row; align-items:center;
+    gap:17px; padding:0; background:none; border:none; box-shadow:none; flex-wrap:wrap;
+    justify-content:flex-end; }
+  .mn-nav a{ font-size:12.5px; letter-spacing:0.03em; text-transform:uppercase;
+    padding:6px 0; border-left:none; border-bottom:2px solid transparent; }
+  .mn-nav a:hover{ background:none; }
+  .mn-nav a.active{ border-left:none; border-bottom-color:var(--accent); }
+}
+
+/* ---------- ritocchi tipografici Mandarin ---------- */
+.hero-title, .block-title, .solofra-hed, .sec-title, .stat-val,
+.tbl-insights .col-num .big, table.data td.val { font-family:var(--serif); }
+.hero-title{ font-weight:700; }
+
+/* ---------- robustezza MOBILE: griglie a 1 colonna ---------- */
+@media (max-width:680px){
+  .cao-cards, .data-cards, .stat-grid, .scenario-grid, .debt-grid, .sez-grid,
+  .risorse-cards, .narr-cards, .asset-grid, .rioni-grid, .summary-cells,
+  .stat-grid, .reasons-list { grid-template-columns:1fr !important; }
+  .tbl-wrap, .ins-tbl-wrap, .map-table { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .hero-title{ font-size:clamp(32px,9vw,46px) !important; }
+  body{ font-size:16px; }
+}
