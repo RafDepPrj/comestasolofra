@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobilità e collegamenti — Come sta Solofra</title>
+<meta name="description" content="La galleria Monte Pergola, il raccordo Avellino-Salerno, la terza corsia, la ferrovia. Quattro infrastrutture, quattro storie di tempo.">
+<meta property="og:title" content="Mobilità e collegamenti — Come sta Solofra">
+<meta property="og:description" content="Quattro infrastrutture, quattro storie di tempo. Il problema di Solofra è la strada che porta a Solofra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  /* Insight strip — tabella fatto/manca per infrastruttura */
+  .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+  .insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+  .ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+  .tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 860px; }
+  .tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .tbl-insights th.done { color: var(--green); }
+  .tbl-insights th.todo { color: var(--accent); }
+  .tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+  .tbl-insights tr:last-child td { border-bottom: none; }
+  .tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+  .tbl-insights .col-num { white-space: nowrap; }
+  .tbl-insights .col-num .big { font-family: var(--serif); font-size: 22px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); display: block; }
+  .tbl-insights .col-num .big.neg { color: var(--accent); }
+  .tbl-insights .col-num .big.amb { color: var(--amber); font-size: 17px; margin-top: 4px; }
+  .tbl-insights .col-num .big.neu { color: var(--ink); }
+  .tbl-insights .col-num .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-top: 2px; font-family: var(--sans); }
+  .tbl-insights .col-lbl { color: var(--ink-2); font-size: 13px; }
+  .tbl-insights .col-done, .tbl-insights .col-todo { font-size: 13px; }
+  .tbl-insights .col-src { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
+  @media (max-width: 720px) {
+    .tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+    .tbl-insights .col-num .big { font-size: 20px; }
+    .tbl-insights .col-infra { font-size: 14px; }
+  }
+
+  /* Sezione "Cosa significa per Solofra" — con card singole */
+  .solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+  .solofra-intro { margin-bottom: 32px; max-width: 720px; }
+  .solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .solofra-lede strong { color: var(--ink); font-weight: 500; }
+  .solofra-quote { font-family: var(--serif); font-style: italic; font-size: clamp(18px,2.2vw,22px); line-height: 1.4; color: var(--ink); padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--paper); border-radius: 0 6px 6px 0; margin-top: 18px; }
+
+  .cao-group { margin-top: 36px; }
+  .cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .cao-group-hed .dot.red { background: var(--accent); }
+  .cao-group-hed .dot.amber { background: var(--amber); }
+  .cao-group-hed .dot.green { background: var(--green); }
+  .cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+  .cao-group.c h3 { color: var(--accent); }
+  .cao-group.a h3 { color: var(--amber); }
+  .cao-group.o h3 { color: var(--green); }
+  .cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+
+  .cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+  .cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+  .cao-card:hover { transform: translateY(-2px); }
+  .cao-card.c { border-top-color: var(--accent); }
+  .cao-card.a { border-top-color: var(--amber); }
+  .cao-card.o { border-top-color: var(--green); }
+  .cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+  .cao-card-body strong { font-weight: 500; color: var(--ink); }
+
+  .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+  @media (min-width: 960px) {
+    .layout { grid-template-columns: 220px 1fr; gap: 64px; }
+  }
+
+  .toc { font-size: 13px; }
+  @media (min-width: 960px) {
+    .toc { position: sticky; top: 78px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; }
+  }
+  .toc-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 10px; }
+  .toc li a { color: var(--ink-2); text-decoration: none; display: block; padding: 6px 0; line-height: 1.4; transition: color .15s; border-left: 2px solid transparent; padding-left: 10px; }
+  .toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--serif); font-size: 12px; color: var(--accent); margin-right: 8px; }
+  .toc li a:hover { color: var(--ink); border-left-color: var(--accent); }
+
+  .block { padding-bottom: clamp(48px,6vw,72px); margin-bottom: clamp(48px,6vw,72px); border-bottom: 1px solid var(--border); }
+  .block:last-of-type { border-bottom: none; }
+  .block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .block-title { font-family: var(--serif); font-size: clamp(28px,3.8vw,42px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--ink); }
+  .block-intro { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 32px; max-width: 680px; }
+
+  h3.sub { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; margin-top: 40px; margin-bottom: 18px; color: var(--ink); }
+  h3.sub:first-child { margin-top: 0; }
+
+  p { margin-bottom: 14px; color: var(--ink); }
+  p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 16px 0; }
+  a.inline { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .15s, border-color .15s; }
+  a.inline:hover { color: var(--accent); border-color: var(--accent); }
+
+  .tbl-wrap { margin: 16px 0 8px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--paper); }
+  table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.data th { text-align: left; padding: 12px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--paper-2); }
+  table.data td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); line-height: 1.5; }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data td:first-child { color: var(--ink-2); }
+  table.data td strong { font-weight: 500; color: var(--ink); }
+  table.data td.val { font-family: var(--serif); font-size: 16px; color: var(--ink); white-space: nowrap; }
+  table.data td.val.neg { color: var(--accent); }
+  table.data td.val.ok { color: var(--green); }
+  @media (max-width: 640px) {
+    table.data { font-size: 13px; }
+    table.data th, table.data td { padding: 10px 12px; }
+  }
+
+  /* Timeline */
+  .timeline { position: relative; margin: 24px 0; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; padding-bottom: 22px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--paper); box-shadow: 0 0 0 2px var(--ink-3); background: var(--paper); }
+  .tl-item.red::before  { box-shadow: 0 0 0 2px var(--accent); background: var(--accent); }
+  .tl-item.green::before{ box-shadow: 0 0 0 2px var(--green);  background: var(--green); }
+  .tl-item.amber::before{ box-shadow: 0 0 0 2px var(--amber);  background: var(--amber); }
+  .tl-year { font-family: var(--serif); font-size: 16px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 4px; }
+  .tl-txt { font-size: 14px; color: var(--ink); line-height: 1.6; }
+  .tl-txt em { color: var(--ink-3); font-style: normal; font-size: 13px; }
+  .tl-txt strong { font-weight: 500; color: var(--ink); }
+  .tl-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--ink-3); margin: 12px 0 20px; padding: 12px 16px; background: var(--paper-2); border-radius: 6px; }
+  .tl-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .tl-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .tl-legend .dot.red { background: var(--accent); }
+  .tl-legend .dot.green { background: var(--green); }
+  .tl-legend .dot.amber { background: var(--amber); }
+
+  .fonti { font-size: 13px; }
+  .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+  .fonti h4:first-child { margin-top: 0; }
+  .fonti ul { list-style: none; }
+  .fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+  .fonti li:last-child { border-bottom: none; }
+  .fonti li strong { color: var(--ink); font-weight: 500; }
+  .fonti li a { color: var(--ink-2); text-decoration: none; border-bottom: 1px dotted var(--ink-3); word-break: break-all; }
+  .fonti li a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+
+  @media (max-width: 640px) {
+    nav { gap: 16px; }
+    nav a { font-size: 12px; }
+  }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale sui documenti pubblici di Anas, RFI, MIT, OpenCoesione e CIPESS. Le fonti sono citate e verificabili. Errori o imprecisioni sono possibili: segnalazioni e correzioni sono benvenute.</div>
+</div>
+
+<header class="mn-header">
+  <div class="mn-header-inner">
+    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
+    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="mn-nav" id="mnNav">
+        <a href="index.html">Home</a>
+        <a href="demografia.html">Demografia</a>
+        <a href="bilancio.html">Bilancio</a>
+        <a href="crisi_mandato.html">Crisi di fine mandato</a>
+
+        <a href="concia.html">Concia</a>
+        <a href="mobilita.html" class="active">Mobilità</a>
+        <a href="scuole.html">Bambini e scuole</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="immigrazione.html">Chi arriva</a>
+        <a href="trasparenza.html">I dati che vorremmo</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="suolo.html">Suolo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">03 — Mobilità e collegamenti · aggiornato aprile 2026</p>
+  <h1 class="hero-title">Come si arriva a Solofra —<br><em>e come si parte.</em></h1>
+  <p class="hero-sub">Quattro infrastrutture, quattro storie di tempo. Quanto passa, quanto resta, quanto si è speso, quanto manca. I numeri ufficiali, le fonti verificabili, i cronoprogrammi dichiarati.</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>Ultima consultazione fonti: aprile 2026</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- INSIGHT TABLE -->
+<div class="insights-wrap">
+  <p class="insights-hed">I numeri, in sintesi</p>
+  <p class="insights-sub">I dati chiave per le quattro infrastrutture che collegano Solofra al resto della Campania: quanto tempo è passato, quanto è stato fatto, quanto resta. Ogni dato è sostenuto dalle fonti riportate in pagina.</p>
+
+  <div class="ins-tbl-wrap">
+    <table class="tbl-insights">
+      <thead>
+        <tr>
+          <th class="col-infra">Infrastruttura</th>
+          <th class="col-num">Durata</th>
+          <th class="col-lbl">Cosa rappresenta</th>
+          <th class="done">Fatto</th>
+          <th class="todo">Manca</th>
+          <th class="col-src">Fonte</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="col-infra">Galleria Monte Pergola</td>
+          <td class="col-num">
+            <span class="big neg">4 anni</span>
+            <span class="sub">passati</span>
+            <span class="big amb">+ 2-4 anni</span>
+            <span class="sub">previsti</span>
+          </td>
+          <td class="col-lbl">galleria a canna unica</td>
+          <td class="col-done">cantiere ripartito marzo 2025 · nuovo appaltatore Infratech</td>
+          <td class="col-todo">prima fase promessa luglio 2026 · seconda canna senza data</td>
+          <td class="col-src">Anas · 2022, 2025</td>
+        </tr>
+
+        <tr>
+          <td class="col-infra">Cantieri raccordo</td>
+          <td class="col-num">
+            <span class="big neu">€ 51,3 mln</span>
+            <span class="sub">attivi</span>
+            <span class="big amb">~18 mesi</span>
+            <span class="sub">stimati residui</span>
+          </td>
+          <td class="col-lbl">cantieri di manutenzione attivi</td>
+          <td class="col-done">2 lotti NDBA su 3 completati · Atripalda e Fisciano</td>
+          <td class="col-todo">lotto Montoro-Solofra da completare · stima fine 2026</td>
+          <td class="col-src">Anas · 2025</td>
+        </tr>
+
+        <tr>
+          <td class="col-infra">Terza corsia</td>
+          <td class="col-num">
+            <span class="big neg">24 anni</span>
+            <span class="sub">dal primo progetto</span>
+            <span class="big amb">senza data</span>
+            <span class="sub">avvio lavori</span>
+          </td>
+          <td class="col-lbl">dal primo progetto alle carte attuali</td>
+          <td class="col-done">€ 109 mln finanziati (24%) · progetto definitivo depositato</td>
+          <td class="col-todo">€ 348 mln da trovare (76%) · tratto irpino senza copertura</td>
+          <td class="col-src">FILT-CGIL / FIT-CISL · MIT</td>
+        </tr>
+
+        <tr>
+          <td class="col-infra">Ferrovia Sa-Av-Bn</td>
+          <td class="col-num">
+            <span class="big neg">14 anni</span>
+            <span class="sub">stazione chiusa</span>
+            <span class="big amb">obiettivo 2026</span>
+            <span class="sub">riapertura</span>
+          </td>
+          <td class="col-lbl">stazione di Avellino chiusa dal 2012</td>
+          <td class="col-done">Salerno → Codola elettrificata · aprile 2024</td>
+          <td class="col-todo">tratta Avellino + riapertura stazione · obiettivo RFI 2026</td>
+          <td class="col-src">RFI · Legambiente</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- COSA SIGNIFICA PER SOLOFRA — spostata qui, subito dopo insight -->
+<div id="solofra" class="solofra-wrap">
+  <div class="solofra-intro">
+    <h2 class="solofra-hed">Cosa significa per Solofra.</h2>
+    <p class="solofra-lede">I numeri in tabella raccontano quattro cantieri. Ma chi vive qui la vive così: <strong>il problema di Solofra è la strada che porta a Solofra.</strong> Chi va in ospedale ad Avellino, chi fa il pendolare per Salerno o Fisciano, chi attraversa la galleria ogni giorno, chi vorrebbe aprire un'attività o trasferirsi qui: tutti pagano il prezzo dello stesso tempo fermo.</p>
+    <p class="solofra-lede">Il dato più difficile da misurare, ma forse il più importante, è un altro:</p>
+    <div class="solofra-quote">Ci siamo abituati. E una routine, a un certo punto, smette di sembrare un problema.</div>
+  </div>
+
+  <!-- CRITICITÀ -->
+  <div class="cao-group c">
+    <div class="cao-group-hed">
+      <span class="dot red"></span>
+      <h3>Criticità documentate</h3>
+      <span class="cao-count">5 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi va in ospedale</h4>
+        <p class="cao-card-body">Raggiungere l'ospedale di Avellino con la galleria a canna unica è diventato un calcolo. Le deviazioni sulle provinciali SP5, SP90, SP145 allungano i tempi in modo imprevedibile. <strong>Per chi ha un familiare ricoverato, questo è un problema quotidiano dal 2021.</strong></p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi fa il pendolare</h4>
+        <p class="cao-card-body">Oltre <strong>5.000 studenti irpini</strong> raggiungono l'Università di Salerno a Fisciano. A loro si aggiungono i pendolari di lavoro verso Salerno e la sua area industriale. Tutti dipendono dalla gomma: il treno regolare da Avellino manca dal 2012.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi entra in galleria</h4>
+        <p class="cao-card-body">A <strong>febbraio 2026 un tamponamento a catena ha causato quattro feriti</strong>. Nel 2024 calcinacci dalla volta hanno sfondato il parabrezza di un'auto in transito. Il rischio non è più un'ipotesi: è già successo, più volte. E ogni anno in più a canna unica è un anno in più in cui può succedere di nuovo.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi attraversa Solofra</h4>
+        <p class="cao-card-body">Quando il raccordo non basta, <strong>i mezzi pesanti invadono il centro di Solofra e Turci</strong>. Strade pensate per la viabilità locale sono diventate il piano B quotidiano. D'estate la galleria chiude alle auto per far passare i TIR dei pomodori: un'estate sì e l'altra pure, da quattro anni.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Chi vorrebbe investire qui</h4>
+        <p class="cao-card-body">Un territorio con un raccordo in regime emergenziale da quattro anni, senza treno e con la soluzione strutturale ferma da 24, <strong>non attira nuove attività, non attrae professionisti, non trattiene i giovani</strong>. È una delle ragioni strutturali per cui Solofra ha perso 600 residenti in dieci anni.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ATTENZIONI -->
+  <div class="cao-group a">
+    <div class="cao-group-hed">
+      <span class="dot amber"></span>
+      <h3>Attenzioni da monitorare</h3>
+      <span class="cao-count">5 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Cronoprogrammi vs realizzati</h4>
+        <p class="cao-card-body">La terza corsia è progettata dal 2001, la ferrovia doveva concludersi nel 2021, la galleria ha avuto una rescissione contrattuale nel 2024. <strong>Le date dichiarate sono state sistematicamente disattese.</strong> Le promesse "luglio 2026" (galleria) e "fine 2025" (ferrovia) vanno trattate come obiettivi, non come esiti.</p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Sovrapposizione cantieri</h4>
+        <p class="cao-card-body">Il lotto NDBA Montoro-Solofra (km 14-20) parte dopo il completamento dei primi due lotti, e potrebbe sovrapporsi alle fasi finali del cantiere galleria. <strong>Senza un quadro unitario pubblico, la percezione di "cantieri che non finiscono mai" rischia di consolidarsi.</strong></p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Vertenza 15 operai</h4>
+        <p class="cao-card-body">Il nuovo appaltatore Infratech non ha riassunto 15 operai del cantiere precedente. La vertenza sindacale è aperta dal 2025. Al di là dell'aspetto sociale, può avere riflessi sulla tempistica dei lavori se non risolta.</p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Voci frammentate</h4>
+        <p class="cao-card-body">Su queste vicende hanno preso posizione separatamente sindaci (10 firme nell'agosto 2025), sindacati (FILT-CGIL, FIT-CISL), partiti (AVS, PD), associazioni (Legambiente, InLocoMotivi). <strong>Non risulta pubblicamente uno strumento formale permanente di coordinamento dei comuni della Valle sul tema mobilità.</strong></p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Incongruenza finanziaria ferrovia</h4>
+        <p class="cao-card-body">La discrepanza tra le cifre di stanziamento (174 mln RFI 2024 vs. 220-230 mln citati in anni precedenti) merita approfondimento. Non è chiaro se ci sia stato un ridimensionamento del perimetro dell'opera ferroviaria.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OPPORTUNITÀ -->
+  <div class="cao-group o">
+    <div class="cao-group-hed">
+      <span class="dot green"></span>
+      <h3>Spazi di manovra</h3>
+      <span class="cao-count">5 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Progetto terza corsia pronto</h4>
+        <p class="cao-card-body">La progettazione definitiva esiste e <strong>è depositata al MIT dal febbraio 2023</strong>. Non c'è un ostacolo tecnico. Gli ostacoli sono finanziari e procedurali — cioè terreno politico. Una posizione territoriale unita della provincia di Avellino sul secondo stralcio ha spazio documentale per essere sollevata.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Strumenti già previsti dalla legge</h4>
+        <p class="cao-card-body">La normativa italiana prevede <strong>Unioni di Comuni, Aree Interne SNAI, Patti Territoriali, Contratti di programma</strong>: tutti strumenti disponibili per costruire interlocuzione coordinata con MIT, Regione e Anas su temi infrastrutturali sovracomunali. Non servono leggi nuove — serve volontà politica di usare quelle esistenti.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Fermata di Solofra per l'ospedale</h4>
+        <p class="cao-card-body">Nel piano post-elettrificazione, <strong>RFI ha dichiarato che è prevista una fermata ferroviaria a Solofra con collegamento all'ospedale</strong>. Un'opportunità concreta di mobilità sanitaria e studentesca da valorizzare quando l'infrastruttura sarà operativa.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Fondi Coesione 2021-2027</h4>
+        <p class="cao-card-body">Il nuovo ciclo di fondi europei offre <strong>finestre di finanziamento non ancora chiuse</strong> per infrastrutture strategiche del Mezzogiorno. È terreno aperto su cui il territorio può candidare progetti specifici — incluso il tratto irpino della terza corsia.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Utenza certa, non ipotetica</h4>
+        <p class="cao-card-body">I 5.000 studenti irpini all'Università di Salerno, gli occupati del distretto conciario con fornitori fuori area, i pazienti sanitari fuori Solofra: <strong>l'utenza della mobilità moderna esiste già. Non è da costruire — è da servire.</strong> Questo rende economicamente difendibile qualsiasi richiesta di completamento delle opere.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<hr class="div">
+
+<div class="layout">
+
+  <aside class="toc">
+    <p class="toc-hed">I dossier infrastrutturali</p>
+    <ol>
+      <li><a href="#galleria">La galleria Monte Pergola</a></li>
+      <li><a href="#raccordo">I cantieri sul raccordo</a></li>
+      <li><a href="#terza-corsia">La terza corsia</a></li>
+      <li><a href="#ferrovia">La linea ferroviaria</a></li>
+      <li><a href="#fonti">Mappa numeri → fonti</a></li>
+      <li><a href="#metodo">Nota metodologica</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- BLOCCO 1: GALLERIA -->
+    <section id="galleria" class="block">
+      <p class="block-num">01 — La galleria</p>
+      <h2 class="block-title">Galleria Monte Pergola: quattro anni a canna unica.</h2>
+      <p class="block-intro">La galleria Monte Pergola è situata lungo il Raccordo Autostradale 2 "di Avellino" (RA02), tra il km 19,500 (svincolo Solofra) e il km 23,450 (svincolo Serino). È stata costruita negli anni '60. Secondo i comunicati Anas consultati, da giugno 2021 viaggia su una sola canna a doppio senso di marcia, a causa dei lavori di manutenzione straordinaria sulla canna opposta.</p>
+
+      <h3 class="sub">Numeri chiave</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Lunghezza tratto interessato (svincolo Solofra → svincolo Serino)</td><td class="val">3,95 km</td></tr>
+            <tr><td>Investimento originario progetto (comunicato Anas gennaio 2022)</td><td class="val">€ 48 mln</td></tr>
+            <tr><td>Investimento lavori rimanenti canna dir. Salerno, dopo rescissione (comunicato Anas aprile 2025)</td><td class="val">€ 27 mln</td></tr>
+            <tr><td>Percentuale lavori eseguita dal primo appaltatore prima della rescissione (fonte: interrogazione Gruppo PD)</td><td class="val neg">~30%</td></tr>
+            <tr><td>Appaltatore attuale (comunicato Anas aprile 2025)</td><td>Consorzio Stabile S.C.A.R.L. Infratech</td></tr>
+            <tr><td>Consegna cantiere al nuovo appaltatore</td><td class="val">27 marzo 2025</td></tr>
+            <tr><td>Ultimazione prima fase (promessa Anas, COV luglio 2025)</td><td class="val">luglio 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Cronologia dei lavori</h3>
+      <div class="tl-legend">
+        <span><span class="dot green"></span> eventi effettivamente accaduti</span>
+        <span><span class="dot red"></span> scadenze dichiarate non rispettate</span>
+        <span><span class="dot amber"></span> obiettivi futuri dichiarati, da verificare</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item green"><div class="tl-year">2020</div><div class="tl-txt">Avvio indagini integrative Anas per progettazione interventi di manutenzione straordinaria.</div></div>
+        <div class="tl-item green"><div class="tl-year">Giugno 2021</div><div class="tl-txt">Chiusura canna direzione Salerno per lavori. La galleria inizia a viaggiare su una sola canna a doppio senso di marcia.</div></div>
+        <div class="tl-item green"><div class="tl-year">Gennaio 2022</div><div class="tl-txt">Consegna lavori al primo appaltatore. <em>Investimento comunicato: 48 milioni di euro.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">Marzo 2024</div><div class="tl-txt">Caduta calcinacci dalla volta · parabrezza di un'auto sfondato · chiusura temporanea e riapertura dopo interventi di messa in sicurezza.</div></div>
+        <div class="tl-item green"><div class="tl-year">Luglio 2024</div><div class="tl-txt">Vertice in Prefettura: i sindaci di Solofra, Montoro e Serino chiedono chiarezza sui tempi dei lavori.</div></div>
+        <div class="tl-item red"><div class="tl-year">Estate 2024</div><div class="tl-txt">Rescissione del contratto con il primo appaltatore. <em>Secondo l'interrogazione del Gruppo PD alla Camera, era stato realizzato solo il 30% dei lavori.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">Dicembre 2024</div><div class="tl-txt">Nuova caduta calcinacci · traffico bloccato in entrambe le direzioni.</div></div>
+        <div class="tl-item green"><div class="tl-year">27 marzo 2025</div><div class="tl-txt">Consegna del cantiere al nuovo appaltatore, Consorzio Stabile S.C.A.R.L. Infratech.</div></div>
+        <div class="tl-item green"><div class="tl-year">29 aprile 2025</div><div class="tl-txt">Sopralluogo del sottosegretario MIT Tullio Ferrante · ripresa effettiva dei lavori. <em>Investimento rimanente aggiornato: 27 milioni, completamente finanziati.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">Agosto 2025</div><div class="tl-txt">Dispositivo estivo 10-14: solo TIR del trasporto pomodori · 10 sindaci firmano lettera al Prefetto.</div></div>
+        <div class="tl-item red"><div class="tl-year">Novembre 2025</div><div class="tl-txt">Nuovo incidente all'uscita della galleria · disagi su tutto il raccordo.</div></div>
+        <div class="tl-item red"><div class="tl-year">14 febbraio 2026</div><div class="tl-txt">Tamponamento a catena · 4 veicoli coinvolti · 4 feriti.</div></div>
+        <div class="tl-item amber"><div class="tl-year">Luglio 2026</div><div class="tl-txt"><strong>Promessa Anas:</strong> ultimazione prima fase · apertura della canna direzione Salerno ammodernata. <em>Obiettivo dichiarato, da verificare.</em></div></div>
+      </div>
+
+      <p class="note">Il comunicato Anas di aprile 2025 indica che, "alla conclusione di tale intervento, le attività previste dal progetto in fase di riadeguamento si concentreranno nella canna in direzione di Avellino". Non è stata pubblicata una data ufficiale per il completamento di questa fase successiva. Qualsiasi stima oltre luglio 2026 va considerata come proiezione, non come impegno documentato.</p>
+    </section>
+
+
+    <!-- BLOCCO 2: RACCORDO -->
+    <section id="raccordo" class="block">
+      <p class="block-num">02 — I cantieri</p>
+      <h2 class="block-title">Il raccordo Avellino-Salerno: oltre 51 milioni di manutenzione in corso.</h2>
+      <p class="block-intro">Oltre alla galleria Monte Pergola, sul RA02 (lunghezza complessiva ~29 km) sono in corso o programmati altri interventi di manutenzione straordinaria. Anas ha comunicato ufficialmente cifre e tempistiche per tre cantieri principali: nuove barriere spartitraffico NDBA, manutenzione del viadotto al km 18,290, installazione di barriere fonoassorbenti a Montoro.</p>
+
+      <h3 class="sub">Numeri chiave</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Cantiere</th><th>Investimento</th><th>Area</th></tr></thead>
+          <tbody>
+            <tr><td>Barriere NDBA + sistema idraulico</td><td class="val">€ 20 mln</td><td>Atripalda (km 29-30) · Fisciano (km 8-9) · Montoro-Solofra (km 14-20)</td></tr>
+            <tr><td>Manutenzione viadotto km 18,290</td><td class="val">€ 1 mln</td><td>Territorio Comune di Solofra</td></tr>
+            <tr><td>Barriere fonoassorbenti</td><td class="val">€ 3,3 mln</td><td>Montoro (km 12,5 — 13,4)</td></tr>
+            <tr><td><strong>Totale cantieri paralleli (esclusa galleria)</strong></td><td class="val"><strong>€ 24,3 mln</strong></td><td>—</td></tr>
+            <tr><td><strong>Totale investimenti sul raccordo (inclusa galleria)</strong></td><td class="val"><strong>€ 51,3 mln</strong></td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Cronologia dei lavori</h3>
+      <div class="tl-legend">
+        <span><span class="dot green"></span> eventi effettivamente accaduti</span>
+        <span><span class="dot red"></span> scadenze dichiarate non rispettate</span>
+        <span><span class="dot amber"></span> obiettivi futuri dichiarati, da verificare</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item green"><div class="tl-year">Estate 2024</div><div class="tl-txt">Avvio lavori NDBA + sistema idraulico · primi due lotti ad Atripalda (km 29-30) e Fisciano (km 8-9).</div></div>
+        <div class="tl-item green"><div class="tl-year">Luglio 2025</div><div class="tl-txt">Avvio manutenzione viadotto km 18,290 in territorio di Solofra. <em>Investimento: 1 milione di euro.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">Settembre 2025</div><div class="tl-txt">Ultimazione primi due lotti NDBA · avvio lotto Montoro-Solofra (km 14-20) · avvio barriere fonoassorbenti Montoro (3,3 milioni).</div></div>
+        <div class="tl-item green"><div class="tl-year">Gennaio 2026</div><div class="tl-txt">Chiusura notturna km 9+180 direzione Salerno (13-15 gennaio) per manutenzione.</div></div>
+        <div class="tl-item amber"><div class="tl-year">Fine 2026</div><div class="tl-txt"><strong>Stima Anas:</strong> ultimazione intervento NDBA completo su tutto il raccordo.</div></div>
+      </div>
+    </section>
+
+
+    <!-- BLOCCO 3: TERZA CORSIA -->
+    <section id="terza-corsia" class="block">
+      <p class="block-num">03 — La soluzione strutturale</p>
+      <h2 class="block-title">La terza corsia: progettata nel 2001, costo quasi raddoppiato, per l'Irpinia niente.</h2>
+      <p class="block-intro">Il progetto NA95 prevede il "conferimento di caratteristiche autostradali" al Raccordo Salerno-Avellino, con l'allargamento a tre corsie più emergenza per senso di marcia. La scheda MIT ufficiale riguarda il primo stralcio da Mercato San Severino allo svincolo di Fratte. Il secondo stralcio — quello che interesserebbe l'Irpinia, da Mercato San Severino ad Avellino Est — secondo le fonti pubbliche consultate non risulta incluso nel finanziamento attuale.</p>
+
+      <h3 class="sub">Numeri chiave</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Anno di prima inclusione nelle infrastrutture strategiche (CIPE)</td><td class="val">21 dicembre 2001</td></tr>
+            <tr><td>Costo stimato 2001</td><td class="val">€ 246 mln</td></tr>
+            <tr><td>Costo stimato 2018 (progetto preliminare)</td><td class="val">€ 232 mln</td></tr>
+            <tr><td>Costo stimato 2023 (Contratto Programma MIT-ANAS)</td><td class="val">€ 410 mln</td></tr>
+            <tr><td><strong>Costo stimato 2024</strong></td><td class="val"><strong>€ 457 mln</strong></td></tr>
+            <tr><td>Risorse disponibili (fonti sindacali FILT-CGIL / FIT-CISL, ago 2025)</td><td class="val">~€ 109 mln</td></tr>
+            <tr><td><strong>Risorse mancanti per il primo stralcio</strong></td><td class="val neg"><strong>~€ 348 mln</strong></td></tr>
+            <tr><td>Tratto irpino (Mercato San Severino → Avellino Est) — copertura nelle fonti consultate</td><td class="val neg">non risulta</td></tr>
+            <tr><td>Proroga vincoli espropriativi (ordinanza Anas 26 giugno 2025)</td><td class="val">fino al 18 luglio 2027</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">La scheda MIT del progetto "Raccordo Salerno/Avellino" (CUP F74E01000120001) riguarda il primo stralcio da Mercato San Severino allo svincolo di Fratte. Un finanziamento esplicito del secondo stralcio (Mercato San Severino → Avellino Est) non risulta agli atti pubblici consultati per questa pagina. Questo non esclude possibili canali di finanziamento futuri, ma registra lo stato documentale al momento della consultazione.</p>
+
+      <h3 class="sub">Cronologia del progetto</h3>
+      <div class="tl-legend">
+        <span><span class="dot green"></span> eventi effettivamente accaduti</span>
+        <span><span class="dot red"></span> scadenze dichiarate non rispettate</span>
+        <span><span class="dot amber"></span> obiettivi futuri dichiarati, da verificare</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item green"><div class="tl-year">2001 · 21 dicembre</div><div class="tl-txt">Delibera CIPE 121/2001. Inclusione nel Primo Programma delle Infrastrutture Strategiche. <em>Costo stimato: 246 milioni.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">2008 · 9 maggio</div><div class="tl-txt">Anas trasmette al MIT il progetto preliminare dell'intero intervento.</div></div>
+        <div class="tl-item green"><div class="tl-year">2009</div><div class="tl-txt">19 giugno: parere favorevole del Consiglio Superiore dei Lavori Pubblici. 30 novembre: parere favorevole della Commissione VIA del MATTM.</div></div>
+        <div class="tl-item green"><div class="tl-year">2014</div><div class="tl-txt">16 settembre: parere favorevole del MIBACT. 1° agosto: delibera CIPE 26/2014 — intervento nel corridoio plurimodale tirrenico nord-europa.</div></div>
+        <div class="tl-item green"><div class="tl-year">2015</div><div class="tl-txt">Patto Stato-Regione Campania firmato in Prefettura a Napoli. Il raccordo è tra le opere strategiche.</div></div>
+        <div class="tl-item green"><div class="tl-year">2016 · 1 dicembre</div><div class="tl-txt">Delibera CIPE 54/2016 — 123 milioni di FSC 2014-2020 per lo stralcio Fratte-Baronissi.</div></div>
+        <div class="tl-item green"><div class="tl-year">2018</div><div class="tl-txt">Approvazione progetto preliminare. <em>Costo fissato a 232,35 milioni.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">2021 · 27 luglio</div><div class="tl-txt">CIPESS delibera 44/2021 — approvazione aggiornamento Contratto di Programma.</div></div>
+        <div class="tl-item green"><div class="tl-year">2022</div><div class="tl-txt">Riformulazione in due lotti nell'ambito del Contratto di Programma MIT-ANAS. Il 28 giugno il Consiglio Comunale di Baronissi approva il progetto definitivo.</div></div>
+        <div class="tl-item green"><div class="tl-year">2023 · febbraio</div><div class="tl-txt">Progettazione definitiva pubblicata sul sito del MIT. L'approvazione formale da parte del CIPESS non risulta essere ancora arrivata secondo le fonti sindacali consultate.</div></div>
+        <div class="tl-item red"><div class="tl-year">2023 · 24 luglio</div><div class="tl-txt">ANAS approva il Programma Triennale 2023/2025. Avvio procedure di affidamento previsto per il 2024. <em>Non risulta avvenuto nelle fonti consultate.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">2024 · 21 marzo</div><div class="tl-txt">Contratto di Programma MIT-ANAS 2021-2025. <em>Costo aggiornato: 410 milioni (2023) → 457 milioni (2024). Incremento documentato di quasi il doppio rispetto al 2018.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">2024</div><div class="tl-txt">Secondo fonti giornalistiche (ITV Online, ottobre 2025), il tratto irpino non risulta incluso nel finanziamento attuale.</div></div>
+        <div class="tl-item red"><div class="tl-year">2025 · 26 giugno</div><div class="tl-txt">Anas proroga i vincoli preordinati all'esproprio fino al 18 luglio 2027. <em>Decisione in apparente contraddizione con un avvio lavori imminente.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">2025 · agosto</div><div class="tl-txt">FILT-CGIL e FIT-CISL Salerno sollevano pubblicamente la discrepanza tra proroga vincoli al 2027 e tempi di avvio riportati da fonti OpenCoesione per il 2026.</div></div>
+        <div class="tl-item red"><div class="tl-year">2025 · 31 ottobre</div><div class="tl-txt">Secondo fonti giornalistiche, la terza corsia andrà in appalto solo per il tratto salernitano. Il tratto irpino resta senza copertura documentata.</div></div>
+        <div class="tl-item amber"><div class="tl-year">2026 · aprile</div><div class="tl-txt"><strong>Stato attuale:</strong> alla data di redazione di questa pagina, l'appalto sul tratto salernitano non risulta ancora avviato nelle fonti pubbliche consultate.</div></div>
+        <div class="tl-item amber"><div class="tl-year">2027 · 18 luglio</div><div class="tl-txt">Scadenza proroga vincoli espropriativi.</div></div>
+      </div>
+    </section>
+
+
+    <!-- BLOCCO 4: FERROVIA -->
+    <section id="ferrovia" class="block">
+      <p class="block-num">04 — Il piano B</p>
+      <h2 class="block-title">La ferrovia Salerno-Avellino-Benevento: ad Avellino il treno non arriva dal 2012.</h2>
+      <p class="block-intro">La linea ferroviaria Salerno-Avellino-Benevento è gestita da RFI (Gruppo FS Italiane). L'infrastruttura è in fase di elettrificazione dal 2016, con lavori finanziati dalla Regione Campania. La stazione di Avellino è chiusa al servizio viaggiatori dal 2012. RFI ha dichiarato l'intenzione di prevedere fermate a Solofra (con collegamento all'ospedale) e a Montoro una volta completata l'elettrificazione della tratta irpina.</p>
+
+      <h3 class="sub">Numeri chiave</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Stanziamento Regione Campania (FSC 2014-2020 + POR FESR, comunicato RFI 8/4/2024)</td><td>€ 174 mln</td></tr>
+            <tr><td>Chiusura stazione di Avellino al servizio viaggiatori</td><td class="val neg">2012</td></tr>
+            <tr><td>Tratta già elettrificata (completata aprile 2024)</td><td>Salerno → Mercato San Severino → Codola</td></tr>
+            <tr><td>Tratta in elettrificazione (obiettivo RFI: fine 2025)</td><td>Mercato San Severino → Avellino → Pratola Serra</td></tr>
+            <tr><td>Tratta ancora in progettazione</td><td>Pratola Serra → Benevento</td></tr>
+            <tr><td>Scadenza originaria completamento (mancata)</td><td class="val neg">2021</td></tr>
+            <tr><td>Classificazione Pendolaria 2025 (Legambiente)</td><td>tra le peggiori d'Italia</td></tr>
+            <tr><td>Studenti irpini all'Università di Salerno (Fisciano) — fonte: petizione associazioni 2025</td><td class="val">~5.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">Cronologia dei lavori</h3>
+      <div class="tl-legend">
+        <span><span class="dot green"></span> eventi effettivamente accaduti</span>
+        <span><span class="dot red"></span> scadenze dichiarate non rispettate</span>
+        <span><span class="dot amber"></span> obiettivi futuri dichiarati, da verificare</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item red"><div class="tl-year">2012</div><div class="tl-txt">Chiusura della stazione di Avellino al servizio viaggiatori.</div></div>
+        <div class="tl-item green"><div class="tl-year">2015</div><div class="tl-txt">Intesa Regione Campania-Stato firmata a Napoli · elettrificazione nei piani.</div></div>
+        <div class="tl-item green"><div class="tl-year">2017</div><div class="tl-txt">Stanziamento FSC 2014-2020 per l'elettrificazione della linea.</div></div>
+        <div class="tl-item red"><div class="tl-year">2021</div><div class="tl-txt">Scadenza originaria completamento elettrificazione. <em>Non rispettata.</em></div></div>
+        <div class="tl-item red"><div class="tl-year">2022-2023</div><div class="tl-txt">Promessa elettrificazione entro giugno 2023, esercizio entro fine 2023. <em>Non rispettata.</em></div></div>
+        <div class="tl-item green"><div class="tl-year">8 aprile 2024</div><div class="tl-txt">Completata elettrificazione tratta Salerno-Mercato San Severino-Codola · messa in tensione portali.</div></div>
+        <div class="tl-item green"><div class="tl-year">Aprile 2024</div><div class="tl-txt">RFI dichiara: Mercato San Severino → Pratola Serra entro il 2025 · Pratola Serra → Benevento ancora in progettazione.</div></div>
+        <div class="tl-item green"><div class="tl-year">Dicembre 2024</div><div class="tl-txt">Sit-in Legambiente alla stazione di Avellino: "Vogliamo prendere il treno" · sindaci di Avellino, Solofra, Montoro, Serino e San Michele di Serino chiedono accelerazione alla Regione.</div></div>
+        <div class="tl-item green"><div class="tl-year">Agosto 2025</div><div class="tl-txt">Petizione di 14 associazioni irpine: riaprire Avellino con treni a gasolio/ibridi.</div></div>
+        <div class="tl-item amber"><div class="tl-year">Fine 2025</div><div class="tl-txt"><strong>Obiettivo RFI:</strong> elettrificazione fino ad Avellino. <em>Obiettivo dichiarato, da verificare.</em></div></div>
+        <div class="tl-item amber"><div class="tl-year">2026</div><div class="tl-txt"><strong>Obiettivo RFI:</strong> riapertura della stazione di Avellino al servizio viaggiatori. <em>Obiettivo dichiarato, da verificare.</em></div></div>
+      </div>
+
+      <p class="note">Lo stanziamento complessivo per l'opera è stato indicato in modo diverso nelle fonti. Il comunicato RFI dell'8 aprile 2024 parla di 174 milioni per l'intervento complessivo Benevento-Avellino-Mercato San Severino-Codola + tratta Codola-Sarno. Alcune fonti giornalistiche precedenti (2022) riferivano di stanziamenti di 220-230 milioni. Possibile riarticolazione finanziaria in corso d'opera; la cifra RFI è la più recente tra quelle consultate.</p>
+    </section>
+
+
+    <!-- MAPPA FONTI -->
+    <section id="fonti" class="block">
+      <p class="block-num">Fonti</p>
+      <h2 class="block-title">Mappa numeri → fonti</h2>
+      <p class="block-intro">Ogni dato di questa pagina è tratto da un documento pubblico. Qui la lista completa delle fonti consultate, con link verificabili.</p>
+
+      <div class="fonti">
+
+        <h4>Comunicati ufficiali ANAS</h4>
+        <ul>
+          <li><strong>26 gennaio 2022</strong> — "Consegnati oggi i lavori di manutenzione della galleria Monte Pergola sul Raccordo Autostradale 2". Investimento originario 48 milioni. <a href="https://www.stradeanas.it/it/campania-anas-consegnati-oggi-i-lavori-di-manutenzione-della-galleria-monte-pergola-sul-raccordo" target="_blank">stradeanas.it</a></li>
+          <li><strong>29 aprile 2025</strong> — "Ripartono le attività nella galleria Monte Pergola". Investimento residuo 27 milioni · Consorzio Infratech · consegna 27/3/2025. <a href="https://www.stradeanas.it/it/campania-anas-ripartono-le-attivita%E2%80%99-nella-galleria-%E2%80%98monte-pergola%E2%80%99-del-raccordo-autostradale-2-%E2%80%9Cdi" target="_blank">stradeanas.it</a></li>
+          <li><strong>17 luglio 2025</strong> — Comunicato dispositivo estivo aziende conserviere. Investimenti NDBA (20 mln), viadotto (1 mln), fonoassorbenti (3,3 mln) · obiettivo fine lavori galleria luglio 2026. <a href="https://inveritas.news/2025/07/17/galleria-monte-pergola-ce-il-dispositivo-estivo-per-agevolare-i-mezzi-pesanti-del-comparto-delle-aziende-conserviere/" target="_blank">inveritas.news</a></li>
+          <li><strong>Aprile 2025</strong> — "Attività di manutenzione nella galleria Monte Pergola tra Serino e Solofra". Coordinate km 23,450 → km 19,500. <a href="https://www.stradeanas.it/it/campania-anas-attivita%E2%80%99-di-manutenzione-nella-galleria-%E2%80%98monte-pergola%E2%80%99-del-raccordo-autostradale-2" target="_blank">stradeanas.it</a></li>
+        </ul>
+
+        <h4>Documenti ufficiali progetto NA95 (terza corsia)</h4>
+        <ul>
+          <li><strong>OpenCoesione — Progetto NA95.</strong> Scheda ufficiale primo lotto 9,4 km Fratte-Mercato San Severino. <a href="https://opencoesione.gov.it/it/dati/progetti/5mtra1a2a005/" target="_blank">opencoesione.gov.it</a></li>
+          <li><strong>Silos Infrastrutture Strategiche.</strong> Storia completa iter progettuale e finanziario del Raccordo Salerno-Avellino. <a href="https://silos.infrastrutturestrategiche.it/Home/Scheda/823" target="_blank">silos.infrastrutturestrategiche.it</a></li>
+          <li><strong>MIT — Progetto Raccordo Salerno/Avellino.</strong> Scheda istituzionale CUP F74E01000120001, primo stralcio Mercato San Severino-Fratte. <a href="https://www.mit.gov.it/index.php/progetto/raccordo-salernoavellino" target="_blank">mit.gov.it</a></li>
+        </ul>
+
+        <h4>Comunicati ufficiali RFI</h4>
+        <ul>
+          <li><strong>8 aprile 2024</strong> — "Completata elettrificazione Salerno-Mercato San Severino-Codola". 174 milioni FSC 2014/2020 + POR FESR. <a href="https://www.rfi.it/it/news-e-media/comunicati-stampa-e-news/2024/4/8/rfi---completata-elettrificazione-salerno-mercato-san-severino-c.html" target="_blank">rfi.it</a></li>
+        </ul>
+
+        <h4>Fonti giornalistiche e istituzionali</h4>
+        <ul>
+          <li><strong>AvellinoToday — 14 febbraio 2026.</strong> Nuovo incidente nella galleria Monte Pergola, 4 feriti, 4 veicoli. <a href="https://www.avellinotoday.it/cronaca/incidente-monte-pergola.html" target="_blank">avellinotoday.it</a></li>
+          <li><strong>Corriere Irpinia — 26 luglio 2024.</strong> Rescissione contratto primo appaltatore · sindaci chiedono chiarezza. <a href="https://corriereirpinia.it/galleria-monte-pergola-i-sindaci-di-montoro-serino-e-solofra-chiarezza-sulle-tempistiche-dei-lavori-disagi-per-le-continue-interruzioni/" target="_blank">corriereirpinia.it</a></li>
+          <li><strong>SalernoToday — agosto 2025.</strong> "Che fine ha fatto la terza corsia del Raccordo Salerno-Avellino?". Costi 457 mln · mancanti 348 mln · proroga espropri. <a href="https://www.salernotoday.it/cronaca/raccordo-salerno-avellino-incompiuta.html" target="_blank">salernotoday.it</a></li>
+          <li><strong>ITV Online — 31 ottobre 2025.</strong> "Terza corsia in appalto senza Avellino e Irpinia". Tratto irpino senza copertura documentata. <a href="https://www.itvonline.news/2025/10/31/la-terza-corsia-va-in-appalto-senza-avellino-e-irpinia-i-lavori-si-fermano-a-mercato-san-severino/" target="_blank">itvonline.news</a></li>
+          <li><strong>ITV Online — 18 dicembre 2024.</strong> Elettrificazione Salerno-Avellino, obiettivo 2025. <a href="https://www.itvonline.news/2024/12/18/elettrificazione-da-salerno-ad-avellino-pronta-nel-2025-per-i-primi-treni-per-ora-sannio-fuori/" target="_blank">itvonline.news</a></li>
+          <li><strong>ITV Online — 23 agosto 2025.</strong> Petizione 14 associazioni: riaprire Avellino con treni a gasolio/ibridi. <a href="https://www.itvonline.news/2025/08/23/treni-a-gasolio-per-riaprire-la-stazione-di-avellino-petizione-delle-associazioni/" target="_blank">itvonline.news</a></li>
+          <li><strong>Salernonotizie — 18 agosto 2025.</strong> Sindacati FILT-CGIL e FIT-CISL Salerno chiedono risorse certe sulla terza corsia. <a href="https://www.salernonotizie.it/2025/08/18/terza-corsia-raccordo-salerno-avellino-i-sindacati-servono-risorse-certe-e-tempi-definiti/" target="_blank">salernonotizie.it</a></li>
+          <li><strong>Corriere Irpinia — 19 dicembre 2024.</strong> Sit-in Legambiente alla stazione di Avellino. <a href="https://corriereirpinia.it/sit-in-di-legambiente-per-la-stazione-fantasma-di-avellino-la-regione-rispetti-gli-impegni/" target="_blank">corriereirpinia.it</a></li>
+          <li><strong>Nuova Irpinia — 14 dicembre 2024.</strong> Mobilitazione per il "Lotto Zero" · sindaci di Avellino, Solofra, Montoro, Serino, San Michele di Serino chiedono accelerazione. <a href="https://www.nuovairpinia.it/2024/12/14/elettrificazione-sa-av-in-cantiere-la-sottostazione-a-pratola-serra/" target="_blank">nuovairpinia.it</a></li>
+          <li><strong>Ottopagine — 4 agosto 2025.</strong> Dispositivo estivo galleria · solo TIR nel tunnel. <a href="https://www.ottopagine.it/av/cronaca/399282/raccordo-da-oggi-galleria-di-solofra-chiusa-solo-tir-nel-tunnel-monte-pergola.shtml" target="_blank">ottopagine.it</a></li>
+          <li><strong>Anteprima24 — 23 dicembre 2024.</strong> Galleria Monte Pergola perde pezzi, traffico bloccato. <a href="https://www.anteprima24.it/avellino/la-galleria-monte-pergola-perde-pezzi-traffico-bloccato/" target="_blank">anteprima24.it</a></li>
+          <li><strong>ANSA — 17 marzo 2024.</strong> Riaperta la galleria dopo caduta calcinacci. <a href="https://www.ansa.it/campania/notizie/2024/03/17/riaperta-la-galleria-sul-raccordo-salerno-avellino_37b82ced-a248-489d-be10-a0631f4616e3.html" target="_blank">ansa.it</a></li>
+        </ul>
+
+        <h4>Atti parlamentari</h4>
+        <ul>
+          <li><strong>Interrogazione Gruppo PD — Camera dei Deputati · settembre 2024.</strong> Criticità galleria Monte Pergola · rescissione contratto · 30% lavori eseguiti. <a href="https://www.deputatipd.it/attivita/interrogazione/merito-alla-criticit%C3%A0-della-galleria-monte-pergola-lungo-il-raccordo" target="_blank">deputatipd.it</a></li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- NOTA METODOLOGICA -->
+    <section id="metodo" class="block" style="border-bottom:none;">
+      <p class="block-num">Metodo</p>
+      <h2 class="block-title">Come è stata costruita questa pagina</h2>
+
+      <p>Tutti i dati pubblicati in questa sezione sono tratti da documenti pubblici: comunicati ufficiali di Anas, RFI, MIT e CIPESS, atti parlamentari, fonti giornalistiche verificabili tramite i link riportati. Non sono stati usati documenti riservati o informazioni non disponibili al pubblico.</p>
+
+      <p>La pagina distingue con attenzione tra dato documentale (verificato in comunicato ufficiale o documento pubblico), stima (indicata come tale nel testo) e inferenza (ricostruzione logica a partire dai dati disponibili). Dove una data o un importo è tratto da fonte giornalistica, la fonte è citata esplicitamente nel testo o nelle tabelle.</p>
+
+      <p>Le cronologie dei quattro cantieri usano uno schema visivo unificato: <strong>verde</strong> per gli eventi effettivamente accaduti, <strong>rosso</strong> per le scadenze dichiarate non rispettate, <strong>ambra</strong> per gli obiettivi futuri dichiarati ancora da verificare. La sezione "Cosa significa per Solofra" raggruppa le letture del quadro complessivo dal punto di vista della città, mantenendo separate le criticità documentate dalle opportunità possibili.</p>
+
+      <p>La pagina non contiene proposte politiche. L'obiettivo è raccogliere in un luogo unico i numeri, le date e le fonti che riguardano lo stato della mobilità del territorio solofrano, consentendo a chiunque di consultarli e verificarli autonomamente.</p>
+
+      <div class="ai-notice">
+        <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+        <p class="ai-notice-text">Nella stesura dei testi è stato utilizzato un modello di intelligenza artificiale come strumento di lavoro per l'elaborazione di grandi quantità di documenti pubblici e la loro strutturazione in forma leggibile. Ogni numero e ogni affermazione sono stati verificati rispetto alla fonte originaria. Nonostante questa verifica, è possibile che la pagina contenga errori, imprecisioni, o omissioni. <strong>Se individui un errore, una fonte non aggiornata, o un'informazione imprecisa, segnalamelo</strong>: la pagina verrà aggiornata tempestivamente. L'obiettivo è la massima accuratezza possibile su dati pubblici.</p>
+      </div>
+
+      <div class="manifest">
+        <p class="manifest-hed">Il metodo</p>
+        <p class="manifest-text">I dati sono pubblici. I calcoli sono mostrati per intero. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le opinioni sono separate dai fatti.</p>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Tutti i dati sono pubblici e le fonti sono citate. I calcoli sono mostrati per intero e verificabili da chiunque.
+    </div>
+    <div class="footer-r">Ultimo aggiornamento: aprile 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+  <script src="theme-mandarin.js" defer></script>
+</body>
+</html>

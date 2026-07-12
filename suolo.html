@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consumo di suolo — Come sta Solofra</title>
+<meta name="description" content="Solofra ha consumato il 15,3% del suo territorio, il doppio della provincia di Avellino. Ma il consumo nuovo è fermo da vent'anni e i ripristini sono zero. Il tema non è quanto costruiremo, ma quanto è già costruito e non usiamo.">
+<meta property="og:title" content="Consumo di suolo — Come sta Solofra">
+<meta property="og:description" content="Il 15,3% del territorio è già grigio: il doppio della provincia. Un edificio su dieci è inutilizzato. E in 18 anni, zero metri restituiti al verde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+  .insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+  .ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+  .tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 720px; }
+  .tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+  .tbl-insights tr:last-child td { border-bottom: none; }
+  .tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+  .tbl-insights .col-num { white-space: nowrap; }
+  .tbl-insights .col-num .big { font-family: var(--serif); font-size: 24px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); display: block; }
+  .tbl-insights .col-num .big.ok { color: var(--green); }
+  .tbl-insights .col-num .big.amb { color: var(--amber); }
+  .tbl-insights .col-num .big.neg { color: var(--accent); }
+  .tbl-insights .col-num .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-top: 2px; font-family: var(--sans); }
+  .tbl-insights .col-lbl { color: var(--ink-2); font-size: 13.5px; }
+  .tbl-insights .col-lbl b { color: var(--ink); font-weight: 500; }
+  .tbl-insights .col-src { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
+  @media (max-width: 720px) {
+    .tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+    .tbl-insights .col-num .big { font-size: 21px; }
+    .tbl-insights .col-infra { font-size: 14px; }
+  }
+
+  .solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+  .solofra-intro { margin-bottom: 32px; max-width: 720px; }
+  .solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .solofra-lede strong { color: var(--ink); font-weight: 500; }
+  .solofra-quote { font-family: var(--serif); font-style: italic; font-size: clamp(18px,2.2vw,22px); line-height: 1.4; color: var(--ink); padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--paper); border-radius: 0 6px 6px 0; margin-top: 18px; }
+
+  .cao-group { margin-top: 36px; }
+  .cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .cao-group-hed .dot.red { background: var(--accent); }
+  .cao-group-hed .dot.amber { background: var(--amber); }
+  .cao-group-hed .dot.green { background: var(--green); }
+  .cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+  .cao-group.c h3 { color: var(--accent); }
+  .cao-group.a h3 { color: var(--amber); }
+  .cao-group.o h3 { color: var(--green); }
+  .cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+
+  .cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+  .cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+  .cao-card:hover { transform: translateY(-2px); }
+  .cao-card.c { border-top-color: var(--accent); }
+  .cao-card.a { border-top-color: var(--amber); }
+  .cao-card.o { border-top-color: var(--green); }
+  .cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+  .cao-card-body strong { font-weight: 500; color: var(--ink); }
+
+  .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+  @media (min-width: 960px) {
+    .layout { grid-template-columns: 220px 1fr; gap: 64px; }
+  }
+
+  .toc { font-size: 13px; }
+  @media (min-width: 960px) {
+    .toc { position: sticky; top: 78px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; }
+  }
+  .toc-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 10px; }
+  .toc li a { color: var(--ink-2); text-decoration: none; display: block; padding: 6px 0; line-height: 1.4; transition: color .15s; border-left: 2px solid transparent; padding-left: 10px; }
+  .toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--serif); font-size: 12px; color: var(--accent); margin-right: 8px; }
+  .toc li a:hover { color: var(--ink); border-left-color: var(--accent); }
+
+  .block { padding-bottom: clamp(48px,6vw,72px); margin-bottom: clamp(48px,6vw,72px); border-bottom: 1px solid var(--border); }
+  .block:last-of-type { border-bottom: none; }
+  .block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .block-title { font-family: var(--serif); font-size: clamp(28px,3.8vw,42px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--ink); }
+  .block-intro { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 32px; max-width: 680px; }
+
+  h3.sub { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; margin-top: 40px; margin-bottom: 18px; color: var(--ink); }
+  h3.sub:first-child { margin-top: 0; }
+
+  p { margin-bottom: 14px; color: var(--ink); }
+  p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 16px 0; }
+  a.inline { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .15s, border-color .15s; }
+  a.inline:hover { color: var(--accent); border-color: var(--accent); }
+
+  .tbl-wrap { margin: 16px 0 8px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--paper); }
+  table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.data th { text-align: left; padding: 12px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--paper-2); }
+  table.data td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); line-height: 1.5; }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data td:first-child { color: var(--ink-2); }
+  table.data td strong { font-weight: 500; color: var(--ink); }
+  table.data td.val { font-family: var(--serif); font-size: 16px; color: var(--ink); white-space: nowrap; }
+  table.data td.val.neg { color: var(--accent); }
+  table.data td.val.ok { color: var(--green); }
+  table.data td.val.amb { color: var(--amber); }
+  @media (max-width: 640px) {
+    table.data { font-size: 13px; }
+    table.data th, table.data td { padding: 10px 12px; }
+  }
+
+  .prov { margin: 6px 0 4px; }
+  .prov-row { display: grid; grid-template-columns: 150px 1fr 130px; align-items: center; gap: 12px; margin: 9px 0; font-size: 14px; }
+  .prov-row .lab { color: var(--ink); }
+  .prov-track { height: 16px; background: var(--paper-2); border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+  .prov-fill { height: 100%; background: var(--green); opacity: .82; display: block; }
+  .prov-fill.neg { background: var(--accent); }
+  .prov-fill.amb { background: var(--amber); }
+  .prov-fill.blu { background: #2a4d6b; }
+  .prov-row .val { text-align: right; font-family: var(--serif); font-size: 15px; color: var(--ink-2); white-space: nowrap; }
+  @media (max-width: 640px) { .prov-row { grid-template-columns: 100px 1fr 96px; gap: 8px; font-size: 13px; } }
+
+  .check-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 13px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .check-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--paper); margin: 16px 0 8px; }
+  .check-row:last-child { border-bottom: none; }
+  .status { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; white-space: nowrap; }
+  .s-no { background: rgba(200,64,26,0.1); color: var(--accent); }
+  .s-parz { background: var(--amber-bg); color: var(--amber); }
+  .s-si { background: var(--green-bg); color: var(--green); }
+
+  .fonti { font-size: 13px; }
+  .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+  .fonti h4:first-child { margin-top: 0; }
+  .fonti ul { list-style: none; }
+  .fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+  .fonti li:last-child { border-bottom: none; }
+  .fonti li strong { color: var(--ink); font-weight: 500; }
+  .fonti li a { color: var(--ink-2); text-decoration: none; border-bottom: 1px dotted var(--ink-3); word-break: break-all; }
+  .fonti li a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .ai-notice-text strong { color: var(--ink); font-weight: 500; }
+
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+
+  @media (max-width: 640px) {
+    nav { gap: 16px; overflow-x: auto; }
+    nav a { font-size: 12px; }
+  }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale su dati pubblici: il Rapporto ISPRA/SNPA sul consumo di suolo (edizione 2025, serie 2006-2024) e il Censimento ISTAT degli edifici. Le fonti sono indicate e verificabili. Errori o imprecisioni sono possibili: segnalazioni e correzioni sono benvenute.</div>
+</div>
+
+<header class="mn-header">
+  <div class="mn-header-inner">
+    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
+    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="mn-nav" id="mnNav">
+        <a href="index.html">Home</a>
+        <a href="demografia.html">Demografia</a>
+        <a href="bilancio.html">Bilancio</a>
+        <a href="crisi_mandato.html">Crisi di fine mandato</a>
+
+        <a href="concia.html">Concia</a>
+        <a href="mobilita.html">Mobilità</a>
+        <a href="scuole.html">Bambini e scuole</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="immigrazione.html">Chi arriva</a>
+        <a href="trasparenza.html">I dati che vorremmo</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="suolo.html" class="active">Suolo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">Consumo di suolo · aggiornato giugno 2026</p>
+  <h1 class="hero-title">Il grigio è già qui.<br><em>Il verde, possiamo ancora sceglierlo.</em></h1>
+  <p class="hero-sub">Solofra ha consumato il 15,3% del suo territorio: il doppio della provincia di Avellino. Ma il consumo nuovo è quasi fermo da vent'anni, e quel grigio è in parte vuoto. La domanda di questa pagina non è quanto costruiremo: è quanto abbiamo già costruito e non usiamo.</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>ISPRA/SNPA ed. 2025 (dati al 2024) · ISTAT Censimento edifici 2011</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- INSIGHT TABLE -->
+<div class="insights-wrap">
+  <p class="insights-hed">I numeri, in sintesi</p>
+  <p class="insights-sub">Quanto territorio è già consumato, quanto se ne aggiunge ancora, quanto se ne restituisce, e quanto di ciò che è costruito resta inutilizzato. Ogni dato è sostenuto dalle fonti riportate in fondo alla pagina.</p>
+
+  <div class="ins-tbl-wrap">
+    <table class="tbl-insights">
+      <thead>
+        <tr>
+          <th class="col-infra">Indicatore</th>
+          <th class="col-num">Valore</th>
+          <th class="col-lbl">Cosa significa</th>
+          <th class="col-src">Fonte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-infra">Suolo consumato a Solofra</td>
+          <td class="col-num"><span class="big neg">15,3%</span><span class="sub">del territorio, 2024</span></td>
+          <td class="col-lbl"><b>il doppio della provincia di Avellino</b> (7,4%), più della Campania (10,6%) e dell'Italia (7,2%)</td>
+          <td class="col-src">ISPRA/SNPA 2025</td>
+        </tr>
+        <tr>
+          <td class="col-infra">Consumo nuovo in 18 anni</td>
+          <td class="col-num"><span class="big amb">+5,84 ha</span><span class="sub">2006 → 2024</span></td>
+          <td class="col-lbl">il cemento <b>non corre più</b>: il grosso è stato costruito in un'altra stagione</td>
+          <td class="col-src">ISPRA/SNPA 2025</td>
+        </tr>
+        <tr>
+          <td class="col-infra">Suolo restituito al verde</td>
+          <td class="col-num"><span class="big neg">0,00 ha</span><span class="sub">in 18 anni</span></td>
+          <td class="col-lbl">nessun metro rinaturalizzato dal 2006: <b>l'Italia ne ha recuperati circa 12.000 ettari</b></td>
+          <td class="col-src">ISPRA/SNPA 2025</td>
+        </tr>
+        <tr>
+          <td class="col-infra">Edifici inutilizzati</td>
+          <td class="col-num"><span class="big neg">10%</span><span class="sub">1 su 10</span></td>
+          <td class="col-lbl">il <b>doppio</b> della media italiana (5,1%) e della Campania (5,9%)</td>
+          <td class="col-src">ISTAT 2011</td>
+        </tr>
+        <tr>
+          <td class="col-infra">Abitazioni non occupate</td>
+          <td class="col-num"><span class="big ok">8%</span><span class="sub">delle case</span></td>
+          <td class="col-lbl">le case sono <b>quasi tutte abitate</b> (Italia 21%, Campania 16%): il vuoto non sono le case</td>
+          <td class="col-src">ISTAT 2011</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- COSA SIGNIFICA PER SOLOFRA -->
+<div id="solofra" class="solofra-wrap">
+  <div class="solofra-intro">
+    <h2 class="solofra-hed">Cosa significa per Solofra.</h2>
+    <p class="solofra-lede">I dati raccontano una storia in tre tempi. <strong>Abbiamo già dato:</strong> il 15,3% del territorio è grigio, il doppio della provincia. <strong>Ma il grigio è in parte vuoto:</strong> un edificio su dieci è inutilizzato, mentre le case restano abitate. <strong>E non abbiamo mai restituito nulla:</strong> zero metri rinaturalizzati in diciotto anni.</p>
+    <p class="solofra-lede">Questa pagina tiene separati i due piani: i numeri restano numeri. Prima la fotografia, poi cosa va letto con onestà, e la domanda che i numeri lasciano aperta.</p>
+    <div class="solofra-quote">La domanda non è se costruire o no. È: cosa farne di tutto il grigio che abbiamo già.</div>
+  </div>
+
+  <!-- COSA VA LETTO CON ONESTÀ -->
+  <div class="cao-group a">
+    <div class="cao-group-hed">
+      <span class="dot amber"></span>
+      <h3>Cosa va letto con onestà</h3>
+      <span class="cao-count">3 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Il cemento non corre più</h4>
+        <p class="cao-card-body">Sarebbe sbagliato dire "il cemento avanza": a Solofra il consumo nuovo è <strong>+5,84 ettari in diciotto anni</strong>, quasi fermo. Il problema non è quello che costruiremo, è quello che è già costruito.</p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">I dati edifici sono del 2011</h4>
+        <p class="cao-card-body">Il 10% di edifici inutilizzati viene dall'<strong>ultimo censimento disponibile</strong>, quello del 2011: il censimento degli edifici non è stato più ripetuto. Quanti siano oggi, nessuno lo sa. È il motivo in più per contarli.</p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">La zona ASI è un'altra storia</h4>
+        <p class="cao-card-body">Il ragionamento di questa pagina riguarda il <strong>tessuto del paese</strong>, non l'area industriale ASI, che ha regole, destinazioni e vicende proprie e merita un'analisi separata.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COSA MANCA -->
+  <div class="cao-group c">
+    <div class="cao-group-hed">
+      <span class="dot red"></span>
+      <h3>Cosa manca</h3>
+      <span class="cao-count">2 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Un solo ettaro restituito</h4>
+        <p class="cao-card-body">In diciotto anni il ripristino a Solofra è <strong>fermo a zero</strong>. Non un parco, non una depermeabilizzazione, non un'area degradata tornata verde. Mai cominciato.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Una regola comunale</h4>
+        <p class="cao-card-body">Non c'è una legge nazionale sul consumo di suolo, e <strong>non risulta una regola comunale</strong> in materia: a indirizzare c'è solo la direttiva UE del 2025. La scelta, oggi, resta in mano al Comune.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<hr class="div">
+
+<div class="layout">
+
+  <aside class="toc">
+    <p class="toc-hed">I dossier</p>
+    <ol>
+      <li><a href="#consumo">Quanto abbiamo consumato</a></li>
+      <li><a href="#vuoto">Il grigio mezzo vuoto</a></li>
+      <li><a href="#dove">Dove sono i vuoti</a></li>
+      <li><a href="#domanda">La domanda che resta</a></li>
+      <li><a href="#fonti">Mappa numeri → fonti</a></li>
+      <li><a href="#metodo">Nota metodologica</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- 1 CONSUMO -->
+    <section id="consumo" class="block">
+      <p class="block-num">01 — La fotografia</p>
+      <h2 class="block-title">Quanto abbiamo consumato.</h2>
+      <p class="block-intro">La percentuale di suolo consumato misura quanta parte del territorio è coperta da edifici, strade, piazzali e altre superfici artificiali. A Solofra è il 15,3%: stesso metro di misura, lo stesso anno, per ogni territorio del confronto.</p>
+
+      <h3 class="sub">Suolo consumato 2024 — % del territorio</h3>
+      <div class="prov">
+        <div class="prov-row"><span class="lab">Solofra</span><span class="prov-track"><span class="prov-fill neg" style="width:100%"></span></span><span class="val">15,3%</span></div>
+        <div class="prov-row"><span class="lab">Montoro</span><span class="prov-track"><span class="prov-fill amb" style="width:88.3%"></span></span><span class="val">13,5%</span></div>
+        <div class="prov-row"><span class="lab">Campania</span><span class="prov-track"><span class="prov-fill amb" style="width:69.4%"></span></span><span class="val">10,6%</span></div>
+        <div class="prov-row"><span class="lab">Prov. Avellino</span><span class="prov-track"><span class="prov-fill" style="width:48.5%"></span></span><span class="val">7,4%</span></div>
+        <div class="prov-row"><span class="lab">Italia</span><span class="prov-track"><span class="prov-fill" style="width:46.9%"></span></span><span class="val">7,2%</span></div>
+        <div class="prov-row"><span class="lab">Serino</span><span class="prov-track"><span class="prov-fill" style="width:37.6%"></span></span><span class="val">5,8%</span></div>
+        <div class="prov-row"><span class="lab">Unione Europea</span><span class="prov-track"><span class="prov-fill blu" style="width:28.8%"></span></span><span class="val">4,4%</span></div>
+      </div>
+      <p class="note">Solofra è <strong>11ª su 118 comuni</strong> della provincia di Avellino per quota di suolo consumato, e sta sopra entrambi i comuni confinanti del confronto: più del doppio di Serino, più alta di Montoro. La Campania è la terza regione più cementificata d'Italia, dopo Lombardia (12,2%) e Veneto (11,9%).</p>
+
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Territorio</th><th>% consumato 2024</th><th>Ettari consumati</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Solofra</strong></td><td class="val neg">15,3%</td><td>337,45 ha</td></tr>
+            <tr><td>Montoro</td><td class="val amb">13,5%</td><td>538,44 ha</td></tr>
+            <tr><td>Campania</td><td class="val amb">10,6%</td><td>—</td></tr>
+            <tr><td>Provincia di Avellino</td><td class="val">7,4%</td><td>20.641 ha</td></tr>
+            <tr><td>Italia</td><td class="val">7,2%</td><td>—</td></tr>
+            <tr><td>Serino</td><td class="val ok">5,8%</td><td>299,93 ha</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2 VUOTO -->
+    <section id="vuoto" class="block">
+      <p class="block-num">02 — Lo stock</p>
+      <h2 class="block-title">Il grigio è mezzo vuoto.</h2>
+      <p class="block-intro">Due fatti che, letti insieme, spostano il problema. Il primo: il consumo di suolo nuovo è quasi fermo da vent'anni. Il secondo: una parte importante di ciò che è già costruito non viene usata. Il tema non è il futuro del cemento, è il presente del vuoto.</p>
+
+      <h3 class="sub">Il flusso si è fermato</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore (Solofra)</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Suolo consumato nuovo 2006 → 2024</td><td class="val amb">+5,84 ettari in 18 anni</td></tr>
+            <tr><td>Suolo consumato nell'ultimo anno (2023 → 2024)</td><td class="val amb">+0,02 ettari</td></tr>
+            <tr><td>Suolo restituito al verde 2006 → 2024</td><td class="val neg">0,00 ettari</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Per confronto, nello stesso periodo l'Italia ha rinaturalizzato circa 12.000 ettari e la provincia di Avellino circa 63. Solofra: nessun metro restituito.</p>
+
+      <h3 class="sub">Lo stock costruito e non usato</h3>
+      <p>Secondo l'ultimo censimento degli edifici (ISTAT 2011), a Solofra <strong>un edificio su dieci risulta non utilizzato</strong>: il doppio della media campana e nazionale.</p>
+      <div class="prov">
+        <div class="prov-row"><span class="lab">Solofra</span><span class="prov-track"><span class="prov-fill neg" style="width:100%"></span></span><span class="val">10,0%</span></div>
+        <div class="prov-row"><span class="lab">Campania</span><span class="prov-track"><span class="prov-fill" style="width:59%"></span></span><span class="val">5,9%</span></div>
+        <div class="prov-row"><span class="lab">Italia</span><span class="prov-track"><span class="prov-fill" style="width:51%"></span></span><span class="val">5,1%</span></div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-3);margin-top:4px;margin-bottom:24px;">Quota di edifici non utilizzati sul totale degli edifici · ISTAT 2011</p>
+
+      <p>Ma quel vuoto <strong>non sono le case</strong>. Le abitazioni di Solofra sono quasi tutte occupate: solo l'8,2% non occupate, contro il 16,3% della Campania e il 20,9% dell'Italia. È un dato anomalo, e dice una cosa precisa: il dismesso solofrano non è residenziale, è produttivo.</p>
+      <div class="prov">
+        <div class="prov-row"><span class="lab">Italia</span><span class="prov-track"><span class="prov-fill" style="width:100%"></span></span><span class="val">20,9%</span></div>
+        <div class="prov-row"><span class="lab">Campania</span><span class="prov-track"><span class="prov-fill" style="width:78%"></span></span><span class="val">16,3%</span></div>
+        <div class="prov-row"><span class="lab">Solofra</span><span class="prov-track"><span class="prov-fill" style="width:39.2%"></span></span><span class="val">8,2%</span></div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-3);margin-top:4px;">Quota di abitazioni non occupate · ISTAT 2011 · a Solofra è la più bassa delle tre: le case sono usate</p>
+    </section>
+
+    <!-- 3 DOVE -->
+    <section id="dove" class="block">
+      <p class="block-num">03 — Il territorio</p>
+      <h2 class="block-title">Dove sono i vuoti.</h2>
+      <p class="block-intro">I numeri dicono quanto. Il territorio dice dove. E qui i dati ufficiali si fermano: questa sezione è una lettura del paese, non una statistica — ed è dichiarata come tale.</p>
+
+      <p>Il vuoto di Solofra ha due facce molto diverse, che non vanno confuse.</p>
+
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Dove</th><th>Cosa è</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Dentro il paese</strong></td><td>Opifici — ma anche edifici civili — nel tessuto urbano, in mezzo a dove si vive: serrande abbassate, vetri rotti, piazzali fermi da anni, accanto alle case. È lo spazio di cui parla questa pagina.</td></tr>
+            <tr><td><strong>Zona industriale ASI</strong></td><td>Area a destinazione produttiva, con regole, vincoli e vicende proprie. <strong>È un capitolo separato</strong>, che non va mescolato con il dismesso urbano: sarà oggetto di un'analisi dedicata.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">Quanti siano esattamente i capannoni fermi dentro il perimetro urbano, oggi, non risulta da alcuna fonte pubblica: il dato ufficiale più recente sugli edifici è del 2011 e non distingue per posizione. Questa distinzione "centro / ASI" è un'osservazione del territorio, non un numero — ed è una delle ragioni per cui servirebbe un censimento del dismesso.</p>
+    </section>
+
+    <!-- 4 DOMANDA -->
+    <section id="domanda" class="block">
+      <p class="block-num">04 — La domanda</p>
+      <h2 class="block-title">La domanda che resta.</h2>
+      <p class="block-intro">Messi in fila, i numeri dicono tre cose. Il territorio già consumato è il doppio della provincia. Il consumo nuovo è quasi fermo da vent'anni. E una parte di ciò che è costruito non viene usata, mentre al verde non è mai stato restituito nulla.</p>
+      <p>Da qui nasce una domanda, che questa pagina registra senza chiuderla: prima di consumare altro suolo, si può riportare in uso ciò che è già costruito e fermo? E con quali strumenti?</p>
+      <p class="note">Il ragionamento per esteso è nel post che accompagna questi dati. Qui restano i numeri, verificabili da chiunque.</p>
+    </section>
+
+    <!-- FONTI -->
+    <section id="fonti" class="block">
+      <p class="block-num">Fonti</p>
+      <h2 class="block-title">Mappa numeri → fonti</h2>
+      <p class="block-intro">Ogni dato di questa pagina è tratto da una fonte pubblica e verificabile. Qui la lista completa.</p>
+
+      <div class="fonti">
+
+        <h4>Consumo di suolo</h4>
+        <ul>
+          <li><strong>Suolo consumato 2024</strong> — Solofra 15,29% (337,45 ha) · Montoro 13,50% (538,44 ha) · Serino 5,75% (299,93 ha) · Provincia di Avellino 7,41% (20.641 ha) · Campania 10,61% · Italia 7,17%. <em>ISPRA/SNPA, dati sul consumo di suolo, edizione 2025 (serie 2006-2024), tavole comunali, provinciali e regionali.</em></li>
+          <li><strong>Consumo nuovo e ripristini (Solofra, 2006-2024)</strong> — incremento netto +5,84 ha (ultimo anno +0,02 ha); ripristino 0,00 ha. <em>Stessa fonte, dataset comunale.</em></li>
+          <li><strong>Contesto</strong> — Campania terza regione più cementificata d'Italia dopo Lombardia (12,22%) e Veneto (11,86%); ripristini Italia ~12.000 ha 2006-2024; Direttiva UE sul monitoraggio del suolo, 2025. <a href="https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/suolo/il-consumo-di-suolo" target="_blank">isprambiente.gov.it</a></li>
+        </ul>
+
+        <h4>Edifici e abitazioni</h4>
+        <ul>
+          <li><strong>Edifici non utilizzati</strong> — Solofra 10,0% · Campania 5,9% · Italia 5,1%. <em>ISTAT, Censimento generale 2011 / piattaforma 8milaCensus, comune 064101 (ultimo censimento degli edifici disponibile).</em></li>
+          <li><strong>Abitazioni non occupate</strong> — Solofra 8,2% · Campania 16,3% · Italia 20,9%. <a href="https://ottomilacensus.istat.it/" target="_blank">ottomilacensus.istat.it</a></li>
+        </ul>
+
+        <h4>Per il visual</h4>
+        <ul>
+          <li><strong>Geoportale del consumo di suolo</strong> — mappa interattiva per visualizzare il suolo consumato comune per comune. <a href="https://www.consumosuolo.it/" target="_blank">consumosuolo.it</a></li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- METODO -->
+    <section id="metodo" class="block" style="border-bottom:none;">
+      <p class="block-num">Metodo</p>
+      <h2 class="block-title">Come è stata costruita questa pagina</h2>
+
+      <p>Tutti i dati pubblicati sono tratti da fonti pubbliche: il Rapporto e i dataset ISPRA/SNPA sul consumo di suolo (edizione 2025, serie 2006-2024) e il Censimento ISTAT degli edifici e delle abitazioni (2011), verificabili tramite i riferimenti riportati. Non sono stati usati documenti riservati o informazioni non disponibili al pubblico.</p>
+
+      <p><strong>Una sola edizione per tutta la serie.</strong> I dati sul consumo di suolo provengono tutti dall'edizione 2025 dello stesso dataset ISPRA: la serie storica viene ricalcolata ogni anno, quindi mescolare edizioni diverse produrrebbe confronti falsati. I valori comunali (Solofra, Montoro, Serino) sono letti direttamente dal foglio dei Comuni del file ufficiale.</p>
+
+      <p><strong>I dati edifici sono del 2011.</strong> Il censimento degli edifici non è stato ripetuto dopo il 2011: le quote di edifici inutilizzati e abitazioni non occupate si riferiscono a quell'anno, l'ultimo disponibile, e sono dichiarate come tali. Non sono stati usati valori comunali 2011 per Montoro e Serino perché non reperibili da fonte ufficiale aperta: meglio non pubblicarli che pubblicarli incerti.</p>
+
+      <p><strong>Dati e osservazioni sono separati.</strong> Le sezioni 01 e 02 contengono fatti verificati; la sezione 03 ("Dove sono i vuoti") è una lettura del territorio, dichiarata come osservazione e non come statistica; la sezione 04 si limita a registrare la domanda che i dati lasciano aperta, senza proporre soluzioni. La distinzione tra ciò che è e ciò che resta da decidere è la regola di questa dashboard.</p>
+
+      <div class="ai-notice">
+        <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+        <p class="ai-notice-text">Nella stesura dei testi è stato utilizzato un modello di intelligenza artificiale come strumento di lavoro per l'elaborazione di dati pubblici e la loro organizzazione in forma leggibile. Ogni numero e ogni affermazione sono stati verificati rispetto alla fonte originaria. Nonostante questa verifica, è possibile che la pagina contenga errori, imprecisioni od omissioni. <strong>Se individui un errore, una fonte non aggiornata o un'informazione imprecisa, segnalamelo</strong>: la pagina verrà aggiornata. L'obiettivo non è convincere, ma rendere leggibile ciò che è già pubblico.</p>
+      </div>
+
+      <div class="manifest">
+        <p class="manifest-hed">Il metodo</p>
+        <p class="manifest-text">I dati sono pubblici. I calcoli sono mostrati per intero. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le opinioni sono separate dai fatti.</p>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Tutti i dati sono pubblici e le fonti sono citate. I numeri sono verificabili da chiunque.
+    </div>
+    <div class="footer-r">Ultimo aggiornamento: giugno 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+  <script src="theme-mandarin.js" defer></script>
+</body>
+</html>

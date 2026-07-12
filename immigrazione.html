@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi arriva a Solofra — Come sta Solofra</title>
+<meta name="description" content="La popolazione straniera residente a Solofra in numeri pubblici. Quante persone, da dove vengono, quanti anni hanno, cosa portano — e cosa dicono davvero i dati su immigrazione e sicurezza.">
+<meta property="og:title" content="Chi arriva a Solofra — Come sta Solofra">
+<meta property="og:description" content="481 persone, il 4% di chi vive a Solofra, è nato altrove. Chi sono, da dove vengono, e perché contano più di quanto se ne parli.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+  .insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+  .ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+  .tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 720px; }
+  .tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+  .tbl-insights tr:last-child td { border-bottom: none; }
+  .tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+  .tbl-insights .col-num { white-space: nowrap; }
+  .tbl-insights .col-num .big { font-family: var(--serif); font-size: 24px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); display: block; }
+  .tbl-insights .col-num .big.ok { color: var(--green); }
+  .tbl-insights .col-num .big.amb { color: var(--amber); }
+  .tbl-insights .col-num .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-top: 2px; font-family: var(--sans); }
+  .tbl-insights .col-lbl { color: var(--ink-2); font-size: 13.5px; }
+  .tbl-insights .col-lbl b { color: var(--ink); font-weight: 500; }
+  .tbl-insights .col-src { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
+  @media (max-width: 720px) {
+    .tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+    .tbl-insights .col-num .big { font-size: 21px; }
+    .tbl-insights .col-infra { font-size: 14px; }
+  }
+
+  .solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+  .solofra-intro { margin-bottom: 32px; max-width: 720px; }
+  .solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .solofra-lede strong { color: var(--ink); font-weight: 500; }
+  .solofra-quote { font-family: var(--serif); font-style: italic; font-size: clamp(18px,2.2vw,22px); line-height: 1.4; color: var(--ink); padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--paper); border-radius: 0 6px 6px 0; margin-top: 18px; }
+
+  .cao-group { margin-top: 36px; }
+  .cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .cao-group-hed .dot.red { background: var(--accent); }
+  .cao-group-hed .dot.amber { background: var(--amber); }
+  .cao-group-hed .dot.green { background: var(--green); }
+  .cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+  .cao-group.c h3 { color: var(--accent); }
+  .cao-group.a h3 { color: var(--amber); }
+  .cao-group.o h3 { color: var(--green); }
+  .cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+
+  .cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+  .cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+  .cao-card:hover { transform: translateY(-2px); }
+  .cao-card.c { border-top-color: var(--accent); }
+  .cao-card.a { border-top-color: var(--amber); }
+  .cao-card.o { border-top-color: var(--green); }
+  .cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+  .cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+  .cao-card-body strong { font-weight: 500; color: var(--ink); }
+
+  .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+  @media (min-width: 960px) {
+    .layout { grid-template-columns: 220px 1fr; gap: 64px; }
+  }
+
+  .toc { font-size: 13px; }
+  @media (min-width: 960px) {
+    .toc { position: sticky; top: 78px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; }
+  }
+  .toc-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 10px; }
+  .toc li a { color: var(--ink-2); text-decoration: none; display: block; padding: 6px 0; line-height: 1.4; transition: color .15s; border-left: 2px solid transparent; padding-left: 10px; }
+  .toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--serif); font-size: 12px; color: var(--accent); margin-right: 8px; }
+  .toc li a:hover { color: var(--ink); border-left-color: var(--accent); }
+
+  .block { padding-bottom: clamp(48px,6vw,72px); margin-bottom: clamp(48px,6vw,72px); border-bottom: 1px solid var(--border); }
+  .block:last-of-type { border-bottom: none; }
+  .block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .block-title { font-family: var(--serif); font-size: clamp(28px,3.8vw,42px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--ink); }
+  .block-intro { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 32px; max-width: 680px; }
+
+  h3.sub { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; margin-top: 40px; margin-bottom: 18px; color: var(--ink); }
+  h3.sub:first-child { margin-top: 0; }
+
+  p { margin-bottom: 14px; color: var(--ink); }
+  p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 16px 0; }
+  a.inline { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .15s, border-color .15s; }
+  a.inline:hover { color: var(--accent); border-color: var(--accent); }
+
+  .tbl-wrap { margin: 16px 0 8px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--paper); }
+  table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.data th { text-align: left; padding: 12px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--paper-2); }
+  table.data td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); line-height: 1.5; }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data td:first-child { color: var(--ink-2); }
+  table.data td strong { font-weight: 500; color: var(--ink); }
+  table.data td.val { font-family: var(--serif); font-size: 16px; color: var(--ink); white-space: nowrap; }
+  table.data td.val.neg { color: var(--accent); }
+  table.data td.val.ok { color: var(--green); }
+  @media (max-width: 640px) {
+    table.data { font-size: 13px; }
+    table.data th, table.data td { padding: 10px 12px; }
+  }
+
+  .prov { margin: 6px 0 4px; }
+  .prov-row { display: grid; grid-template-columns: 120px 1fr 86px; align-items: center; gap: 12px; margin: 9px 0; font-size: 14px; }
+  .prov-row .lab { color: var(--ink); }
+  .prov-track { height: 16px; background: var(--paper-2); border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+  .prov-fill { height: 100%; background: var(--green); opacity: .82; }
+  .prov-row .val { text-align: right; font-family: var(--serif); font-size: 15px; color: var(--ink-2); white-space: nowrap; }
+  @media (max-width: 640px) { .prov-row { grid-template-columns: 92px 1fr 76px; gap: 8px; font-size: 13px; } }
+
+  .fonti { font-size: 13px; }
+  .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+  .fonti h4:first-child { margin-top: 0; }
+  .fonti ul { list-style: none; }
+  .fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+  .fonti li:last-child { border-bottom: none; }
+  .fonti li strong { color: var(--ink); font-weight: 500; }
+  .fonti li a { color: var(--ink-2); text-decoration: none; border-bottom: 1px dotted var(--ink-3); word-break: break-all; }
+  .fonti li a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .ai-notice-text strong { color: var(--ink); font-weight: 500; }
+
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+
+  @media (max-width: 640px) {
+    nav { gap: 16px; overflow-x: auto; }
+    nav a { font-size: 12px; }
+  }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale sui dati pubblici di ISTAT, della Fondazione Leone Moressa e della ricerca accademica citata. Le fonti sono indicate e verificabili. Errori o imprecisioni sono possibili: segnalazioni e correzioni sono benvenute.</div>
+</div>
+
+<header class="mn-header">
+  <div class="mn-header-inner">
+    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
+    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="mn-nav" id="mnNav">
+        <a href="index.html">Home</a>
+        <a href="demografia.html">Demografia</a>
+        <a href="bilancio.html">Bilancio</a>
+        <a href="crisi_mandato.html">Crisi di fine mandato</a>
+
+        <a href="concia.html">Concia</a>
+        <a href="mobilita.html">Mobilità</a>
+        <a href="scuole.html">Bambini e scuole</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="immigrazione.html" class="active">Chi arriva</a>
+        <a href="trasparenza.html">I dati che vorremmo</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="suolo.html">Suolo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">07 — Chi arriva a Solofra · aggiornato giugno 2026</p>
+  <h1 class="hero-title">Chi arriva a Solofra —<br><em>e diventa Solofra.</em></h1>
+  <p class="hero-sub">Quante sono le persone nate altrove che oggi vivono qui, da dove vengono, quanti anni hanno, cosa portano. I numeri pubblici di ISTAT, messi uno accanto all'altro — compreso quello che i dati dicono davvero sul rapporto fra immigrazione e sicurezza.</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>Dati ISTAT al 1° gennaio 2025 · contesto nazionale 2023–2024</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- INSIGHT TABLE -->
+<div class="insights-wrap">
+  <p class="insights-hed">I numeri, in sintesi</p>
+  <p class="insights-sub">La popolazione straniera residente a Solofra: chi sono le persone con cittadinanza non italiana che hanno qui la dimora abituale. Ogni dato è sostenuto dalle fonti riportate in fondo alla pagina.</p>
+
+  <div class="ins-tbl-wrap">
+    <table class="tbl-insights">
+      <thead>
+        <tr>
+          <th class="col-infra">Indicatore</th>
+          <th class="col-num">Solofra</th>
+          <th class="col-lbl">Confronto territoriale</th>
+          <th class="col-src">Fonte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-infra">Residenti stranieri</td>
+          <td class="col-num"><span class="big">481</span><span class="sub">al 1° gen 2025</span></td>
+          <td class="col-lbl">su una popolazione di <b>11.957</b> abitanti</td>
+          <td class="col-src">ISTAT · tuttitalia</td>
+        </tr>
+        <tr>
+          <td class="col-infra">Incidenza sulla popolazione</td>
+          <td class="col-num"><span class="big">4,0%</span></td>
+          <td class="col-lbl">Prov. Avellino <b>3,7%</b> · Campania <b>4,7%</b> · Italia <b>9,1%</b></td>
+          <td class="col-src">ISTAT</td>
+        </tr>
+        <tr>
+          <td class="col-infra">Comunità più numerosa</td>
+          <td class="col-num"><span class="big">India</span><span class="sub">194 persone</span></td>
+          <td class="col-lbl">il <b>40,3%</b> del totale · seguono Ucraina, Romania, Marocco</td>
+          <td class="col-src">ISTAT · tuttitalia</td>
+        </tr>
+        <tr>
+          <td class="col-infra">Età prevalente</td>
+          <td class="col-num"><span class="big">25–54</span><span class="sub">anni</span></td>
+          <td class="col-lbl">circa l'<b>80%</b> in età da lavoro · over 65: solo ~22 persone</td>
+          <td class="col-src">ISTAT · tuttitalia</td>
+        </tr>
+        <tr>
+          <td class="col-infra">Saldo migratorio con l'estero</td>
+          <td class="col-num"><span class="big ok">+48</span><span class="sub">nel 2024</span></td>
+          <td class="col-lbl">unico segno positivo: il saldo naturale del Comune è <b>−36</b></td>
+          <td class="col-src">ISTAT · tuttitalia</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- COSA SIGNIFICA PER SOLOFRA -->
+<div id="solofra" class="solofra-wrap">
+  <div class="solofra-intro">
+    <h2 class="solofra-hed">Cosa significa per Solofra.</h2>
+    <p class="solofra-lede">I numeri in tabella raccontano una presenza piccola ma precisa: regolare, giovane, occupata. Chi vive qui la conosce di vista — è la persona dietro il bancone, l'operaio in conceria, la famiglia che porta i figli alle nostre scuole. <strong>Eppure di questa parte di paese, nel dibattito pubblico, non si parla quasi mai.</strong></p>
+    <p class="solofra-lede">Gli stessi dati dicono tre cose insieme: cosa porta questa presenza, cosa va letto con onestà, e cosa — politicamente — manca del tutto.</p>
+    <div class="solofra-quote">Chi vive a Solofra, lavora a Solofra e manda i figli alle nostre scuole, fa parte di Solofra esattamente come noi.</div>
+  </div>
+
+  <!-- OPPORTUNITÀ -->
+  <div class="cao-group o">
+    <div class="cao-group-hed">
+      <span class="dot green"></span>
+      <h3>Cosa porta a Solofra</h3>
+      <span class="cao-count">4 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Riempie un vuoto demografico</h4>
+        <p class="cao-card-body">Solofra fa sempre meno figli e ogni anno muoiono più persone di quante ne nascano. <strong>L'unico flusso che resta positivo nei conti del Comune è chi arriva dall'estero:</strong> +48 nel 2024, +51 nel 2023. Senza, il calo sarebbe più rapido.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Tiene accesa l'economia</h4>
+        <p class="cao-card-body">Una popolazione concentrata in età da lavoro presidia mansioni e settori dove la manodopera locale ormai scarseggia — a partire dal distretto della pelle, a cui la comunità più numerosa, quella indiana, è storicamente legata.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">È base fiscale e contributiva</h4>
+        <p class="cao-card-body">Età giovane significa più contribuenti che pensionati. A livello nazionale gli occupati stranieri producono <strong>177 miliardi di valore aggiunto, il 9% del totale</strong>, e versano imposte e contributi che sostengono anche chi è uscito dal mercato del lavoro.</p>
+      </div>
+
+      <div class="cao-card o">
+        <h4 class="cao-card-title">Arricchisce la cultura</h4>
+        <p class="cao-card-body">Una lingua in più, una cucina in più, una festa in più, un modo in più di guardare le cose. <strong>Una città non si impoverisce quando accanto alla sua cultura ne arrivano altre: si arricchisce.</strong> Si impara qualcosa, e si è ancora di più ciò che si era.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ATTENZIONI -->
+  <div class="cao-group a">
+    <div class="cao-group-hed">
+      <span class="dot amber"></span>
+      <h3>Cosa va letto con onestà</h3>
+      <span class="cao-count">3 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Non sono "tutti lavoratori"</h4>
+        <p class="cao-card-body">La larghissima maggioranza è in età da lavoro, ma ci sono anche bambini e famiglie: <strong>73 minori sotto i 14 anni</strong>. È una comunità che mette radici, non solo forza-lavoro di passaggio.</p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Il dato sottostima la realtà</h4>
+        <p class="cao-card-body">I 481 contano solo chi ha ancora cittadinanza straniera. <strong>Chi è arrivato e nel frattempo è diventato italiano non compare più</strong> in questa statistica: la comunità di origine immigrata è, nella realtà, più ampia del numero indicato.</p>
+      </div>
+
+      <div class="cao-card a">
+        <h4 class="cao-card-title">Sicurezza: conta lo status, non la nazionalità</h4>
+        <p class="cao-card-body">In Italia il legame forte è con l'irregolarità, non con l'immigrazione in sé. Una popolazione <strong>regolare, residente e occupata</strong> come quella di Solofra è il profilo che gli studi associano alla sicurezza. I dettagli nel dossier 04.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COSA MANCA -->
+  <div class="cao-group c">
+    <div class="cao-group-hed">
+      <span class="dot red"></span>
+      <h3>Cosa manca</h3>
+      <span class="cao-count">3 punti</span>
+    </div>
+    <div class="cao-cards">
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Assente dal dibattito</h4>
+        <p class="cao-card-body">Nei programmi, nelle liste, nei discorsi di chi si candida, questa parte di paese semplicemente non c'è. <strong>Né come problema, né come risorsa.</strong> Come se non si vedesse.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Nessuna politica dedicata</h4>
+        <p class="cao-card-body">Mediazione, lingua, accesso ai servizi, integrazione scolastica: temi che a Solofra non hanno un interlocutore politico. Il vuoto, prima ancora che amministrativo, è culturale.</p>
+      </div>
+
+      <div class="cao-card c">
+        <h4 class="cao-card-title">Anche un limite strategico</h4>
+        <p class="cao-card-body">Una comunità che cresce, mette radici e — con la cittadinanza — diventa anche elettorato. <strong>Ignorarla non è solo miope: a un certo punto è un errore di conti</strong> che la politica, di solito, sa fare benissimo.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<hr class="div">
+
+<div class="layout">
+
+  <aside class="toc">
+    <p class="toc-hed">I dossier</p>
+    <ol>
+      <li><a href="#provenienze">Da dove vengono</a></li>
+      <li><a href="#eta">Quanti anni hanno</a></li>
+      <li><a href="#demografia">Perché contano</a></li>
+      <li><a href="#sicurezza">Immigrazione e sicurezza</a></li>
+      <li><a href="#nazionale">Il contesto nazionale</a></li>
+      <li><a href="#fonti">Mappa numeri → fonti</a></li>
+      <li><a href="#metodo">Nota metodologica</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- 1 PROVENIENZE -->
+    <section id="provenienze" class="block">
+      <p class="block-num">01 — La fotografia</p>
+      <h2 class="block-title">Da dove vengono.</h2>
+      <p class="block-intro">I 481 residenti stranieri di Solofra arrivano da oltre quaranta Paesi. Una comunità domina nettamente le altre: quella indiana, da sola quattro residenti stranieri su dieci. È una presenza storicamente legata al lavoro nelle concerie del distretto.</p>
+
+      <h3 class="sub">Le prime comunità per numero di residenti</h3>
+      <div class="prov">
+        <div class="prov-row"><span class="lab">India</span><span class="prov-track"><span class="prov-fill" style="width:100%"></span></span><span class="val">194 · 40,3%</span></div>
+        <div class="prov-row"><span class="lab">Ucraina</span><span class="prov-track"><span class="prov-fill" style="width:21%"></span></span><span class="val">40 · 8,3%</span></div>
+        <div class="prov-row"><span class="lab">Romania</span><span class="prov-track"><span class="prov-fill" style="width:20%"></span></span><span class="val">39 · 8,1%</span></div>
+        <div class="prov-row"><span class="lab">Marocco</span><span class="prov-track"><span class="prov-fill" style="width:17%"></span></span><span class="val">33 · 6,9%</span></div>
+        <div class="prov-row"><span class="lab">Albania</span><span class="prov-track"><span class="prov-fill" style="width:12.5%"></span></span><span class="val">24 · 5,0%</span></div>
+        <div class="prov-row"><span class="lab">Tunisia</span><span class="prov-track"><span class="prov-fill" style="width:12%"></span></span><span class="val">23 · 4,8%</span></div>
+        <div class="prov-row"><span class="lab">Cina</span><span class="prov-track"><span class="prov-fill" style="width:11%"></span></span><span class="val">21 · 4,4%</span></div>
+      </div>
+
+      <h3 class="sub">Per continente di provenienza</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Area</th><th>Residenti</th><th>Quota</th></tr></thead>
+          <tbody>
+            <tr><td>Asia</td><td class="val">265</td><td>55,1%</td></tr>
+            <tr><td>Europa</td><td class="val">134</td><td>27,9%</td></tr>
+            <tr><td>Africa</td><td class="val">68</td><td>14,1%</td></tr>
+            <tr><td>America</td><td class="val">14</td><td>2,9%</td></tr>
+            <tr><td><strong>Totale</strong></td><td class="val"><strong>481</strong></td><td><strong>100%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">La componente europea è in larga parte femminile (Ucraina, Romania, Polonia), spesso legata al lavoro di cura. La componente asiatica e africana è in prevalenza maschile, legata al lavoro nel distretto. È una fotografia coerente con un'immigrazione di lavoro stabile, non di transito.</p>
+    </section>
+
+    <!-- 2 ETÀ -->
+    <section id="eta" class="block">
+      <p class="block-num">02 — La fotografia</p>
+      <h2 class="block-title">Quanti anni hanno.</h2>
+      <p class="block-intro">La popolazione straniera di Solofra è quasi interamente in età attiva. Il picco è tra i 30 e i 49 anni; gli anziani sono pochissimi. È l'esatto contrario della curva di invecchiamento che riguarda il resto del paese — e per questo è demograficamente preziosa.</p>
+
+      <h3 class="sub">Composizione per fasce d'età</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Fascia</th><th>Persone</th><th>Quota</th></tr></thead>
+          <tbody>
+            <tr><td>Minori (0–14 anni)</td><td class="val">73</td><td>15,2%</td></tr>
+            <tr><td>In età da lavoro (15–64 anni)</td><td class="val">~386</td><td>~80%</td></tr>
+            <tr><td>di cui fascia 30–49 (il picco)</td><td class="val">225</td><td>46,8%</td></tr>
+            <tr><td>Over 65</td><td class="val">~22</td><td>4,6%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">A confronto: in Italia l'età media degli stranieri è 35,7 anni, quella degli italiani 46,9. La presenza straniera è mediamente più giovane di oltre dieci anni — ed è una delle ragioni per cui pesa così poco sulla spesa per anziani e così tanto su contributi e natalità.</p>
+    </section>
+
+    <!-- 3 DEMOGRAFIA -->
+    <section id="demografia" class="block">
+      <p class="block-num">03 — Il contesto locale</p>
+      <h2 class="block-title">Perché contano.</h2>
+      <p class="block-intro">Il Comune perde popolazione e fa meno figli ogni anno. I decessi superano le nascite. L'unico segno positivo nel bilancio demografico è il movimento con l'estero: persone che scelgono di trasferirsi qui. Non è un'opinione — è la somma di due colonne nello stesso registro anagrafico.</p>
+
+      <h3 class="sub">Il bilancio demografico di Solofra (2024)</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Voce</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Nati nel 2024</td><td class="val">69</td></tr>
+            <tr><td>Decessi nel 2024</td><td class="val">105</td></tr>
+            <tr><td>Saldo naturale (nati − morti)</td><td class="val neg">−36</td></tr>
+            <tr><td>Saldo migratorio con l'estero, 2024</td><td class="val ok">+48</td></tr>
+            <tr><td>Saldo migratorio con l'estero, 2023</td><td class="val ok">+51</td></tr>
+            <tr><td>Popolazione residente al 31/12/2024</td><td class="val">11.957</td></tr>
+            <tr><td>Variazione in dieci anni</td><td class="val neg">−600 circa</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Detto in modo semplice: ogni anno il paese perde solofrani per nascite mancate e per chi se ne va, e ne recupera una parte grazie a chi arriva da fuori. Togliere quel "+48" non rende Solofra più solofrana: la rende più piccola.</p>
+    </section>
+
+    <!-- 4 SICUREZZA -->
+    <section id="sicurezza" class="block">
+      <p class="block-num">04 — Il nodo</p>
+      <h2 class="block-title">Immigrazione e sicurezza: cosa dicono davvero i dati.</h2>
+      <p class="block-intro">È il punto più strumentalizzato del dibattito, e quello su cui i numeri dicono una cosa precisa che spesso si perde: il legame forte è con l'<strong>irregolarità</strong>, non con l'immigrazione in quanto tale. Sono due fenomeni diversi, e confonderli porta a conclusioni sbagliate.</p>
+
+      <h3 class="sub">I numeri della ricerca</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Quota di irregolari sul totale degli stranieri in Italia</td><td class="val">~5,6%</td></tr>
+            <tr><td>Reati attribuiti a stranieri riconducibili a chi è irregolare</td><td class="val neg">larga maggioranza</td></tr>
+            <tr><td>Tasso di criminalità relativa — stranieri regolari vs italiani</td><td class="val">2–3 volte</td></tr>
+            <tr><td>Recidiva dopo regolarizzazione (rumeni e bulgari, dopo l'ingresso UE 2007)</td><td class="val ok">dimezzata</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Gli stranieri <strong>regolari</strong> — con permesso, lavoro e famiglia — mostrano tassi in calo costante. Una parte del differenziale che resta con gli italiani si spiega non con la nazionalità, ma con la diversa composizione per età e sesso: gli immigrati sono concentrati nelle fasce giovani-maschili, che delinquono di più in qualunque popolazione, italiana inclusa.</p>
+
+      <p>Il dato più importante viene dagli studi dell'economista Paolo Pinotti (Università Bocconi): la <strong>regolarizzazione fa scendere la criminalità</strong>. Dare documenti, lavoro e prospettive a chi è già qui è, prima ancora che una scelta di civiltà, una misura di sicurezza che funziona.</p>
+
+      <p class="note">La popolazione straniera di Solofra è residente, regolare e occupata. È esattamente il profilo che la ricerca associa alla sicurezza, non al rischio. Per questo, qui, l'integrazione non è in tensione con la sicurezza: ne è lo strumento.</p>
+
+      <p style="font-size:14px;color:var(--ink-3);font-style:italic;">Abbiamo scelto di non riportare i dati grezzi "reati per nazionalità", che senza il contesto dello status giuridico inducono in errore. La distinzione fra regolari e irregolari è ciò che spiega i numeri.</p>
+    </section>
+
+    <!-- 5 NAZIONALE -->
+    <section id="nazionale" class="block">
+      <p class="block-num">05 — Lo sfondo</p>
+      <h2 class="block-title">Il contesto nazionale.</h2>
+      <p class="block-intro">Quello che a Solofra si vede in piccolo, in Italia si misura in miliardi. La presenza straniera è giovane, produce ricchezza e, secondo le previsioni, sarà sempre più necessaria — non per scelta ideologica, ma per aritmetica demografica.</p>
+
+      <h3 class="sub">I numeri dell'economia dell'immigrazione</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore (Italia)</th><th>Valore</th></tr></thead>
+          <tbody>
+            <tr><td>Residenti stranieri (fine 2024)</td><td class="val">5,37 mln · 9,1%</td></tr>
+            <tr><td>Valore aggiunto prodotto dagli occupati stranieri (2024)</td><td class="val">177 mld € · 9%</td></tr>
+            <tr><td>Imprenditori immigrati (2023)</td><td class="val">776.000</td></tr>
+            <tr><td>Variazione imprenditori immigrati 2013→2023</td><td class="val ok">+27,3%</td></tr>
+            <tr><td>Nuovi lavoratori stranieri necessari 2024–2028</td><td class="val">640.000 · 21,3% del fabbisogno</td></tr>
+            <tr><td>Nuovi cittadini italiani (2023)</td><td class="val">213.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Il fabbisogno di nuova manodopera dipende per circa l'80% dal ricambio legato ai pensionamenti, e solo per il 20% dalla crescita economica. È la fotografia di un Paese — e di un paese — che invecchia e ha bisogno di chi arriva.</p>
+    </section>
+
+    <!-- FONTI -->
+    <section id="fonti" class="block">
+      <p class="block-num">Fonti</p>
+      <h2 class="block-title">Mappa numeri → fonti</h2>
+      <p class="block-intro">Ogni dato di questa pagina è tratto da una fonte pubblica. Qui la lista completa, con link verificabili.</p>
+
+      <div class="fonti">
+
+        <h4>Dati di Solofra e della provincia</h4>
+        <ul>
+          <li><strong>Cittadini stranieri a Solofra 2025</strong> — elaborazione su dati ISTAT: 481 residenti, 4,0%, provenienze per Paese e continente, piramide delle età. <a href="https://www.tuttitalia.it/campania/37-solofra/statistiche/cittadini-stranieri-2025/" target="_blank">tuttitalia.it</a></li>
+          <li><strong>Andamento demografico di Solofra</strong> — nati, decessi, saldo naturale e saldo migratorio con l'estero; popolazione 11.957 al 31/12/2024. <a href="https://www.tuttitalia.it/campania/37-solofra/statistiche/popolazione-andamento-demografico/" target="_blank">tuttitalia.it</a></li>
+          <li><strong>Statistiche provincia di Avellino</strong> — incidenza stranieri 3,7%, tra le più basse della Campania. <a href="https://www.tuttitalia.it/campania/provincia-di-avellino/statistiche/" target="_blank">tuttitalia.it</a></li>
+        </ul>
+
+        <h4>Dati regionali e nazionali</h4>
+        <ul>
+          <li><strong>ISTAT — Censimento e dinamica della popolazione, anno 2024</strong> — 5.371.251 stranieri residenti in Italia, incidenza 9,1%. <a href="https://www.istat.it/comunicato-stampa/censimento-e-dinamica-della-popolazione-anno-2024/" target="_blank">istat.it</a></li>
+          <li><strong>ISTAT — Censimento permanente della popolazione, Campania 2023</strong> — 263.680 stranieri, 4,7%, provenienti da 171 Paesi. <a href="https://www.istat.it/wp-content/uploads/2025/04/Censimento-permanente-popolazione_Anno-2023_Campania.pdf" target="_blank">istat.it (PDF)</a></li>
+        </ul>
+
+        <h4>Economia e demografia dell'immigrazione</h4>
+        <ul>
+          <li><strong>Fondazione Leone Moressa — Rapporto sull'economia dell'immigrazione 2024</strong> — 177 miliardi di valore aggiunto (9%), età media 35,7 vs 46,9 anni, 776.000 imprenditori immigrati, fabbisogno 2024–2028, naturalizzazioni. <a href="https://www.fondazioneleonemoressa.org/category/economia-immigrazione/" target="_blank">fondazioneleonemoressa.org</a></li>
+        </ul>
+
+        <h4>Immigrazione e sicurezza</h4>
+        <ul>
+          <li><strong>Welforum — I reati commessi dagli stranieri irregolari</strong> — sintesi degli studi di Paolo Pinotti e Marzio Barbagli sul peso dell'irregolarità rispetto alla regolarità. <a href="https://www.welforum.it/i-reati-commessi-dagli-stranieri-irregolari/" target="_blank">welforum.it</a></li>
+          <li><strong>Lavoce.info — Immigrati e criminalità, il legame letto nei dati</strong> — analisi dei tassi per status giuridico e delle cautele di lettura. <a href="https://lavoce.info/archives/98009/immigrati-criminalita-un-legame-smentito-dai-dati/" target="_blank">lavoce.info</a></li>
+          <li><strong>Pagella Politica — Immigrazione e criminalità: i numeri</strong> — distinzione fra residenti stranieri, cittadinanza e autori di reato; note metodologiche sui dati ISTAT e del Viminale. <a href="https://pagellapolitica.it/fact-checking/immigrazione-e-criminalita-i-numeri" target="_blank">pagellapolitica.it</a></li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- METODO -->
+    <section id="metodo" class="block" style="border-bottom:none;">
+      <p class="block-num">Metodo</p>
+      <h2 class="block-title">Come è stata costruita questa pagina</h2>
+
+      <p>Tutti i dati pubblicati in questa sezione sono tratti da fonti pubbliche: rilevazioni ISTAT, il rapporto annuale della Fondazione Leone Moressa e la ricerca accademica citata, tutti verificabili tramite i link riportati. Non sono stati usati documenti riservati o informazioni non disponibili al pubblico.</p>
+
+      <p><strong>Chi è "straniero" in questi dati.</strong> Sono le persone con cittadinanza non italiana che hanno la residenza anagrafica nel territorio. È una misura di chi si è <em>stabilito</em>, non di chi transita. Esclude chi è diventato cittadino italiano: per questo la comunità di origine immigrata è, nella realtà, più ampia del numero indicato.</p>
+
+      <p><strong>Confronti tra livelli.</strong> I dati comunali, provinciali, regionali e nazionali si riferiscono ad anni vicini ma non sempre identici (Solofra al 1° gennaio 2025; Campania al censimento 2023; Italia a fine 2024). I confronti vanno letti come ordini di grandezza, non come decimali al millesimo. Le voci contrassegnate con il simbolo "~" sono stime o arrotondamenti, dichiarati come tali.</p>
+
+      <p><strong>Sul tema sicurezza.</strong> La pagina distingue con attenzione fra dato documentale, stima e inferenza. Abbiamo scelto di non riportare i dati grezzi "reati per nazionalità", che senza il contesto dello status giuridico inducono in errore: la letteratura disponibile distingue nettamente fra regolari e irregolari, ed è quella distinzione — non la nazionalità — a spiegare i numeri.</p>
+
+      <div class="ai-notice">
+        <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+        <p class="ai-notice-text">Nella stesura dei testi è stato utilizzato un modello di intelligenza artificiale come strumento di lavoro per l'elaborazione di dati pubblici e la loro organizzazione in forma leggibile. Ogni numero e ogni affermazione sono stati verificati rispetto alla fonte originaria. Nonostante questa verifica, è possibile che la pagina contenga errori, imprecisioni od omissioni. <strong>Se individui un errore, una fonte non aggiornata o un'informazione imprecisa, segnalamelo</strong>: la pagina verrà aggiornata. L'obiettivo non è convincere, ma rendere leggibile ciò che è già pubblico.</p>
+      </div>
+
+      <div class="manifest">
+        <p class="manifest-hed">Il metodo</p>
+        <p class="manifest-text">I dati sono pubblici. I calcoli sono mostrati per intero. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le opinioni sono separate dai fatti.</p>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Tutti i dati sono pubblici e le fonti sono citate. I numeri sono verificabili da chiunque.
+    </div>
+    <div class="footer-r">Ultimo aggiornamento: giugno 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+  <script src="theme-mandarin.js" defer></script>
+</body>
+</html>

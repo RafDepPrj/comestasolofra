@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crisi di fine mandato — Come sta Solofra</title>
+<meta name="description" content="Scioglimenti anticipati dei consigli comunali in Italia, 2010–2019. Dati Openpolis: cause, distribuzione geografica, ricorrenza del fenomeno.">
+<meta property="og:title" content="Scioglimenti dei consigli comunali — Come sta Solofra">
+<meta property="og:description" content="In Italia tra il 2010 e il 2019 sono stati sciolti anticipatamente 1.753 consigli comunali. Il 63% per ragioni politiche. I dati Openpolis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXKKYEGK04');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:     #1a1a18;
+    --ink-2:   #4a4a47;
+    --ink-3:   #8a8a85;
+    --paper:   #f7f5f0;
+    --paper-2: #eeece6;
+    --paper-3: #e3e0d8;
+    --accent:  #c8401a;
+    --green:   #2a6b3c;
+    --green-bg:#e8f2ec;
+    --amber:   #8a5a0a;
+    --amber-bg:#fef3e0;
+    --border:  rgba(26,26,24,0.12);
+    --serif:   'Instrument Serif', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 clamp(20px,5vw,80px); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 24px; }
+  .site-title { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-title span { color: var(--accent); }
+  nav { display: flex; gap: 24px; overflow-x: auto; }
+  nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spacing: 0.02em; transition: color .15s; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .disclaimer { background: var(--paper-3); border-bottom: 1px solid var(--border); padding: 9px clamp(20px,5vw,80px); }
+  .disclaimer-inner { max-width: 1060px; margin: 0 auto; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+  .disclaimer-inner strong { font-weight: 500; color: var(--ink-2); }
+
+  .hero { padding: clamp(48px,8vw,96px) clamp(20px,5vw,80px) clamp(28px,4vw,48px); max-width: 1060px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero-title { font-family: var(--serif); font-size: clamp(36px,5vw,58px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title em { font-style: italic; color: var(--ink-2); }
+  .hero-sub { font-size: 16px; color: var(--ink-2); max-width: 640px; line-height: 1.65; margin-bottom: 24px; }
+  .hero-meta { font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero-meta a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .hero-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 0 clamp(20px,5vw,80px); }
+
+  .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+  .insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+  .ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+  .tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 700px; }
+  .tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); }
+  .tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+  .tbl-insights tr:last-child td { border-bottom: none; }
+  .tbl-insights .col-ind { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; }
+  .tbl-insights .big { font-family: var(--serif); font-size: 22px; line-height: 1.05; letter-spacing: -0.02em; display: block; }
+  .tbl-insights .big.neg { color: var(--accent); }
+  .tbl-insights .big.ok  { color: var(--green); }
+  .tbl-insights .big.neu { color: var(--ink); }
+  .tbl-insights .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-top: 2px; }
+  .tbl-insights .col-src { color: var(--ink-3); font-size: 12px; }
+
+  .solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+  .solofra-intro { margin-bottom: 32px; max-width: 720px; }
+  .solofra-hed { font-family: var(--serif); font-size: clamp(26px,3.4vw,36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .solofra-lede { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+  .solofra-lede strong { color: var(--ink); font-weight: 500; }
+  .solofra-quote { font-family: var(--serif); font-style: italic; font-size: clamp(18px,2.2vw,22px); line-height: 1.4; color: var(--ink); padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--paper); border-radius: 0 6px 6px 0; margin-top: 18px; }
+
+  .narr-cards { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+  @media (min-width: 720px) { .narr-cards { grid-template-columns: repeat(3, 1fr); } }
+  .narr-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 22px; border-top: 3px solid var(--ink-3); }
+  .narr-card-title { font-family: var(--serif); font-size: 18px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--ink); }
+  .narr-card-body { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .narr-card-body strong { font-weight: 500; color: var(--ink); }
+
+  .layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+  @media (min-width: 960px) { .layout { grid-template-columns: 220px 1fr; gap: 64px; } }
+
+  .toc { font-size: 13px; }
+  @media (min-width: 960px) { .toc { position: sticky; top: 78px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; } }
+  .toc-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 10px; }
+  .toc li a { color: var(--ink-2); text-decoration: none; display: block; padding: 6px 0; line-height: 1.4; transition: color .15s; border-left: 2px solid transparent; padding-left: 10px; }
+  .toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--serif); font-size: 12px; color: var(--accent); margin-right: 8px; }
+  .toc li a:hover { color: var(--ink); border-left-color: var(--accent); }
+
+  .block { padding-bottom: clamp(48px,6vw,72px); margin-bottom: clamp(48px,6vw,72px); border-bottom: 1px solid var(--border); }
+  .block:last-of-type { border-bottom: none; }
+  .block-num { font-family: var(--serif); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .block-title { font-family: var(--serif); font-size: clamp(28px,3.8vw,42px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--ink); }
+  .block-intro { font-size: 16px; color: var(--ink-2); line-height: 1.7; margin-bottom: 32px; max-width: 680px; }
+
+  h3.sub { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; margin-top: 40px; margin-bottom: 18px; color: var(--ink); }
+  h3.sub:first-child { margin-top: 0; }
+
+  p { margin-bottom: 14px; color: var(--ink); }
+  p.note { font-size: 14px; color: var(--ink-3); font-style: italic; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--ink-3); border-radius: 0 4px 4px 0; margin: 16px 0; }
+
+  .tbl-wrap { margin: 16px 0 8px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--paper); }
+  table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.data th { text-align: left; padding: 12px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--paper-2); }
+  table.data td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); line-height: 1.5; }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data td:first-child { color: var(--ink-2); }
+  table.data td strong { font-weight: 500; color: var(--ink); }
+  table.data td.val { font-family: var(--serif); font-size: 16px; color: var(--ink); white-space: nowrap; }
+  table.data td.val.neg { color: var(--accent); }
+  table.data td.val.ok  { color: var(--green); }
+  table.data td.val.amb { color: var(--amber); }
+
+  .timeline { position: relative; margin: 24px 0; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; padding-bottom: 22px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--paper); box-shadow: 0 0 0 2px var(--ink-3); background: var(--paper); }
+  .tl-item.red::before  { box-shadow: 0 0 0 2px var(--accent); background: var(--accent); }
+  .tl-item.green::before{ box-shadow: 0 0 0 2px var(--green);  background: var(--green); }
+  .tl-item.amber::before{ box-shadow: 0 0 0 2px var(--amber);  background: var(--amber); }
+  .tl-year { font-family: var(--serif); font-size: 16px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 4px; }
+  .tl-txt { font-size: 14px; color: var(--ink); line-height: 1.6; }
+  .tl-txt strong { font-weight: 500; color: var(--ink); }
+  .tl-txt em { color: var(--ink-3); font-style: normal; font-size: 13px; }
+
+  .reasons-list { margin: 20px 0 8px; }
+  .reason-item { display: grid; grid-template-columns: 50px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+  .reason-item:first-child { border-top: 1px solid var(--border); }
+  .reason-num-large { font-family: var(--serif); font-size: 32px; line-height: 1; color: var(--accent); letter-spacing: -0.02em; }
+  .reason-title-large { font-family: var(--serif); font-size: 19px; letter-spacing: -0.01em; margin-bottom: 6px; color: var(--ink); }
+  .reason-text-large { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .reason-text-large strong { color: var(--ink); font-weight: 500; }
+
+  .fonti { font-size: 13px; }
+  .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+  .fonti h4:first-child { margin-top: 0; }
+  .fonti ul { list-style: none; }
+  .fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+  .fonti li:last-child { border-bottom: none; }
+  .fonti li strong { color: var(--ink); font-weight: 500; }
+  .fonti li a { color: var(--ink-2); text-decoration: none; border-bottom: 1px dotted var(--ink-3); word-break: break-all; }
+  .fonti li a:hover { color: var(--accent); border-color: var(--accent); }
+  .src-flag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+  .src-flag.verified { color: var(--green); background: var(--green-bg); }
+  .src-flag.estimate { color: var(--amber); background: var(--amber-bg); }
+  .src-flag.inferenza { color: var(--amber); background: var(--amber-bg); }
+
+  .ai-notice { background: var(--amber-bg); border: 1px solid rgba(138,90,10,0.25); border-radius: 10px; padding: 20px 24px; margin-top: 32px; }
+  .ai-notice-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ai-notice-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+  .manifest { background: var(--paper-2); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+  .manifest-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .manifest-text { font-family: var(--serif); font-size: clamp(18px,2.2vw,22px); line-height: 1.45; color: var(--ink); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px clamp(20px,5vw,80px); margin-top: 40px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-l { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .footer-l strong { color: var(--ink-2); font-weight: 500; }
+  .footer-l a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .footer-l a:hover { color: var(--ink); }
+  .footer-r { font-size: 12px; color: var(--ink-3); text-align: right; }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale su fonti pubbliche: Openpolis (2019), Ministero dell'Interno, TUEL. I dati certificati sono distinti dalle inferenze argomentate. Segnalazioni e correzioni sono benvenute.</div>
+</div>
+
+<header class="mn-header">
+  <div class="mn-header-inner">
+    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
+    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="mn-nav" id="mnNav">
+        <a href="index.html">Home</a>
+        <a href="demografia.html">Demografia</a>
+        <a href="bilancio.html">Bilancio</a>
+        <a href="crisi_mandato.html" class="active">Crisi di fine mandato</a>
+
+        <a href="concia.html">Concia</a>
+        <a href="mobilita.html">Mobilità</a>
+        <a href="scuole.html">Bambini e scuole</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="immigrazione.html">Chi arriva</a>
+        <a href="trasparenza.html">I dati che vorremmo</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="suolo.html">Suolo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">07 — Istituzioni locali · aggiornato maggio 2026</p>
+  <h1 class="hero-title">Scioglimenti dei consigli comunali<br><em>in Italia, 2010–2019.</em></h1>
+  <p class="hero-sub">In Italia, tra il 2010 e il 2019, sono stati sciolti anticipatamente 1.753 consigli comunali — quasi uno su cinque. I dati del rapporto Openpolis "Fuori dal comune" (2019) su cause, distribuzione geografica e ricorrenza del fenomeno.</p>
+  <div class="hero-meta">
+    A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+    <span>·</span>
+    <span>Ultima consultazione fonti: maggio 2026</span>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- INSIGHT TABLE -->
+<div class="insights-wrap">
+  <p class="insights-hed">I numeri, in sintesi</p>
+  <p class="insights-sub">Scioglimenti anticipati di comuni in Italia, 2010–2019. Fonte: Openpolis su dati Ministero dell'Interno, rapporto "Fuori dal comune" 2019.</p>
+  <div class="ins-tbl-wrap">
+    <table class="tbl-insights">
+      <thead>
+        <tr>
+          <th>Indicatore</th>
+          <th>Dato</th>
+          <th>Nota</th>
+          <th class="col-src">Fonte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-ind">Comuni sciolti anticipatamente, 2010–2019</td>
+          <td><span class="big neg">1.753</span><span class="sub">scioglimenti nel decennio</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Media ~175/anno. Al netto dei pluricommissariamenti: 1.466 comuni unici — quasi 1 su 5 in Italia</td>
+          <td class="col-src">Openpolis 2019</td>
+        </tr>
+        <tr>
+          <td class="col-ind">Scioglimenti per motivi politici</td>
+          <td><span class="big neg">63%</span><span class="sub">del totale decennale</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Dimissioni consiglieri (38%) + dimissioni sindaco (22%) + sfiducia (3%)</td>
+          <td class="col-src">Openpolis 2019</td>
+        </tr>
+        <tr>
+          <td class="col-ind">Causa principale: dimissioni consiglieri</td>
+          <td><span class="big neg">38%</span><span class="sub">degli scioglimenti totali</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Art. 141 TUEL — dimissioni contestuali della maggioranza</td>
+          <td class="col-src">Openpolis 2019</td>
+        </tr>
+        <tr>
+          <td class="col-ind">Dimissioni del sindaco</td>
+          <td><span class="big neu">22%</span><span class="sub">degli scioglimenti totali</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Seconda causa politica più frequente</td>
+          <td class="col-src">Openpolis 2019</td>
+        </tr>
+        <tr>
+          <td class="col-ind">Scioglimento per mafia (art. 143 TUEL)</td>
+          <td><span class="big ok">7,7%</span><span class="sub">nell'intero periodo</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">In crescita negli anni recenti — sopra il 10% dal 2017</td>
+          <td class="col-src">Openpolis 2019</td>
+        </tr>
+        <tr>
+          <td class="col-ind">Comuni sciolti due o più volte</td>
+          <td><span class="big neu">240</span><span class="sub">pluricommissariati</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">64% nel Mezzogiorno. Segnale di cronicità strutturale</td>
+          <td class="col-src">Openpolis 2019</td>
+        </tr>
+        <tr>
+          <td class="col-ind">Campania — quota sul totale nazionale</td>
+          <td><span class="big neg">15,8%</span><span class="sub">283 scioglimenti su 1.794</span></td>
+          <td style="font-size:13px; color:var(--ink-2);">Prima regione in Italia per numero di scioglimenti. Il 36% dei comuni campani è stato sciolto almeno una volta</td>
+          <td class="col-src">Openpolis 2019</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<div class="layout">
+
+  <aside class="toc">
+    <p class="toc-hed">Le pagine</p>
+    <ol>
+      <li><a href="#cause">Le cause degli scioglimenti</a></li>
+      <li><a href="#meccanismo">Il meccanismo normativo</a></li>
+      <li><a href="#campania">Campania</a></li>
+      <li><a href="#fonti">Mappa numeri → fonti</a></li>
+      <li><a href="#metodo">Nota metodologica</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- BLOCCO 1: LE CAUSE -->
+    <section id="cause" class="block">
+      <p class="block-num">01 — Le cause</p>
+      <h2 class="block-title">Perché si sciolgono i consigli.</h2>
+      <p class="block-intro">Distribuzione degli scioglimenti per tipologia di causa, 2010–2019. Dati Openpolis su fonte Ministero dell'Interno. Il 63% ha origine politica — dimissioni, sfiducia, conflitti interni alla maggioranza.</p>
+
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Causa</th><th>Quota</th><th>Carattere</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Dimissioni maggioranza consiglieri</strong></td>
+              <td class="val neg">38%</td>
+              <td>Causa politica — scelta deliberata</td>
+            </tr>
+            <tr>
+              <td><strong>Dimissioni del sindaco</strong></td>
+              <td class="val neg">22%</td>
+              <td>Causa politica — scelta deliberata</td>
+            </tr>
+            <tr>
+              <td>Sfiducia al sindaco</td>
+              <td class="val neg">3%</td>
+              <td>Causa politica — voto formale in aula</td>
+            </tr>
+            <tr>
+              <td>Decesso / impedimento del sindaco</td>
+              <td class="val">~20%</td>
+              <td>Causa non politica — evento accidentale</td>
+            </tr>
+            <tr>
+              <td>Mancata approvazione bilancio / rendiconto</td>
+              <td class="val amb">incluso nel 63%</td>
+              <td>Spesso classificato come dimissioni dei consiglieri che rifiutano il voto</td>
+            </tr>
+            <tr>
+              <td>Infiltrazione mafiosa (art. 143 TUEL)</td>
+              <td class="val ok">7,7%</td>
+              <td>Causa straordinaria — in crescita dal 2017 (sopra il 10%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">La voce "mancata approvazione bilancio/rendiconto" non ha una quota separata nei dati Openpolis perché spesso si manifesta come dimissioni dei consiglieri che rifiutano di approvare il documento contabile — classificate nella categoria "dimissioni politiche". L'intreccio tra crisi contabile e crisi politica è strutturale.</p>
+    </section>
+
+    <!-- BLOCCO 2: MECCANISMO NORMATIVO -->
+    <section id="meccanismo" class="block">
+      <p class="block-num">02 — Il meccanismo normativo</p>
+      <h2 class="block-title">Come funziona lo scioglimento per rendiconto.</h2>
+      <p class="block-intro">Questa è la procedura prevista dalla legge per <strong>qualsiasi comune italiano</strong> — indipendentemente dalle circostanze locali. È il percorso standard dell'art. 141 TUEL e dell'art. 227 TUEL, uguale in ogni regione e per ogni amministrazione.</p>
+      <p class="note">Questo iter si applica a tutti i comuni d'Italia. Non descrive nessuna situazione specifica — descrive come funziona la legge.</p>
+
+      <div class="timeline">
+        <div class="tl-item red">
+          <div class="tl-year">Scadenza 30 aprile</div>
+          <div class="tl-txt">Il consiglio comunale non approva il rendiconto entro il termine di legge — o lo batte in seconda convocazione. Scatta l'inadempienza formale.</div>
+        </div>
+        <div class="tl-item amber">
+          <div class="tl-year">Diffida prefettizia</div>
+          <div class="tl-txt">Il Prefetto notifica al comune una diffida con termine perentorio. <strong>Massimo 20 giorni</strong> per approvare il rendiconto.</div>
+        </div>
+        <div class="tl-item amber">
+          <div class="tl-year">Seconda convocazione</div>
+          <div class="tl-txt">Il consiglio viene riconvocato entro il termine prefettizio. Se la maggioranza non partecipa o vota contro, l'inadempienza è confermata.</div>
+        </div>
+        <div class="tl-item red">
+          <div class="tl-year">Proposta di scioglimento</div>
+          <div class="tl-txt">Il Prefetto trasmette la proposta di scioglimento al Ministro dell'Interno. <strong>Viene nominato un commissario prefettizio.</strong></div>
+        </div>
+        <div class="tl-item green">
+          <div class="tl-year">Commissario fino alle elezioni</div>
+          <div class="tl-txt">Il commissario gestisce l'ordinario, approva i documenti contabili. Le elezioni si tengono nella prima finestra utile — tipicamente la primavera successiva.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCCO 3: CAMPANIA -->
+    <section id="campania" class="block">
+      <p class="block-num">03 — Il contesto regionale</p>
+      <h2 class="block-title">Campania e Irpinia nel quadro nazionale.</h2>
+      <p class="block-intro">La Campania è la regione con più scioglimenti in Italia nel decennio 2010–2019: 283, pari al 15,8% del totale nazionale. Il 36% dei comuni campani è stato sciolto almeno una volta. L'Irpinia condivide questa vulnerabilità strutturale.</p>
+
+      <h3 class="sub">Il peso della Campania</h3>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th>Indicatore</th><th>Dato</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Scioglimenti in Campania, 2010–2019</td>
+              <td class="val neg">283</td>
+            </tr>
+            <tr>
+              <td>Quota sul totale nazionale</td>
+              <td class="val neg">15,8%</td>
+            </tr>
+            <tr>
+              <td>Comuni campani sciolti almeno una volta</td>
+              <td class="val neg">36% dei comuni regionali</td>
+            </tr>
+            <tr>
+              <td>Di cui per mafia (art. 143)</td>
+              <td class="val">24 commissariamenti</td>
+            </tr>
+            <tr>
+              <td>Province più colpite</td>
+              <td>Napoli e Caserta — concentrano il 77% dei pluricommissariati campani</td>
+            </tr>
+            <tr>
+              <td>Irpinia (Avellino)</td>
+              <td>Vulnerabilità da frammentazione politica nei piccoli comuni</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <!-- FONTI -->
+    <section id="fonti" class="block">
+      <p class="block-num">Fonti</p>
+      <h2 class="block-title">Mappa numeri → fonti.</h2>
+      <p class="block-intro">Ogni dato in questa pagina è tratto da un documento pubblico.</p>
+
+      <div class="fonti">
+        <h4>Dati — Openpolis 2019</h4>
+        <ul>
+          <li><strong>1.753 comuni sciolti / 1.466 unici / 63% cause politiche / 38% dimissioni consiglieri / 22% dimissioni sindaco / 7,7% mafia / 240 pluricommissariati / 283 Campania / 15,8%</strong> <span class="src-flag verified">verificato</span> — Openpolis, rapporto "Fuori dal comune", esercizio #18, 3 dicembre 2019. <a href="https://www.openpolis.it/esercizi/gli-scioglimenti-di-comuni-e-altri-enti-dal-2010-a-oggi/" target="_blank">openpolis.it</a></li>
+          <li><strong>77% pluricommissariati campani nelle province di Napoli e Caserta / 36% dei comuni campani sciolti almeno una volta</strong> <span class="src-flag verified">verificato</span> — stessa fonte Openpolis 2019.</li>
+        </ul>
+
+        <h4>Quadro normativo</h4>
+        <ul>
+          <li><strong>Art. 141 TUEL — cause e procedura di scioglimento</strong> <span class="src-flag verified">verificato</span> — <a href="https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticolo?art.versione=1&art.idGruppo=17&art.flagTipoArticolo=0&art.codiceRedazionale=000G0304&art.idArticolo=141&art.idSottoArticolo=1&art.idSottoArticolo1=10&art.dataPubblicazioneGazzetta=2000-09-28&art.progressivo=0" target="_blank">Gazzetta Ufficiale — TUEL art. 141</a></li>
+          <li><strong>Art. 227 TUEL — rendiconto di gestione e termine 30 aprile / diffida prefettizia 20 giorni</strong> <span class="src-flag verified">verificato</span> — D.Lgs. 267/2000</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NOTA METODOLOGICA -->
+    <section id="metodo" class="block" style="border-bottom:none;">
+      <p class="block-num">Metodo</p>
+      <h2 class="block-title">Come è stata costruita questa pagina.</h2>
+
+      <p>I dati numerici vengono tutti dal rapporto Openpolis "Fuori dal comune" (dicembre 2019), basato su dati del Ministero dell'Interno. Sono dati osservazionali diretti: numero di scioglimenti, cause, distribuzione geografica. Il quadro normativo è tratto dal TUEL (D.Lgs. 267/2000).</p>
+
+      <div class="ai-notice">
+        <p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+        <p class="ai-notice-text">Nella stesura dei testi è stato utilizzato un modello di intelligenza artificiale come strumento di lavoro. Ogni numero è stato verificato rispetto alla fonte primaria (Openpolis 2019). <strong>Se individui un errore o un'imprecisione, segnalamelo</strong>: la pagina verrà aggiornata.</p>
+      </div>
+
+      <div class="manifest">
+        <p class="manifest-hed">Il metodo</p>
+        <p class="manifest-text">I dati sono pubblici. Le fonti sono linkate e verificabili. I numeri sono mostrati per intero, senza interpretazioni aggiunte.</p>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      Curata da <strong>Raffaele De Piano</strong> —
+      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a><br>
+      Tutti i dati sono pubblici e le fonti sono citate. I numeri sono mostrati per intero e verificabili da chiunque.
+    </div>
+    <div class="footer-r">Ultimo aggiornamento: maggio 2026<br>Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+  <script src="theme-mandarin.js" defer></script>
+</body>
+</html>
