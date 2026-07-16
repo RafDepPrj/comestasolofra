@@ -15,13 +15,7 @@
 <meta name="twitter:description" content="Da Liverpool a Matera, da Bilbao al Rione Sanità: posti che hanno scelto una direzione e l'hanno resa concreta. Spunti, non modelli — per immaginare Solofra tra vent'anni.">
 <meta name="twitter:image" content="https://rafdepprj.github.io/comestasolofra/logo.png">
 <link rel="canonical" href="https://rafdepprj.github.io/comestasolofra/altrove.html">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QXKKYEGK04');
-</script>
+<script defer src="analytics.js"></script>
 <link rel="stylesheet" href="shared.css">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -115,13 +109,7 @@ td.econ-num { width:84px; }
   <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è diversa dalle altre. Non mostra dati su Solofra: raccoglie esempi da altri luoghi per far venire idee. I posti e le trasformazioni sono reali e documentati, ma le cifre esatte vanno sempre verificate alla fonte. Sono spunti, non modelli da copiare.</div>
 </div>
 
-<header class="mn-header">
-  <div class="mn-header-inner">
-    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
-    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="mn-nav" id="mnNav"></nav>
-  </div>
-</header>
+<header class="mn-header" id="mnHeader"></header>
 
 <div class="hero">
   <p class="hero-eyebrow">Spunti da altre realtà · aggiornato giugno 2026</p>
@@ -426,8 +414,7 @@ td.econ-num { width:84px; }
 <footer>
   <div class="footer-inner">
     <div class="footer-l">
-      Curata da <strong>Raffaele De Piano</strong> —
-      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a> · <a href="https://t.me/comestasolofra" target="_blank">Telegram</a><br>
+      <span id="mnFooterCredit"></span><br>
       Spunti da casi pubblici e documentati. Le cifre esatte vanno verificate alla fonte.
     </div>
     <div class="footer-r">Ultimo aggiornamento: giugno 2026<br>Solofra (AV), Campania</div>

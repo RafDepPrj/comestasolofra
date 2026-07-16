@@ -15,13 +15,7 @@
 <meta name="twitter:description" content="Le idee dei solofrani sul paese fra vent'anni, raccolte con un sondaggio anonimo aperto. Pubblicate per intero, comprese quelle critiche.">
 <meta name="twitter:image" content="https://rafdepprj.github.io/comestasolofra/logo.png">
 <link rel="canonical" href="https://rafdepprj.github.io/comestasolofra/idee.html">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QXKKYEGK04');
-</script>
+<script defer src="analytics.js"></script>
 <link rel="stylesheet" href="shared.css">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -115,13 +109,7 @@ td.econ-num { width:84px; }
   <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina raccoglie le risposte a un sondaggio anonimo aperto. Hanno risposto 33 persone. <strong>Non è un campione rappresentativo del paese</strong> (vedi il riquadro più sotto): vale come raccolta di idee, non come misura di cosa pensa Solofra.</div>
 </div>
 
-<header class="mn-header">
-  <div class="mn-header-inner">
-    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
-    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="mn-nav" id="mnNav"></nav>
-  </div>
-</header>
+<header class="mn-header" id="mnHeader"></header>
 
 <div class="hero">
   <p class="hero-eyebrow">La Solofra che immaginate · giugno 2026</p>
@@ -241,7 +229,7 @@ Un luogo capace di valorizzare competenze, impegno e idee, senza costringere chi
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-l">Curata da <strong>Raffaele De Piano</strong> — <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a> · <a href="https://t.me/comestasolofra" target="_blank">Telegram</a><br>Raccolta di idee da sondaggio anonimo aperto. Non è un sondaggio rappresentativo.</div>
+    <div class="footer-l"><span id="mnFooterCredit"></span><br>Raccolta di idee da sondaggio anonimo aperto. Non è un sondaggio rappresentativo.</div>
     <div class="footer-r">Ultimo aggiornamento: giugno 2026<br>Solofra (AV), Campania</div>
   </div>
 </footer>
