@@ -32,9 +32,9 @@ a.inline:hover { color: var(--accent); border-color: var(--accent); }
 h3.sub { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; margin-top: 40px; margin-bottom: 18px; color: var(--ink); }
 h3.sub:first-child { margin-top: 0; }
 
-.layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: 1fr; gap: 48px; }
+.layout { max-width: 1060px; margin: 0 auto; padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px); display: grid; grid-template-columns: minmax(0,1fr); gap: 48px; }
 @media (min-width: 960px) {
-.layout { grid-template-columns: 220px 1fr; gap: 64px; }
+.layout { grid-template-columns: 220px minmax(0,1fr); gap: 64px; }
 }
 .toc { font-size: 13px; }
 @media (min-width: 960px) {
