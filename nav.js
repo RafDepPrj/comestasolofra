@@ -58,7 +58,7 @@
     if (!header) return;
     header.innerHTML =
       '<div class="mn-header-inner">'
-      + '<a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>'
+      + '<a href="index.html" class="mn-brand"><img class="mn-logo" src="logo-avatar.jpg" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>'
       + '<button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>'
       + '<nav class="mn-nav" id="mnNav"></nav>'
       + '</div>';
