@@ -15,13 +15,7 @@
 <meta name="twitter:description" content="Solofra ha perso 600 residenti in dieci anni. Cosa significa davvero per il Comune, il commercio, i servizi.">
 <meta name="twitter:image" content="https://rafdepprj.github.io/comestasolofra/logo.png">
 <link rel="canonical" href="https://rafdepprj.github.io/comestasolofra/demografia.html">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QXKKYEGK04');
-</script>
+<script defer src="analytics.js"></script>
 <link rel="stylesheet" href="shared.css">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -104,13 +98,7 @@ nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spac
   <div class="disclaimer-inner"><strong>Nota:</strong> questa pagina è stata realizzata con il supporto di strumenti di intelligenza artificiale. I contenuti sono stati verificati dall'autore, ma potrebbero contenere imprecisioni. Le fonti sono citate e verificabili. Segnalazioni benvenute.</div>
 </div>
 
-<header class="mn-header">
-  <div class="mn-header-inner">
-    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
-    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="mn-nav" id="mnNav"></nav>
-  </div>
-</header>
+<header class="mn-header" id="mnHeader"></header>
 
 <div class="hero">
   <p class="hero-eyebrow">Sezione 01 · Demografia · Aprile 2026</p>
@@ -325,8 +313,7 @@ nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; letter-spac
 <footer>
   <div class="footer-inner">
     <div class="footer-l">
-      Curata da <strong>Raffaele De Piano</strong> —
-      <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a> · <a href="https://t.me/comestasolofra" target="_blank">Telegram</a><br>
+      <span id="mnFooterCredit"></span><br>
       Tutti i dati sono pubblici e le fonti sono citate. I calcoli sono mostrati per intero e verificabili da chiunque.
     </div>
     <div class="footer-r">Prima pubblicazione: aprile 2026<br>Solofra (AV), Campania</div>

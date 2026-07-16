@@ -108,23 +108,11 @@
 
   @media (max-width:640px){ .tiles{ grid-template-columns:1fr; } }
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKKYEGK04"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QXKKYEGK04');
-</script>
+<script defer src="analytics.js"></script>
 </head>
 <body>
 
-<header class="mn-header">
-  <div class="mn-header-inner">
-    <a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>
-    <button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="mn-nav" id="mnNav"></nav>
-  </div>
-</header>
+<header class="mn-header" id="mnHeader"></header>
 
 <section class="hero">
   <p class="hero-eyebrow">Dati pubblici · Solofra (AV)</p>
@@ -148,7 +136,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-l">
-      Curata da <strong>Raffaele De Piano</strong> — <a href="https://www.facebook.com/raf.dep/" target="_blank">facebook.com/raf.dep</a> · <a href="https://t.me/comestasolofra" target="_blank">Telegram</a><br>
+      <span id="mnFooterCredit"></span><br>
       Tutti i dati sono pubblici e le fonti sono citate.
     </div>
     <div class="footer-r">Ultimo aggiornamento: luglio 2026<br>Solofra (AV), Campania</div>

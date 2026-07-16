@@ -1,4 +1,8 @@
 (function () {
+  /* ── Punti unici di aggiornamento per tutto il sito ── */
+  var FACEBOOK_URL = 'https://www.facebook.com/raf.dep/';
+  var TELEGRAM_URL = 'https://t.me/comestasolofra';
+
   /* ── Aggiungere una sezione = aggiungere UNA riga qui ── */
   var SEZIONI = [
     { file: 'index.html',         label: 'Home' },
@@ -48,6 +52,26 @@
       cat: 'Servizio',
       desc: 'Qualità dell\'aria a Solofra dai dati ARPA Campania: come funziona il monitoraggio automatico e dove seguire gli aggiornamenti.' },
   ];
+
+  function buildHeader() {
+    var header = document.getElementById('mnHeader');
+    if (!header) return;
+    header.innerHTML =
+      '<div class="mn-header-inner">'
+      + '<a href="index.html" class="mn-brand"><img class="mn-logo" src="logo.png" alt="Raffaele De Piano"><span class="mn-wordmark">Come sta <em>Solofra</em></span></a>'
+      + '<button class="mn-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>'
+      + '<nav class="mn-nav" id="mnNav"></nav>'
+      + '</div>';
+  }
+
+  function buildFooterCredit() {
+    var el = document.getElementById('mnFooterCredit');
+    if (!el) return;
+    el.innerHTML =
+      'Curata da <strong>Raffaele De Piano</strong> — '
+      + '<a href="' + FACEBOOK_URL + '" target="_blank">facebook.com/raf.dep</a> · '
+      + '<a href="' + TELEGRAM_URL + '" target="_blank">Telegram</a>';
+  }
 
   function buildNav() {
     var nav = document.getElementById('mnNav');
@@ -99,8 +123,10 @@
   }
 
   function init() {
+    buildHeader();
     buildNav();
     buildCards();
+    buildFooterCredit();
     initToggle();
   }
 
