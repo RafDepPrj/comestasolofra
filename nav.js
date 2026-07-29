@@ -51,9 +51,8 @@
     { file: 'telegram.html',      label: 'Canale Telegram',
       cat: 'Servizio',
       desc: 'Un canale gratuito che segue aria e acqua a Solofra e scrive solo quando c\'è qualcosa da sapere davvero. Come iscriversi e cosa ricevi.' },
-    { file: 'aria.html',          label: 'Qualità dell\'aria',
-      cat: 'Servizio',
-      desc: 'Il dettaglio del servizio sull\'aria del canale Telegram: come funziona il monitoraggio automatico e dove seguire gli aggiornamenti.' },
+    /* aria.html e acqua.html sono sottopagine di telegram.html: linkate da lì,
+       non compaiono nel menu principale né tra le card della home. */
   ];
 
   function buildHeader() {

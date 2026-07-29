@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'acqua — Come sta Solofra</title>
+<meta name="description" content="Come funziona il servizio sull'acqua potabile di Solofra: quando arrivano gli aggiornamenti, cosa spiegano, e dove seguirli su Telegram.">
+<meta property="og:title" content="L'acqua — Come sta Solofra">
+<meta property="og:description" content="Ogni volta che il gestore idrico pubblica nuove analisi, un messaggio dice se l'acqua di Solofra è conforme alla legge — spiegato in parole semplici.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rafdepprj.github.io/comestasolofra/acqua.html">
+<meta property="og:image" content="https://rafdepprj.github.io/comestasolofra/logo-social.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="L'acqua — Come sta Solofra">
+<meta name="twitter:description" content="Ogni volta che il gestore idrico pubblica nuove analisi, un messaggio dice se l'acqua di Solofra è conforme alla legge — spiegato in parole semplici.">
+<meta name="twitter:image" content="https://rafdepprj.github.io/comestasolofra/logo-social.jpg">
+<link rel="canonical" href="https://rafdepprj.github.io/comestasolofra/acqua.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script defer src="analytics.js"></script>
+<link rel="stylesheet" href="shared.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.btn-cta { display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 14px; font-weight: 500; padding: 12px 22px; border-radius: 8px; letter-spacing: 0.01em; transition: opacity .15s; }
+.btn-cta:hover { opacity: .85; }
+.insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+.insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+.ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+.tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+.tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+.tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+.tbl-insights tr:last-child td { border-bottom: none; }
+.tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+.tbl-insights .col-lbl { color: var(--ink-2); font-size: 13.5px; }
+@media (max-width: 720px) {
+.tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+.tbl-insights .col-infra { font-size: 14px; }
+}
+.solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+.cao-group { margin-top: 36px; }
+.cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.cao-group-hed .dot.amber { background: var(--amber); }
+.cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+.cao-group.a h3 { color: var(--amber); }
+.cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+.cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+.cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+.cao-card:hover { transform: translateY(-2px); }
+.cao-card.a { border-top-color: var(--amber); }
+.cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+.cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.cao-card-body strong { font-weight: 500; color: var(--ink); }
+.fonti { font-size: 13px; }
+.fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+.fonti h4:first-child { margin-top: 0; }
+.fonti ul { list-style: none; }
+.fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+.fonti li:last-child { border-bottom: none; }
+.fonti li strong { color: var(--ink); font-weight: 500; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+<div class="disclaimer">
+<div class="disclaimer-inner"><strong>Nota:</strong> questo servizio elabora automaticamente le analisi pubblicate dal gestore idrico. Sono dati di terze parti, non validati dal canale: possono essere corretti a posteriori dall'ente di riferimento. Errori o imprecisioni sono possibili: segnalazioni e correzioni sono benvenute.</div>
+</div>
+<header class="mn-header" id="mnHeader"></header>
+
+<div class="hero">
+<p class="hero-eyebrow">Servizio · luglio 2026</p>
+<h1 class="hero-title">L'acqua si analizza,<br><em>tu lo sai subito.</em></h1>
+<p class="hero-sub">Ogni volta che il gestore idrico pubblica le nuove analisi dell'acqua di Solofra, un messaggio automatico dice se è conforme alla legge, con i numeri più importanti spiegati in parole semplici. Questa pagina spiega come funziona: cosa contiene il messaggio, ogni quanto arriva, e dove seguirlo.</p>
+<div class="hero-meta">
+A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+<span>·</span>
+<span>Analisi del gestore idrico</span>
+</div>
+<div style="margin-top:20px;">
+<a class="btn-cta" href="https://t.me/comestasolofra" target="_blank">Segui il canale su Telegram →</a>
+</div>
+<p style="margin-top:14px; font-size:13px; color:var(--ink-3);">Gratuito, nessuna registrazione, nessun dato personale richiesto. Ci si può disiscrivere in qualunque momento.</p>
+</div>
+
+<hr class="div">
+
+<!-- IN SINTESI -->
+<div class="insights-wrap">
+<p class="insights-hed">In sintesi</p>
+<p class="insights-sub">Le domande più immediate — quando arriva un messaggio, cosa contiene, cosa succede se qualcosa non torna — con la risposta diretta. Il dettaglio di ciascun punto è nelle sezioni sotto.</p>
+<div class="ins-tbl-wrap">
+<table class="tbl-insights">
+<thead>
+<tr>
+<th class="col-infra">Domanda</th>
+<th class="col-lbl">Risposta</th>
+<th class="col-lbl">Perché</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-infra">Quando arriva un messaggio</td>
+<td class="col-lbl">ogni volta che il gestore pubblica nuove analisi</td>
+<td class="col-lbl">il servizio non inventa un dato tra un'analisi e l'altra: segue i tempi di chi analizza davvero l'acqua</td>
+</tr>
+<tr>
+<td class="col-infra">Frequenza indicativa</td>
+<td class="col-lbl">circa una volta a settimana</td>
+<td class="col-lbl">non è un valore fisso: dipende da quando il gestore pubblica, non da un calendario del canale</td>
+</tr>
+<tr>
+<td class="col-infra">Cosa contiene</td>
+<td class="col-lbl">conformità di legge + parametri chiave spiegati</td>
+<td class="col-lbl">durezza, batteri, nitrati, e sempre un controllo sui solventi industriali</td>
+</tr>
+<tr>
+<td class="col-infra">Notifiche notturne</td>
+<td class="col-lbl">disattivate, 23–7</td>
+<td class="col-lbl">stesso criterio del servizio sull'aria</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- COSA VA LETTO CON ONESTÀ -->
+<div class="solofra-wrap" style="padding-top:0;">
+<div class="cao-group a">
+<div class="cao-group-hed">
+<span class="dot amber"></span>
+<h3>Cosa va letto con onestà</h3>
+<span class="cao-count">3 punti</span>
+</div>
+<div class="cao-cards">
+<div class="cao-card a">
+<h4 class="cao-card-title">Il dato viene dal gestore, non dal canale</h4>
+<p class="cao-card-body">Le analisi sono fatte da un laboratorio del gestore idrico. Il servizio le legge e le traduce in linguaggio semplice: <strong>non effettua analisi proprie</strong> e non ha modo di verificarle indipendentemente.</p>
+</div>
+<div class="cao-card a">
+<h4 class="cao-card-title">Aggiornamento legato alla pubblicazione</h4>
+<p class="cao-card-body">Non c'è un controllo continuo come per l'aria: il messaggio arriva <strong>quando il gestore pubblica</strong>, non a un orario o una frequenza decisa dal canale.</p>
+</div>
+<div class="cao-card a">
+<h4 class="cao-card-title">Il controllo sui solventi è sempre presente</h4>
+<p class="cao-card-body">Trattandosi di un tema storicamente sensibile per Solofra, il messaggio riporta sempre l'esito del controllo sui solventi industriali — <strong>anche quando il valore è del tutto irrilevante</strong> — invece di ometterlo quando non c'è nulla da segnalare.</p>
+</div>
+</div>
+</div>
+</div>
+
+<hr class="div">
+
+<div class="layout">
+<aside class="toc">
+<p class="toc-hed">In questa pagina</p>
+<ol>
+<li><a href="#cosa">Cos'è</a></li>
+<li><a href="#frequenza">Quando arriva un messaggio</a></li>
+<li><a href="#contenuto">Cosa contiene il messaggio</a></li>
+<li><a href="#canale">Il canale Telegram</a></li>
+<li><a href="#fonti">Mappa numeri → fonti</a></li>
+<li><a href="#metodo">Nota metodologica</a></li>
+</ol>
+</aside>
+<main>
+
+<!-- 1 COS'È -->
+<section id="cosa" class="block">
+<p class="block-num">01 — Il servizio</p>
+<h2 class="block-title">Cos'è.</h2>
+<p class="block-intro">Un servizio del canale Telegram "Come sta Solofra" che pubblica lo stato dell'acqua potabile: conforme o no alla legge, e i numeri più importanti spiegati senza gergo tecnico. Il dato è del gestore idrico, già pubblico — questo servizio lo prende e lo rende leggibile.</p>
+<p>È il secondo servizio del canale, dopo quello sull'aria, con lo stesso metodo: dati pubblici, resi semplici. Per la panoramica di entrambi, <a class="inline" href="telegram.html">vedi qui</a>.</p>
+</section>
+
+<!-- 2 FREQUENZA -->
+<section id="frequenza" class="block">
+<p class="block-num">02 — La logica</p>
+<h2 class="block-title">Quando arriva un messaggio.</h2>
+<p class="block-intro">A differenza dell'aria, che viene controllata più volte al giorno da una rete automatica, l'acqua viene analizzata in laboratorio dal gestore idrico — un processo che non può avvenire in tempo reale.</p>
+<p>Per questo il servizio non ha un orario fisso: <strong>arriva un messaggio ogni volta che il gestore pubblica nuove analisi</strong>, circa una volta a settimana. Non è un valore garantito: se il gestore pubblica prima o dopo, il messaggio segue lo stesso ritmo.</p>
+<p class="note">In pratica: meno frequente ma più corposo dei messaggi sull'aria, perché ogni analisi porta con sé più numeri da leggere in una volta sola.</p>
+</section>
+
+<!-- 3 CONTENUTO -->
+<section id="contenuto" class="block">
+<p class="block-num">03 — Cosa ricevi</p>
+<h2 class="block-title">Cosa contiene il messaggio.</h2>
+<p class="block-intro">Il messaggio dice prima di tutto se l'acqua è conforme alla legge, poi scende nel dettaglio dei parametri più utili da sapere.</p>
+<h3 class="sub">I numeri spiegati</h3>
+<p><strong>Durezza</strong> — utile per capire quanto calcare si deposita su lavatrice e caldaia. <strong>Batteri</strong> — l'esito dei test di conformità igienico-sanitaria. <strong>Nitrati</strong> — un valore importante in particolare per chi prepara il latte artificiale ai neonati. <strong>Solventi industriali</strong> — controllati sempre, tema storicamente sensibile per Solofra, anche quando il valore è irrilevante.</p>
+<h3 class="sub">Come sono raccontate le anomalie</h3>
+<p>Se un parametro non è conforme, il messaggio lo segnala <strong>in modo specifico, punto per punto</strong> — mai con un generico "va tutto bene" che potrebbe nascondere un problema puntuale.</p>
+<p class="note">Notifiche disattivate tra le 23 e le 7 di notte, come per il servizio sull'aria.</p>
+</section>
+
+<!-- 4 CANALE -->
+<section id="canale" class="block">
+<p class="block-num">04 — Dove seguirlo</p>
+<h2 class="block-title">Il canale Telegram.</h2>
+<p class="block-intro">Il servizio vive sullo stesso canale Telegram di "Come sta Solofra", insieme a quello sull'aria: chi si iscrive riceve entrambi, direttamente, senza dover controllare questa pagina.</p>
+<p><a class="btn-cta" href="https://t.me/comestasolofra" target="_blank">Segui "Come sta Solofra" su Telegram →</a></p>
+</section>
+
+<!-- FONTI -->
+<section id="fonti" class="block">
+<p class="block-num">Fonti</p>
+<h2 class="block-title">Mappa numeri → fonti</h2>
+<p class="block-intro">Ogni dato di questa pagina è tratto dalle analisi pubblicate dal gestore idrico che serve Solofra.</p>
+<div class="fonti">
+<h4>Qualità dell'acqua potabile</h4>
+<ul>
+<li><strong>Analisi di conformità</strong> — pubblicate periodicamente dal gestore idrico, come previsto dalla normativa sull'acqua destinata al consumo umano.</li>
+<li><strong>Soglie di riferimento</strong> — i limiti di legge italiani ed europei per l'acqua potabile, gli stessi usati dal gestore per dichiarare la conformità.</li>
+</ul>
+</div>
+</section>
+
+<!-- METODO -->
+<section id="metodo" class="block" style="border-bottom:none;">
+<p class="block-num">Metodo</p>
+<h2 class="block-title">Come funziona, dietro le quinte</h2>
+<p>Il servizio è un sistema automatico: nessuna persona decide caso per caso se pubblicare un messaggio. La lettura dell'analisi, il confronto con le soglie di legge e la decisione se e cosa segnalare seguono sempre la stessa logica descritta in questa pagina.</p>
+<p><strong>Non è un servizio di allerta sanitaria.</strong> È un bollettino informativo legato ai tempi di pubblicazione del gestore. Per informazioni sanitarie o situazioni di emergenza, il riferimento restano i canali ufficiali del gestore idrico e delle autorità sanitarie.</p>
+<div class="ai-notice">
+<p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+<p class="ai-notice-text">Il sistema che genera i messaggi — dalla lettura dell'analisi alla decisione se pubblicare, fino al testo e all'immagine — è stato costruito con il supporto di strumenti di intelligenza artificiale. Il dato di partenza resta sempre quello pubblico del gestore idrico, non elaborato nel merito: l'intelligenza artificiale ha aiutato a costruire la logica e la forma, non a interpretare i numeri. <strong>Se noti un'anomalia o un comportamento che non torna</strong>, segnalamelo: verrà verificato e corretto.</p>
+</div>
+<div class="manifest">
+<p class="manifest-hed">Il metodo</p>
+<p class="manifest-text">I dati sono pubblici. I calcoli sono mostrati per intero. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le opinioni sono separate dai fatti.</p>
+</div>
+</section>
+
+</main>
+</div>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-l">
+<span id="mnFooterCredit"></span><br>
+Tutti i dati sono pubblici e le fonti sono citate.
+</div>
+<div class="footer-r">Ultimo aggiornamento: luglio 2026<br>Solofra (AV), Campania</div>
+</div>
+</footer>
+<script src="nav.js" defer></script>
+</body>
+</html>
