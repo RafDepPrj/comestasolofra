@@ -44,13 +44,16 @@
       desc: 'Posti lontani da Solofra che hanno scelto una direzione e ci hanno lavorato: casi documentati, non ricette.' },
     { file: 'idee.html',          label: 'Le vostre idee',
       cat: 'Partecipazione',
-      desc: 'Trentatré risposte anonime alla domanda: come immaginate Solofra fra vent\'anni? Le idee, intere e senza tagli.' },
+      desc: 'Trentacinque risposte anonime alla domanda: come immaginate Solofra fra vent\'anni? Le idee, intere e senza tagli.' },
     { file: 'resilienza.html',    label: 'Il caldo',
       cat: 'Clima',
       desc: 'I numeri su verde, acqua ed energia come strumenti di adattamento: cosa fanno i Comuni che hanno già iniziato.' },
-    { file: 'aria.html',          label: 'Aria',
+    { file: 'telegram.html',      label: 'Canale Telegram',
       cat: 'Servizio',
-      desc: 'Qualità dell\'aria a Solofra dai dati ARPA Campania: come funziona il monitoraggio automatico e dove seguire gli aggiornamenti.' },
+      desc: 'Un canale gratuito che segue aria e acqua a Solofra e scrive solo quando c\'è qualcosa da sapere davvero. Come iscriversi e cosa ricevi.' },
+    { file: 'aria.html',          label: 'Qualità dell\'aria',
+      cat: 'Servizio',
+      desc: 'Il dettaglio del servizio sull\'aria del canale Telegram: come funziona il monitoraggio automatico e dove seguire gli aggiornamenti.' },
   ];
 
   function buildHeader() {
