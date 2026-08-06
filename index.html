@@ -61,7 +61,7 @@
   .mn-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
   .mn-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
   .mn-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
-  .mn-nav{ display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; padding:6px 0 10px; background:var(--paper); border-bottom:1px solid var(--border); box-shadow:0 12px 28px rgba(0,0,0,0.07); }
+  .mn-nav{ display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; padding:6px 0 10px; background:var(--paper); border-bottom:1px solid var(--border); box-shadow:0 12px 28px rgba(0,0,0,0.07); max-height:calc(100vh - 62px); max-height:calc(100dvh - 62px); overflow-y:auto; -webkit-overflow-scrolling:touch; }
   .mn-nav.open{ display:flex; }
   .mn-nav a{ font-size:15px; color:var(--ink-2); text-decoration:none; padding:13px clamp(18px,5vw,80px); border-left:3px solid transparent; }
   .mn-nav a:hover{ color:var(--red); background:var(--paper-2); }
@@ -147,6 +147,6 @@
   </div>
 </footer>
 
-<script src="nav.js?v=2" defer></script>
+<script src="nav.js?v=3" defer></script>
 </body>
 </html>
