@@ -50,7 +50,7 @@
       desc: 'I numeri su verde, acqua ed energia come strumenti di adattamento: cosa fanno i Comuni che hanno già iniziato.' },
     { file: 'telegram.html',      label: 'Canale Telegram',
       cat: 'Servizio',
-      desc: 'Un canale gratuito che segue aria e acqua a Solofra e scrive solo quando c\'è qualcosa da sapere davvero. Come iscriversi e cosa ricevi.' },
+      desc: 'Un canale gratuito che segue aria, acqua, meteo e sismico a Solofra e scrive solo quando c\'è qualcosa da sapere davvero. Come iscriversi e cosa ricevi.' },
     /* aria.html e acqua.html sono sottopagine di telegram.html: linkate da lì,
        non compaiono nel menu principale né tra le card della home. */
   ];
