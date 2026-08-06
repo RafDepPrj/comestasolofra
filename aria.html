@@ -102,9 +102,9 @@ table.data th, table.data td { padding: 10px 12px; }
 <header class="mn-header" id="mnHeader"></header>
 
 <div class="hero">
-<p class="hero-eyebrow">Servizio · aggiornato luglio 2026</p>
+<p class="hero-eyebrow">Servizio · aggiornato agosto 2026</p>
 <h1 class="hero-title">L'aria si controlla,<br><em>non si racconta.</em></h1>
-<p class="hero-sub">Un dato pubblico di ARPA Campania, controllato più volte al giorno da un sistema automatico, che diventa un messaggio solo quando cambia davvero qualcosa. Questa pagina spiega come funziona: quando arrivano gli aggiornamenti, perché sono stati pensati così, e dove seguirli.</p>
+<p class="hero-sub">Un dato pubblico di ARPA Campania (via WAQI), controllato più volte al giorno da un sistema automatico, che diventa un messaggio solo quando cambia davvero qualcosa. Questa pagina spiega come funziona: quando arrivano gli aggiornamenti, cosa contengono, e dove seguirli.</p>
 <div class="hero-meta">
 A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
 <span>·</span>
@@ -157,6 +157,11 @@ A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele D
 <td class="col-num"><span class="big ok">ogni lunedì</span></td>
 <td class="col-lbl">sempre, a prescindere da quanti messaggi siano arrivati nei sette giorni precedenti</td>
 </tr>
+<tr>
+<td class="col-infra">Notifiche notturne</td>
+<td class="col-num"><span class="big">disattivate, 23–7</span></td>
+<td class="col-lbl">un cambio di fascia rilevato di notte non va perso: resta in coda e viene pubblicato al primo controllo utile del mattino</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -208,7 +213,9 @@ A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele D
 <p class="block-num">01 — Il servizio</p>
 <h2 class="block-title">Cos'è.</h2>
 <p class="block-intro">Un servizio del canale Telegram "Come sta Solofra" che pubblica come sta l'aria a Solofra: un semaforo, un numero, un consiglio pratico su cosa fare. Il dato è di ARPA Campania, già pubblico — questo servizio lo prende e lo rende leggibile e continuo, senza bisogno di sapere cos'è un indice AQI.</p>
-<p>È stato il primo servizio del canale, pensato per arrivare direttamente sul telefono invece che essere consultato su una pagina. Da allora se n'è aggiunto un altro, sull'acqua potabile, con lo stesso metodo: dati pubblici, resi semplici. Questa pagina spiega solo la parte sull'aria — per la panoramica completa del canale, <a class="inline" href="telegram.html">vedi qui</a>.</p>
+<p>È stato il primo servizio del canale, pensato per arrivare direttamente sul telefono invece che essere consultato su una pagina. Da allora se ne sono aggiunti altri tre — acqua potabile, allerta meteo, avviso sismico — con lo stesso metodo: dati pubblici, resi semplici. Questa pagina spiega solo la parte sull'aria — per la panoramica completa del canale, <a class="inline" href="telegram.html">vedi qui</a>.</p>
+<h3 class="sub">Cosa contiene un messaggio</h3>
+<p>Il valore AQI e la fascia con il suo colore, la <strong>tendenza</strong> rispetto all'ultimo controllo (in miglioramento, in peggioramento o stabile), la causa probabile dell'inquinante dominante spiegata in parole semplici, il confronto con i comuni vicini che hanno una centralina attiva (Avellino, Montoro, Mercato San Severino, Salerno) e, quando disponibile, un contesto rapido di temperatura, indice UV e previsione per domani.</p>
 </section>
 
 <!-- 2 FREQUENZA -->
@@ -222,6 +229,8 @@ A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele D
 <p>Un valore che oscilla proprio al confine tra due fasce (49, poi 51, poi 48...) rischierebbe di far rimbalzare il canale con messaggi ravvicinati e poco utili. Per questo tra un messaggio e l'altro deve passare <strong>almeno 4 ore</strong>, anche quando la fascia è appena cambiata: un margine che filtra il rumore senza nascondere un peggioramento vero.</p>
 <h3 class="sub">Se non cambia nulla per giorni</h3>
 <p>Un sistema che controlla ma non parla mai non si distingue da un sistema che si è fermato. Per questo, se l'aria resta nella stessa fascia per <strong>più di 7 giorni</strong>, arriva comunque un messaggio: non perché sia successo qualcosa, ma perché è l'unico modo per sapere con certezza che il controllo è ancora attivo, invece di doverlo semplicemente supporre.</p>
+<h3 class="sub">Di notte, in coda</h3>
+<p>Nessuna pubblicazione tra le 23:00 e le 7:00. Un cambio di fascia rilevato durante la notte non viene perso: resta in sospeso e viene pubblicato al primo controllo utile del mattino.</p>
 <p class="note">In pratica: nella maggior parte delle settimane arrivano pochi messaggi, quasi tutti legati a un cambiamento reale. È una scelta deliberata: meglio pochi messaggi che contano, che molti che si smette di leggere.</p>
 </section>
 
@@ -281,7 +290,7 @@ A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele D
 <span id="mnFooterCredit"></span><br>
 Tutti i dati sono pubblici e le fonti sono citate. I numeri sono verificabili da chiunque.
 </div>
-<div class="footer-r">Ultimo aggiornamento: luglio 2026<br>Solofra (AV), Campania</div>
+<div class="footer-r">Ultimo aggiornamento: agosto 2026<br>Solofra (AV), Campania</div>
 </div>
 </footer>
 <script src="nav.js?v=2" defer></script>

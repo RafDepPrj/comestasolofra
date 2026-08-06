@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'allerta meteo — Come sta Solofra</title>
+<meta name="description" content="Come funziona il servizio di allerta meteo di Solofra: quando arriva un messaggio, cosa contiene, e il limite reale del preavviso.">
+<meta property="og:title" content="L'allerta meteo — Come sta Solofra">
+<meta property="og:description" content="Un messaggio quando la Protezione Civile Regione Campania emette un'allerta gialla, arancione o rossa per Solofra — con un limite onesto sul preavviso reale.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rafdepprj.github.io/comestasolofra/meteo.html">
+<meta property="og:image" content="https://rafdepprj.github.io/comestasolofra/logo-social.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="L'allerta meteo — Come sta Solofra">
+<meta name="twitter:description" content="Un messaggio quando la Protezione Civile Regione Campania emette un'allerta gialla, arancione o rossa per Solofra — con un limite onesto sul preavviso reale.">
+<meta name="twitter:image" content="https://rafdepprj.github.io/comestasolofra/logo-social.jpg">
+<link rel="canonical" href="https://rafdepprj.github.io/comestasolofra/meteo.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script defer src="analytics.js"></script>
+<link rel="stylesheet" href="shared.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.btn-cta { display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 14px; font-weight: 500; padding: 12px 22px; border-radius: 8px; letter-spacing: 0.01em; transition: opacity .15s; }
+.btn-cta:hover { opacity: .85; }
+.insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+.insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+.ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+.tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+.tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+.tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+.tbl-insights tr:last-child td { border-bottom: none; }
+.tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+.tbl-insights .col-lbl { color: var(--ink-2); font-size: 13.5px; }
+@media (max-width: 720px) {
+.tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+.tbl-insights .col-infra { font-size: 14px; }
+}
+.solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+.cao-group { margin-top: 36px; }
+.cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.cao-group-hed .dot.amber { background: var(--amber); }
+.cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+.cao-group.a h3 { color: var(--amber); }
+.cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+.cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+.cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+.cao-card:hover { transform: translateY(-2px); }
+.cao-card.a { border-top-color: var(--amber); }
+.cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+.cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.cao-card-body strong { font-weight: 500; color: var(--ink); }
+.fonti { font-size: 13px; }
+.fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+.fonti h4:first-child { margin-top: 0; }
+.fonti ul { list-style: none; }
+.fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+.fonti li:last-child { border-bottom: none; }
+.fonti li strong { color: var(--ink); font-weight: 500; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+<div class="disclaimer">
+<div class="disclaimer-inner"><strong>Nota:</strong> questo servizio elabora automaticamente i bollettini pubblici della Protezione Civile Regione Campania. Non è un canale di allerta ufficiale: per indicazioni di sicurezza fare sempre riferimento alla Protezione Civile. Errori o imprecisioni sono possibili: segnalazioni e correzioni sono benvenute.</div>
+</div>
+<header class="mn-header" id="mnHeader"></header>
+
+<div class="hero">
+<p class="hero-eyebrow">Servizio · agosto 2026</p>
+<h1 class="hero-title">Il cielo cambia,<br><em>il canale se ne accorge.</em></h1>
+<p class="hero-sub">Un messaggio quando la Protezione Civile Regione Campania emette un'allerta gialla, arancione o rossa per la zona di Solofra — a qualunque ora, perché un'allerta severa non aspetta il mattino. Questa pagina spiega come funziona, e qual è il limite reale del preavviso.</p>
+<div class="hero-meta">
+A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+<span>·</span>
+<span>Protezione Civile Regione Campania</span>
+</div>
+<div style="margin-top:20px;">
+<a class="btn-cta" href="https://t.me/comestasolofra" target="_blank">Segui il canale su Telegram →</a>
+</div>
+<p style="margin-top:14px; font-size:13px; color:var(--ink-3);">Gratuito, nessuna registrazione, nessun dato personale richiesto. Ci si può disiscrivere in qualunque momento.</p>
+</div>
+
+<hr class="div">
+
+<!-- IN SINTESI -->
+<div class="insights-wrap">
+<p class="insights-hed">In sintesi</p>
+<p class="insights-sub">Le domande più immediate — quando arriva un messaggio, quanto preavviso dà davvero, cosa contiene — con la risposta diretta. Il dettaglio di ciascun punto è nelle sezioni sotto.</p>
+<div class="ins-tbl-wrap">
+<table class="tbl-insights">
+<thead>
+<tr>
+<th class="col-infra">Domanda</th>
+<th class="col-lbl">Risposta</th>
+<th class="col-lbl">Perché</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-infra">Quando arriva un messaggio</td>
+<td class="col-lbl">da livello giallo in su, solo se il bollettino è nuovo</td>
+<td class="col-lbl">il verde non genera notifiche: significherebbe un messaggio quasi ogni giorno, che si smetterebbe presto di leggere</td>
+</tr>
+<tr>
+<td class="col-infra">Zona monitorata</td>
+<td class="col-lbl">Zona 3 — Penisola sorrentino-amalfitana, Monti di Sarno e Monti Picentini</td>
+<td class="col-lbl">è la zona di allerta ufficiale della Protezione Civile Regione Campania a cui appartiene Solofra</td>
+</tr>
+<tr>
+<td class="col-infra">Preavviso reale</td>
+<td class="col-lbl">circa un'ora</td>
+<td class="col-lbl">il bollettino viene emesso la mattina stessa per una finestra che spesso inizia nel primo pomeriggio</td>
+</tr>
+<tr>
+<td class="col-infra">Notifiche notturne</td>
+<td class="col-lbl">sempre attive</td>
+<td class="col-lbl">un'allerta severa può arrivare a qualunque ora, a differenza di aria e acqua</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- COSA VA LETTO CON ONESTÀ -->
+<div class="solofra-wrap" style="padding-top:0;">
+<div class="cao-group a">
+<div class="cao-group-hed">
+<span class="dot amber"></span>
+<h3>Cosa va letto con onestà</h3>
+<span class="cao-count">3 punti</span>
+</div>
+<div class="cao-cards">
+<div class="cao-card a">
+<h4 class="cao-card-title">Il preavviso è più corto di quanto sembri</h4>
+<p class="cao-card-body">Il bollettino viene emesso la mattina per un rischio che può iniziare nel primo pomeriggio: il margine reale osservato è dell'ordine di <strong>circa un'ora</strong>, non "la sera prima". Utile per organizzarsi nell'immediato, non per pianificare la giornata in anticipo.</p>
+</div>
+<div class="cao-card a">
+<h4 class="cao-card-title">Non è un'allerta ufficiale</h4>
+<p class="cao-card-body">Resta un servizio informativo automatico che rilancia un bollettino pubblico: per decisioni di sicurezza il riferimento è sempre e solo la Protezione Civile.</p>
+</div>
+<div class="cao-card a">
+<h4 class="cao-card-title">Solo da livello giallo in su</h4>
+<p class="cao-card-body">Le allerte di livello verde non generano messaggi. Non perché non contino, ma perché notificarle tutte trasformerebbe il canale in rumore quotidiano.</p>
+</div>
+</div>
+</div>
+</div>
+
+<hr class="div">
+
+<div class="layout">
+<aside class="toc">
+<p class="toc-hed">In questa pagina</p>
+<ol>
+<li><a href="#cosa">Cos'è</a></li>
+<li><a href="#frequenza">Quando arriva un messaggio</a></li>
+<li><a href="#contenuto">Cosa contiene il messaggio</a></li>
+<li><a href="#canale">Il canale Telegram</a></li>
+<li><a href="#fonti">Mappa numeri → fonti</a></li>
+<li><a href="#metodo">Nota metodologica</a></li>
+</ol>
+</aside>
+<main>
+
+<!-- 1 COS'È -->
+<section id="cosa" class="block">
+<p class="block-num">01 — Il servizio</p>
+<h2 class="block-title">Cos'è.</h2>
+<p class="block-intro">Un servizio del canale Telegram "Come sta Solofra" che rilancia i bollettini di allerta meteo della Protezione Civile Regione Campania per la zona di Solofra, tradotti in un messaggio semplice da capire al volo.</p>
+<p>È nato da un evento reale: la grandinata del 4 agosto 2026, che ha danneggiato diverse auto a Solofra senza che fosse arrivato alcun avviso utile a chi le aveva parcheggiate in strada. È il terzo servizio del canale, dopo aria e acqua, con lo stesso metodo. Per la panoramica di tutti e quattro, <a class="inline" href="telegram.html">vedi qui</a>.</p>
+</section>
+
+<!-- 2 FREQUENZA -->
+<section id="frequenza" class="block">
+<p class="block-num">02 — La logica</p>
+<h2 class="block-title">Quando arriva un messaggio.</h2>
+<p class="block-intro">Il servizio controlla periodicamente i bollettini pubblicati dal Centro Funzionale Multirischi della Regione Campania per la Zona 3, a cui appartiene Solofra.</p>
+<p>Un messaggio arriva solo se il livello di allerta è <strong>giallo, arancione o rosso</strong>, e solo se il bollettino è nuovo o è stato aggiornato rispetto all'ultimo già notificato. Il livello verde — la situazione ordinaria — non genera mai un messaggio.</p>
+<h3 class="sub">Perché non c'è un blocco notturno</h3>
+<p>Aria e acqua non pubblicano tra le 23 e le 7: un cambiamento della qualità dell'aria o un'analisi dell'acqua possono aspettare qualche ora senza conseguenze. Un'allerta meteo severa no. Per questo il servizio meteo pubblica <strong>a qualunque ora</strong>, appena il bollettino è disponibile.</p>
+<p class="note">Il preavviso reale osservato è dell'ordine di circa un'ora: il bollettino viene emesso dalla Protezione Civile la mattina stessa, spesso per una finestra di rischio che inizia nel primo pomeriggio. Non è un limite del canale, ma dei tempi con cui la fonte ufficiale pubblica i propri bollettini.</p>
+</section>
+
+<!-- 3 CONTENUTO -->
+<section id="contenuto" class="block">
+<p class="block-num">03 — Cosa ricevi</p>
+<h2 class="block-title">Cosa contiene il messaggio.</h2>
+<p class="block-intro">Il messaggio riporta il livello di allerta (giallo, arancione o rosso), il tipo di rischio quando disponibile — per esempio "per temporali" — e il testo specifico dei fenomeni attesi per la zona, quando il bollettino lo fornisce.</p>
+<p>Include sempre il link alla fonte ufficiale della Protezione Civile Regione Campania, e un promemoria che questo non è un canale di emergenza: per indicazioni di sicurezza il riferimento resta sempre la Protezione Civile.</p>
+</section>
+
+<!-- 4 CANALE -->
+<section id="canale" class="block">
+<p class="block-num">04 — Dove seguirlo</p>
+<h2 class="block-title">Il canale Telegram.</h2>
+<p class="block-intro">Il servizio vive sullo stesso canale Telegram di "Come sta Solofra", insieme ad aria, acqua e sismico: chi si iscrive riceve tutti i messaggi, direttamente, senza dover controllare questa pagina.</p>
+<p><a class="btn-cta" href="https://t.me/comestasolofra" target="_blank">Segui "Come sta Solofra" su Telegram →</a></p>
+</section>
+
+<!-- FONTI -->
+<section id="fonti" class="block">
+<p class="block-num">Fonti</p>
+<h2 class="block-title">Mappa numeri → fonti</h2>
+<p class="block-intro">Ogni dato di questa pagina è tratto dai bollettini pubblicati dalla Protezione Civile Regione Campania.</p>
+<div class="fonti">
+<h4>Allerta meteo</h4>
+<ul>
+<li><strong>Bollettini di criticità e vigilanza meteo</strong> — Centro Funzionale Multirischi, Protezione Civile Regione Campania, Zona di allerta 3 (Penisola sorrentino-amalfitana, Monti di Sarno e Monti Picentini).</li>
+<li><strong>Codici colore delle allerte</strong> — standard nazionale di Protezione Civile (verde, giallo, arancione, rosso), lo stesso usato in tutti i bollettini regionali.</li>
+</ul>
+</div>
+</section>
+
+<!-- METODO -->
+<section id="metodo" class="block" style="border-bottom:none;">
+<p class="block-num">Metodo</p>
+<h2 class="block-title">Come funziona, dietro le quinte</h2>
+<p>Il servizio è un sistema automatico: nessuna persona decide caso per caso se pubblicare un messaggio. La lettura del bollettino, il confronto con l'ultimo già notificato e la decisione se pubblicare seguono sempre la stessa logica descritta in questa pagina.</p>
+<p><strong>Non è un servizio di allerta ufficiale.</strong> È un bollettino informativo che rilancia, in forma semplice, un'informazione già pubblica. Per indicazioni di sicurezza e situazioni di emergenza, il riferimento restano i canali ufficiali della Protezione Civile.</p>
+<div class="ai-notice">
+<p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+<p class="ai-notice-text">Il sistema che genera i messaggi — dalla lettura del bollettino alla decisione se pubblicare, fino al testo e all'immagine — è stato costruito con il supporto di strumenti di intelligenza artificiale. Il dato di partenza resta sempre quello pubblico della Protezione Civile, non elaborato nel merito: l'intelligenza artificiale ha aiutato a costruire la logica e la forma, non a interpretare i bollettini. <strong>Se noti un'anomalia o un comportamento che non torna</strong>, segnalamelo: verrà verificato e corretto.</p>
+</div>
+<div class="manifest">
+<p class="manifest-hed">Il metodo</p>
+<p class="manifest-text">I dati sono pubblici. I calcoli sono mostrati per intero. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le opinioni sono separate dai fatti.</p>
+</div>
+</section>
+
+</main>
+</div>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-l">
+<span id="mnFooterCredit"></span><br>
+Tutti i dati sono pubblici e le fonti sono citate.
+</div>
+<div class="footer-r">Ultimo aggiornamento: agosto 2026<br>Solofra (AV), Campania</div>
+</div>
+</footer>
+<script src="nav.js?v=2" defer></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'avviso sismico — Come sta Solofra</title>
+<meta name="description" content="Come funziona il servizio di avviso sismico di Solofra: soglie di rilevanza, cosa contiene un messaggio, e perché non è un canale di emergenza.">
+<meta property="og:title" content="L'avviso sismico — Come sta Solofra">
+<meta property="og:description" content="Un messaggio quando il catalogo INGV registra, vicino a Solofra, un evento sismico sopra soglia — non per le microscosse che l'Irpinia registra di continuo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rafdepprj.github.io/comestasolofra/sismico.html">
+<meta property="og:image" content="https://rafdepprj.github.io/comestasolofra/logo-social.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="L'avviso sismico — Come sta Solofra">
+<meta name="twitter:description" content="Un messaggio quando il catalogo INGV registra, vicino a Solofra, un evento sismico sopra soglia — non per le microscosse che l'Irpinia registra di continuo.">
+<meta name="twitter:image" content="https://rafdepprj.github.io/comestasolofra/logo-social.jpg">
+<link rel="canonical" href="https://rafdepprj.github.io/comestasolofra/sismico.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script defer src="analytics.js"></script>
+<link rel="stylesheet" href="shared.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.btn-cta { display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 14px; font-weight: 500; padding: 12px 22px; border-radius: 8px; letter-spacing: 0.01em; transition: opacity .15s; }
+.btn-cta:hover { opacity: .85; }
+.insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
+.insights-hed { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.insights-sub { font-size: 13px; color: var(--ink-2); margin-bottom: 20px; max-width: 640px; line-height: 1.6; }
+.ins-tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--paper); }
+.tbl-insights { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+.tbl-insights th { text-align: left; padding: 14px 16px; font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+.tbl-insights td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--ink); }
+.tbl-insights tr:last-child td { border-bottom: none; }
+.tbl-insights .col-infra { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+.tbl-insights .col-lbl { color: var(--ink-2); font-size: 13.5px; }
+@media (max-width: 720px) {
+.tbl-insights th, .tbl-insights td { padding: 12px; font-size: 13px; }
+.tbl-insights .col-infra { font-size: 14px; }
+}
+.solofra-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(40px,5vw,60px) clamp(20px,5vw,80px); }
+.cao-group { margin-top: 36px; }
+.cao-group-hed { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.cao-group-hed .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.cao-group-hed .dot.amber { background: var(--amber); }
+.cao-group-hed h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+.cao-group.a h3 { color: var(--amber); }
+.cao-group-hed .cao-count { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; margin-left: auto; }
+.cao-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 720px) { .cao-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .cao-cards { grid-template-columns: repeat(3, 1fr); } }
+.cao-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: 20px; border-top: 3px solid var(--ink-3); transition: transform .15s, border-color .15s; }
+.cao-card:hover { transform: translateY(-2px); }
+.cao-card.a { border-top-color: var(--amber); }
+.cao-card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--ink); }
+.cao-card-body { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.cao-card-body strong { font-weight: 500; color: var(--ink); }
+.fonti { font-size: 13px; }
+.fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
+.fonti h4:first-child { margin-top: 0; }
+.fonti ul { list-style: none; }
+.fonti li { padding: 10px 0; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--ink-2); }
+.fonti li:last-child { border-bottom: none; }
+.fonti li strong { color: var(--ink); font-weight: 500; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme-mandarin.css">
+</head>
+<body>
+<div class="disclaimer">
+<div class="disclaimer-inner"><strong>Nota:</strong> questo servizio elabora automaticamente il catalogo pubblico INGV (ISIDe). Non è un canale di emergenza ufficiale: per indicazioni di sicurezza fare sempre riferimento a INGV e Protezione Civile. I dati sono preliminari e possono essere rivisti nelle ore successive.</div>
+</div>
+<header class="mn-header" id="mnHeader"></header>
+
+<div class="hero">
+<p class="hero-eyebrow">Servizio · agosto 2026</p>
+<h1 class="hero-title">La terra si muove,<br><em>il canale se ne accorge.</em></h1>
+<p class="hero-sub">Un messaggio quando il catalogo pubblico INGV registra, vicino a Solofra, un evento sismico sopra una soglia di rilevanza — non per le microscosse che l'Irpinia registra di continuo e che nessuno sente.</p>
+<div class="hero-meta">
+A cura di <a href="https://www.facebook.com/raf.dep/" target="_blank">Raffaele De Piano</a>
+<span>·</span>
+<span>INGV — catalogo ISIDe</span>
+</div>
+<div style="margin-top:20px;">
+<a class="btn-cta" href="https://t.me/comestasolofra" target="_blank">Segui il canale su Telegram →</a>
+</div>
+<p style="margin-top:14px; font-size:13px; color:var(--ink-3);">Gratuito, nessuna registrazione, nessun dato personale richiesto. Ci si può disiscrivere in qualunque momento.</p>
+</div>
+
+<hr class="div">
+
+<!-- IN SINTESI -->
+<div class="insights-wrap">
+<p class="insights-hed">In sintesi</p>
+<p class="insights-sub">Le domande più immediate — quando arriva un messaggio, cosa contiene, quanto sono affidabili i primi dati — con la risposta diretta. Il dettaglio di ciascun punto è nelle sezioni sotto.</p>
+<div class="ins-tbl-wrap">
+<table class="tbl-insights">
+<thead>
+<tr>
+<th class="col-infra">Domanda</th>
+<th class="col-lbl">Risposta</th>
+<th class="col-lbl">Perché</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-infra">Quando arriva un messaggio</td>
+<td class="col-lbl">mag. ≥2.0 entro 20 km, oppure ≥3.0 entro 60 km da Solofra</td>
+<td class="col-lbl">sotto soglia sono eventi troppo piccoli o troppo lontani per essere rilevanti</td>
+</tr>
+<tr>
+<td class="col-infra">Cosa contiene</td>
+<td class="col-lbl">magnitudo, distanza, ora e profondità dell'evento</td>
+<td class="col-lbl">i dati essenziali per capire cosa è successo e se riguarda davvero Solofra</td>
+</tr>
+<tr>
+<td class="col-infra">Affidabilità dei dati</td>
+<td class="col-lbl">preliminari, possono essere rivisti</td>
+<td class="col-lbl">l'INGV affina magnitudo ed epicentro nelle ore successive all'evento</td>
+</tr>
+<tr>
+<td class="col-infra">Notifiche notturne</td>
+<td class="col-lbl">sempre attive</td>
+<td class="col-lbl">un evento sismico non aspetta il mattino, a differenza di aria e acqua</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- COSA VA LETTO CON ONESTÀ -->
+<div class="solofra-wrap" style="padding-top:0;">
+<div class="cao-group a">
+<div class="cao-group-hed">
+<span class="dot amber"></span>
+<h3>Cosa va letto con onestà</h3>
+<span class="cao-count">3 punti</span>
+</div>
+<div class="cao-cards">
+<div class="cao-card a">
+<h4 class="cao-card-title">Non è un'allerta ufficiale</h4>
+<p class="cao-card-body">Resta un servizio informativo automatico: per indicazioni di sicurezza il riferimento restano sempre INGV e la Protezione Civile.</p>
+</div>
+<div class="cao-card a">
+<h4 class="cao-card-title">I primi dati possono cambiare</h4>
+<p class="cao-card-body">Magnitudo, distanza e profondità pubblicate sono quelle disponibili al momento del messaggio: l'INGV le rivede e le affina nelle ore successive.</p>
+</div>
+<div class="cao-card a">
+<h4 class="cao-card-title">La soglia esclude le microscosse</h4>
+<p class="cao-card-body">L'Irpinia registra in continuazione eventi minori che nessuno percepisce. Il canale segnala solo ciò che supera la soglia di rilevanza — non ogni riga del catalogo INGV.</p>
+</div>
+</div>
+</div>
+</div>
+
+<hr class="div">
+
+<div class="layout">
+<aside class="toc">
+<p class="toc-hed">In questa pagina</p>
+<ol>
+<li><a href="#cosa">Cos'è</a></li>
+<li><a href="#frequenza">Quando arriva un messaggio</a></li>
+<li><a href="#contenuto">Cosa contiene il messaggio</a></li>
+<li><a href="#canale">Il canale Telegram</a></li>
+<li><a href="#fonti">Mappa numeri → fonti</a></li>
+<li><a href="#metodo">Nota metodologica</a></li>
+</ol>
+</aside>
+<main>
+
+<!-- 1 COS'È -->
+<section id="cosa" class="block">
+<p class="block-num">01 — Il servizio</p>
+<h2 class="block-title">Cos'è.</h2>
+<p class="block-intro">Un servizio del canale Telegram "Come sta Solofra" che monitora il catalogo pubblico INGV (ISIDe) per eventi sismici vicino a Solofra, e pubblica un messaggio solo per quelli che superano una soglia di rilevanza.</p>
+<p>È il quarto servizio del canale, dopo aria, acqua e meteo, con lo stesso metodo: dati pubblici, resi semplici. Per la panoramica di tutti e quattro, <a class="inline" href="telegram.html">vedi qui</a>.</p>
+</section>
+
+<!-- 2 FREQUENZA -->
+<section id="frequenza" class="block">
+<p class="block-num">02 — La logica</p>
+<h2 class="block-title">Quando arriva un messaggio.</h2>
+<p class="block-intro">Il servizio controlla il catalogo ISIDe dell'INGV, che registra ogni evento sismico rilevato in Italia — comprese le decine di microscosse che l'Irpinia, zona sismicamente attiva, registra ogni mese senza che nessuno le percepisca.</p>
+<p>Un messaggio arriva solo per eventi che superano una <strong>soglia di rilevanza</strong>: magnitudo 2.0 o superiore entro 20 km da Solofra, oppure magnitudo 3.0 o superiore entro 60 km. Sotto questa soglia, il servizio resta silenzioso — non perché l'evento non sia registrato, ma perché troppo piccolo o troppo lontano per avere un impatto reale.</p>
+<h3 class="sub">Perché non c'è un blocco notturno</h3>
+<p>Come per il meteo, un evento sismico rilevante non aspetta il mattino: il servizio pubblica a qualunque ora, appena il dato è disponibile nel catalogo.</p>
+</section>
+
+<!-- 3 CONTENUTO -->
+<section id="contenuto" class="block">
+<p class="block-num">03 — Cosa ricevi</p>
+<h2 class="block-title">Cosa contiene il messaggio.</h2>
+<p class="block-intro">Il messaggio riporta magnitudo, distanza da Solofra, ora e profondità dell'evento, con un link diretto al portale INGV in tempo reale per approfondire.</p>
+<p>I dati riportati sono quelli disponibili al momento della pubblicazione: l'INGV li tratta come <strong>preliminari</strong> e può rivederli — magnitudo ed epicentro compresi — nelle ore successive, man mano che arrivano altre letture dalla rete sismica nazionale.</p>
+<p class="note">Ogni messaggio include un promemoria che questo non è un canale di emergenza: per indicazioni di sicurezza il riferimento restano sempre INGV e la Protezione Civile.</p>
+</section>
+
+<!-- 4 CANALE -->
+<section id="canale" class="block">
+<p class="block-num">04 — Dove seguirlo</p>
+<h2 class="block-title">Il canale Telegram.</h2>
+<p class="block-intro">Il servizio vive sullo stesso canale Telegram di "Come sta Solofra", insieme ad aria, acqua e meteo: chi si iscrive riceve tutti i messaggi, direttamente, senza dover controllare questa pagina.</p>
+<p><a class="btn-cta" href="https://t.me/comestasolofra" target="_blank">Segui "Come sta Solofra" su Telegram →</a></p>
+</section>
+
+<!-- FONTI -->
+<section id="fonti" class="block">
+<p class="block-num">Fonti</p>
+<h2 class="block-title">Mappa numeri → fonti</h2>
+<p class="block-intro">Ogni dato di questa pagina è tratto dal catalogo sismico pubblico dell'INGV.</p>
+<div class="fonti">
+<h4>Eventi sismici</h4>
+<ul>
+<li><strong>Catalogo ISIDe (Italian Seismological Instrumental and Parametric Database)</strong> — Istituto Nazionale di Geofisica e Vulcanologia (INGV), aggiornato in tempo quasi reale con ogni evento rilevato dalla rete sismica nazionale.</li>
+<li><strong>Soglie di magnitudo e distanza</strong> — criterio interno del servizio per distinguere eventi rilevanti per Solofra dalle microscosse di routine, non uno standard INGV.</li>
+</ul>
+</div>
+</section>
+
+<!-- METODO -->
+<section id="metodo" class="block" style="border-bottom:none;">
+<p class="block-num">Metodo</p>
+<h2 class="block-title">Come funziona, dietro le quinte</h2>
+<p>Il servizio è un sistema automatico: nessuna persona decide caso per caso se pubblicare un messaggio. Il controllo del catalogo, il confronto con la soglia di rilevanza e la decisione se pubblicare seguono sempre la stessa logica descritta in questa pagina.</p>
+<p><strong>Non è un servizio di emergenza ufficiale.</strong> È un bollettino informativo che rilancia, in forma semplice, dati già pubblici. Per indicazioni di sicurezza e situazioni di emergenza, il riferimento restano i canali ufficiali di INGV e della Protezione Civile.</p>
+<div class="ai-notice">
+<p class="ai-notice-hed">Elaborazione con supporto di intelligenza artificiale</p>
+<p class="ai-notice-text">Il sistema che genera i messaggi — dalla lettura del catalogo alla decisione se pubblicare, fino al testo e all'immagine — è stato costruito con il supporto di strumenti di intelligenza artificiale. Il dato di partenza resta sempre quello pubblico dell'INGV, non elaborato nel merito: l'intelligenza artificiale ha aiutato a costruire la logica e la forma, non a interpretare gli eventi. <strong>Se noti un'anomalia o un comportamento che non torna</strong>, segnalamelo: verrà verificato e corretto.</p>
+</div>
+<div class="manifest">
+<p class="manifest-hed">Il metodo</p>
+<p class="manifest-text">I dati sono pubblici. I calcoli sono mostrati per intero. Le stime sono dichiarate come tali. Le fonti sono linkate e verificabili. Le opinioni sono separate dai fatti.</p>
+</div>
+</section>
+
+</main>
+</div>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-l">
+<span id="mnFooterCredit"></span><br>
+Tutti i dati sono pubblici e le fonti sono citate.
+</div>
+<div class="footer-r">Ultimo aggiornamento: agosto 2026<br>Solofra (AV), Campania</div>
+</div>
+</footer>
+<script src="nav.js?v=2" defer></script>
+</body>
+</html>
