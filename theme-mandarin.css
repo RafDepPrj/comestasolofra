@@ -53,7 +53,9 @@ a.inline, .fonti li a, .hero-meta a { --accent:#c41d1d; }
 /* nav: mobile-first (a tendina) */
 .mn-nav{ display:none; position:absolute; top:100%; left:0; right:0;
   flex-direction:column; padding:6px 0 10px; background:var(--paper);
-  border-bottom:1px solid var(--border); box-shadow:0 12px 28px rgba(0,0,0,0.07); }
+  border-bottom:1px solid var(--border); box-shadow:0 12px 28px rgba(0,0,0,0.07);
+  max-height:calc(100vh - 62px); max-height:calc(100dvh - 62px);
+  overflow-y:auto; -webkit-overflow-scrolling:touch; }
 .mn-nav.open{ display:flex; }
 .mn-nav a{ font-family:var(--sans); font-size:15px; color:var(--ink-2); text-decoration:none;
   padding:13px clamp(18px,5vw,80px); border-left:3px solid transparent; }

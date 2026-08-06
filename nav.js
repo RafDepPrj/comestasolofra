@@ -112,9 +112,21 @@
     var btn = document.querySelector('.mn-toggle');
     var nav = document.getElementById('mnNav');
     if (!btn || !nav) return;
+    /* Calcola lo spazio verticale davvero disponibile sotto l'header
+       nel momento in cui il menu si apre: la posizione dell'header
+       può variare (es. banner di avviso ancora visibile, sticky non
+       ancora agganciato), quindi un valore CSS fisso non basta. */
+    function sizeNav() {
+      var top = nav.getBoundingClientRect().top;
+      nav.style.maxHeight = Math.max(200, window.innerHeight - top) + 'px';
+    }
     btn.addEventListener('click', function () {
       var open = nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) sizeNav();
+    });
+    window.addEventListener('resize', function () {
+      if (nav.classList.contains('open')) sizeNav();
     });
     nav.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') {
