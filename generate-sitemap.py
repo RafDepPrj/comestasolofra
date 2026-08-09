@@ -19,7 +19,7 @@ def last_modified(path):
     return out
 
 def main():
-    pages = sorted(p.name for p in ROOT.glob("*.html"))
+    pages = sorted(p.name for p in ROOT.glob("*.html") if p.name != "404.html")
     entries = []
     for page in pages:
         loc = BASE_URL if page == "index.html" else BASE_URL + page
