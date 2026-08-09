@@ -71,8 +71,9 @@
     if (!el) return;
     el.innerHTML =
       'Curata da <strong>Raffaele De Piano</strong> — '
-      + '<a href="' + FACEBOOK_URL + '" target="_blank">facebook.com/raf.dep</a> · '
-      + '<a href="' + TELEGRAM_URL + '" target="_blank">Telegram</a>';
+      + '<a href="' + FACEBOOK_URL + '" target="_blank" rel="noopener">facebook.com/raf.dep</a> · '
+      + '<a href="' + TELEGRAM_URL + '" target="_blank" rel="noopener">Telegram</a> · '
+      + '<a href="metodo.html">Il metodo</a>';
   }
 
   function buildNav() {
