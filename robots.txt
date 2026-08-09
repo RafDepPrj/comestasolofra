@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rafdepprj.github.io/comestasolofra/sitemap.xml
