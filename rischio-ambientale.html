@@ -21,6 +21,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script defer src="analytics.js"></script>
 <link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 .insights-wrap { max-width: 1060px; margin: 0 auto; padding: clamp(28px,4vw,40px) clamp(20px,5vw,80px) clamp(12px,2vw,20px); }
@@ -92,6 +93,13 @@ table.data td.val.amb { color: var(--amber); }
 .comuni-det summary::before { content: "▸ "; color: var(--accent); }
 .comuni-det[open] summary::before { content: "▾ "; }
 .comuni-det-body { padding: 4px 0; }
+.map-wrap { margin: 16px 0 24px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+#mapComuni { height: 560px; width: 100%; background: var(--paper-2); }
+.map-legend { display: flex; flex-wrap: wrap; gap: 14px; padding: 12px 16px; background: var(--paper-2); border-top: 1px solid var(--border); font-size: 12.5px; }
+.map-legend .item { display: flex; align-items: center; gap: 6px; color: var(--ink-2); }
+.map-legend .dot { width: 13px; height: 13px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.25); flex-shrink: 0; }
+.leaflet-popup-content { font-family: var(--sans); font-size: 13px; }
+.leaflet-popup-content b { font-family: var(--serif); font-size: 15px; }
 .fonti { font-size: 13px; }
 .fonti h4 { font-family: var(--serif); font-size: 18px; margin: 24px 0 10px; font-style: italic; color: var(--ink); }
 .fonti h4:first-child { margin-top: 0; }
@@ -320,6 +328,12 @@ table.data td.val.amb { color: var(--amber); }
       <h2 class="block-title">Gli 86 comuni, classe per classe.</h2>
       <p class="block-intro">L'Indicatore di Rischio Comunale (IRC) per ciascuno degli 86 comuni del circondario di Avellino, da 1 (nessun residente entro 1 km da un sito) a 6 (massimo rischio).</p>
 
+      <div class="map-wrap">
+        <div id="mapComuni"></div>
+        <div class="map-legend" id="mapLegend"></div>
+      </div>
+      <p class="note">Posizione dei comuni geocodificata tramite OpenStreetMap/Nominatim sul centro abitato; il colore e la dimensione del punto indicano la classe IRC. Tocca o clicca un punto per il nome e la classe.</p>
+
       <details class="comuni-det" open>
         <summary>Classe 6 — massimo rischio (3 comuni)</summary>
         <div class="comuni-det-body"><p style="padding:0 16px 16px;">Avellino, Atripalda, Solofra</p></div>
@@ -405,5 +419,44 @@ table.data td.val.amb { color: var(--amber); }
 </footer>
 
 <script src="nav.js?v=5" defer></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+(function () {
+  var COMUNI = [{n:'Atripalda',c:6,lat:40.92081,lon:14.8335},{n:'Avellino',c:6,lat:40.9142,lon:14.78888},{n:'Solofra',c:6,lat:40.82913,lon:14.84565},{n:'Aiello del Sabato',c:5,lat:40.88719,lon:14.81945},{n:'Avella',c:5,lat:40.95891,lon:14.60054},{n:'Calitri',c:5,lat:40.90212,lon:15.43056},{n:'Domicella',c:5,lat:40.88001,lon:14.58774},{n:'Forino',c:5,lat:40.86197,lon:14.7348},{n:'Manocalzati',c:5,lat:40.94187,lon:14.8498},{n:'Monteforte Irpino',c:5,lat:40.89192,lon:14.7139},{n:'Montefredane',c:5,lat:40.9624,lon:14.81096},{n:'Montella',c:5,lat:40.84241,lon:15.01791},{n:'Montemarano',c:5,lat:40.91522,lon:14.99765},{n:'Montemiletto',c:5,lat:41.01134,lon:14.9087},{n:'Montoro',c:5,lat:40.83288,lon:14.79178},{n:"Ospedaletto d'Alpinolo",c:5,lat:40.93867,lon:14.74393},{n:'Roccabascerana',c:5,lat:41.01844,lon:14.71632},{n:'San Michele di Serino',c:5,lat:40.8773,lon:14.85631},{n:'Sperone',c:5,lat:40.95236,lon:14.60328},{n:'Altavilla Irpina',c:4,lat:41.00616,lon:14.77768},{n:'Bagnoli Irpino',c:4,lat:40.83311,lon:15.07255},{n:'Baiano',c:4,lat:40.95251,lon:14.61674},{n:'Capriglia Irpina',c:4,lat:40.96032,lon:14.77724},{n:'Cervinara',c:4,lat:41.02193,lon:14.61329},{n:'Conza della Campania',c:4,lat:40.85858,lon:15.33606},{n:'Frigento',c:4,lat:41.01132,lon:15.09975},{n:'Grottolella',c:4,lat:40.97272,lon:14.78704},{n:'Lacedonia',c:4,lat:41.05122,lon:15.42385},{n:'Lioni',c:4,lat:40.86066,lon:15.1799},{n:'Marzano di Nola',c:4,lat:40.90272,lon:14.58409},{n:'Mugnano del Cardinale',c:4,lat:40.94301,lon:14.63564},{n:'Nusco',c:4,lat:40.88695,lon:15.084},{n:'Parolise',c:4,lat:40.93094,lon:14.88177},{n:'Prata di Principato Ultra',c:4,lat:40.98597,lon:14.83751},{n:'Pratola Serra',c:4,lat:40.98702,lon:14.85264},{n:'Quadrelle',c:4,lat:40.947,lon:14.63826},{n:'Rotondi',c:4,lat:41.03119,lon:14.59672},{n:'San Martino Valle Caudina',c:4,lat:41.02321,lon:14.663},{n:'San Potito Ultra',c:4,lat:40.92815,lon:14.87271},{n:"Sant'Angelo dei Lombardi",c:4,lat:40.92703,lon:15.17752},{n:'Serino',c:4,lat:40.85671,lon:14.87057},{n:'Sirignano',c:4,lat:40.95101,lon:14.63159},{n:'Summonte',c:4,lat:40.94949,lon:14.7448},{n:'Tufo',c:4,lat:41.0103,lon:14.82332},{n:'Bisaccia',c:3,lat:41.01212,lon:15.37475},{n:'Candida',c:3,lat:40.9423,lon:14.87518},{n:'Cassano Irpino',c:3,lat:40.87042,lon:15.02595},{n:'Chiusano di San Domenico',c:3,lat:40.93312,lon:14.91634},{n:'Contrada',c:3,lat:40.86845,lon:14.7812},{n:'Lauro',c:3,lat:40.87997,lon:14.62947},{n:'Mercogliano',c:3,lat:40.92016,lon:14.73861},{n:'Morra De Sanctis',c:3,lat:40.91952,lon:15.26239},{n:'Rocca San Felice',c:3,lat:40.95146,lon:15.16439},{n:"Sant'Andrea di Conza",c:3,lat:40.85333,lon:15.36502},{n:'Santa Lucia di Serino',c:3,lat:40.87042,lon:14.87594},{n:'Santo Stefano del Sole',c:3,lat:40.89391,lon:14.86854},{n:'Senerchia',c:3,lat:40.74026,lon:15.20315},{n:'Torre Le Nocelle',c:3,lat:41.03042,lon:14.91969},{n:'Andretta',c:2,lat:40.93848,lon:15.32775},{n:'Calabritto',c:2,lat:40.78222,lon:15.22395},{n:'Castelfranci',c:2,lat:40.93097,lon:15.04287},{n:'Castelvetere sul Calore',c:2,lat:40.92872,lon:14.98615},{n:'Guardia Lombardi',c:2,lat:40.95382,lon:15.20918},{n:'Lapio',c:2,lat:40.98112,lon:14.94634},{n:'Monteverde',c:2,lat:40.99892,lon:15.53416},{n:'Moschiano',c:2,lat:40.87425,lon:14.65836},{n:'Pago del Vallo di Lauro',c:2,lat:40.89721,lon:14.60764},{n:'Pietrastornina',c:2,lat:40.99174,lon:14.72924},{n:'Quindici',c:2,lat:40.86331,lon:14.64754},{n:'Salza Irpina',c:2,lat:40.92006,lon:14.88935},{n:'San Mango sul Calore',c:2,lat:40.96108,lon:14.97459},{n:"Sant'Angelo a Scala",c:2,lat:40.97458,lon:14.74019},{n:'Santa Paolina',c:2,lat:41.02172,lon:14.84724},{n:'Sturno',c:2,lat:41.01983,lon:15.11132},{n:'Taurano',c:2,lat:40.88407,lon:14.63401},{n:'Teora',c:2,lat:40.85263,lon:15.25268},{n:'Torella dei Lombardi',c:2,lat:40.94053,lon:15.11536},{n:'Villamaina',c:2,lat:40.96936,lon:15.08958},{n:'Aquilonia',c:1,lat:40.98704,lon:15.47444},{n:'Cairano',c:1,lat:40.89682,lon:15.37035},{n:'Caposele',c:1,lat:40.81492,lon:15.22391},{n:'Cesinali',c:1,lat:40.89553,lon:14.82833},{n:'Gesualdo',c:1,lat:41.00672,lon:15.07245},{n:'Montefalcione',c:1,lat:40.96104,lon:14.88221},{n:'Sorbo Serpico',c:1,lat:40.90441,lon:14.89197},{n:'Volturara Irpina',c:1,lat:40.85793,lon:14.93662}];
+
+  var COLORI = { 1:'#2a6b3c', 2:'#7a9a3e', 3:'#c9a227', 4:'#d8815f', 5:'#c4673f', 6:'#8c1d1d' };
+  var RAGGI  = { 1:5, 2:6, 3:7, 4:8, 5:9.5, 6:11 };
+
+  var mapEl = document.getElementById('mapComuni');
+  if (!mapEl || typeof L === 'undefined') return;
+
+  var map = L.map('mapComuni', { scrollWheelZoom: false }).setView([40.92, 15.0], 10);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+  }).addTo(map);
+
+  COMUNI.forEach(function (c) {
+    var marker = L.circleMarker([c.lat, c.lon], {
+      radius: RAGGI[c.c],
+      fillColor: COLORI[c.c],
+      color: '#212529',
+      weight: 1,
+      opacity: 0.35,
+      fillOpacity: 0.85
+    }).addTo(map);
+    marker.bindPopup('<b>' + c.n + '</b><br>Classe IRC: ' + c.c + (c.c === 6 ? ' (massimo rischio)' : c.c === 1 ? ' (nessun residente entro 1 km)' : ''));
+  });
+
+  var legend = document.getElementById('mapLegend');
+  if (legend) {
+    var html = '';
+    for (var k = 6; k >= 1; k--) {
+      html += '<span class="item"><span class="dot" style="background:' + COLORI[k] + '"></span>Classe ' + k + (k === 6 ? ' (max)' : k === 1 ? ' (min)' : '') + '</span>';
+    }
+    legend.innerHTML = html;
+  }
+})();
+</script>
 </body>
 </html>
