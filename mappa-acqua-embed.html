@@ -61,7 +61,7 @@
     function zonaByNome(n) { return DATI.zone.filter(function (z) { return z.nome === n; })[0]; }
     function colore(z) { return (!z || z.solo_conteggio_minimo) ? GRIGIO : classeColore(z.pct_problemi, [20, 40, 60, 80]); }
 
-    var map = L.map("mapEmbed", { scrollWheelZoom: false, zoomControl: true, attributionControl: true, minZoom: 12, maxZoom: 19 });
+    var map = L.map("mapEmbed", { scrollWheelZoom: false, zoomControl: true, attributionControl: true, minZoom: 12, maxZoom: 19, zoomSnap: 0.1, zoomDelta: 0.5 });
     L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
       { maxZoom: 19, crossOrigin: true, attribution: "Tiles &copy; Esri · dati: questionario \"L'acqua di Solofra\"" }).addTo(map);
 

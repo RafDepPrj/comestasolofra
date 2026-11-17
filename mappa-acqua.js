@@ -80,6 +80,7 @@
 
   function init() {
     initTema();
+    renderSintesiRapida();
     renderIntro();
     renderKpi();
     initMappa();
@@ -114,6 +115,41 @@
     }
   }
 
+  /* ---------------- in sintesi (lettura rapida, stile piramide) ---------------- */
+
+  function renderSintesiRapida() {
+    var k = DATI.kpi, g = DATI.generale;
+    var voci = [];
+
+    voci.push(
+      "<strong>" + k.pct_problemi + "%</strong> di chi ha risposto (" + k.n_problemi + " su " + k.n_risposte +
+      ") segnala un problema con l'acqua, quasi sempre la stessa cosa: pressione bassa o acqua che manca del tutto."
+    );
+
+    var zoneSiProb = DATI.zone.filter(function (z) { return !z.poco_significativo && z.pct_problemi >= 80; }).map(function (z) { return z.nome; });
+    var zoneNoProb = DATI.zone.filter(function (z) { return !z.poco_significativo && z.pct_problemi <= 20; }).map(function (z) { return z.nome; });
+    if (zoneSiProb.length) {
+      voci.push(
+        "Il problema non è uniforme: in " + (zoneSiProb.length > 1 ? "zone come " : "") + zoneSiProb.slice(0, 3).join(", ") +
+        (zoneSiProb.length > 3 ? " e altre" : "") + " quasi tutti segnalano un problema" +
+        (zoneNoProb.length ? ", in " + zoneNoProb.slice(0, 2).join(" e ") + " quasi nessuno" : "") + "."
+      );
+    }
+
+    if (k.pct_mai_avvisati >= 50) {
+      voci.push(
+        "<strong>" + k.pct_mai_avvisati + "%</strong> di chi ha un problema dice di non essere quasi mai avvisato prima di un'interruzione: " +
+        "il modo in cui viene comunicato sembra pesare quanto il problema stesso."
+      );
+    }
+
+    voci.push(
+      "Sembra più un problema di distribuzione e di rete che di scarsità d'acqua: pochissime risposte lo legano all'estate."
+    );
+
+    document.getElementById("sintesiLista").innerHTML = voci.map(function (v) { return "<li>" + v + "</li>"; }).join("");
+  }
+
   /* ---------------- intro / kpi ---------------- */
 
   function renderIntro() {
@@ -144,7 +180,10 @@
   /* ---------------- mappa ---------------- */
 
   function initMappa() {
-    map = L.map("mapZone", { scrollWheelZoom: false, minZoom: 12, maxZoom: 19 }).setView([40.8312, 14.8480], 14);
+    // zoomSnap/zoomDelta frazionari: senza, fitBounds arrotonda al livello di
+    // zoom intero più vicino e può lasciare un margine vuoto consistente
+    // attorno alle zone anche quando il riquadro ha le proporzioni giuste.
+    map = L.map("mapZone", { scrollWheelZoom: false, minZoom: 12, maxZoom: 19, zoomSnap: 0.1, zoomDelta: 0.5 }).setView([40.8312, 14.8480], 14);
 
     var basemaps = {
       "Satellite (Esri)": L.tileLayer(
@@ -388,23 +427,28 @@
     var z = nome ? zonaByNome(nome) : DATI.generale;
     document.getElementById("dettTitolo").textContent = nome || "Tutta Solofra";
     var el = document.getElementById("dettContent");
+    var dettagliEl = document.getElementById("dettDettagli");
+    var grid = document.getElementById("dettGrid");
 
-    if (!z) { el.innerHTML = "<p>Nessuna risposta per questa zona.</p>"; return; }
+    if (!z) { el.innerHTML = "<p>Nessuna risposta per questa zona.</p>"; dettagliEl.style.display = "none"; return; }
 
     if (z.solo_conteggio_minimo) {
       el.innerHTML = '<p class="dett-poco">Pochissime risposte in questa zona: ' + z.n + " risposte, " + z.n_problemi +
         " con problemi. Non ci sono abbastanza casi per mostrare altro.</p>";
+      dettagliEl.style.display = "none";
       return;
     }
 
-    var intro = '<p class="mappa-nota" style="margin-bottom:18px;">' + z.n + " risposte" +
+    el.innerHTML = '<p class="mappa-nota" style="margin-bottom:0;">' + z.n + " risposte" +
       (nome ? " in questa zona" : " in totale") + ": " + z.n_problemi + " segnalano problemi (" + z.pct_problemi + "%), " +
       z.n_gravi + " con un indice di gravità alto (" + z.pct_gravi + "%)." +
       (z.poco_significativo ? ' <strong>Pochissimi casi: non significativo.</strong>' : "") + "</p>";
 
-    if (!z.frequenza) { el.innerHTML = intro; return; }
+    if (!z.frequenza) { dettagliEl.style.display = "none"; return; }
+    dettagliEl.style.display = "";
+    dettagliEl.open = false;
 
-    var html = intro + '<div class="dett-grid">';
+    var html = '<div class="dett-grid">';
     html += barraBlocco("Quanto spesso (chi ha problemi)", z.frequenza);
     html += barraBlocco("Quanto dura (chi ha problemi)", z.durata);
     html += barraBlocco("Da quanto tempo (chi ha problemi)", z.da_quanto);
@@ -416,7 +460,7 @@
     html += "</div>";
     html += '<p class="mappa-nota" style="margin-top:14px;">Ha segnalato il problema (tra chi ha problemi): ' +
       z.segnalato.n + " su " + z.n_problemi + " (" + z.segnalato.pct + "%).</p>";
-    el.innerHTML = html;
+    grid.innerHTML = html;
   }
 
   /* ---------------- tabella confronto zone ---------------- */
@@ -460,6 +504,8 @@
     document.getElementById("vieCopertura").textContent =
       "Le " + DATI.vie.length + " vie qui sotto coprono " + c.n_via_pubblicata + " risposte su " + c.n_totale_risposte +
       ". Le altre " + c.n_via_non_riconosciuta_o_assente + " non hanno una via riconoscibile (contano solo nei totali generali).";
+    var vnv = document.getElementById("vieNVoci");
+    if (vnv) vnv.textContent = "(" + DATI.vie.length + " vie)";
   }
 
   function renderVie() {
@@ -642,7 +688,9 @@
     }
 
     document.getElementById("emergeOvvie").innerHTML = ovvie.length ? "<h4>Le osservazioni più immediate</h4>" + ovvie.join("") : "";
-    document.getElementById("emergeNonOvvie").innerHTML = nonOvvie.length ? "<h4>Osservazioni meno immediate</h4>" + nonOvvie.join("") : "";
+    document.getElementById("emergeNonOvvie").innerHTML = nonOvvie.join("");
+    var nv = document.getElementById("emergeNVoci");
+    if (nv) nv.textContent = "(" + nonOvvie.length + ")";
   }
 
   function trovaSpreadVie() {
@@ -762,6 +810,8 @@
         '<div class="corpo"><div class="nome">' + t.tema + '</div><div class="sintesi">' + (t.sintesi || "") + "</div></div></div>";
     }).join("");
     document.getElementById("temiGrid").innerHTML = html;
+    var tnv = document.getElementById("temiNVoci");
+    if (tnv) tnv.textContent = "(" + n.temi.length + ")";
     if (n.rapporto_proposte_sfogo) {
       document.getElementById("noteRapporto").textContent =
         "Tra le note incluse, una stima prudente: circa " + n.rapporto_proposte_sfogo.proposta_pct + "% contengono una proposta concreta, il resto è più uno sfogo sulla situazione.";
