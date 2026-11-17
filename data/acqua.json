@@ -235,6 +235,23 @@
         "pct": 2
       }
     ],
+    "periodo": [
+      {
+        "valore": "Soprattutto d'estate",
+        "n": 5,
+        "pct": 4
+      },
+      {
+        "valore": "Tutto l'anno",
+        "n": 46,
+        "pct": 38
+      },
+      {
+        "valore": "Senza una regola precisa",
+        "n": 70,
+        "pct": 58
+      }
+    ],
     "come_fronte": [
       {
         "valore": "Acqua in bottiglia per bere",

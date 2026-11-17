@@ -118,13 +118,36 @@
   /* ---------------- in sintesi (lettura rapida, stile piramide) ---------------- */
 
   function renderSintesiRapida() {
-    var k = DATI.kpi, g = DATI.generale;
+    var k = DATI.kpi, g = DATI.generale, r = DATI.riflessioni_dati;
     var voci = [];
 
     voci.push(
       "<strong>" + k.pct_problemi + "%</strong> di chi ha risposto (" + k.n_problemi + " su " + k.n_risposte +
       ") segnala un problema con l'acqua, quasi sempre la stessa cosa: pressione bassa o acqua che manca del tutto."
     );
+
+    var recenti = g.da_quanto.filter(function (d) { return d.valore === "Meno di un anno" || d.valore === "Da 1 a 3 anni"; });
+    var pctRecenti = recenti.reduce(function (s, d) { return s + d.pct; }, 0);
+    var nRecenti = recenti.reduce(function (s, d) { return s + d.n; }, 0);
+    if (pctRecenti >= 50) {
+      voci.push(
+        "Il problema sembra essersi aggravato di recente, non essere sempre esistito così: <strong>" + pctRecenti +
+        "%</strong> di chi ha un problema (" + nRecenti + " su " + k.n_problemi + ") dice che va avanti da meno di 3 anni."
+      );
+    }
+
+    if (r.periodo && r.periodo.length) {
+      var estate = r.periodo.filter(function (p) { return p.valore === "Soprattutto d'estate"; })[0];
+      var pressione = (r.tipo_problema.filter(function (t) { return t.valore === "Pressione bassa (esce poca acqua)"; })[0] || {}).pct;
+      var temaReteN = (DATI.note_aperte.temi.filter(function (t) { return t.tema === "rete e perdite"; })[0] || {}).n;
+      if (estate && estate.pct <= 15) {
+        voci.push(
+          "C'è un indizio forte che non sia un problema di siccità: solo <strong>" + estate.pct + "%</strong> di chi ha un problema lo lega all'estate. " +
+          "Pesano di più la pressione bassa (" + pressione + "%) e, secondo le risposte aperte, lo stato della rete" +
+          (temaReteN ? " (il tema più citato, " + temaReteN + " note)" : "") + "."
+        );
+      }
+    }
 
     var zoneSiProb = DATI.zone.filter(function (z) { return !z.poco_significativo && z.pct_problemi >= 80; }).map(function (z) { return z.nome; });
     var zoneNoProb = DATI.zone.filter(function (z) { return !z.poco_significativo && z.pct_problemi <= 20; }).map(function (z) { return z.nome; });
@@ -142,10 +165,6 @@
         "il modo in cui viene comunicato sembra pesare quanto il problema stesso."
       );
     }
-
-    voci.push(
-      "Sembra più un problema di distribuzione e di rete che di scarsità d'acqua: pochissime risposte lo legano all'estate."
-    );
 
     document.getElementById("sintesiLista").innerHTML = voci.map(function (v) { return "<li>" + v + "</li>"; }).join("");
   }
