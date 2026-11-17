@@ -1,0 +1,3508 @@
+{
+  "generato_il": "2026-11-17",
+  "versione_dati": 1,
+  "fonte": {
+    "questionario": "L'acqua di Solofra",
+    "periodo_raccolta": "2026-11-13 – 2026-11-17",
+    "tipo": "Google Form anonimo, campione volontario"
+  },
+  "kpi": {
+    "n_risposte": 168,
+    "n_problemi": 121,
+    "pct_problemi": 72,
+    "n_gravi": 59,
+    "pct_gravi": 35,
+    "pct_mai_avvisati": 80,
+    "n_mai_avvisati": 97,
+    "pct_segnalato": 65,
+    "n_segnalato": 79
+  },
+  "generale": {
+    "n": 168,
+    "n_problemi": 121,
+    "pct_problemi": 72,
+    "n_gravi": 59,
+    "pct_gravi": 35,
+    "frequenza": [
+      {
+        "valore": "Quasi ogni giorno",
+        "n": 101,
+        "pct": 83
+      },
+      {
+        "valore": "Qualche volta a settimana",
+        "n": 10,
+        "pct": 8
+      },
+      {
+        "valore": "Qualche volta al mese",
+        "n": 5,
+        "pct": 4
+      },
+      {
+        "valore": "Qualche volta l'anno",
+        "n": 5,
+        "pct": 4
+      }
+    ],
+    "durata": [
+      {
+        "valore": "Meno di un'ora",
+        "n": 1,
+        "pct": 1
+      },
+      {
+        "valore": "Da 1 a 4 ore",
+        "n": 45,
+        "pct": 37
+      },
+      {
+        "valore": "Mezza giornata",
+        "n": 46,
+        "pct": 38
+      },
+      {
+        "valore": "Una giornata intera",
+        "n": 11,
+        "pct": 9
+      },
+      {
+        "valore": "Più giorni di seguito",
+        "n": 17,
+        "pct": 14
+      }
+    ],
+    "da_quanto": [
+      {
+        "valore": "Meno di un anno",
+        "n": 16,
+        "pct": 13
+      },
+      {
+        "valore": "Da 1 a 3 anni",
+        "n": 55,
+        "pct": 45
+      },
+      {
+        "valore": "Da 3 a 10 anni",
+        "n": 35,
+        "pct": 29
+      },
+      {
+        "valore": "Più di 10 anni",
+        "n": 12,
+        "pct": 10
+      }
+    ],
+    "momenti": [
+      {
+        "valore": "Mattina (6–12)",
+        "n": 18,
+        "pct": 15
+      },
+      {
+        "valore": "Pomeriggio (12–18)",
+        "n": 65,
+        "pct": 54
+      },
+      {
+        "valore": "Sera (18–23)",
+        "n": 34,
+        "pct": 28
+      },
+      {
+        "valore": "Notte (23–6)",
+        "n": 10,
+        "pct": 8
+      },
+      {
+        "valore": "Tutto il giorno",
+        "n": 14,
+        "pct": 12
+      },
+      {
+        "valore": "Non c'è un orario fisso",
+        "n": 39,
+        "pct": 32
+      }
+    ],
+    "avvisi": [
+      {
+        "valore": "Quasi mai",
+        "n": 97,
+        "pct": 80
+      },
+      {
+        "valore": "A volte",
+        "n": 17,
+        "pct": 14
+      },
+      {
+        "valore": "Sì, quasi sempre",
+        "n": 4,
+        "pct": 3
+      },
+      {
+        "valore": "Non lo so",
+        "n": 2,
+        "pct": 2
+      }
+    ],
+    "segnalato": {
+      "n": 79,
+      "pct": 65
+    },
+    "esito": [
+      {
+        "valore": "Ho avuto risposta, ma il problema è rimasto",
+        "n": 45,
+        "pct": 57
+      },
+      {
+        "valore": "Non ho avuto risposta",
+        "n": 32,
+        "pct": 41
+      },
+      {
+        "valore": "Problema risolto",
+        "n": 2,
+        "pct": 3
+      }
+    ],
+    "beve_rubinetto": [
+      {
+        "valore": "Sì",
+        "n": 51,
+        "pct": 30
+      },
+      {
+        "valore": "No",
+        "n": 104,
+        "pct": 62
+      },
+      {
+        "valore": "Solo filtrata",
+        "n": 13,
+        "pct": 8
+      }
+    ],
+    "autoclave": [
+      {
+        "valore": "Sì",
+        "n": 32,
+        "pct": 19
+      },
+      {
+        "valore": "No",
+        "n": 119,
+        "pct": 71
+      },
+      {
+        "valore": "Non lo so",
+        "n": 17,
+        "pct": 10
+      }
+    ],
+    "da_quanto_modale": "Da 1 a 3 anni",
+    "pomeriggio_pct": 54,
+    "indice_medio_gravita": 5.2
+  },
+  "riflessioni_dati": {
+    "tipo_problema": [
+      {
+        "valore": "L'acqua manca del tutto",
+        "n": 82,
+        "pct": 68
+      },
+      {
+        "valore": "Pressione bassa (esce poca acqua)",
+        "n": 71,
+        "pct": 59
+      },
+      {
+        "valore": "Acqua torbida o colorata",
+        "n": 11,
+        "pct": 9
+      },
+      {
+        "valore": "Odore o sapore strano",
+        "n": 6,
+        "pct": 5
+      },
+      {
+        "valore": "Perdite visibili in strada o vicino casa",
+        "n": 3,
+        "pct": 2
+      }
+    ],
+    "come_fronte": [
+      {
+        "valore": "Acqua in bottiglia per bere",
+        "n": 63,
+        "pct": 52
+      },
+      {
+        "valore": "Acqua in bottiglia anche per cucinare",
+        "n": 40,
+        "pct": 33
+      },
+      {
+        "valore": "Scorte in taniche o bottiglioni",
+        "n": 47,
+        "pct": 39
+      },
+      {
+        "valore": "Autoclave o serbatoio",
+        "n": 33,
+        "pct": 27
+      },
+      {
+        "valore": "Fontane pubbliche o casa dell'acqua",
+        "n": 5,
+        "pct": 4
+      },
+      {
+        "valore": "Filtri o depuratore domestico",
+        "n": 1,
+        "pct": 1
+      },
+      {
+        "valore": "Niente di particolare",
+        "n": 18,
+        "pct": 15
+      }
+    ],
+    "autoclave_vs_problemi": {
+      "n_autoclave_si": 32,
+      "n_autoclave_si_con_problemi": 31,
+      "pct": 97
+    },
+    "piano_vs_manca_tutto": [
+      {
+        "gruppo": "piani bassi (terra, 1°-2°)",
+        "n": 47,
+        "n_manca_tutto": 30,
+        "pct_manca_tutto": 64
+      },
+      {
+        "gruppo": "piani alti (dal 3° in su)",
+        "n": 32,
+        "n_manca_tutto": 24,
+        "pct_manca_tutto": 75
+      }
+    ],
+    "beve_rubinetto_senza_problemi": {
+      "n_gruppo": 47,
+      "valori": [
+        {
+          "valore": "Sì",
+          "n": 23,
+          "pct": 49
+        },
+        {
+          "valore": "No",
+          "n": 21,
+          "pct": 45
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 3,
+          "pct": 6
+        }
+      ]
+    }
+  },
+  "zone": [
+    {
+      "n": 43,
+      "n_problemi": 30,
+      "pct_problemi": 70,
+      "n_gravi": 16,
+      "pct_gravi": 37,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 28,
+          "pct": 93
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 2,
+          "pct": 7
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 1,
+          "pct": 3
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 7,
+          "pct": 23
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 15,
+          "pct": 50
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 3,
+          "pct": 10
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 4,
+          "pct": 13
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 4,
+          "pct": 13
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 18,
+          "pct": 60
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 4,
+          "pct": 13
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 2,
+          "pct": 7
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 2,
+          "pct": 7
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 24,
+          "pct": 80
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 7,
+          "pct": 23
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 1,
+          "pct": 3
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 4,
+          "pct": 13
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 7,
+          "pct": 23
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 26,
+          "pct": 87
+        },
+        {
+          "valore": "A volte",
+          "n": 2,
+          "pct": 7
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 1,
+          "pct": 3
+        },
+        {
+          "valore": "Non lo so",
+          "n": 1,
+          "pct": 3
+        }
+      ],
+      "segnalato": {
+        "n": 18,
+        "pct": 60
+      },
+      "esito": [
+        {
+          "valore": "Ho avuto risposta, ma il problema è rimasto",
+          "n": 9,
+          "pct": 50
+        },
+        {
+          "valore": "Non ho avuto risposta",
+          "n": 8,
+          "pct": 44
+        },
+        {
+          "valore": "Problema risolto",
+          "n": 1,
+          "pct": 6
+        }
+      ],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 13,
+          "pct": 30
+        },
+        {
+          "valore": "No",
+          "n": 28,
+          "pct": 65
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 2,
+          "pct": 5
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 2,
+          "pct": 5
+        },
+        {
+          "valore": "No",
+          "n": 38,
+          "pct": 88
+        },
+        {
+          "valore": "Non lo so",
+          "n": 3,
+          "pct": 7
+        }
+      ],
+      "da_quanto_modale": "Da 1 a 3 anni",
+      "pomeriggio_pct": 80,
+      "nome": "Centro",
+      "poco_significativo": false,
+      "indice_medio_gravita": 5.4
+    },
+    {
+      "n": 25,
+      "n_problemi": 22,
+      "pct_problemi": 88,
+      "n_gravi": 15,
+      "pct_gravi": 60,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 19,
+          "pct": 86
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 2,
+          "pct": 9
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 1,
+          "pct": 5
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 4,
+          "pct": 18
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 9,
+          "pct": 41
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 4,
+          "pct": 18
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 4,
+          "pct": 18
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 2,
+          "pct": 9
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 5,
+          "pct": 23
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 7,
+          "pct": 32
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 7,
+          "pct": 32
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 5,
+          "pct": 23
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 1,
+          "pct": 5
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 4,
+          "pct": 18
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 5,
+          "pct": 23
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 4,
+          "pct": 18
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 13,
+          "pct": 59
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 21,
+          "pct": 95
+        },
+        {
+          "valore": "A volte",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 1,
+          "pct": 5
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 16,
+        "pct": 73
+      },
+      "esito": [
+        {
+          "valore": "Ho avuto risposta, ma il problema è rimasto",
+          "n": 13,
+          "pct": 81
+        },
+        {
+          "valore": "Non ho avuto risposta",
+          "n": 3,
+          "pct": 19
+        },
+        {
+          "valore": "Problema risolto",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 7,
+          "pct": 28
+        },
+        {
+          "valore": "No",
+          "n": 16,
+          "pct": 64
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 2,
+          "pct": 8
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 16,
+          "pct": 64
+        },
+        {
+          "valore": "No",
+          "n": 5,
+          "pct": 20
+        },
+        {
+          "valore": "Non lo so",
+          "n": 4,
+          "pct": 16
+        }
+      ],
+      "da_quanto_modale": "Da 3 a 10 anni",
+      "pomeriggio_pct": 5,
+      "nome": "Turci",
+      "poco_significativo": false,
+      "indice_medio_gravita": 5.8
+    },
+    {
+      "n": 17,
+      "n_problemi": 12,
+      "pct_problemi": 71,
+      "n_gravi": 9,
+      "pct_gravi": 53,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 12,
+          "pct": 100
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 2,
+          "pct": 17
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 6,
+          "pct": 50
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 1,
+          "pct": 8
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 3,
+          "pct": 25
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 10,
+          "pct": 83
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 2,
+          "pct": 17
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 2,
+          "pct": 17
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 9,
+          "pct": 75
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 8,
+          "pct": 67
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 1,
+          "pct": 8
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 1,
+          "pct": 8
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 1,
+          "pct": 8
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 12,
+          "pct": 100
+        },
+        {
+          "valore": "A volte",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 11,
+        "pct": 92
+      },
+      "esito": [
+        {
+          "valore": "Ho avuto risposta, ma il problema è rimasto",
+          "n": 5,
+          "pct": 45
+        },
+        {
+          "valore": "Non ho avuto risposta",
+          "n": 6,
+          "pct": 55
+        },
+        {
+          "valore": "Problema risolto",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 2,
+          "pct": 12
+        },
+        {
+          "valore": "No",
+          "n": 15,
+          "pct": 88
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 1,
+          "pct": 6
+        },
+        {
+          "valore": "No",
+          "n": 14,
+          "pct": 82
+        },
+        {
+          "valore": "Non lo so",
+          "n": 2,
+          "pct": 12
+        }
+      ],
+      "da_quanto_modale": "Da 1 a 3 anni",
+      "pomeriggio_pct": 75,
+      "nome": "Sorbo",
+      "poco_significativo": false,
+      "indice_medio_gravita": 6.1
+    },
+    {
+      "n": 13,
+      "n_problemi": 11,
+      "pct_problemi": 85,
+      "n_gravi": 3,
+      "pct_gravi": 23,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 7,
+          "pct": 64
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 3,
+          "pct": 27
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 1,
+          "pct": 9
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 7,
+          "pct": 64
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 2,
+          "pct": 18
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 1,
+          "pct": 9
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 1,
+          "pct": 9
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 1,
+          "pct": 9
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 4,
+          "pct": 36
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 5,
+          "pct": 45
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 1,
+          "pct": 9
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 3,
+          "pct": 27
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 1,
+          "pct": 9
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 6,
+          "pct": 55
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 2,
+          "pct": 18
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 5,
+          "pct": 45
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 5,
+          "pct": 45
+        },
+        {
+          "valore": "A volte",
+          "n": 5,
+          "pct": 45
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 9,
+        "pct": 82
+      },
+      "esito": [
+        {
+          "valore": "Ho avuto risposta, ma il problema è rimasto",
+          "n": 7,
+          "pct": 78
+        },
+        {
+          "valore": "Non ho avuto risposta",
+          "n": 1,
+          "pct": 11
+        },
+        {
+          "valore": "Problema risolto",
+          "n": 1,
+          "pct": 11
+        }
+      ],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 2,
+          "pct": 15
+        },
+        {
+          "valore": "No",
+          "n": 7,
+          "pct": 54
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 4,
+          "pct": 31
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 4,
+          "pct": 31
+        },
+        {
+          "valore": "No",
+          "n": 8,
+          "pct": 62
+        },
+        {
+          "valore": "Non lo so",
+          "n": 1,
+          "pct": 8
+        }
+      ],
+      "da_quanto_modale": "Da 3 a 10 anni",
+      "pomeriggio_pct": 9,
+      "nome": "Caposolofra / Caprai",
+      "poco_significativo": false,
+      "indice_medio_gravita": 4.5
+    },
+    {
+      "n": 14,
+      "n_problemi": 14,
+      "pct_problemi": 100,
+      "n_gravi": 6,
+      "pct_gravi": 43,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 12,
+          "pct": 86
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 2,
+          "pct": 14
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 7,
+          "pct": 50
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 6,
+          "pct": 43
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 1,
+          "pct": 7
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 2,
+          "pct": 14
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 4,
+          "pct": 29
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 8,
+          "pct": 57
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 1,
+          "pct": 7
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 14,
+          "pct": 100
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 3,
+          "pct": 21
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 1,
+          "pct": 7
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 3,
+          "pct": 21
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 11,
+          "pct": 79
+        },
+        {
+          "valore": "A volte",
+          "n": 2,
+          "pct": 14
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non lo so",
+          "n": 1,
+          "pct": 7
+        }
+      ],
+      "segnalato": {
+        "n": 8,
+        "pct": 57
+      },
+      "esito": [
+        {
+          "valore": "Ho avuto risposta, ma il problema è rimasto",
+          "n": 3,
+          "pct": 38
+        },
+        {
+          "valore": "Non ho avuto risposta",
+          "n": 5,
+          "pct": 62
+        },
+        {
+          "valore": "Problema risolto",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 5,
+          "pct": 36
+        },
+        {
+          "valore": "No",
+          "n": 8,
+          "pct": 57
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 1,
+          "pct": 7
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 2,
+          "pct": 14
+        },
+        {
+          "valore": "No",
+          "n": 11,
+          "pct": 79
+        },
+        {
+          "valore": "Non lo so",
+          "n": 1,
+          "pct": 7
+        }
+      ],
+      "da_quanto_modale": "Da 3 a 10 anni",
+      "pomeriggio_pct": 100,
+      "nome": "Pastena",
+      "poco_significativo": false,
+      "indice_medio_gravita": 5.4
+    },
+    {
+      "n": 12,
+      "n_problemi": 10,
+      "pct_problemi": 83,
+      "n_gravi": 0,
+      "pct_gravi": 0,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 3,
+          "pct": 30
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 3,
+          "pct": 30
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 2,
+          "pct": 20
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 2,
+          "pct": 20
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 7,
+          "pct": 70
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 2,
+          "pct": 20
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 1,
+          "pct": 10
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 1,
+          "pct": 10
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 4,
+          "pct": 40
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 4,
+          "pct": 40
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 1,
+          "pct": 10
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 3,
+          "pct": 30
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 3,
+          "pct": 30
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 2,
+          "pct": 20
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 1,
+          "pct": 10
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 4,
+          "pct": 40
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 7,
+          "pct": 70
+        },
+        {
+          "valore": "A volte",
+          "n": 2,
+          "pct": 20
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 1,
+          "pct": 10
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 4,
+        "pct": 40
+      },
+      "esito": [
+        {
+          "valore": "Ho avuto risposta, ma il problema è rimasto",
+          "n": 1,
+          "pct": 25
+        },
+        {
+          "valore": "Non ho avuto risposta",
+          "n": 3,
+          "pct": 75
+        },
+        {
+          "valore": "Problema risolto",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 5,
+          "pct": 42
+        },
+        {
+          "valore": "No",
+          "n": 5,
+          "pct": 42
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 2,
+          "pct": 17
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 5,
+          "pct": 42
+        },
+        {
+          "valore": "No",
+          "n": 5,
+          "pct": 42
+        },
+        {
+          "valore": "Non lo so",
+          "n": 2,
+          "pct": 17
+        }
+      ],
+      "da_quanto_modale": "Da 1 a 3 anni",
+      "pomeriggio_pct": 0,
+      "nome": "Sant'Andrea",
+      "poco_significativo": false,
+      "indice_medio_gravita": 3.3
+    },
+    {
+      "n": 8,
+      "n_problemi": 8,
+      "pct_problemi": 100,
+      "n_gravi": 3,
+      "pct_gravi": 38,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 8,
+          "pct": 100
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 4,
+          "pct": 50
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 2,
+          "pct": 25
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 2,
+          "pct": 25
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 1,
+          "pct": 12
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 6,
+          "pct": 75
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 1,
+          "pct": 12
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 6,
+          "pct": 75
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 1,
+          "pct": 12
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 1,
+          "pct": 12
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 2,
+          "pct": 25
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 5,
+          "pct": 62
+        },
+        {
+          "valore": "A volte",
+          "n": 3,
+          "pct": 38
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 5,
+        "pct": 62
+      },
+      "esito": [
+        {
+          "valore": "Ho avuto risposta, ma il problema è rimasto",
+          "n": 3,
+          "pct": 60
+        },
+        {
+          "valore": "Non ho avuto risposta",
+          "n": 2,
+          "pct": 40
+        },
+        {
+          "valore": "Problema risolto",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 1,
+          "pct": 12
+        },
+        {
+          "valore": "No",
+          "n": 7,
+          "pct": 88
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "No",
+          "n": 6,
+          "pct": 75
+        },
+        {
+          "valore": "Non lo so",
+          "n": 2,
+          "pct": 25
+        }
+      ],
+      "da_quanto_modale": "Da 1 a 3 anni",
+      "pomeriggio_pct": 75,
+      "nome": "Volpi",
+      "poco_significativo": false,
+      "indice_medio_gravita": 5.4
+    },
+    {
+      "n": 8,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "A volte",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 0,
+        "pct": 0
+      },
+      "esito": [],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 4,
+          "pct": 50
+        },
+        {
+          "valore": "No",
+          "n": 4,
+          "pct": 50
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "No",
+          "n": 7,
+          "pct": 88
+        },
+        {
+          "valore": "Non lo so",
+          "n": 1,
+          "pct": 12
+        }
+      ],
+      "nome": "Fratta",
+      "poco_significativo": false,
+      "indice_medio_gravita": null
+    },
+    {
+      "n": 9,
+      "n_problemi": 2,
+      "pct_problemi": 22,
+      "n_gravi": 1,
+      "pct_gravi": 11,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 1,
+          "pct": 50
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 1,
+          "pct": 50
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 1,
+          "pct": 50
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 1,
+          "pct": 50
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 2,
+          "pct": 100
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 1,
+          "pct": 50
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 1,
+          "pct": 50
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 1,
+          "pct": 50
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 1,
+          "pct": 50
+        },
+        {
+          "valore": "A volte",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 1,
+          "pct": 50
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 0,
+        "pct": 0
+      },
+      "esito": [],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 3,
+          "pct": 33
+        },
+        {
+          "valore": "No",
+          "n": 5,
+          "pct": 56
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 1,
+          "pct": 11
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "No",
+          "n": 8,
+          "pct": 89
+        },
+        {
+          "valore": "Non lo so",
+          "n": 1,
+          "pct": 11
+        }
+      ],
+      "da_quanto_modale": "Meno di un anno",
+      "pomeriggio_pct": 50,
+      "nome": "Sant'Agata",
+      "poco_significativo": false,
+      "indice_medio_gravita": 3.5
+    },
+    {
+      "n": 7,
+      "n_problemi": 7,
+      "pct_problemi": 100,
+      "n_gravi": 3,
+      "pct_gravi": 43,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 7,
+          "pct": 100
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 4,
+          "pct": 57
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 2,
+          "pct": 29
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 1,
+          "pct": 14
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 3,
+          "pct": 43
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 2,
+          "pct": 29
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 1,
+          "pct": 14
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 1,
+          "pct": 14
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 1,
+          "pct": 14
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 6,
+          "pct": 86
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 1,
+          "pct": 14
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 6,
+          "pct": 86
+        },
+        {
+          "valore": "A volte",
+          "n": 1,
+          "pct": 14
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 5,
+        "pct": 71
+      },
+      "esito": [
+        {
+          "valore": "Ho avuto risposta, ma il problema è rimasto",
+          "n": 3,
+          "pct": 60
+        },
+        {
+          "valore": "Non ho avuto risposta",
+          "n": 2,
+          "pct": 40
+        },
+        {
+          "valore": "Problema risolto",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 1,
+          "pct": 14
+        },
+        {
+          "valore": "No",
+          "n": 6,
+          "pct": 86
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "No",
+          "n": 7,
+          "pct": 100
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "da_quanto_modale": "Meno di un anno",
+      "pomeriggio_pct": 86,
+      "nome": "Toppolo / Balsami",
+      "poco_significativo": false,
+      "indice_medio_gravita": 5.0
+    },
+    {
+      "n": 5,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0,
+      "frequenza": [
+        {
+          "valore": "Quasi ogni giorno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta a settimana",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta al mese",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Qualche volta l'anno",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "durata": [
+        {
+          "valore": "Meno di un'ora",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 4 ore",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Mezza giornata",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Una giornata intera",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più giorni di seguito",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "da_quanto": [
+        {
+          "valore": "Meno di un anno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 1 a 3 anni",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Da 3 a 10 anni",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Più di 10 anni",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "momenti": [
+        {
+          "valore": "Mattina (6–12)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Pomeriggio (12–18)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Sera (18–23)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Notte (23–6)",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Tutto il giorno",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non c'è un orario fisso",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "avvisi": [
+        {
+          "valore": "Quasi mai",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "A volte",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Sì, quasi sempre",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "segnalato": {
+        "n": 0,
+        "pct": 0
+      },
+      "esito": [],
+      "beve_rubinetto": [
+        {
+          "valore": "Sì",
+          "n": 3,
+          "pct": 60
+        },
+        {
+          "valore": "No",
+          "n": 2,
+          "pct": 40
+        },
+        {
+          "valore": "Solo filtrata",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "autoclave": [
+        {
+          "valore": "Sì",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "valore": "No",
+          "n": 5,
+          "pct": 100
+        },
+        {
+          "valore": "Non lo so",
+          "n": 0,
+          "pct": 0
+        }
+      ],
+      "nome": "Toro / Stazione",
+      "poco_significativo": false,
+      "indice_medio_gravita": null
+    },
+    {
+      "n": 2,
+      "n_problemi": 1,
+      "solo_conteggio_minimo": true,
+      "nome": "Castello",
+      "poco_significativo": true,
+      "indice_medio_gravita": 2.0
+    },
+    {
+      "n": 2,
+      "n_problemi": 1,
+      "solo_conteggio_minimo": true,
+      "nome": "Cappuccini",
+      "poco_significativo": true,
+      "indice_medio_gravita": 7.0
+    }
+  ],
+  "n_senza_zona": 3,
+  "vie": [
+    {
+      "nome": "Piazza Municipio",
+      "zone": [
+        "Sant'Agata"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 1,
+      "pct_gravi": 50
+    },
+    {
+      "nome": "Piazza Umberto I",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Piazza del Popolo",
+      "zone": [
+        "Toppolo / Balsami"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Abate Giannattasio",
+      "zone": [
+        "Centro",
+        "Toppolo / Balsami"
+      ],
+      "n": 3,
+      "n_problemi": 3,
+      "pct_problemi": 100,
+      "n_gravi": 2,
+      "pct_gravi": 67
+    },
+    {
+      "nome": "Via Aldo Moro",
+      "zone": [
+        "Centro"
+      ],
+      "n": 2,
+      "n_problemi": 2,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Caduti del 21 Settembre",
+      "zone": [
+        "Caposolofra / Caprai"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Campi",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Caposolofra",
+      "zone": [
+        "Caposolofra / Caprai"
+      ],
+      "n": 6,
+      "n_problemi": 5,
+      "pct_problemi": 83,
+      "n_gravi": 2,
+      "pct_gravi": 33
+    },
+    {
+      "nome": "Via Cappuccini",
+      "zone": [
+        "Cappuccini"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 1,
+      "pct_gravi": 100
+    },
+    {
+      "nome": "Via Caprai",
+      "zone": [
+        "Caposolofra / Caprai"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Casa Papa",
+      "zone": [
+        "Centro",
+        "Sorbo"
+      ],
+      "n": 2,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Castello",
+      "zone": [
+        "Castello"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Cerzeta",
+      "zone": [
+        "Sant'Agata"
+      ],
+      "n": 5,
+      "n_problemi": 1,
+      "pct_problemi": 20,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Cigliano",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Croce",
+      "zone": [
+        "Centro",
+        "Toppolo / Balsami"
+      ],
+      "n": 4,
+      "n_problemi": 4,
+      "pct_problemi": 100,
+      "n_gravi": 3,
+      "pct_gravi": 75
+    },
+    {
+      "nome": "Via Dodici Apostoli",
+      "zone": [
+        "Volpi"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 1,
+      "pct_gravi": 100
+    },
+    {
+      "nome": "Via Felice De Stefano",
+      "zone": [
+        "Centro"
+      ],
+      "n": 10,
+      "n_problemi": 9,
+      "pct_problemi": 90,
+      "n_gravi": 7,
+      "pct_gravi": 70
+    },
+    {
+      "nome": "Via Fontanelle",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 2,
+      "n_problemi": 2,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Forna",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 1,
+      "pct_gravi": 100
+    },
+    {
+      "nome": "Via Giuseppe Maffei",
+      "zone": [
+        "Centro",
+        "Toro / Stazione"
+      ],
+      "n": 7,
+      "n_problemi": 3,
+      "pct_problemi": 43,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Gregorio Ronca",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Luigi Landolfi",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Madonna delle Grazie",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 2,
+      "n_problemi": 2,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Michele Napoli",
+      "zone": [
+        "Pastena",
+        "Volpi"
+      ],
+      "n": 9,
+      "n_problemi": 9,
+      "pct_problemi": 100,
+      "n_gravi": 3,
+      "pct_gravi": 33
+    },
+    {
+      "nome": "Via Misericordia",
+      "zone": [
+        "Fratta"
+      ],
+      "n": 5,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Nuova Scorza",
+      "zone": [
+        "Cappuccini",
+        "Sorbo"
+      ],
+      "n": 5,
+      "n_problemi": 1,
+      "pct_problemi": 20,
+      "n_gravi": 1,
+      "pct_gravi": 20
+    },
+    {
+      "nome": "Via Panoramica Turci",
+      "zone": [
+        "Caposolofra / Caprai",
+        "Turci"
+      ],
+      "n": 23,
+      "n_problemi": 22,
+      "pct_problemi": 96,
+      "n_gravi": 14,
+      "pct_gravi": 61
+    },
+    {
+      "nome": "Via Pastena",
+      "zone": [
+        "Pastena"
+      ],
+      "n": 12,
+      "n_problemi": 12,
+      "pct_problemi": 100,
+      "n_gravi": 5,
+      "pct_gravi": 42
+    },
+    {
+      "nome": "Via Regina Margherita",
+      "zone": [
+        "Volpi"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Sant'Andrea",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 3,
+      "n_problemi": 1,
+      "pct_problemi": 33,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Santa Lucia",
+      "zone": [
+        "Caposolofra / Caprai",
+        "Centro"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 1,
+      "pct_gravi": 50
+    },
+    {
+      "nome": "Via Sorbo Soprano",
+      "zone": [
+        "Sorbo"
+      ],
+      "n": 5,
+      "n_problemi": 5,
+      "pct_problemi": 100,
+      "n_gravi": 2,
+      "pct_gravi": 40
+    },
+    {
+      "nome": "Via Sorbo Sottano",
+      "zone": [
+        "Sorbo"
+      ],
+      "n": 6,
+      "n_problemi": 5,
+      "pct_problemi": 83,
+      "n_gravi": 5,
+      "pct_gravi": 83
+    },
+    {
+      "nome": "Via Starza",
+      "zone": [
+        "Centro",
+        "Fratta"
+      ],
+      "n": 3,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Starza del Conte",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Toppolo",
+      "zone": [
+        "Toppolo / Balsami"
+      ],
+      "n": 3,
+      "n_problemi": 3,
+      "pct_problemi": 100,
+      "n_gravi": 2,
+      "pct_gravi": 67
+    },
+    {
+      "nome": "Via Toro Sottano",
+      "zone": [
+        "Toro / Stazione"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Turci",
+      "zone": [
+        "Turci"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 1,
+      "pct_gravi": 50
+    },
+    {
+      "nome": "Via Umberto I",
+      "zone": [
+        "Sant'Agata"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Vicinanzo",
+      "zone": [
+        "Caposolofra / Caprai"
+      ],
+      "n": 3,
+      "n_problemi": 2,
+      "pct_problemi": 67,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Vico Palazzo",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via della Fortuna",
+      "zone": [
+        "Centro"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via della Libertà",
+      "zone": [
+        "Centro",
+        "Fratta"
+      ],
+      "n": 7,
+      "n_problemi": 3,
+      "pct_problemi": 43,
+      "n_gravi": 2,
+      "pct_gravi": 29
+    },
+    {
+      "nome": "Via delle Vigne",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 3,
+      "n_problemi": 3,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Viale Principe Amedeo",
+      "zone": [
+        "Centro"
+      ],
+      "n": 5,
+      "n_problemi": 3,
+      "pct_problemi": 60,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Vico del Vento",
+      "zone": [
+        "Centro",
+        "Sorbo"
+      ],
+      "n": 5,
+      "n_problemi": 5,
+      "pct_problemi": 100,
+      "n_gravi": 5,
+      "pct_gravi": 100
+    }
+  ],
+  "vie_mappa": [
+    {
+      "nome": "Piazza Municipio",
+      "zone": [
+        "Sant'Agata"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 1,
+      "pct_gravi": 50
+    },
+    {
+      "nome": "Piazza Umberto I",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Piazza del Popolo",
+      "zone": [
+        "Toppolo / Balsami"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Abate Giannattasio",
+      "zone": [
+        "Centro",
+        "Toppolo / Balsami"
+      ],
+      "n": 3,
+      "n_problemi": 3,
+      "pct_problemi": 100,
+      "n_gravi": 2,
+      "pct_gravi": 67
+    },
+    {
+      "nome": "Via Aldo Moro",
+      "zone": [
+        "Centro"
+      ],
+      "n": 2,
+      "n_problemi": 2,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Caduti del 21 Settembre",
+      "zone": [
+        "Caposolofra / Caprai"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Campi",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Caposolofra",
+      "zone": [
+        "Caposolofra / Caprai"
+      ],
+      "n": 6,
+      "n_problemi": 5,
+      "pct_problemi": 83,
+      "n_gravi": 2,
+      "pct_gravi": 33
+    },
+    {
+      "nome": "Via Cappuccini",
+      "zone": [
+        "Cappuccini"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 1,
+      "pct_gravi": 100
+    },
+    {
+      "nome": "Via Caprai",
+      "zone": [
+        "Caposolofra / Caprai"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Casa Papa",
+      "zone": [
+        "Centro",
+        "Sorbo"
+      ],
+      "n": 2,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Castello",
+      "zone": [
+        "Castello"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Cerzeta",
+      "zone": [
+        "Sant'Agata"
+      ],
+      "n": 5,
+      "n_problemi": 1,
+      "pct_problemi": 20,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Cigliano",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Croce",
+      "zone": [
+        "Centro",
+        "Toppolo / Balsami"
+      ],
+      "n": 4,
+      "n_problemi": 4,
+      "pct_problemi": 100,
+      "n_gravi": 3,
+      "pct_gravi": 75
+    },
+    {
+      "nome": "Via Dodici Apostoli",
+      "zone": [
+        "Volpi"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 1,
+      "pct_gravi": 100
+    },
+    {
+      "nome": "Via Felice De Stefano",
+      "zone": [
+        "Centro"
+      ],
+      "n": 10,
+      "n_problemi": 9,
+      "pct_problemi": 90,
+      "n_gravi": 7,
+      "pct_gravi": 70
+    },
+    {
+      "nome": "Via Fontanelle",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 2,
+      "n_problemi": 2,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Forna",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 1,
+      "pct_gravi": 100
+    },
+    {
+      "nome": "Via Giuseppe Maffei",
+      "zone": [
+        "Centro",
+        "Toro / Stazione"
+      ],
+      "n": 7,
+      "n_problemi": 3,
+      "pct_problemi": 43,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Gregorio Ronca",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Luigi Landolfi",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Madonna delle Grazie",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 2,
+      "n_problemi": 2,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Michele Napoli",
+      "zone": [
+        "Pastena",
+        "Volpi"
+      ],
+      "n": 9,
+      "n_problemi": 9,
+      "pct_problemi": 100,
+      "n_gravi": 3,
+      "pct_gravi": 33
+    },
+    {
+      "nome": "Via Misericordia",
+      "zone": [
+        "Fratta"
+      ],
+      "n": 5,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Nuova Scorza",
+      "zone": [
+        "Cappuccini",
+        "Sorbo"
+      ],
+      "n": 5,
+      "n_problemi": 1,
+      "pct_problemi": 20,
+      "n_gravi": 1,
+      "pct_gravi": 20
+    },
+    {
+      "nome": "Via Panoramica Turci",
+      "zone": [
+        "Caposolofra / Caprai",
+        "Turci"
+      ],
+      "n": 23,
+      "n_problemi": 22,
+      "pct_problemi": 96,
+      "n_gravi": 14,
+      "pct_gravi": 61
+    },
+    {
+      "nome": "Via Pastena",
+      "zone": [
+        "Pastena"
+      ],
+      "n": 12,
+      "n_problemi": 12,
+      "pct_problemi": 100,
+      "n_gravi": 5,
+      "pct_gravi": 42
+    },
+    {
+      "nome": "Via Regina Margherita",
+      "zone": [
+        "Volpi"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Sant'Andrea",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 3,
+      "n_problemi": 1,
+      "pct_problemi": 33,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Santa Lucia",
+      "zone": [
+        "Caposolofra / Caprai",
+        "Centro"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 1,
+      "pct_gravi": 50
+    },
+    {
+      "nome": "Via Sorbo Soprano",
+      "zone": [
+        "Sorbo"
+      ],
+      "n": 5,
+      "n_problemi": 5,
+      "pct_problemi": 100,
+      "n_gravi": 2,
+      "pct_gravi": 40
+    },
+    {
+      "nome": "Via Sorbo Sottano",
+      "zone": [
+        "Sorbo"
+      ],
+      "n": 6,
+      "n_problemi": 5,
+      "pct_problemi": 83,
+      "n_gravi": 5,
+      "pct_gravi": 83
+    },
+    {
+      "nome": "Via Starza",
+      "zone": [
+        "Centro",
+        "Fratta"
+      ],
+      "n": 3,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Starza del Conte",
+      "zone": [
+        "Centro"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Toppolo",
+      "zone": [
+        "Toppolo / Balsami"
+      ],
+      "n": 3,
+      "n_problemi": 3,
+      "pct_problemi": 100,
+      "n_gravi": 2,
+      "pct_gravi": 67
+    },
+    {
+      "nome": "Via Toro Sottano",
+      "zone": [
+        "Toro / Stazione"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Turci",
+      "zone": [
+        "Turci"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 1,
+      "pct_gravi": 50
+    },
+    {
+      "nome": "Via Umberto I",
+      "zone": [
+        "Sant'Agata"
+      ],
+      "n": 1,
+      "n_problemi": 0,
+      "pct_problemi": 0,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Vicinanzo",
+      "zone": [
+        "Caposolofra / Caprai"
+      ],
+      "n": 3,
+      "n_problemi": 2,
+      "pct_problemi": 67,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via Vico Palazzo",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 1,
+      "n_problemi": 1,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via della Fortuna",
+      "zone": [
+        "Centro"
+      ],
+      "n": 2,
+      "n_problemi": 1,
+      "pct_problemi": 50,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Via della Libertà",
+      "zone": [
+        "Centro",
+        "Fratta"
+      ],
+      "n": 7,
+      "n_problemi": 3,
+      "pct_problemi": 43,
+      "n_gravi": 2,
+      "pct_gravi": 29
+    },
+    {
+      "nome": "Via delle Vigne",
+      "zone": [
+        "Sant'Andrea"
+      ],
+      "n": 3,
+      "n_problemi": 3,
+      "pct_problemi": 100,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Viale Principe Amedeo",
+      "zone": [
+        "Centro"
+      ],
+      "n": 5,
+      "n_problemi": 3,
+      "pct_problemi": 60,
+      "n_gravi": 0,
+      "pct_gravi": 0
+    },
+    {
+      "nome": "Vico del Vento",
+      "zone": [
+        "Centro",
+        "Sorbo"
+      ],
+      "n": 5,
+      "n_problemi": 5,
+      "pct_problemi": 100,
+      "n_gravi": 5,
+      "pct_gravi": 100
+    }
+  ],
+  "vie_copertura": {
+    "n_totale_risposte": 168,
+    "n_via_riconosciuta": 166,
+    "n_via_non_riconosciuta_o_assente": 2,
+    "n_via_pubblicata": 166
+  },
+  "note_aperte": {
+    "totale_risposte_con_testo": 44,
+    "escluse_per_privacy": 5,
+    "temi": [
+      {
+        "tema": "rete e perdite",
+        "n": 9,
+        "sintesi": "Il tema più ricorrente: chi scrive chiede di ridurre le perdite della rete e di rifare le condotte più vecchie, spesso descritte come la causa principale del problema più che la scarsità d'acqua in sé."
+      },
+      {
+        "tema": "competenza e programmazione",
+        "n": 3,
+        "sintesi": "Alcune note chiedono più programmazione e chiarezza nella gestione del servizio, senza indicare soluzioni tecniche specifiche."
+      },
+      {
+        "tema": "disagio quotidiano",
+        "n": 8,
+        "sintesi": "Diverse persone descrivono quanto il problema pesi sulla vita di tutti i giorni, dalle faccende domestiche alla cura di bambini o familiari."
+      },
+      {
+        "tema": "pozzi e qualità dell'acqua",
+        "n": 6,
+        "sintesi": "Più note chiedono di riattivare pozzi oggi fermi e di controllare meglio la qualità dell'acqua, non solo la sua disponibilità."
+      },
+      {
+        "tema": "monitoraggio digitale e distretti",
+        "n": 3,
+        "sintesi": "Si propongono sensori di rete e una distrettualizzazione dell'acquedotto, per individuare le perdite più rapidamente."
+      },
+      {
+        "tema": "fragili e serbatoi",
+        "n": 3,
+        "sintesi": "Si chiede un sostegno concreto, anche economico, per chi è anziano o in difficoltà e deve procurarsi un serbatoio o un'autoclave."
+      },
+      {
+        "tema": "casette dell'acqua",
+        "n": 1,
+        "sintesi": "Una nota propone di aumentare il numero delle casette pubbliche dell'acqua."
+      },
+      {
+        "tema": "chiusure programmate e orari",
+        "n": 4,
+        "sintesi": "Diverse note propongono di programmare le eventuali chiusure con orari fissi comunicati in anticipo, anche per permettere ai pozzi di ricaricarsi."
+      },
+      {
+        "tema": "sprechi e usi non essenziali",
+        "n": 2,
+        "sintesi": "Alcune note segnalano l'uso dell'acqua per usi non essenziali (lavare cortili, innaffiare giardini) quando il servizio è già in difficoltà."
+      },
+      {
+        "tema": "acqua piovana e riuso",
+        "n": 1,
+        "sintesi": "Una nota propone sistemi di raccolta e riutilizzo dell'acqua piovana."
+      },
+      {
+        "tema": "altro",
+        "n": 3,
+        "sintesi": "Note senza un contenuto specifico sul tema dell'acqua (risposte molto brevi o un commento sul questionario stesso)."
+      }
+    ],
+    "rapporto_proposte_sfogo": {
+      "proposta_pct": 69,
+      "sfogo_pct": 31,
+      "n_classificate": 36
+    }
+  },
+  "soglie_privacy": {
+    "zona_dettaglio_minimo": 5,
+    "nota_vie": "Nessuna soglia minima per le vie: non pubblichiamo civici o punti di riferimento, quindi l'aggregato per via (anche con 1 risposta) non è riconducibile a una persona."
+  }
+}

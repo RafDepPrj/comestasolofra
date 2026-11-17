@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La mappa dell'acqua — Come sta Solofra</title>
+<meta name="description" content="168 risposte a un questionario civico anonimo sull'acqua a Solofra, zona per zona: dove si sente di più il problema, cosa emerge dai dati, cosa si può chiedere.">
+<meta property="og:title" content="La mappa dell'acqua — Come sta Solofra">
+<meta property="og:description" content="Un questionario civico anonimo, zona per zona: dove si sente di più il problema dell'acqua a Solofra, secondo chi ha risposto. Non un sondaggio, non un'accusa: un esercizio di trasparenza.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rafdepprj.github.io/comestasolofra/mappa-acqua.html">
+<meta property="og:image" content="https://rafdepprj.github.io/comestasolofra/logo-social.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="La mappa dell'acqua — Come sta Solofra">
+<meta name="twitter:description" content="Un questionario civico anonimo, zona per zona: dove si sente di più il problema dell'acqua a Solofra, secondo chi ha risposto.">
+<meta name="twitter:image" content="https://rafdepprj.github.io/comestasolofra/logo-social.jpg">
+<link rel="canonical" href="https://rafdepprj.github.io/comestasolofra/mappa-acqua.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script defer src="analytics.js"></script>
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ---------- riquadro "come leggere questi numeri" ---------- */
+.leggi-box { background: var(--paper-2); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin: 28px 0; }
+.leggi-box h3 { font-family: var(--serif); font-size: 17px; margin-bottom: 10px; color: var(--ink); }
+.leggi-box p { font-size: 14px; color: var(--ink-2); margin-bottom: 8px; }
+.leggi-box p:last-child { margin-bottom: 0; }
+
+/* ---------- KPI ---------- */
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
+.stat-card { background: var(--paper); padding: 20px 18px; }
+.stat-val { font-family: var(--serif); font-size: 34px; line-height: 1; letter-spacing: -0.03em; margin-bottom: 6px; color: var(--accent); }
+.stat-lbl { font-size: 12.5px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.stat-sub { font-size: 11.5px; color: var(--ink-3); }
+
+/* ---------- toggle tema ---------- */
+.tema-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink-2); background: var(--paper-2); border: 1px solid var(--border); border-radius: 20px; padding: 6px 14px; cursor: pointer; }
+.tema-toggle:hover { background: var(--paper-3); }
+
+/* ---------- mappa ---------- */
+.map-controls { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin-bottom: 14px; font-size: 13px; }
+.map-controls label { color: var(--ink-2); display: flex; align-items: center; gap: 6px; }
+.map-controls select { font-family: var(--sans); font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--paper); color: var(--ink); }
+.map-wrap { position: relative; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--paper-2); }
+/* l'area abitata di Solofra è larga circa quanto alta (rapporto ~1.16:1):
+   l'altezza segue la larghezza reale del riquadro così la mappa lo riempie,
+   invece di restare piccola dentro un riquadro panoramico fisso. */
+#mapZone { width: 100%; aspect-ratio: 1.16; min-height: 420px; max-height: 760px; }
+@media (max-width: 680px) { #mapZone { aspect-ratio: 0.95; min-height: 380px; max-height: 520px; } }
+.map-wrap:fullscreen { border-radius: 0; display: flex; flex-direction: column; }
+.map-wrap:fullscreen #mapZone { height: auto; aspect-ratio: auto; max-height: none; flex: 1; }
+.map-wrap:-webkit-full-screen { border-radius: 0; display: flex; flex-direction: column; }
+.map-wrap:-webkit-full-screen #mapZone { height: auto; aspect-ratio: auto; max-height: none; flex: 1; }
+.map-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 16px; background: var(--paper-2); border-top: 1px solid var(--border); font-size: 12px; color: var(--ink-2); }
+.map-legend .box { width: 15px; height: 15px; border-radius: 3px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.15); }
+.map-legend .item { display: flex; align-items: center; gap: 6px; }
+.map-actions { display: flex; gap: 10px; padding: 10px 16px; border-top: 1px solid var(--border); background: var(--paper); }
+.btn-sec { font-family: var(--sans); font-size: 12.5px; background: var(--paper); color: var(--ink-2); border: 1px solid var(--border); border-radius: 7px; padding: 8px 14px; cursor: pointer; }
+.btn-sec:hover { color: var(--ink); border-color: var(--ink-3); }
+.leaflet-popup-content { font-family: var(--sans); font-size: 13px; }
+.leaflet-popup-content b { font-family: var(--serif); font-size: 15px; }
+.zona-label { background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; box-shadow: none; padding: 1px 4px; font-family: var(--sans); line-height: 1.15; text-align: center; pointer-events: none; }
+.zona-label::before { display: none; }
+.zona-label-nome { font-size: 8px; font-weight: 600; color: #212529; white-space: nowrap; }
+.zona-label-val { font-size: 9px; font-weight: 700; color: #212529; }
+:root[data-theme="dark"] .zona-label { background: rgba(27,23,21,0.85); border-color: rgba(255,255,255,0.25); }
+:root[data-theme="dark"] .zona-label-nome, :root[data-theme="dark"] .zona-label-val { color: #f1ece8; }
+.mappa-nota { font-size: 12px; color: var(--ink-3); margin-top: 8px; }
+.embed-box { margin-top: 18px; padding: 16px 18px; background: var(--paper-2); border: 1px solid var(--border); border-radius: 10px; }
+.embed-box h4 { font-family: var(--serif); font-size: 15px; margin-bottom: 6px; color: var(--ink); }
+.embed-box textarea { width: 100%; font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--ink-2); background: var(--paper); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; margin: 8px 0; resize: vertical; }
+
+/* ---------- tabella accessibile equivalente ---------- */
+.tbl-wrap { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+table.data th, table.data td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+table.data th { font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); cursor: pointer; user-select: none; }
+table.data th:hover { color: var(--ink); }
+table.data td.num, table.data th.num { text-align: right; }
+table.data tr.poco-sig { opacity: .65; }
+table.data tr.poco-sig td:first-child::after { content: " *"; color: var(--accent); }
+
+/* ---------- dettaglio zona ---------- */
+.dett-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.dett-head h3 { font-family: var(--serif); font-size: 22px; }
+.dett-head select { font-family: var(--sans); font-size: 13px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--paper); color: var(--ink); }
+.dett-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; }
+.dett-col h4 { font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+.barra-row { margin-bottom: 9px; }
+.barra-lbl { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--ink-2); margin-bottom: 3px; }
+.barra-lbl b { color: var(--ink); font-weight: 500; }
+.barra-track { height: 7px; background: var(--paper-3); border-radius: 4px; overflow: hidden; }
+.barra-fill { height: 100%; background: var(--accent); border-radius: 4px; }
+.dett-poco { font-size: 13px; color: var(--ink-3); font-style: italic; padding: 16px; background: var(--paper-2); border-radius: 8px; }
+
+/* ---------- vie ---------- */
+.via-filtro { margin-bottom: 14px; font-size: 13px; }
+.via-filtro select { font-family: var(--sans); font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--paper); color: var(--ink); }
+
+/* ---------- cosa emerge ---------- */
+.emerge-group h4 { font-family: var(--serif); font-size: 18px; margin: 26px 0 12px; color: var(--ink); }
+.emerge-group h4:first-child { margin-top: 0; }
+.emerge-item { border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; background: var(--paper-2); }
+.emerge-item .fatto { font-size: 14.5px; color: var(--ink); margin-bottom: 6px; }
+.emerge-item .ipotesi { font-size: 13px; color: var(--ink-2); margin-bottom: 4px; }
+.emerge-item .ipotesi::before { content: "Ipotesi: "; font-weight: 500; color: var(--ink-3); }
+.emerge-item .non-possiamo { font-size: 12.5px; color: var(--ink-3); font-style: italic; }
+.emerge-item .non-possiamo::before { content: "Cosa non possiamo dire: "; font-style: normal; font-weight: 500; }
+
+/* ---------- raccomandazioni ---------- */
+.racc-fase h4 { font-family: var(--serif); font-size: 19px; margin: 30px 0 14px; }
+.racc-fase h4:first-child { margin-top: 0; }
+.racc-card { border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+.racc-card .cosa { font-size: 14.5px; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
+.racc-card .perche, .racc-card .chi, .racc-card .misura { font-size: 13px; color: var(--ink-2); margin-bottom: 4px; }
+.racc-card .perche::before { content: "Perché: "; color: var(--ink-3); }
+.racc-card .chi::before { content: "Chi potrebbe farlo: "; color: var(--ink-3); }
+.racc-card .misura::before { content: "Come misurarlo: "; color: var(--ink-3); }
+
+/* ---------- note aperte ---------- */
+.temi-grid { margin: 16px 0; }
+.tema-card { display: flex; gap: 16px; align-items: flex-start; border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; background: var(--paper-2); }
+.tema-card .n-wrap { flex-shrink: 0; width: 46px; text-align: center; }
+.tema-card .n { font-family: var(--serif); font-size: 24px; color: var(--accent); line-height: 1; display: block; }
+.tema-card .n-lbl { font-size: 10px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .03em; }
+.tema-card .corpo .nome { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.tema-card .corpo .sintesi { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme-mandarin.css?v=2">
+<style>
+:root[data-theme="dark"] {
+  --ink:#f1ece8; --ink-2:#c9c2ba; --ink-3:#938c83;
+  --paper:#1b1715; --paper-2:#242019; --paper-3:#2d2721;
+  --border: rgba(255,255,255,0.14);
+}
+:root[data-theme="dark"] .leaflet-tile { filter: brightness(0.85) contrast(1.05); }
+:root[data-theme="dark"] .map-legend .box { border-color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<header class="mn-header" id="mnHeader"></header>
+
+<div class="hero">
+  <p class="hero-eyebrow">Partecipazione · questionario civico</p>
+  <h1 class="hero-title">La mappa <em>dell'acqua.</em></h1>
+  <p class="hero-sub">Un esercizio civico di trasparenza, per capire dove il problema dell'acqua si sente di più a Solofra. Non per accusare nessuno: per avere, finalmente, una fotografia condivisa da cui ripartire.</p>
+  <p class="hero-meta">
+    <button class="tema-toggle" id="temaToggle" type="button" aria-pressed="false">🌙 Tema scuro</button>
+    <span id="metaRisposte"></span>
+  </p>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Indice della pagina">
+    <p class="toc-hed">In questa pagina</p>
+    <ol>
+      <li><a href="#leggere">Come leggere questi numeri</a></li>
+      <li><a href="#kpi">I numeri in sintesi</a></li>
+      <li><a href="#mappa">La mappa a zone</a></li>
+      <li><a href="#dettaglio">Dettaglio per zona</a></li>
+      <li><a href="#confronto">Confronto tra zone</a></li>
+      <li><a href="#vie">Le vie</a></li>
+      <li><a href="#emerge">Cosa emerge</a></li>
+      <li><a href="#fare">Cosa si può fare</a></li>
+      <li><a href="#note-aperte">Le risposte aperte</a></li>
+      <li><a href="#metodo">Come è stato fatto</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section id="leggere" class="block">
+      <div class="leggi-box">
+        <h3>Come leggere questi numeri</h3>
+        <p id="leggiN">Caricamento…</p>
+        <p>Chi ha un problema con l'acqua ha più motivo di compilare un questionario sull'acqua: chi non ha mai avuto problemi, probabilmente, ha anche meno motivo di rispondere. Per questo i numeri di questa pagina descrivono <strong>chi ha risposto</strong>, non necessariamente tutta Solofra.</p>
+        <p>È una raccolta volontaria e anonima, aperta a chiunque volesse rispondere: usala per capire dove guardare, non come conteggio esatto di chi ha o non ha un problema in una via o in una zona.</p>
+      </div>
+    </section>
+
+    <section id="kpi" class="block">
+      <p class="block-num">01</p>
+      <h2 class="block-title">I numeri in sintesi</h2>
+      <div class="stat-grid" id="kpiGrid"></div>
+      <p class="mappa-nota">Le percentuali sono sempre calcolate su chi ha risposto in quella categoria; il conteggio esatto (es. «28 su 37») è sempre indicato.</p>
+    </section>
+
+    <section id="mappa" class="block">
+      <p class="block-num">02</p>
+      <h2 class="block-title">La mappa a zone</h2>
+      <p class="block-intro">I confini delle zone sulla mappa sono <strong>schematici e non ufficiali</strong>: servono solo a dare un'idea di dove si trova ciascuna zona, non sono confini amministrativi. Le zone sono sempre quelle dichiarate da chi ha risposto, mai dedotte dalla via.</p>
+      <div class="map-controls">
+        <label>Colora per
+          <select id="colorBy">
+            <option value="problemi">chi segnala problemi</option>
+            <option value="gravi">problemi gravi</option>
+            <option value="indice">gravità media</option>
+          </select>
+        </label>
+        <label>Trasparenza zone
+          <input type="range" id="opacitySlider" min="15" max="70" value="42">
+        </label>
+        <label>Vai alla zona
+          <select id="zoneJump"><option value="">Tutta Solofra</option></select>
+        </label>
+      </div>
+      <div class="map-wrap">
+        <div id="mapZone" role="img" aria-label="Mappa schematica delle zone di Solofra colorata secondo i problemi d'acqua segnalati, con un punto per ciascuna via pubblicata. La stessa informazione è disponibile in forma di tabella nella sezione Confronto tra zone e Le vie."></div>
+        <div class="map-legend" id="mapLegendZone"></div>
+        <div class="map-actions">
+          <button class="btn-sec" id="btnFullscreen" type="button">⛶ Schermo intero</button>
+          <button class="btn-sec" id="btnPng" type="button">⬇ Scarica immagine (PNG)</button>
+          <span class="mappa-nota" id="pngMsg"></span>
+        </div>
+      </div>
+      <p class="mappa-nota">I punti sulle vie sono posizioni indicative prese da OpenStreetMap, non l'indirizzo di chi ha risposto: rappresentano la via nel suo complesso. <span id="vieNonMostrate"></span></p>
+      <p class="mappa-nota">La mappa non è l'unico modo per leggere questi dati: la stessa informazione, in forma di tabella accessibile, è nella sezione <a class="inline" href="#confronto">Confronto tra zone</a> e <a class="inline" href="#vie">Le vie</a>.</p>
+
+      <div class="embed-box">
+        <h4>Incorpora questa mappa sul tuo sito</h4>
+        <p class="mappa-nota">Copia e incolla questo codice: mostra la mappa colorata per zona, con il logo e il link a questa pagina.</p>
+        <textarea id="embedCode" readonly rows="3" onclick="this.select()"></textarea>
+        <button class="btn-sec" id="btnCopyEmbed" type="button">📋 Copia il codice</button>
+        <span class="mappa-nota" id="embedMsg"></span>
+      </div>
+    </section>
+
+    <section id="dettaglio" class="block">
+      <p class="block-num">03</p>
+      <div class="dett-head">
+        <h3 id="dettTitolo" class="block-title">Tutta Solofra</h3>
+        <select id="dettSelect"><option value="">Tutta Solofra</option></select>
+      </div>
+      <div id="dettContent"></div>
+    </section>
+
+    <section id="confronto" class="block">
+      <p class="block-num">04</p>
+      <h2 class="block-title">Confronto tra zone</h2>
+      <p class="block-intro">Le zone segnate con <strong>*</strong> hanno pochissimi casi: i numeri sono mostrati ma non sono significativi. Clicca sull'intestazione di una colonna per ordinare.</p>
+      <div class="tbl-wrap">
+        <table class="data" id="tblZone">
+          <thead><tr>
+            <th data-k="nome">Zona</th>
+            <th data-k="n" class="num">N risposte</th>
+            <th data-k="pct_problemi" class="num">% con problemi</th>
+            <th data-k="pct_gravi" class="num">% problemi gravi</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="vie" class="block">
+      <p class="block-num">05</p>
+      <h2 class="block-title">Le vie</h2>
+      <p class="block-intro">Tutte le vie riconosciute sono pubblicate, in forma aggregata: nessun numero civico, nessun punto di riferimento, nessuna nota — per questo anche le vie con una sola risposta non permettono di risalire a chi ha risposto. L'ordine è alfabetico: non è una classifica delle vie "peggiori".</p>
+      <p class="mappa-nota" id="vieCopertura"></p>
+      <div class="via-filtro">
+        <label>Filtra per zona
+          <select id="viaFiltro"><option value="">Tutte le zone</option></select>
+        </label>
+      </div>
+      <div class="tbl-wrap">
+        <table class="data" id="tblVie">
+          <thead><tr>
+            <th data-k="nome">Via</th>
+            <th data-k="zone">Zone dichiarate</th>
+            <th data-k="n" class="num">N risposte</th>
+            <th data-k="pct_problemi" class="num">% con problemi</th>
+            <th data-k="pct_gravi" class="num">% problemi gravi</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="emerge" class="block">
+      <p class="block-num">06</p>
+      <h2 class="block-title">Cosa emerge</h2>
+      <p class="block-intro">Osservazioni calcolate sul questionario definitivo. Per ciascuna: cosa si vede nei dati, un'ipotesi — scritta come tale, non come fatto — sul perché potrebbe succedere, e cosa i dati non permettono di dire.</p>
+      <div id="emergeOvvie" class="emerge-group"></div>
+      <div id="emergeNonOvvie" class="emerge-group"></div>
+    </section>
+
+    <section id="fare" class="block">
+      <p class="block-num">07</p>
+      <h2 class="block-title">Cosa si può fare: breve, medio, lungo termine</h2>
+      <p class="block-intro">Richieste civiche e domande precise, non un programma di nessuno. Per ciascuna: cosa, perché, chi potrebbe farla, come verificare che sia stata fatta.</p>
+      <div id="raccomandazioni"></div>
+      <p class="note" style="margin-top:28px;">Se hai dati, competenze o vuoi aiutare su uno di questi punti, scrivici attraverso i canali di questo sito.</p>
+    </section>
+
+    <section id="note-aperte" class="block">
+      <p class="block-num">08</p>
+      <h2 class="block-title">Le risposte aperte: cosa ci hanno scritto</h2>
+      <p id="noteIntro" class="block-intro"></p>
+      <div class="temi-grid" id="temiGrid"></div>
+      <p id="noteRapporto" class="mappa-nota"></p>
+      <p id="noteEscluse" class="mappa-nota"></p>
+    </section>
+
+    <section id="metodo" class="block" style="border-bottom:none;">
+      <p class="block-num">Metodo</p>
+      <h2 class="block-title">Come è stato fatto, e i suoi limiti</h2>
+      <p><strong>Raccolta.</strong> Questionario Google Form, anonimo, aperto dal 13 all'17 novembre 2026. Nessun nome, email o numero civico è stato chiesto.</p>
+      <p><strong>«Segnala problemi»</strong> è chi ha risposto «Sì» alla domanda sui problemi negli ultimi 12 mesi, in percentuale sul totale delle risposte della zona.</p>
+      <p><strong>Indice di gravità (0-7)</strong>, solo per chi ha un problema: punti per frequenza (0-3) e durata (0-3), più 1 punto se tra i problemi c'è "l'acqua manca del tutto". Lieve 0-3, Serio 4-5, Grave/Critico 6-7. "Problemi gravi" = indice ≥ 6, sempre in percentuale sul totale della zona.</p>
+      <p><strong>Zone e vie.</strong> La zona usata è sempre quella dichiarata da chi ha risposto, mai quella dedotta dalla via o dal punto di riferimento. I confini sulla mappa sono poligoni schematici (celle di Voronoi dalle posizioni medie delle zone), non confini ufficiali. I punti sulle vie sono posizioni geocodificate con OpenStreetMap/Nominatim (nessun numero civico usato): rappresentano la via nel suo complesso, non l'indirizzo di chi ha risposto. Quando una via non è mappata su OpenStreetMap, il punto è posizionato al centro della zona a cui la via appartiene (tratteggiato e più trasparente in mappa, segnalato anche nel popup): è una posizione approssimata, non quella reale della via. Sulla mappa compaiono tutte le vie riconosciute, con i loro numeri, indipendentemente da quante risposte hanno: non pubblicando mai civici o punti di riferimento, l'aggregato per via non permette di risalire a chi ha risposto anche quando è una sola persona. La dimensione del punto segue il numero di risposte di quella via.</p>
+      <p><strong>Cosa questa pagina non fa.</strong> Non stabilisce di chi sia la responsabilità del problema dell'acqua e non valuta l'operato di chi amministra o gestisce il servizio. Registra quello che chi ha risposto ha segnalato, zona per zona, e le domande che è ragionevole porsi.</p>
+      <p><strong>Limiti.</strong> Raccolta volontaria e anonima: descrive chi ha risposto, non necessariamente tutta la popolazione di Solofra. Nessuna verifica indipendente delle singole risposte. I confini di zona sono indicativi.</p>
+      <p class="note">Il metodo con cui è costruita questa pagina — uso dell'intelligenza artificiale, gestione degli errori, il manifesto del sito — è lo stesso per tutte le pagine di dati, spiegato una volta sola: <a class="inline" href="metodo.html">leggilo qui</a>.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-l">
+      <span id="mnFooterCredit"></span><br>
+      Fonte: questionario "L'acqua di Solofra", 13-17 novembre 2026. Dati aggregati, nessuna informazione individuale.
+    </div>
+    <div class="footer-r" id="footerDate">Solofra (AV), Campania</div>
+  </div>
+</footer>
+
+<script src="nav.js?v=5" defer></script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="mappa-acqua.js"></script>
+</body>
+</html>

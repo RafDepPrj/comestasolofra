@@ -1,0 +1,281 @@
+{
+  "vie": [
+    {
+      "nome": "Via Abate Giannattasio",
+      "lat": 40.8281318,
+      "lon": 14.8477887,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Aldo Moro",
+      "lat": 40.830444,
+      "lon": 14.8477371,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Campi",
+      "lat": 40.8268682,
+      "lon": 14.849499,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Caprai",
+      "lat": 40.8307541,
+      "lon": 14.8550787,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Casa Papa",
+      "lat": 40.8316567,
+      "lon": 14.8508667,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Croce",
+      "lat": 40.8291162,
+      "lon": 14.849787,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Felice De Stefano",
+      "lat": 40.8308928,
+      "lon": 14.85004,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Fontanelle",
+      "lat": 40.8409066,
+      "lon": 14.8369139,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Forna",
+      "lat": 40.8285891,
+      "lon": 14.8488721,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Giuseppe Maffei",
+      "lat": 40.8350146,
+      "lon": 14.8442752,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Gregorio Ronca",
+      "lat": 40.8291683,
+      "lon": 14.8466346,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Luigi Landolfi",
+      "lat": 40.8282824,
+      "lon": 14.850621,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Sant'Andrea",
+      "lat": 40.8398519,
+      "lon": 14.8394235,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Sorbo Soprano",
+      "lat": 40.8277516,
+      "lon": 14.8566314,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Sorbo Sottano",
+      "lat": 40.8297521,
+      "lon": 14.8504196,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Toro Sottano",
+      "lat": 40.8346827,
+      "lon": 14.8423997,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Vicinanzo",
+      "lat": 40.8319509,
+      "lon": 14.8539971,
+      "approssimata": false
+    },
+    {
+      "nome": "Via Vico Palazzo",
+      "lat": 40.842141,
+      "lon": 14.8355795,
+      "approssimata": false
+    },
+    {
+      "nome": "Via della Fortuna",
+      "lat": 40.8289606,
+      "lon": 14.8466662,
+      "approssimata": false
+    },
+    {
+      "nome": "Via della Libertà",
+      "lat": 40.8330796,
+      "lon": 14.8440551,
+      "approssimata": false
+    },
+    {
+      "nome": "Viale Principe Amedeo",
+      "lat": 40.8313765,
+      "lon": 14.8454825,
+      "approssimata": false
+    },
+    {
+      "nome": "Vico del Vento",
+      "lat": 40.8302106,
+      "lon": 14.8492336,
+      "approssimata": false
+    },
+    {
+      "nome": "Piazza Municipio",
+      "lat": 40.8375,
+      "lon": 14.8274,
+      "approssimata": true
+    },
+    {
+      "nome": "Piazza Umberto I",
+      "lat": 40.8309,
+      "lon": 14.8482,
+      "approssimata": true
+    },
+    {
+      "nome": "Piazza del Popolo",
+      "lat": 40.8287,
+      "lon": 14.8487,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Caduti del 21 Settembre",
+      "lat": 40.8332,
+      "lon": 14.8538,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Caposolofra",
+      "lat": 40.8332,
+      "lon": 14.8538,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Cappuccini",
+      "lat": 40.8275,
+      "lon": 14.8573,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Castello",
+      "lat": 40.8353,
+      "lon": 14.8501,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Cerzeta",
+      "lat": 40.8375,
+      "lon": 14.8274,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Cigliano",
+      "lat": 40.8409,
+      "lon": 14.8404,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Dodici Apostoli",
+      "lat": 40.8289,
+      "lon": 14.8417,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Madonna delle Grazie",
+      "lat": 40.8409,
+      "lon": 14.8404,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Michele Napoli",
+      "lat": 40.828450000000004,
+      "lon": 14.8415,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Misericordia",
+      "lat": 40.8321,
+      "lon": 14.8436,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Nuova Scorza",
+      "lat": 40.82815,
+      "lon": 14.8543,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Panoramica Turci",
+      "lat": 40.83455,
+      "lon": 14.85445,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Pastena",
+      "lat": 40.828,
+      "lon": 14.8413,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Regina Margherita",
+      "lat": 40.8289,
+      "lon": 14.8417,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Santa Lucia",
+      "lat": 40.832049999999995,
+      "lon": 14.850999999999999,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Starza",
+      "lat": 40.8315,
+      "lon": 14.8459,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Starza del Conte",
+      "lat": 40.8309,
+      "lon": 14.8482,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Toppolo",
+      "lat": 40.8287,
+      "lon": 14.8487,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Turci",
+      "lat": 40.8359,
+      "lon": 14.8551,
+      "approssimata": true
+    },
+    {
+      "nome": "Via Umberto I",
+      "lat": 40.8375,
+      "lon": 14.8274,
+      "approssimata": true
+    },
+    {
+      "nome": "Via delle Vigne",
+      "lat": 40.8409,
+      "lon": 14.8404,
+      "approssimata": true
+    }
+  ],
+  "non_trovate": []
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La mappa dell'acqua — Come sta Solofra</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; font-family: 'DM Sans', system-ui, sans-serif; }
+  #mapEmbed { position: absolute; inset: 0; }
+  .wm { position: absolute; left: 10px; bottom: 10px; z-index: 1000; display: flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.92); border: 1px solid rgba(0,0,0,0.15); border-radius: 20px;
+    padding: 5px 12px 5px 5px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .wm img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; display: block; }
+  .wm span { font-size: 12px; font-weight: 600; color: #212529; white-space: nowrap; }
+  .wm span em { font-style: italic; color: #c41d1d; }
+  .wm-sub { font-size: 9.5px; font-weight: 400; color: #495057; display: block; }
+  .zona-label { background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; padding: 1px 4px; font-family: inherit; line-height: 1.15; text-align: center; pointer-events: none; }
+  .zona-label::before { display: none; }
+  .zona-label-nome { font-size: 8px; font-weight: 600; color: #212529; white-space: nowrap; }
+  .zona-label-val { font-size: 9px; font-weight: 700; color: #212529; }
+  .legenda-embed { position: absolute; right: 8px; bottom: 8px; z-index: 1000; background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; padding: 6px 9px; font-size: 10px; color: #495057; display: flex; gap: 6px; align-items: center; }
+  .legenda-embed .box { width: 10px; height: 10px; border-radius: 2px; border: 1px solid rgba(0,0,0,0.15); }
+  .fs-btn { position: absolute; right: 8px; top: 8px; z-index: 1000; background: rgba(255,255,255,0.92); border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px; padding: 6px 9px; font-size: 11px; color: #212529; cursor: pointer; font-family: inherit; }
+  .fs-btn:hover { background: #fff; }
+  body:fullscreen .fs-btn, body:-webkit-full-screen .fs-btn { top: 10px; right: 10px; }
+</style>
+</head>
+<body>
+<div id="mapEmbed"></div>
+<a class="wm" href="https://rafdepprj.github.io/comestasolofra/mappa-acqua.html" target="_blank" rel="noopener">
+  <img src="logo-avatar.jpg" alt="">
+  <span>Come sta <em>Solofra</em><span class="wm-sub">La mappa dell'acqua — vedi tutti i dati →</span></span>
+</a>
+<div class="legenda-embed" id="legendaEmbed"></div>
+<button class="fs-btn" id="fsBtn" type="button">⛶ Schermo intero</button>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script>
+(function () {
+  "use strict";
+  var SCALA = ["#fde7d4", "#f7c49a", "#ef9b62", "#d8713c", "#a84d1f"];
+  var GRIGIO = "#b9b4ad";
+
+  function classeColore(v, soglie) {
+    if (v == null) return GRIGIO;
+    for (var i = 0; i < soglie.length; i++) if (v < soglie[i]) return SCALA[i];
+    return SCALA[SCALA.length - 1];
+  }
+
+  Promise.all([
+    fetch("data/acqua.json", { cache: "no-store" }).then(function (r) { return r.json(); }),
+    fetch("data/zone_poligoni.geojson", { cache: "no-store" }).then(function (r) { return r.json(); }),
+    fetch("data/vie_posizioni.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : { vie: [] }; }).catch(function () { return { vie: [] }; })
+  ]).then(function (res) {
+    var DATI = res[0], GEO = res[1], VIE_POS = res[2];
+    function zonaByNome(n) { return DATI.zone.filter(function (z) { return z.nome === n; })[0]; }
+    function colore(z) { return (!z || z.solo_conteggio_minimo) ? GRIGIO : classeColore(z.pct_problemi, [20, 40, 60, 80]); }
+
+    var map = L.map("mapEmbed", { scrollWheelZoom: false, zoomControl: true, attributionControl: true, minZoom: 12, maxZoom: 19 });
+    L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      { maxZoom: 19, crossOrigin: true, attribution: "Tiles &copy; Esri · dati: questionario \"L'acqua di Solofra\"" }).addTo(map);
+
+    var zonaLayers = [];
+    var layer = L.geoJSON(GEO, {
+      style: function (f) {
+        var z = zonaByNome(f.properties.zona);
+        return { color: "#6b5a4a", weight: z && z.poco_significativo ? 1.5 : 1, dashArray: z && z.poco_significativo ? "5,4" : null, fillColor: colore(z), fillOpacity: 0.42 };
+      },
+      onEachFeature: function (f, l) {
+        l.bindTooltip("", { permanent: true, direction: "center", className: "zona-label", opacity: 1 });
+        zonaLayers.push({ nome: f.properties.zona, layer: l });
+      }
+    }).addTo(map);
+    map.fitBounds(layer.getBounds(), { padding: [2, 2] });
+
+    function etichettaZona(nome) {
+      var z = zonaByNome(nome);
+      var val = "n/d";
+      if (z && z.solo_conteggio_minimo) val = z.n + " risp.";
+      else if (z) val = z.pct_problemi + "%";
+      return '<div class="zona-label-nome">' + nome + '</div><div class="zona-label-val">' + val + "</div>";
+    }
+    zonaLayers.forEach(function (zl) { zl.layer.setTooltipContent(etichettaZona(zl.nome)); });
+
+    function viaByNome(n) { return (DATI.vie_mappa || []).filter(function (v) { return v.nome === n; })[0]; }
+    var nMaxVia = Math.max.apply(null, (DATI.vie || []).map(function (v) { return v.n; }).concat([1]));
+    function raggioVia(n) { var t = nMaxVia > 1 ? Math.sqrt(n) / Math.sqrt(nMaxVia) : 1; return Math.round(3 + t * (11 - 3)); }
+    (VIE_POS.vie || []).forEach(function (p) {
+      var v = viaByNome(p.nome);
+      if (!v) return;
+      var punto = L.circleMarker([p.lat, p.lon], {
+        radius: raggioVia(v.n), color: "#2b2622", weight: 1.3, fillColor: classeColore(v.pct_problemi, [20, 40, 60, 80]),
+        fillOpacity: p.approssimata ? 0.5 : 0.9, dashArray: p.approssimata ? "3,2" : null
+      });
+      var notaPos = p.approssimata ? "<br><em style=\"font-size:11px;color:#868e96;\">Posizione approssimata (centro zona): via non su OpenStreetMap.</em>" : "";
+      punto.bindPopup("<b>" + v.nome + "</b><br>" + v.zone.join(", ") + "<br>" + v.n_problemi + " su " + v.n + " segnalano problemi (" + v.pct_problemi + "%)" + notaPos);
+      punto.addTo(map);
+    });
+
+    document.getElementById("legendaEmbed").innerHTML =
+      '<span>% con problemi:</span>' +
+      ["0–20", "20–40", "40–60", "60–80", "80–100"].map(function (t, i) {
+        return '<span class="box" style="background:' + SCALA[i] + '"></span>';
+      }).join("");
+
+    var fsBtn = document.getElementById("fsBtn");
+    if (!document.body.requestFullscreen && !document.body.webkitRequestFullscreen) {
+      fsBtn.style.display = "none";
+    } else {
+      fsBtn.addEventListener("click", function () {
+        var el = document.fullscreenElement || document.webkitFullscreenElement;
+        if (!el) (document.body.requestFullscreen || document.body.webkitRequestFullscreen).call(document.body);
+        else (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      });
+      ["fullscreenchange", "webkitfullscreenchange"].forEach(function (ev) {
+        document.addEventListener(ev, function () {
+          var attivo = document.fullscreenElement || document.webkitFullscreenElement;
+          fsBtn.textContent = attivo ? "✕ Esci" : "⛶ Schermo intero";
+          setTimeout(function () { map.invalidateSize(); }, 80);
+        });
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>

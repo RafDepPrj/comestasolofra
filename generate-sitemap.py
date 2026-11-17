@@ -19,7 +19,8 @@ def last_modified(path):
     return out
 
 def main():
-    pages = sorted(p.name for p in ROOT.glob("*.html") if p.name != "404.html")
+    ESCLUSE = {"404.html", "mappa-acqua-embed.html"}  # pagine non pensate per la ricerca/sitemap
+    pages = sorted(p.name for p in ROOT.glob("*.html") if p.name not in ESCLUSE)
     entries = []
     for page in pages:
         loc = BASE_URL if page == "index.html" else BASE_URL + page
