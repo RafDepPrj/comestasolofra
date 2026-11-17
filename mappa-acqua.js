@@ -149,6 +149,16 @@
       }
     }
 
+    var bottiglia = (r.come_fronte || []).filter(function (c) { return c.valore === "Acqua in bottiglia per bere"; })[0];
+    var tanich = (r.come_fronte || []).filter(function (c) { return c.valore === "Scorte in taniche o bottiglioni"; })[0];
+    if (bottiglia && bottiglia.pct >= 30) {
+      voci.push(
+        "Chi ha un problema si arrangia soprattutto comprando acqua in bottiglia: <strong>" + bottiglia.pct + "%</strong> (" + bottiglia.n +
+        " su " + k.n_problemi + ") lo fa per bere" + (tanich ? ", " + tanich.pct + "% fa anche scorte in taniche" : "") +
+        ". È una spesa aggiuntiva che la famiglia sostiene da sola, non coperta da nessuno."
+      );
+    }
+
     var zoneSiProb = DATI.zone.filter(function (z) { return !z.poco_significativo && z.pct_problemi >= 80; }).map(function (z) { return z.nome; });
     var zoneNoProb = DATI.zone.filter(function (z) { return !z.poco_significativo && z.pct_problemi <= 20; }).map(function (z) { return z.nome; });
     if (zoneSiProb.length) {
