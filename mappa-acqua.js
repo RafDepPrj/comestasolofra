@@ -619,15 +619,6 @@
     }
 
     // non ovvie
-    var senzaRegola = null;
-    (function () {
-      var periodoEstate = null; // calcolato solo se serve, qui lasciamo generico
-    })();
-    nonOvvie.push(emergeItem(
-      "Sembra più un problema di distribuzione che di scarsità: pochissime risposte lo legano all'estate.",
-      "La maggior parte di chi ha problemi dice che succede \"senza una regola precisa\" o \"tutto l'anno\", non solo in estate.",
-      "Non possiamo dire se la rete abbia davvero meno acqua in alcuni periodi: sappiamo solo cosa percepisce chi ha risposto."
-    ));
 
     // vie vicine molto diverse (calcolato dinamicamente, senza nominare "peggiore/migliore")
     var vieSpread = trovaSpreadVie();
